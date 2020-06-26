@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: DungeonTemplate
   m_EditorClassIdentifier: 
   Seed: 2
-  Width: 100
-  Height: 100
-  MinRoomSize: 10
-  MaxRoomSize: 26
+  Width: 50
+  Height: 50
+  MinRoomSize: 6
+  MaxRoomSize: 16
   FloorTile: {fileID: 11400000, guid: 62ad4f030b74d074b82dc067c2a4b9b6, type: 2}
   WallTile: {fileID: 11400000, guid: ea73582145926d24fb8da6db6f6ce9a3, type: 2}
   BackgroundTile: {fileID: 11400000, guid: 037761662f74f95459c96605bd0bfd42, type: 2}

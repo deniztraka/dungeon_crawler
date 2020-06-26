@@ -8,9 +8,12 @@ namespace DTWorldz.ScriptableObjects
     public class RoomTemplate : ScriptableObject
     {
         public float DecorationChance = .25f;
+        public float ObjectsChance = .1f;
         public TileBase[] FloorDecorations;
         public TileBase[] UpperWallDecorations;
         public TileBase[] LeftWallDecorations;
         public TileBase[] RightWallDecorations;
+
+        public GameObject[] Objects;
     }
 }

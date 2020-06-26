@@ -88,6 +88,21 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
                         }
 
+                        //Room Object Decorations
+                        if (DungeonTemplate.RoomTemplate.FloorDecorations.Length > 0)
+                        {
+                            //if there is no any decoration and chance factor ofcourse
+                            if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && DungeonTemplate.RoomTemplate.ObjectsChance > UnityEngine.Random.value)
+                            {
+                                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                //to centralize the object within cell
+                                var newPos = new Vector3(objectPosition.x, objectPosition.y + .2f, objectPosition.z);
+                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Objects[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.Objects.Length)], newPos, Quaternion.identity);
+                                node.Room.Objects.Add(obj);
+
+                            }
+                        }
+
                     }
                 }
             }

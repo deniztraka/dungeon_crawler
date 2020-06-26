@@ -134,6 +134,9 @@ TextureImporter:
   - first:
       213: 6577929264186998489
     second: floorDecorations_26
+  - first:
+      213: 1787435985480104660
+    second: floorDecorations_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -585,8 +588,8 @@ TextureImporter:
       name: floorDecorations_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 288
+        x: 96
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -606,8 +609,8 @@ TextureImporter:
       name: floorDecorations_16
       rect:
         serializedVersion: 2
-        x: 64
-        y: 288
+        x: 128
+        y: 320
         width: 32
         height: 32
       alignment: 0
@@ -619,6 +622,111 @@ TextureImporter:
       bones: []
       spriteID: ffbe330bfcff42770800000000000000
       internalID: 8585268057154513919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4daba4dfe8f3ec810800000000000000
+      internalID: 1787435985480104660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1325019267392a930800000000000000
+      internalID: 4153043942093378097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_19
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f9e47006f2a5850800000000000000
+      internalID: 6366453112727576369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c575e0de37dd94ed0800000000000000
+      internalID: -2429167034021554340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1373b04b9ab56a550800000000000000
+      internalID: 6171721123786078001
       vertices: []
       indices: 
       edges: []
