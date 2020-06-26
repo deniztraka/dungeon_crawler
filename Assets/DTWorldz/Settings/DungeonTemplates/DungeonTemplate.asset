@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb00ff0cfb79d5948a792d8aefb57c40, type: 3}
+  m_Name: DungeonTemplate
+  m_EditorClassIdentifier: 
+  Seed: 2
+  Width: 100
+  Height: 100
+  MinRoomSize: 10
+  MaxRoomSize: 26
+  FloorTile: {fileID: 11400000, guid: 62ad4f030b74d074b82dc067c2a4b9b6, type: 2}
+  WallTile: {fileID: 11400000, guid: ea73582145926d24fb8da6db6f6ce9a3, type: 2}
+  BackgroundTile: {fileID: 11400000, guid: 037761662f74f95459c96605bd0bfd42, type: 2}
+  TestTile: {fileID: 11400000, guid: e5ed8a53b7f0ce546bdd2af9583f9335, type: 2}
+  RoomTemplate: {fileID: 11400000, guid: 0df8f0636eebab14b8fd15a4c465fc2a, type: 2}

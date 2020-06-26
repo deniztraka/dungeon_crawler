@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cf11f21c580774e9cdf7572b5ccb0b, type: 3}
+  m_Name: RoomTemplate
+  m_EditorClassIdentifier: 
+  DecorationChance: 0.2
+  FloorDecorations:
+  - {fileID: 11400000, guid: ca3d4f0163df2fa47a9387c6d786ffea, type: 2}
+  UpperWallDecorations:
+  - {fileID: 11400000, guid: bb159990fb3131b48af61e369b572811, type: 2}
+  - {fileID: 11400000, guid: da352ada938320b41aaf859e49d3ef7f, type: 2}
+  - {fileID: 11400000, guid: 6df10584aa88d814a9772715f53be820, type: 2}
+  - {fileID: 11400000, guid: f67caa385bbddb3428028eed3e1f9ea5, type: 2}
+  - {fileID: 11400000, guid: a8f9f50ee92b65a47a006284ef5de78a, type: 2}
+  - {fileID: 11400000, guid: f23dc75aaa9b5d34580429f4ed103467, type: 2}
+  - {fileID: 11400000, guid: 9d1abee732541484e902f22c09f6a3bd, type: 2}
+  - {fileID: 11400000, guid: b875d7325c90eeb438dc6bf73b3f35e5, type: 2}
+  - {fileID: 11400000, guid: bdac2d31320fc0b4798ba09bd0cdb6e4, type: 2}
+  - {fileID: 11400000, guid: ef15f542a35aab94db5f8bd97408553d, type: 2}
+  - {fileID: 11400000, guid: f36e6a1fa7fc60b48ba66582fbf181bd, type: 2}
+  - {fileID: 11400000, guid: 53cb06a14460df6499ff4adc0ad014b2, type: 2}
+  - {fileID: 11400000, guid: 4948c8c1b9a34324e88396247082be16, type: 2}
+  - {fileID: 11400000, guid: 2eacda551c5501743a91648ce9a508d3, type: 2}
+  - {fileID: 11400000, guid: 86b4f41301510d34db0f8d455b8266c0, type: 2}
+  - {fileID: 11400000, guid: fda6d8e0619223347872d4adf615ed66, type: 2}
+  - {fileID: 11400000, guid: 9f13b9fb170f2ae4498561ecff156f13, type: 2}
+  - {fileID: 11400000, guid: ccea719458570dd4f9e7df08870c2210, type: 2}
+  - {fileID: 11400000, guid: 595011b41d38ed248a74956d9b075726, type: 2}
+  - {fileID: 11400000, guid: cc3421f68fdd1804fb7bc3766b8856b1, type: 2}
+  - {fileID: 11400000, guid: 917523027a4112f4f873cb2489370c72, type: 2}
+  LeftWallDecorations: []
+  RightWallDecorations: []

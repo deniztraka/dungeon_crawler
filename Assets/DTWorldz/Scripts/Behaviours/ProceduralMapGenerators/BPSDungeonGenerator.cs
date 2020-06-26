@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.ProceduralGeneration;
+using DTWorldz.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,58 +10,95 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 {
     public class BPSDungeonGenerator : MonoBehaviour
     {
-        public int Seed = 0;
-        public int Width = 20;
-        public int Height = 20;
-
-        public int MinRoomSize = 4;
-        public int MaxRoomSize = 10;
+        public DungeonTemplate DungeonTemplate;
 
         // Tilemaps
         public Tilemap FloorMap;
+        public Tilemap FloorDecorationsMap;
         public Tilemap WallMap;
-
-        // Tiles
-        public TileBase FloorTile;
-        public TileBase WallTile;
-        public TileBase BackgroundTile;
-        public TileBase CorridorTile;
-        // Start is called before the first frame update
-
-
+        public Tilemap WallDecorationsMap;
 
         void Start()
         {
-            long hash = Seed;
+            long hash = DungeonTemplate.Seed;
             hash = (hash + 0xabcd1234) + (hash << 15);
             hash = (hash + 0x0987efab) ^ (hash >> 11);
-            hash ^= Seed;
+            hash ^= DungeonTemplate.Seed;
             hash = (hash + 0x46ac12fd) + (hash << 7);
             hash = (hash + 0xbe9730af) ^ (hash << 11);
-            UnityEngine.Random.InitState(Seed);
+            UnityEngine.Random.InitState(DungeonTemplate.Seed);
 
-            // Set background color
-            for (int i = 0; i < Width; i++)
+            // Set Default Tiles
+            for (int i = 0; i < DungeonTemplate.Width; i++)
             {
-                for (int j = 0; j < Height; j++)
+                for (int j = 0; j < DungeonTemplate.Height; j++)
                 {
-                    FloorMap.SetTile(new Vector3Int(i, j, 0), BackgroundTile);
-                    WallMap.SetTile(new Vector3Int(i, j, 0), WallTile);
+                    FloorMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.BackgroundTile);
+                    WallMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.WallTile);
                 }
             }
 
             var roomTree = new BinaryTree();
-            roomTree.Add(new Room(new Rect(0, 0, Width, Height)));
+            roomTree.Add(new Room(new Rect(0, 0, DungeonTemplate.Width, DungeonTemplate.Height)));
             recurseBSP(roomTree.Root);
             roomTree.Root.CreateRooms();
-            drawLeafsFloor(roomTree.Root, roomTree);
-            //drawLeafWalls(roomTree.Root, roomTree);
-            drawCorridors(roomTree.Root, roomTree);
-            //drawCorridorsWalls(roomTree.Root, roomTree);
-            clearCorridorRoomIntersections(roomTree.Root, roomTree);
+            BuildLeafs(roomTree.Root, roomTree);
+            BuildCorridors(roomTree.Root, roomTree);
+            BuildDecorations(roomTree.Root, roomTree);
         }
 
-        private void drawCorridorsWalls(BinaryTreeNode root, BinaryTree tree)
+        private void BuildDecorations(BinaryTreeNode node, BinaryTree tree)
+        {
+            // Fail if the node was null
+            if (node == null)
+            {
+                return;
+            }
+
+            // Iterate if the room is a leaf, otherwise recurse
+            if (node.LeftNode == null && node.RightNode == null)
+            {
+                // iterate room tiles
+                for (int x = (int)node.Room.InnerRect.xMin; x < (int)node.Room.InnerRect.xMax; x++)
+                {
+                    for (int y = (int)node.Room.InnerRect.yMin; y < (int)node.Room.InnerRect.yMax; y++)
+                    {
+
+                        //Room Top Wall Decorations
+                        if (DungeonTemplate.RoomTemplate.UpperWallDecorations.Length > 0 && y == (int)node.Room.InnerRect.yMax - 1)
+                        {
+                            var wallTile = WallMap.GetTile(new Vector3Int(x, y + 1, 0));
+                            if (wallTile != null)
+                            {
+                                if (DungeonTemplate.RoomTemplate.DecorationChance > UnityEngine.Random.value)
+                                {
+                                    WallDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.UpperWallDecorations[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.UpperWallDecorations.Length)]);
+                                }
+                            }
+                        }
+
+                        //Room Floor Decorations
+                        if (DungeonTemplate.RoomTemplate.FloorDecorations.Length > 0 && y != (int)node.Room.InnerRect.yMax - 1 && y != (int)node.Room.InnerRect.yMin && x != (int)node.Room.InnerRect.xMax - 1 && x != (int)node.Room.InnerRect.xMin)
+                        {
+
+                            if (DungeonTemplate.RoomTemplate.DecorationChance > UnityEngine.Random.value)
+                            {
+                                FloorDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.FloorDecorations[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.FloorDecorations.Length)]);
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+                BuildDecorations(node.LeftNode, tree);
+                BuildDecorations(node.RightNode, tree);
+            }
+        }
+
+        private void BuildCorridors(BinaryTreeNode root, BinaryTree tree)
         {
             // Fail if the input was null
             if (root == null)
@@ -77,196 +115,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     {
 
 
-                        //Top Wall
-                        if (y == (int)corridor.y + (int)corridor.height - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int(x, y, 0), WallTile);
-                        }
-                        else
-
-                        //Bottom Wall
-                        if (y == (int)corridor.y)
-                        {
-                            WallMap.SetTile(new Vector3Int(x, y - 1, 0), WallTile);
-                        }
-                        else
-
-                        //Left Wall
-                        if (x == (int)corridor.x)
-                        {
-                            WallMap.SetTile(new Vector3Int(x - 1, y, 0), WallTile);
-                        }
-                        else
-
-                        //Right Wall
-                        if (x == (int)corridor.x + (int)corridor.width - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int(x + 1, y, 0), WallTile);
-                        }
-
-                        // //Bottom Left Corner
-                        // if (x == (int)node.Room.InnerRect.xMin && y == (int)node.Room.InnerRect.yMin)
-                        // {
-                        //     WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.x - 1, (int)node.Room.InnerRect.yMin - 1, 0), WallTile);
-                        // }
-
-                        // //Bottom Right Corner
-                        // if (x == (int)node.Room.InnerRect.xMax - 1 && y == (int)node.Room.InnerRect.yMin)
-                        // {
-                        //     WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMax, (int)node.Room.InnerRect.yMin - 1, 0), WallTile);
-                        // }
-
-                        // //Top Right Corner
-                        // if (x == (int)node.Room.InnerRect.xMax - 1 && y == (int)node.Room.InnerRect.yMax - 1)
-                        // {
-                        //     WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMax, (int)node.Room.InnerRect.yMax, 0), WallTile);
-                        // }
-
-                        // //Top Left Corner
-                        // if (x == (int)node.Room.InnerRect.xMin && y == (int)node.Room.InnerRect.yMax - 1)
-                        // {
-                        //     WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMin - 1, (int)node.Room.InnerRect.yMax, 0), WallTile);
-                        // }
-
-
-
-                        WallMap.SetTile(new Vector3Int(x, y, 0), null);
-                    }
-                }
-            }
-            drawCorridorsWalls(root.LeftNode, tree);
-            drawCorridorsWalls(root.RightNode, tree);
-        }
-
-        private void drawLeafWalls(BinaryTreeNode node, BinaryTree tree)
-        {
-            // Fail if the input was null
-            if (node == null)
-            {
-                return;
-            }
-
-            // Draw the room if it is a leaf, otherwise recurse
-            if (node.LeftNode == null && node.RightNode == null)
-            {
-                // Draw the floor of the room
-                for (int x = (int)node.Room.InnerRect.xMin; x < (int)node.Room.InnerRect.xMax; x++)
-                {
-                    for (int y = (int)node.Room.InnerRect.yMin; y < (int)node.Room.InnerRect.yMax; y++)
-                    {
-
-                        //clear intersecting corridor walls 
-                        WallMap.SetTile(new Vector3Int(x, y, 0), null);
-
-                        //Bottom Left Corner
-                        if (x == (int)node.Room.InnerRect.xMin && y == (int)node.Room.InnerRect.yMin)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.x - 1, (int)node.Room.InnerRect.yMin - 1, 0), WallTile);
-                        }
-
-                        //Bottom Right Corner
-                        if (x == (int)node.Room.InnerRect.xMax - 1 && y == (int)node.Room.InnerRect.yMin)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMax, (int)node.Room.InnerRect.yMin - 1, 0), WallTile);
-                        }
-
-                        //Top Right Corner
-                        if (x == (int)node.Room.InnerRect.xMax - 1 && y == (int)node.Room.InnerRect.yMax - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMax, (int)node.Room.InnerRect.yMax, 0), WallTile);
-                        }
-
-                        //Top Left Corner
-                        if (x == (int)node.Room.InnerRect.xMin && y == (int)node.Room.InnerRect.yMax - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMin - 1, (int)node.Room.InnerRect.yMax, 0), WallTile);
-                        }
-
-                        //Top Wall
-                        if (y == (int)node.Room.InnerRect.yMax - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int(x, (int)node.Room.InnerRect.yMax, 0), WallTile);
-                        }
-
-                        //Bottom Wall
-                        if (y == (int)node.Room.InnerRect.yMin)
-                        {
-                            WallMap.SetTile(new Vector3Int(x, (int)node.Room.InnerRect.yMin - 1, 0), WallTile);
-                        }
-
-                        //Left Wall
-                        if (x == (int)node.Room.InnerRect.xMin)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMin - 1, y, 0), WallTile);
-                        }
-
-                        //Right Wall
-                        if (x == (int)node.Room.InnerRect.xMax - 1)
-                        {
-                            WallMap.SetTile(new Vector3Int((int)node.Room.InnerRect.xMax, y, 0), WallTile);
-                        }
-                    }
-                }
-
-
-
-            }
-            else
-            {
-                drawLeafWalls(node.LeftNode, tree);
-                drawLeafWalls(node.RightNode, tree);
-            }
-        }
-
-        private void clearCorridorRoomIntersections(BinaryTreeNode node, BinaryTree tree)
-        {
-            // Fail if the input was null
-            if (node == null)
-            {
-                return;
-            }
-
-            // Draw the room if it is a leaf, otherwise recurse
-            if (node.LeftNode == null && node.RightNode == null)
-            {
-                // Draw the floor of the room
-                for (int x = (int)node.Room.InnerRect.xMin; x < (int)node.Room.InnerRect.xMax; x++)
-                {
-                    for (int y = (int)node.Room.InnerRect.yMin; y < (int)node.Room.InnerRect.yMax; y++)
-                    {
-                        //FloorMap.SetTile(new Vector3Int(x, y, 0), FloorTile);
-
-                        //clear intersecting corridor walls 
-                        WallMap.SetTile(new Vector3Int(x, y, 0), null);
-                    }
-                }
-            }
-
-            else
-            {
-                clearCorridorRoomIntersections(node.LeftNode, tree);
-                clearCorridorRoomIntersections(node.RightNode, tree);
-            }
-        }
-
-        private void drawCorridors(BinaryTreeNode root, BinaryTree tree)
-        {
-            // Fail if the input was null
-            if (root == null)
-            {
-                return;
-            }
-
-            foreach (var corridor in root.GetCorridors())
-            {
-                // Draw the floor of the room
-                for (int x = (int)corridor.x; x < (int)corridor.x + (int)corridor.width; x++)
-                {
-                    for (int y = (int)corridor.y; y < (int)corridor.y + (int)corridor.height; y++)
-                    {
-
-
-                        FloorMap.SetTile(new Vector3Int(x, y, 0), CorridorTile);
+                        FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                         WallMap.SetTile(new Vector3Int(x, y, 0), null);
 
 
@@ -275,8 +124,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     }
                 }
             }
-            drawCorridors(root.LeftNode, tree);
-            drawCorridors(root.RightNode, tree);
+            BuildCorridors(root.LeftNode, tree);
+            BuildCorridors(root.RightNode, tree);
         }
 
         public void recurseBSP(BinaryTreeNode node)
@@ -295,10 +144,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             // Only attempt a split if the room is large enough
-            if (node.Room.Rect.width > MaxRoomSize || node.Room.Rect.height > MaxRoomSize)
+            if (node.Room.Rect.width > DungeonTemplate.MaxRoomSize || node.Room.Rect.height > DungeonTemplate.MaxRoomSize)
             {
                 // Only recurse if the split was successful
-                if (node.Split(MinRoomSize))
+                if (node.Split(DungeonTemplate.MinRoomSize))
                 {
                     recurseBSP(node.LeftNode);
                     recurseBSP(node.RightNode);
@@ -306,7 +155,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
         }
 
-        public void drawLeafsFloor(BinaryTreeNode node, BinaryTree tree)
+        public void BuildLeafs(BinaryTreeNode node, BinaryTree tree)
         {
             //Debug.Log("Call of draw");
 
@@ -324,7 +173,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 {
                     for (int y = (int)node.Room.InnerRect.yMin; y < (int)node.Room.InnerRect.yMax; y++)
                     {
-                        FloorMap.SetTile(new Vector3Int(x, y, 0), FloorTile);
+                        FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                         WallMap.SetTile(new Vector3Int(x, y, 0), null);
                     }
                 }
@@ -334,8 +183,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
             else
             {
-                drawLeafsFloor(node.LeftNode, tree);
-                drawLeafsFloor(node.RightNode, tree);
+                BuildLeafs(node.LeftNode, tree);
+                BuildLeafs(node.RightNode, tree);
             }
         }
     }

@@ -1,106 +1,139 @@
 fileFormatVersion: 2
-guid: 58497eb2fc723334c93719d08e6e8a1c
+guid: 8b3257475b69c5e43b855cbe29974d1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6758061411840816901
-    second: wall_dungeon_bottomleft
+      213: 8804283857202646316
+    second: floorDecorations_0
   - first:
-      213: -8749412693630546586
-    second: wall_dungeon_bottom
+      213: 1603259130492328020
+    second: floorDecorations_1
   - first:
-      213: 7823275351336641805
-    second: wall_dungeon_bottomright
+      213: 8951201255858144524
+    second: floorDecorations_2
   - first:
-      213: -2721821639227262652
-    second: wall_dungeon_left
+      213: 6916074317219492233
+    second: floorDecorations_3
   - first:
-      213: 3253266907876568970
-    second: wall_dungeon_right
+      213: 4817887675786525162
+    second: floorDecorations_4
   - first:
-      213: -5925511535907216157
-    second: wall_dungeon_topleft
+      213: 7834558760527509076
+    second: floorDecorations_5
   - first:
-      213: 1532630714408793570
-    second: wall_dungeon_top
+      213: 6087151888118174446
+    second: floorDecorations_6
   - first:
-      213: 2723998197979919630
-    second: wall_dungeon_topright
+      213: 3346966334267389441
+    second: floorDecorations_7
   - first:
-      213: -2825120786768802879
-    second: wall_dungeon_bottomleft
+      213: 5655144758208023511
+    second: floorDecorations_8
   - first:
-      213: -9014930908878656604
-    second: wall_dungeon_bottom
+      213: 3207352897130422247
+    second: floorDecorations_9
   - first:
-      213: 6096331580336428469
-    second: wall_dungeon_bottomright
+      213: -7903648614939583821
+    second: floorDecorations_10
   - first:
-      213: -4003260905496165926
-    second: wall_dungeon_left
+      213: 5865624078291040172
+    second: floorDecorations_11
   - first:
-      213: 1185680197384051048
-    second: wall_dungeon_right
+      213: 6016506577630392383
+    second: floorDecorations_0
   - first:
-      213: 3305827628935218019
-    second: wall_dungeon_topleft
+      213: -7078295223788083148
+    second: floorDecorations_1
   - first:
-      213: 2763755274670320970
-    second: wall_dungeon_top
+      213: 6698715750074018951
+    second: floorDecorations_2
   - first:
-      213: -2405188466811044165
-    second: wall_dungeon_topright
+      213: 6422855890583233849
+    second: floorDecorations_3
   - first:
-      213: 1449436598052392610
-    second: wall_column_dungeon_bottomleft
+      213: -6577507908194725186
+    second: floorDecorations_4
   - first:
-      213: 2475551153684006706
-    second: wall_column_dungeon_bottomright
+      213: 4262160641214041502
+    second: floorDecorations_5
   - first:
-      213: -5086917310794680336
-    second: wall_column_dungeon_topleft
+      213: -1548339487465689362
+    second: floorDecorations_6
   - first:
-      213: -3071946971925113517
-    second: wall_column_dungeon_topright
+      213: -1803488471797119095
+    second: floorDecorations_7
   - first:
-      213: 3131281587611023333
-    second: wall_dungeon_bottomleft
+      213: -8951095045618763281
+    second: floorDecorations_8
   - first:
-      213: 1220300023916344553
-    second: wall_dungeon_bottom
+      213: 2456869385857476958
+    second: floorDecorations_9
   - first:
-      213: 7897854196945970818
-    second: wall_dungeon_bottomright
+      213: -1158937538842525629
+    second: floorDecorations_10
   - first:
-      213: -3788895625066405068
-    second: wall_dungeon_left
+      213: 867478321068978529
+    second: floorDecorations_11
   - first:
-      213: 5310262631721433360
-    second: wall_dungeon_right
+      213: 5864702636405751073
+    second: floorDecorations_12
   - first:
-      213: -8078999666768663848
-    second: wall_dungeon_topleft
+      213: -3789036616398349032
+    second: floorDecorations_13
   - first:
-      213: -4297941047410551941
-    second: wall_dungeon_top
+      213: 4417029592071856075
+    second: floorDecorations_14
   - first:
-      213: -6175904979458329381
-    second: wall_dungeon_topright
+      213: 1775582263887959286
+    second: floorDecorations_15
   - first:
-      213: 1513556089488272903
-    second: wall_column_dungeon_bottomleft
+      213: 8563495789600184111
+    second: floorDecorations_16
   - first:
-      213: 4132095030499526011
-    second: wall_column_dungeon_bottomright
+      213: -3879245808521735232
+    second: floorDecorations_12
   - first:
-      213: 1765813866902667999
-    second: wall_column_dungeon_topleft
+      213: 5090229781307447301
+    second: floorDecorations_13
   - first:
-      213: 3243434513151009279
-    second: wall_column_dungeon_topright
+      213: 8267302466896890030
+    second: floorDecorations_14
   - first:
-      213: 2205313367859221767
-    second: wall_column_dungeon_full
+      213: 4564721297898918359
+    second: floorDecorations_15
+  - first:
+      213: 8585268057154513919
+    second: floorDecorations_16
+  - first:
+      213: -4081874286607571944
+    second: floorDecorations_17
+  - first:
+      213: 4153043942093378097
+    second: floorDecorations_18
+  - first:
+      213: 6366453112727576369
+    second: floorDecorations_19
+  - first:
+      213: -2429167034021554340
+    second: floorDecorations_20
+  - first:
+      213: 6171721123786078001
+    second: floorDecorations_21
+  - first:
+      213: 2772503009224439724
+    second: floorDecorations_22
+  - first:
+      213: 7714332050392744639
+    second: floorDecorations_23
+  - first:
+      213: 5712515640502720037
+    second: floorDecorations_24
+  - first:
+      213: 2435765009656302213
+    second: floorDecorations_25
+  - first:
+      213: 6577929264186998489
+    second: floorDecorations_26
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -234,274 +267,358 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wall_dungeon_bottomleft
+      name: floorDecorations_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e7b641830c847b20800000000000000
-      internalID: 3131281587611023333
+      spriteID: f30f5740bdcee7350800000000000000
+      internalID: 6016506577630392383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_bottom
+      name: floorDecorations_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e43fe408606fe010800000000000000
-      internalID: 1220300023916344553
+      spriteID: 43864c21ff7d4cd90800000000000000
+      internalID: -7078295223788083148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_bottomright
+      name: floorDecorations_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 286eac82c80da9d60800000000000000
-      internalID: 7897854196945970818
+      spriteID: 78ce97ebb7e96fc50800000000000000
+      internalID: 6698715750074018951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_left
+      name: floorDecorations_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 433a2e0e0832b6bc0800000000000000
-      internalID: -3788895625066405068
+      spriteID: 9352db91761922950800000000000000
+      internalID: 6422855890583233849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_right
+      name: floorDecorations_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01979c38ab7d1b940800000000000000
-      internalID: 5310262631721433360
+      spriteID: eb21bb8186ff7b4a0800000000000000
+      internalID: -6577507908194725186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_topleft
+      name: floorDecorations_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8da21c18b90a1ef80800000000000000
-      internalID: -8078999666768663848
+      spriteID: e9dc633758c362b30800000000000000
+      internalID: 4262160641214041502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_top
+      name: floorDecorations_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b73168b8365aa54c0800000000000000
-      internalID: -4297941047410551941
+      spriteID: eeea5e98071338ae0800000000000000
+      internalID: -1548339487465689362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_dungeon_topright
+      name: floorDecorations_7
       rect:
         serializedVersion: 2
         x: 224
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd4f1dc7427ca4aa0800000000000000
-      internalID: -6175904979458329381
+      spriteID: 987450a4ac8b8f6e0800000000000000
+      internalID: -1803488471797119095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_column_dungeon_bottomleft
+      name: floorDecorations_8
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70ee3958e3b310510800000000000000
-      internalID: 1513556089488272903
+      spriteID: fe9722f1b7257c380800000000000000
+      internalID: -8951095045618763281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_column_dungeon_bottomright
+      name: floorDecorations_9
       rect:
         serializedVersion: 2
         x: 288
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75c4179986285930800000000000000
-      internalID: 4132095030499526011
+      spriteID: e59219b70bd881220800000000000000
+      internalID: 2456869385857476958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_column_dungeon_topleft
+      name: floorDecorations_10
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd241343b5e618810800000000000000
-      internalID: 1765813866902667999
+      spriteID: 3400d60e270aaefe0800000000000000
+      internalID: -1158937538842525629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_column_dungeon_topright
+      name: floorDecorations_11
       rect:
         serializedVersion: 2
         x: 352
-        y: 0
+        y: 352
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1ab98518ef20d20800000000000000
-      internalID: 3243434513151009279
+      spriteID: 1613ba9dfe6e90c00800000000000000
+      internalID: 867478321068978529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall_column_dungeon_full
+      name: floorDecorations_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 0
+        y: 320
         width: 32
-        height: 96
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1666667}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7055ba5e2d8da9e10800000000000000
-      internalID: 2205313367859221767
+      spriteID: 0c393a28d762a2ac0800000000000000
+      internalID: -3879245808521735232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508d1f3540124a640800000000000000
+      internalID: 5090229781307447301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea88916aacb5bb270800000000000000
+      internalID: 8267302466896890030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1dce3e5d5295f30800000000000000
+      internalID: 4564721297898918359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorDecorations_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbe330bfcff42770800000000000000
+      internalID: 8585268057154513919
       vertices: []
       indices: 
       edges: []
@@ -509,7 +626,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ca27bfe6b80fedc4287c31978f0d208d
     internalID: 0
     vertices: []
     indices: 
