@@ -22,14 +22,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private Random random;
 
         void Start()
-        {
-            long hash = DungeonTemplate.Seed;
-            hash = (hash + 0xabcd1234) + (hash << 15);
-            hash = (hash + 0x0987efab) ^ (hash >> 11);
-            hash ^= DungeonTemplate.Seed;
-            hash = (hash + 0x46ac12fd) + (hash << 7);
-            hash = (hash + 0xbe9730af) ^ (hash << 11);
-            //UnityEngine.Random.InitState(DungeonTemplate.Seed);
+        {            
 
             random = new System.Random(DungeonTemplate.Seed);            
 
