@@ -5,6 +5,7 @@ using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = System.Random;
 
 namespace DTWorldz.Behaviours.ProceduralMapGenerators
 {
@@ -18,6 +19,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public Tilemap WallMap;
         public Tilemap WallDecorationsMap;
 
+        private Random random;
+
         void Start()
         {
             long hash = DungeonTemplate.Seed;
@@ -26,7 +29,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             hash ^= DungeonTemplate.Seed;
             hash = (hash + 0x46ac12fd) + (hash << 7);
             hash = (hash + 0xbe9730af) ^ (hash << 11);
-            UnityEngine.Random.InitState(DungeonTemplate.Seed);
+            //UnityEngine.Random.InitState(DungeonTemplate.Seed);
+
+            random = new System.Random(DungeonTemplate.Seed);            
 
             // Set Default Tiles
             for (int i = 0; i < DungeonTemplate.Width; i++)
@@ -38,7 +43,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 }
             }
 
-            var roomTree = new BinaryTree();
+            var roomTree = new BinaryTree(random);
             roomTree.Add(new Room(new Rect(0, 0, DungeonTemplate.Width, DungeonTemplate.Height)));
             recurseBSP(roomTree.Root);
             roomTree.Root.CreateRooms();
@@ -70,9 +75,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                             var wallTile = WallMap.GetTile(new Vector3Int(x, y + 1, 0));
                             if (wallTile != null)
                             {
-                                if (DungeonTemplate.RoomTemplate.DecorationChance > UnityEngine.Random.value)
+                                if (DungeonTemplate.RoomTemplate.DecorationChance > random.NextDouble())
                                 {
-                                    WallDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.UpperWallDecorations[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.UpperWallDecorations.Length)]);
+                                    WallDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.UpperWallDecorations[random.Next(0, DungeonTemplate.RoomTemplate.UpperWallDecorations.Length)]);
                                 }
                             }
                         }
@@ -81,9 +86,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         if (DungeonTemplate.RoomTemplate.FloorDecorations.Length > 0 && y != (int)node.Room.InnerRect.yMax - 1 && y != (int)node.Room.InnerRect.yMin && x != (int)node.Room.InnerRect.xMax - 1 && x != (int)node.Room.InnerRect.xMin)
                         {
 
-                            if (DungeonTemplate.RoomTemplate.DecorationChance > UnityEngine.Random.value)
+                            if (DungeonTemplate.RoomTemplate.DecorationChance > random.NextDouble())
                             {
-                                FloorDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.FloorDecorations[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.FloorDecorations.Length)]);
+                                FloorDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.FloorDecorations[random.Next(0, DungeonTemplate.RoomTemplate.FloorDecorations.Length)]);
                             }
 
                         }
@@ -92,14 +97,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         if (DungeonTemplate.RoomTemplate.FloorDecorations.Length > 0)
                         {
                             //if there is no any decoration and chance factor ofcourse
-                            if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && DungeonTemplate.RoomTemplate.ObjectsChance > UnityEngine.Random.value)
+                            if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && DungeonTemplate.RoomTemplate.ObjectsChance > random.NextDouble())
                             {
                                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                                 //to centralize the object within cell
                                 var newPos = new Vector3(objectPosition.x, objectPosition.y + .2f, objectPosition.z);
-                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Objects[UnityEngine.Random.Range(0, DungeonTemplate.RoomTemplate.Objects.Length)], newPos, Quaternion.identity);
+                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Objects[random.Next(0, DungeonTemplate.RoomTemplate.Objects.Length)], newPos, Quaternion.identity);
                                 node.Room.Objects.Add(obj);
-
                             }
                         }
 
@@ -162,7 +166,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             if (node.Room.Rect.width > DungeonTemplate.MaxRoomSize || node.Room.Rect.height > DungeonTemplate.MaxRoomSize)
             {
                 // Only recurse if the split was successful
-                if (node.Split(DungeonTemplate.MinRoomSize))
+                if (node.Split(DungeonTemplate))
                 {
                     recurseBSP(node.LeftNode);
                     recurseBSP(node.RightNode);

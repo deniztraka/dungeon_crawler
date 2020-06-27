@@ -1,10 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using Random = System.Random;
 
 namespace DTWorldz.ProceduralGeneration
 {
     public class BinaryTree
     {
+        private Random random;
+        public BinaryTree(Random random)
+        {
+            this.random = random;
+        }
         public BinaryTreeNode Root { get; set; }
 
         public bool Add(Room room)
@@ -26,7 +32,7 @@ namespace DTWorldz.ProceduralGeneration
                 }
             }
 
-            BinaryTreeNode newNode = new BinaryTreeNode(room);
+            BinaryTreeNode newNode = new BinaryTreeNode(room, random);
 
             if (this.Root == null)//Tree ise empty
                 this.Root = newNode;

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.ScriptableObjects;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = System.Random;
 
 namespace DTWorldz.ProceduralGeneration
 {
@@ -14,10 +15,13 @@ namespace DTWorldz.ProceduralGeneration
         public Room Room { get; set; }
 
         private List<Rect> corridors = new List<Rect>();
+        private Random random;
 
-        public BinaryTreeNode(Room room)
+        public BinaryTreeNode(Room room, Random random)
         {
             Room = room;
+            this.random = random;
+
         }
 
         private void SetChildNodes(BinaryTreeNode node1, BinaryTreeNode node2)
@@ -34,7 +38,7 @@ namespace DTWorldz.ProceduralGeneration
             }
         }
 
-        internal bool Split(int minRoomSize)
+        internal bool Split(DungeonTemplate dungeonTemplate)
         {
             // Should not split rooms that have already been split
             if (LeftNode != null || RightNode != null)
@@ -43,7 +47,7 @@ namespace DTWorldz.ProceduralGeneration
             }
 
             // Randomly pick if the split will be horizontal or vertical
-            bool horSplit = (Random.value < 0.5f);
+            bool horSplit = (random.NextDouble() < 0.5f);
 
             // To prevent splitting a room in one way too much
             if (Room.Rect.width / Room.Rect.height >= 1.25)
@@ -56,27 +60,27 @@ namespace DTWorldz.ProceduralGeneration
             }
 
             // Determine if an appropriate size is impossible
-            int maxDimension = (horSplit ? (int)Room.Rect.height : (int)Room.Rect.width) - minRoomSize;
-            if (maxDimension < minRoomSize)
+            int maxDimension = (horSplit ? (int)Room.Rect.height : (int)Room.Rect.width) - dungeonTemplate.MinRoomSize;
+            if (maxDimension < dungeonTemplate.MinRoomSize)
             {
                 return false;
             }
 
             // Calculate where the split will occur
-            int split = Random.Range(minRoomSize, maxDimension);
+            int split = random.Next(dungeonTemplate.MinRoomSize, maxDimension);
 
             // Split the room into two children
             if (horSplit)
             {
-                var node1 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y, Room.Rect.width, split)));
-                var node2 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y + split, Room.Rect.width, Room.Rect.height - split)));
+                var node1 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y, Room.Rect.width, split)), random);
+                var node2 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y + split, Room.Rect.width, Room.Rect.height - split)), random);
 
                 SetChildNodes(node1, node2);
             }
             else
             {
-                var node1 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y, split, Room.Rect.height)));
-                var node2 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x + split, Room.Rect.y, Room.Rect.width - split, Room.Rect.height)));
+                var node1 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x, Room.Rect.y, split, Room.Rect.height)), random);
+                var node2 = new BinaryTreeNode(new Room(new Rect(Room.Rect.x + split, Room.Rect.y, Room.Rect.width - split, Room.Rect.height)), random);
                 SetChildNodes(node1, node2);
             }
 
@@ -110,13 +114,13 @@ namespace DTWorldz.ProceduralGeneration
             }
             else
             {
-                int roomWidth = (int)Random.Range(Room.Rect.width / 2, Room.Rect.width - 2);
+                int roomWidth = random.Next((int)Room.Rect.width / 2, (int)Room.Rect.width - 2);
 
-                int roomHeight = (int)Random.Range(Room.Rect.height / 2, Room.Rect.height - 2);
+                int roomHeight = random.Next((int)Room.Rect.height / 2, (int)Room.Rect.height - 2);
 
-                int roomX = (int)Random.Range(1, Room.Rect.width - roomWidth - 1);
+                int roomX = random.Next(1, (int)Room.Rect.width - roomWidth - 1);
 
-                int roomY = (int)Random.Range(1, Room.Rect.height - roomHeight - 1);
+                int roomY = random.Next(1, (int)Room.Rect.height - roomHeight - 1);
 
 
                 Room.InnerRect = new Rect(Room.Rect.x + roomX, Room.Rect.y + roomY, roomWidth, roomHeight);
@@ -160,7 +164,7 @@ namespace DTWorldz.ProceduralGeneration
                 if (w != 0)
                 {
                     // choose at random to go horizontal then vertical or the opposite
-                    if (Random.Range(0, 1) > 2)
+                    if (random.Next(0, 1) > 2)
                     {
                         // add a corridor to the right
                         corridors.Add(new Rect(lpoint.x, lpoint.y, Mathf.Abs(w) + 1, 1));
