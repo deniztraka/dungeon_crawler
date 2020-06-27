@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecorationChance: 0.2
   ObjectsChance: 0.05
+  ContainerChance: 0.1
   FloorDecorations:
   - {fileID: 11400000, guid: ca3d4f0163df2fa47a9387c6d786ffea, type: 2}
   UpperWallDecorations:
@@ -41,6 +42,10 @@ MonoBehaviour:
   LeftWallDecorations: []
   RightWallDecorations: []
   Objects:
+  - {fileID: 2273079249387786720, guid: 31e9e6ed22f4a6348a39fea0631fb2e7, type: 3}
+  - {fileID: 5792644227479943745, guid: 911d4b18552fa3c41861da11a8259705, type: 3}
+  - {fileID: 3690855269219818583, guid: b0e95033eb9a0e04abb8f9bcc3f910a5, type: 3}
+  Containers:
   - {fileID: 2273079249387786720, guid: 31e9e6ed22f4a6348a39fea0631fb2e7, type: 3}
   - {fileID: 5792644227479943745, guid: 911d4b18552fa3c41861da11a8259705, type: 3}
   - {fileID: 3690855269219818583, guid: b0e95033eb9a0e04abb8f9bcc3f910a5, type: 3}

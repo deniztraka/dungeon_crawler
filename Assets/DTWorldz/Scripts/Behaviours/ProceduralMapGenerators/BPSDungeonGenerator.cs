@@ -22,9 +22,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private Random random;
 
         void Start()
-        {            
+        {
 
-            random = new System.Random(DungeonTemplate.Seed);            
+            random = new System.Random(DungeonTemplate.Seed);
 
             // Set Default Tiles
             for (int i = 0; i < DungeonTemplate.Width; i++)
@@ -87,15 +87,19 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         }
 
                         //Room Object Decorations
-                        if (DungeonTemplate.RoomTemplate.FloorDecorations.Length > 0)
+                        if (DungeonTemplate.RoomTemplate.Containers.Length > 0)
                         {
-                            //if there is no any decoration and chance factor ofcourse
-                            if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && DungeonTemplate.RoomTemplate.ObjectsChance > random.NextDouble())
+                            //if there is no any decoration && chance factor ofcourse && make sure containers locations will be near wall
+                            if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && //there shouldn't be too much objects
+                                FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && //there should be no floor decoration on that tile
+                                DungeonTemplate.RoomTemplate.ContainerChance > random.NextDouble() && //chance factor
+                                (y == (int)node.Room.InnerRect.yMax - 1 || y == (int)node.Room.InnerRect.yMin + 1 || x == (int)node.Room.InnerRect.xMax - 1 || x == (int)node.Room.InnerRect.xMin)
+                            )
                             {
                                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                                 //to centralize the object within cell
-                                var newPos = new Vector3(objectPosition.x, objectPosition.y + .2f, objectPosition.z);
-                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Objects[random.Next(0, DungeonTemplate.RoomTemplate.Objects.Length)], newPos, Quaternion.identity);
+                                var newPos = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
+                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Containers[random.Next(0, DungeonTemplate.RoomTemplate.Containers.Length)], newPos, Quaternion.identity);
                                 node.Room.Objects.Add(obj);
                             }
                         }
