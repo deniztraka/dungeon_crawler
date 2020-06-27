@@ -43,6 +43,29 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             BuildLeafs(roomTree.Root, roomTree);
             BuildCorridors(roomTree.Root, roomTree);
             BuildDecorations(roomTree.Root, roomTree);
+
+            //Debug.Log(roomTree.GetTreeDepth());
+            var smallestNode = roomTree.FindMin(roomTree.Root);
+            BuildTreasure(smallestNode);
+        }
+
+        private void BuildTreasure(BinaryTreeNode node)
+        {
+            // Fail if the node was null
+            if (node == null)
+            {
+                return;
+            }
+
+            if (DungeonTemplate.RoomTemplate.Treasures.Length > 0)
+            {
+                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
+                
+
+                var obj = Instantiate(DungeonTemplate.RoomTemplate.Treasures[random.Next(0, DungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity);
+                node.Room.Objects.Add(obj);
+                
+            }
         }
 
         private void BuildDecorations(BinaryTreeNode node, BinaryTree tree)

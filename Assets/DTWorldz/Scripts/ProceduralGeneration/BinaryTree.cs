@@ -13,6 +13,30 @@ namespace DTWorldz.ProceduralGeneration
         }
         public BinaryTreeNode Root { get; set; }
 
+        public BinaryTreeNode FindMin(BinaryTreeNode node)
+        {
+            BinaryTreeNode current = node;
+
+            /* loop down to find the leftmost leaf */
+            while (current.LeftNode != null)
+            {
+                current = current.LeftNode;
+            }
+            return (current);
+        }
+
+        public BinaryTreeNode FindMax(BinaryTreeNode node)
+        {
+            BinaryTreeNode current = node;
+
+            /* loop down to find the rightmost leaf */
+            while (current.RightNode != null)
+            {
+                current = current.RightNode;
+            }
+            return (current);
+        }
+
         public bool Add(Room room)
         {
             BinaryTreeNode before = null, after = this.Root;

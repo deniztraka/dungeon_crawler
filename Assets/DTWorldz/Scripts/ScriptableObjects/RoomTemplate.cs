@@ -17,5 +17,6 @@ namespace DTWorldz.ScriptableObjects
 
         public GameObject[] Objects;
         public GameObject[] Containers;
+        public GameObject[] Treasures;
     }
 }
