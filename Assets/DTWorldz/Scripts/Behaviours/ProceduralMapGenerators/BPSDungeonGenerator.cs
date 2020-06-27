@@ -24,7 +24,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         void Start()
         {
 
-            random = new System.Random(DungeonTemplate.Seed);
+            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : DateTime.Now.Millisecond);
 
             // Set Default Tiles
             for (int i = 0; i < DungeonTemplate.Width; i++)
@@ -45,8 +45,21 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             BuildDecorations(roomTree.Root, roomTree);
 
             //Debug.Log(roomTree.GetTreeDepth());
+            //put treasure into smallest room
             var smallestNode = roomTree.FindMin(roomTree.Root);
             BuildTreasure(smallestNode);
+
+            //move player into biggest room
+            var largestNode = roomTree.FindMax(roomTree.Root);
+            BuildStartRoom(largestNode);
+        }
+
+        private void BuildStartRoom(BinaryTreeNode node)
+        {
+            //move player in the center of the room
+            var player = GameObject.FindGameObjectWithTag("Player");
+            var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
+            player.transform.position = position;
         }
 
         private void BuildTreasure(BinaryTreeNode node)
