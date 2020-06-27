@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb00ff0cfb79d5948a792d8aefb57c40, type: 3}
   m_Name: DungeonTemplate
   m_EditorClassIdentifier: 
-  Seed: 0
-  Width: 30
-  Height: 30
+  Seed: 2
+  Width: 100
+  Height: 100
   MinRoomSize: 6
   MaxRoomSize: 26
   FloorTile: {fileID: 11400000, guid: 62ad4f030b74d074b82dc067c2a4b9b6, type: 2}
