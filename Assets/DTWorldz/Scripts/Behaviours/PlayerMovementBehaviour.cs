@@ -13,6 +13,7 @@ namespace DTWorldz.Behaviours
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
+        public List<Animator> AnimationSlots;
 
         // Start is called before the first frame update
         void Start()
@@ -37,11 +38,9 @@ namespace DTWorldz.Behaviours
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 isRunning = false;
-                Debug.Log("keyuop");
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                Debug.Log("keydown");
                 isRunning = true;
             }
         }
@@ -52,6 +51,11 @@ namespace DTWorldz.Behaviours
             {
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
+                foreach (var animator in AnimationSlots)
+                {
+                    animator.SetFloat("Horizontal", movement.x);
+                    animator.SetFloat("Vertical", movement.y);
+                }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
             }
             else
@@ -59,6 +63,11 @@ namespace DTWorldz.Behaviours
                 resultingSpeed = 0;
             }
             animator.SetFloat("MovementSpeed", resultingSpeed);
+            foreach (var animator in AnimationSlots)
+                {
+                    animator.SetFloat("MovementSpeed", resultingSpeed);
+                    animator.SetFloat("MovementSpeed", resultingSpeed);
+                }
         }
 
         private void FixedUpdate()
