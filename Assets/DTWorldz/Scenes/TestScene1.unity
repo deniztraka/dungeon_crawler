@@ -5370,7 +5370,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5932,7 +5932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1578333799
 Animator:
   serializedVersion: 3
@@ -6051,8 +6051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1
   RunningSpeed: 2
-  AnimationSlots:
-  - {fileID: 1578333799}
+  AnimationSlots: []
 --- !u!58 &1823843250
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6066,9 +6065,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.14}
+  m_Offset: {x: -0.021334171, y: 0.35}
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Radius: 0.3
 --- !u!212 &1823843251
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6129,7 +6128,7 @@ Transform:
   m_GameObject: {fileID: 1823843248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4, y: 6.5999994, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 604470754}
   - {fileID: 1113820549}
