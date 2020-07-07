@@ -10,6 +10,7 @@ namespace DTWorldz.Behaviours
         public float RunningSpeed = 5f;   //Movement Speed of the Player
         private float resultingSpeed = 1f;   //Movement Speed of the Player
         private bool isRunning = false;
+        private bool isAttacking = false;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
@@ -28,6 +29,9 @@ namespace DTWorldz.Behaviours
         {
             HandleInput();
             HandleAnimations();
+            
+            //reset attacking trigger
+            isAttacking = false;
         }
 
         private void HandleInput()
@@ -42,6 +46,11 @@ namespace DTWorldz.Behaviours
             else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 isRunning = true;
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isAttacking = true;
             }
         }
 
@@ -63,11 +72,12 @@ namespace DTWorldz.Behaviours
                 resultingSpeed = 0;
             }
             animator.SetFloat("MovementSpeed", resultingSpeed);
-            foreach (var animator in AnimationSlots)
-                {
-                    animator.SetFloat("MovementSpeed", resultingSpeed);
-                    animator.SetFloat("MovementSpeed", resultingSpeed);
-                }
+            animator.SetBool("Attack", isAttacking);
+            foreach (var animatorSlot in AnimationSlots)
+            {
+                animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
+                animatorSlot.SetBool("Attack", isAttacking);
+            }            
         }
 
         private void FixedUpdate()
