@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models;
 using UnityEngine;
 namespace DTWorldz.Behaviours
 {
@@ -8,12 +10,17 @@ namespace DTWorldz.Behaviours
     {
         public float Speed = 3f;   //Movement Speed of the Player
         public float RunningSpeed = 5f;   //Movement Speed of the Player
+
+        [SerializeField]
+        private Direction direction;
+
         private float resultingSpeed = 1f;   //Movement Speed of the Player
         private bool isRunning = false;
         private bool isAttacking = false;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
+        private AttackBehaviour attackBehaviour;
         public List<Animator> AnimationSlots;
 
         // Start is called before the first frame update
@@ -21,7 +28,8 @@ namespace DTWorldz.Behaviours
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
-
+            attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
+            direction = Direction.Right;
         }
 
         // Update is called once per frame
@@ -29,7 +37,7 @@ namespace DTWorldz.Behaviours
         {
             HandleInput();
             HandleAnimations();
-            
+            attackBehaviour.SetDirection(direction);
             //reset attacking trigger
             isAttacking = false;
         }
@@ -54,6 +62,30 @@ namespace DTWorldz.Behaviours
             }
         }
 
+        private void SetDirection(float x, float y)
+        {
+
+            if (x < 0)
+            {
+                direction = Direction.Left;
+            }
+            else if (x > 0)
+            {
+                direction = Direction.Right;
+            }
+            else
+            {
+                if (y < 0)
+                {
+                    direction = Direction.Down;
+                }
+                else
+                {
+                    direction = Direction.Up;
+                }
+            }
+        }
+
         private void HandleAnimations()
         {
             if (movement != Vector2.zero)
@@ -66,6 +98,8 @@ namespace DTWorldz.Behaviours
                     animator.SetFloat("Vertical", movement.y);
                 }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
+
+                SetDirection(movement.x, movement.y);
             }
             else
             {
@@ -77,7 +111,7 @@ namespace DTWorldz.Behaviours
             {
                 animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
                 animatorSlot.SetBool("Attack", isAttacking);
-            }            
+            }
         }
 
         private void FixedUpdate()
