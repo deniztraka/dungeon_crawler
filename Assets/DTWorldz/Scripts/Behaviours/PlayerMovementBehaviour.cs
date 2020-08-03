@@ -16,7 +16,10 @@ namespace DTWorldz.Behaviours
 
         private float resultingSpeed = 1f;   //Movement Speed of the Player
         private bool isRunning = false;
-        private bool isAttacking = false;
+        private bool attackingTrigger = false;
+        [SerializeField]
+        private float attackingFrequency = 0.5f;
+        private float attackTime = 0;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
@@ -39,7 +42,7 @@ namespace DTWorldz.Behaviours
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
-            isAttacking = false;
+            attackingTrigger = false;
         }
 
         private void HandleInput()
@@ -56,10 +59,25 @@ namespace DTWorldz.Behaviours
                 isRunning = true;
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (attackTime <= 0)
             {
-                isAttacking = true;
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    attackingTrigger = true;
+                    Attack();
+                    attackTime = attackingFrequency;                    
+                }
+
             }
+            else
+            {
+                attackTime -= Time.deltaTime;
+            }
+        }
+
+        private void Attack()
+        {
+            attackBehaviour.Attack();
         }
 
         private void SetDirection(float x, float y)
@@ -106,11 +124,11 @@ namespace DTWorldz.Behaviours
                 resultingSpeed = 0;
             }
             animator.SetFloat("MovementSpeed", resultingSpeed);
-            animator.SetBool("Attack", isAttacking);
+            animator.SetBool("Attack", attackingTrigger);
             foreach (var animatorSlot in AnimationSlots)
             {
                 animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
-                animatorSlot.SetBool("Attack", isAttacking);
+                animatorSlot.SetBool("Attack", attackingTrigger);
             }
         }
 

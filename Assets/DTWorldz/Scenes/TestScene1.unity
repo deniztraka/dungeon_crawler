@@ -6052,6 +6052,7 @@ MonoBehaviour:
   Speed: 1
   RunningSpeed: 2
   direction: 0
+  attackingFrequency: 0.5
   AnimationSlots: []
 --- !u!58 &1823843250
 CircleCollider2D:
@@ -7065,7 +7066,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 0.63
+  AttackRange: 1
+  layer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!61 &2140888643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7076,7 +7080,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

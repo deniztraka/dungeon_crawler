@@ -8,7 +8,7 @@ namespace DTWorldz.Editor.Gizmo
 {
     public class AttackZoneGizmo : MonoBehaviour
     {
-        [DrawGizmo(GizmoType.Selected)]
+        [DrawGizmo(GizmoType.NotInSelectionHierarchy)]
         static void DrawAttackZone(AttackBehaviour attackBehaviour, GizmoType gizmoType){
             var collider = attackBehaviour.gameObject.GetComponent<BoxCollider2D>();
             Gizmos.color = Color.red;
