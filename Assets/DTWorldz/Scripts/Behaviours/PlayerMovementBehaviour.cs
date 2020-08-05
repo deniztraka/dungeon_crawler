@@ -13,10 +13,11 @@ namespace DTWorldz.Behaviours
     {
         public float Speed = 3f;   //Movement Speed of the Player
         public float RunningSpeed = 5f;   //Movement Speed of the Player
+        public bool ClickAndGoEnabled = false;
 
         [SerializeField]
         private Direction direction;
-        private List<Vector3> paths; 
+        private List<Vector3> paths;
         private Tilemap wallMap;
 
         private float resultingSpeed = 1f;   //Movement Speed of the Player
@@ -35,7 +36,8 @@ namespace DTWorldz.Behaviours
         void Start()
         {
             var wallsObj = GameObject.Find("Walls");
-            if(wallsObj != null){
+            if (wallsObj != null)
+            {
                 wallMap = wallsObj.GetComponent<Tilemap>();
             }
             rigidbody2d = this.GetComponent<Rigidbody2D>();
@@ -58,15 +60,20 @@ namespace DTWorldz.Behaviours
                 paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 if (paths != null && paths.Count > 0)
                 {
+                    movement = (paths[1] - transform.position).normalized;
                     Debug.Log(paths.Count);
+                    Debug.Log((paths[1] - transform.position).normalized);
                 }
             }
         }
 
         private void HandleInput()
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            if (!ClickAndGoEnabled)
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
+            }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
@@ -83,7 +90,7 @@ namespace DTWorldz.Behaviours
                 {
                     attackingTrigger = true;
                     Attack();
-                    attackTime = attackingFrequency;                    
+                    attackTime = attackingFrequency;
                 }
 
             }

@@ -267,6 +267,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     Gizmos.DrawWireSphere(point, 0.5f);
                 }
 
+                Gizmos.color = Color.red;
+
+                Gizmos.DrawWireSphere(testPaths[0], 0.5f);
+
+
             }
         }
     }
