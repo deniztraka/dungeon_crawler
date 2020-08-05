@@ -7,7 +7,7 @@ using UnityEngine;
 namespace DTWorldz.Behaviours
 {
     public class AttackBehaviour : MonoBehaviour
-    {        
+    {
         public float AttackRange;
         [SerializeField]
         private LayerMask layer = 0;
@@ -47,7 +47,15 @@ namespace DTWorldz.Behaviours
 
         internal void Attack()
         {
-            var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);          
+            var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
+            foreach (var collider in colliders)
+            {
+                var healthBehaviour = collider.gameObject.GetComponent<HealthBehaviour>();
+                if (healthBehaviour != null)
+                {
+                    healthBehaviour.TakeDamage(5);
+                }
+            }
         }
     }
 
