@@ -2,7 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Models;
+using Toolbox;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+
 namespace DTWorldz.Behaviours
 {
     [RequireComponent(typeof(Rigidbody2D))]
@@ -13,6 +16,8 @@ namespace DTWorldz.Behaviours
 
         [SerializeField]
         private Direction direction;
+        private List<Vector3> paths; 
+        private Tilemap wallMap;
 
         private float resultingSpeed = 1f;   //Movement Speed of the Player
         private bool isRunning = false;
@@ -29,6 +34,10 @@ namespace DTWorldz.Behaviours
         // Start is called before the first frame update
         void Start()
         {
+            var wallsObj = GameObject.Find("Walls");
+            if(wallsObj != null){
+                wallMap = wallsObj.GetComponent<Tilemap>();
+            }
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
@@ -43,6 +52,15 @@ namespace DTWorldz.Behaviours
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
             attackingTrigger = false;
+
+            if (wallMap != null && Input.GetMouseButtonDown(0))
+            {
+                paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if (paths != null && paths.Count > 0)
+                {
+                    Debug.Log(paths.Count);
+                }
+            }
         }
 
         private void HandleInput()

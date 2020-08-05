@@ -254,11 +254,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //to test astar alghoritm
             if (player != null && Input.GetMouseButtonDown(0))
             {
-                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                if (testPaths != null && testPaths.Count > 0)
-                {
-                    Debug.Log(testPaths.Count);
-                }
+                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));                
             }
         }
         void OnDrawGizmosSelected()
