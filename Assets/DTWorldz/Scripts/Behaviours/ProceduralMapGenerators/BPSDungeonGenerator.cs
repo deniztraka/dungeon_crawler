@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
+using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = System.Random;
@@ -12,6 +13,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
     public class BPSDungeonGenerator : MonoBehaviour
     {
         public DungeonTemplate DungeonTemplate;
+
+        private GameObject player;
+
+        private List<Vector3> testPaths;
+
 
         // Tilemaps
         public Tilemap FloorMap;
@@ -23,6 +29,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         void Start()
         {
+            player = GameObject.FindGameObjectWithTag("Player");
 
             random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : DateTime.Now.Millisecond);
 
@@ -56,10 +63,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         private void BuildStartRoom(BinaryTreeNode node)
         {
-            //move player in the center of the room
-            var player = GameObject.FindGameObjectWithTag("Player");
-            var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
-            player.transform.position = position;
+            if (player != null)
+            {
+                //move player in the center of the room            
+                var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
+                player.transform.position = position;
+            }
         }
 
         private void BuildTreasure(BinaryTreeNode node)
@@ -73,11 +82,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             if (DungeonTemplate.RoomTemplate.Treasures.Length > 0)
             {
                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
-                
+
 
                 var obj = Instantiate(DungeonTemplate.RoomTemplate.Treasures[random.Next(0, DungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity);
                 node.Room.Objects.Add(obj);
-                
+
             }
         }
 
@@ -237,6 +246,31 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             {
                 BuildLeafs(node.LeftNode, tree);
                 BuildLeafs(node.RightNode, tree);
+            }
+        }
+
+        void Update()
+        {
+            //to test astar alghoritm
+            if (player != null && Input.GetMouseButtonDown(0))
+            {
+                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if (testPaths != null && testPaths.Count > 0)
+                {
+                    Debug.Log(testPaths.Count);
+                }
+            }
+        }
+        void OnDrawGizmosSelected()
+        {
+            if (testPaths != null && testPaths.Count > 0)
+            {
+                Gizmos.color = Color.blue;
+                foreach (var point in testPaths)
+                {
+                    Gizmos.DrawWireSphere(point, 0.5f);
+                }
+
             }
         }
     }

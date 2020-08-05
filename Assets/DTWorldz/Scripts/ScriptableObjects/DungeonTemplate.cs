@@ -18,8 +18,6 @@ namespace DTWorldz.ScriptableObjects
         public TileBase WallTile;
         public TileBase BackgroundTile;
 
-        public TileBase TestTile;
-
         public RoomTemplate RoomTemplate;
 
 
