@@ -50,6 +50,7 @@ namespace DTWorldz.Behaviours
         void Update()
         {
             HandleInput();
+            CheckMovementPaths();
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
@@ -58,12 +59,43 @@ namespace DTWorldz.Behaviours
             if (wallMap != null && Input.GetMouseButtonDown(0))
             {
                 paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                if (paths != null && paths.Count > 1)
+                {
+                    paths.RemoveAt(0);
+                    movement = (paths[0] - transform.position).normalized;
+                    // Debug.Log(paths.Count);
+                    // Debug.Log((paths[1] - transform.position).normalized);
+                }
+            }
+        }
+
+        private void CheckMovementPaths()
+        {
+            if (ClickAndGoEnabled)
+            {
                 if (paths != null && paths.Count > 0)
                 {
-                    movement = (paths[1] - transform.position).normalized;
-                    Debug.Log(paths.Count);
-                    Debug.Log((paths[1] - transform.position).normalized);
+                    var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
+                    for (int i = 0; i < colliders.Length; i++)
+                    {
+                        if (colliders[i].gameObject == gameObject)
+                        {
+                            paths.RemoveAt(0);
+                            if (paths.Count > 0)
+                            {
+                                movement = (paths[0] - transform.position).normalized;
+                            }
+                            else
+                            {
+                                movement = Vector2.zero;
+                            }
+                            break;
+                        }
+                    }
                 }
+
+
+
             }
         }
 
@@ -105,28 +137,61 @@ namespace DTWorldz.Behaviours
             attackBehaviour.Attack();
         }
 
+        private float GetAngle()
+        {
+            return 1f;
+        }
+
         private void SetDirection(float x, float y)
         {
+            if (ClickAndGoEnabled && paths != null && paths.Count > 0)
+            {
+                var deltaX = transform.position.x - paths[0].x;
+                var deltaY = transform.position.y - paths[0].y;
+                var rad = Math.Atan2(deltaY, deltaX);
+                var deg = rad * (180 / Math.PI);
+                Debug.Log(deg);
 
-            if (x < 0)
-            {
-                direction = Direction.Left;
-            }
-            else if (x > 0)
-            {
-                direction = Direction.Right;
-            }
-            else
-            {
-                if (y < 0)
+                if (deg > -45 && deg < 45)
+                {
+                    direction = Direction.Left;
+                }
+                else if (deg >= 45 && deg <= 135)
                 {
                     direction = Direction.Down;
                 }
-                else
+                else if ((deg >= 135 && deg <= 180) || (deg <= -135 && deg >= -180))
+                {
+                    direction = Direction.Right;
+                }
+                else if ((deg < -45 && deg > -180))
                 {
                     direction = Direction.Up;
                 }
             }
+            else if (!ClickAndGoEnabled)
+            {
+
+                if (x < 0)
+                {
+                    direction = Direction.Left;
+                }
+                else if (x > 0)
+                {
+                    direction = Direction.Right;
+                }
+                else
+                {
+                    if (y < 0)
+                    {
+                        direction = Direction.Down;
+                    }
+                    else
+                    {
+                        direction = Direction.Up;
+                    }
+                }
+            }            
         }
 
         private void HandleAnimations()
@@ -142,7 +207,7 @@ namespace DTWorldz.Behaviours
                 }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
 
-                SetDirection(movement.x, movement.y);
+                SetDirection(movement.x, movement.y);                
             }
             else
             {
@@ -157,9 +222,30 @@ namespace DTWorldz.Behaviours
             }
         }
 
+        // private void SetDirection(float angle)
+        // {
+        //     throw new NotImplementedException();
+        // }
+
         private void FixedUpdate()
         {
             rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
+        }
+
+        void OnDrawGizmosSelected()
+        {
+            if (paths != null && paths.Count > 0)
+            {
+                Gizmos.color = Color.yellow;
+                foreach (var point in paths)
+                {
+                    Gizmos.DrawWireSphere(point, 0.5f);
+                }
+
+                Gizmos.color = Color.red;
+
+                Gizmos.DrawWireSphere(paths[0], 0.5f);
+            }
         }
     }
 }

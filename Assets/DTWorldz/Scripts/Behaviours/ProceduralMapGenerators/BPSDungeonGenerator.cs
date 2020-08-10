@@ -25,9 +25,25 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public Tilemap WallMap;
         public Tilemap WallDecorationsMap;
 
+        public Transform EnvironmentParent;
+
         private Random random;
 
-        void Start()
+        public void ClearMap()
+        {
+            FloorMap.ClearAllTiles();
+            FloorDecorationsMap.ClearAllTiles();
+            WallMap.ClearAllTiles();
+            WallDecorationsMap.ClearAllTiles();
+
+            int childs = EnvironmentParent.transform.childCount;
+            for (int i = childs - 1; i > 0; i--)
+            {
+                DestroyImmediate(EnvironmentParent.transform.GetChild(i).gameObject);
+            }
+        }
+
+        public void BuildMap()
         {
             player = GameObject.FindGameObjectWithTag("Player");
 
@@ -61,6 +77,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             BuildStartRoom(largestNode);
         }
 
+        void Start()
+        {
+            //BuildMap();
+        }
+
         private void BuildStartRoom(BinaryTreeNode node)
         {
             if (player != null)
@@ -84,7 +105,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
 
 
-                var obj = Instantiate(DungeonTemplate.RoomTemplate.Treasures[random.Next(0, DungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity);
+                var obj = Instantiate(DungeonTemplate.RoomTemplate.Treasures[random.Next(0, DungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
                 node.Room.Objects.Add(obj);
 
             }
@@ -144,7 +165,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                                 //to centralize the object within cell
                                 var newPos = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
-                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Containers[random.Next(0, DungeonTemplate.RoomTemplate.Containers.Length)], newPos, Quaternion.identity);
+                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Containers[random.Next(0, DungeonTemplate.RoomTemplate.Containers.Length)], newPos, Quaternion.identity, EnvironmentParent);
                                 node.Room.Objects.Add(obj);
                             }
                         }
@@ -254,7 +275,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //to test astar alghoritm
             if (player != null && Input.GetMouseButtonDown(0))
             {
-                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));                
+                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
         }
         void OnDrawGizmosSelected()
@@ -270,8 +291,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 Gizmos.color = Color.red;
 
                 Gizmos.DrawWireSphere(testPaths[0], 0.5f);
-
-
             }
         }
     }
