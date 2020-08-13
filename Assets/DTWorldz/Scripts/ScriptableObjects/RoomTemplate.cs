@@ -18,5 +18,10 @@ namespace DTWorldz.ScriptableObjects
         public GameObject[] Objects;
         public GameObject[] Containers;
         public GameObject[] Treasures;
+
+        public GameObject TopLight;
+        public GameObject BottomLight;
+        public GameObject RightLight;
+        public GameObject LeftLight;
     }
 }

@@ -150,7 +150,7 @@ namespace DTWorldz.Behaviours
                 var deltaY = transform.position.y - paths[0].y;
                 var rad = Math.Atan2(deltaY, deltaX);
                 var deg = rad * (180 / Math.PI);
-                Debug.Log(deg);
+                //Debug.Log(deg);
 
                 if (deg > -45 && deg < 45)
                 {

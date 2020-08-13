@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
 using Toolbox;
@@ -66,6 +67,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             BuildLeafs(roomTree.Root, roomTree);
             BuildCorridors(roomTree.Root, roomTree);
             BuildDecorations(roomTree.Root, roomTree);
+            BuildLights(roomTree.Root, roomTree);
 
             //Debug.Log(roomTree.GetTreeDepth());
             //put treasure into smallest room
@@ -75,6 +77,90 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //move player into biggest room
             var largestNode = roomTree.FindMax(roomTree.Root);
             BuildStartRoom(largestNode);
+        }
+
+        private void BuildLights(BinaryTreeNode node, BinaryTree tree)
+        {
+            // Fail if the node was null
+            if (node == null)
+            {
+                return;
+            }
+
+            // Iterate if the room is a leaf, otherwise recurse
+            if (node.LeftNode == null && node.RightNode == null)
+            {
+                var lightPositions = GetRoomLightPositions(node.Room);
+                foreach (var pos in lightPositions.Top)
+                {
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.TopLight, pos, DungeonTemplate.RoomTemplate.TopLight.transform.rotation, EnvironmentParent);
+                }
+                foreach (var pos in lightPositions.Bottom)
+                {
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.BottomLight, pos, DungeonTemplate.RoomTemplate.BottomLight.transform.rotation, EnvironmentParent);
+                }
+                foreach (var pos in lightPositions.Left)
+                {
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.LeftLight, pos, DungeonTemplate.RoomTemplate.LeftLight.transform.rotation, EnvironmentParent);
+                }
+                foreach (var pos in lightPositions.Right)
+                {
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.RightLight, pos, DungeonTemplate.RoomTemplate.RightLight.transform.rotation, EnvironmentParent);
+                }
+            }
+            else
+            {
+                BuildLights(node.LeftNode, tree);
+                BuildLights(node.RightNode, tree);
+            }
+        }
+
+        private LightPositions GetRoomLightPositions(Room room)
+        {
+            var positions = new LightPositions();
+            var height = room.InnerRect.height;
+            var width = room.InnerRect.width;
+
+            //Debug.Log(width * height);
+
+            for (int x = (int)room.InnerRect.xMin; x < (int)room.InnerRect.xMax; x++)
+            {
+                for (int y = (int)room.InnerRect.yMin; y < (int)room.InnerRect.yMax; y++)
+                {
+                    //top lights
+                    if (y == room.InnerRect.yMax - 1 && WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
+                    {
+                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        positions.Top.Add(new Vector3(objectPosition.x, objectPosition.y - 0.01f, objectPosition.z));
+                    }
+
+                    //bottom lights
+                    if (y == room.InnerRect.yMin && WallMap.GetTile(new Vector3Int(x, y - 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
+                    {
+                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y - 1, 0));
+                        positions.Bottom.Add(new Vector3(objectPosition.x, objectPosition.y - 0.01f, objectPosition.z));
+                    }
+
+                    //left lights
+                    if (x == room.InnerRect.xMin && WallMap.GetTile(new Vector3Int(x - 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
+                    {
+                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        positions.Left.Add(new Vector3(objectPosition.x - 0.6f, objectPosition.y, objectPosition.z));
+                    }
+
+
+                    // && WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2)-1)
+                    //right lights
+                    if (x == room.InnerRect.xMax - 1 && WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
+                    {
+                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        positions.Right.Add(new Vector3(objectPosition.x + 0.6f, objectPosition.y, objectPosition.z));
+                    }
+
+                }
+            }
+
+            return positions;
         }
 
         void Start()

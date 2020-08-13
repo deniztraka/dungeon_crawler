@@ -51,3 +51,11 @@ MonoBehaviour:
   - {fileID: 3690855269219818583, guid: b0e95033eb9a0e04abb8f9bcc3f910a5, type: 3}
   Treasures:
   - {fileID: 4663308623770685161, guid: 6a853f62f022d094580c2fa496448691, type: 3}
+  TopLight: {fileID: 4974044864229606424, guid: 16d8ced6bcb512c419fe8d92680070ca,
+    type: 3}
+  BottomLight: {fileID: 7450360844087733834, guid: ff63c23db58a51f41b60ee1612bdce4d,
+    type: 3}
+  RightLight: {fileID: 3721875164066731677, guid: ed8118b8d9fd1c647917a5a922d6efd4,
+    type: 3}
+  LeftLight: {fileID: 1801500175263395654, guid: 9b2beda1c5341634ab86c6799285237c,
+    type: 3}
