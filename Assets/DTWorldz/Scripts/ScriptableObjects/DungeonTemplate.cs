@@ -8,7 +8,7 @@ namespace DTWorldz.ScriptableObjects
     public class DungeonTemplate : ScriptableObject
     {
         public int Seed = 0;
-
+        public int MaxLevelCount = 1;
         public int Width = 20;
         public int Height = 20;
         public int MinRoomSize = 4;
@@ -17,9 +17,8 @@ namespace DTWorldz.ScriptableObjects
         public TileBase FloorTile;
         public TileBase WallTile;
         public TileBase BackgroundTile;
-
         public RoomTemplate RoomTemplate;
-
+        public GameObject TreasurePrefab;
 
     }
 }

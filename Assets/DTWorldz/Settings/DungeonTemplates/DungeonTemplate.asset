@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb00ff0cfb79d5948a792d8aefb57c40, type: 3}
   m_Name: DungeonTemplate
   m_EditorClassIdentifier: 
-  Seed: -1
+  Seed: 2
+  MaxLevelCount: 5
   Width: 50
   Height: 50
   MinRoomSize: 6
@@ -21,3 +22,5 @@ MonoBehaviour:
   WallTile: {fileID: 11400000, guid: 33f6a68be492ccc45a0747e8e785b443, type: 2}
   BackgroundTile: {fileID: 11400000, guid: 037761662f74f95459c96605bd0bfd42, type: 2}
   RoomTemplate: {fileID: 11400000, guid: 0df8f0636eebab14b8fd15a4c465fc2a, type: 2}
+  TreasurePrefab: {fileID: 4663308623770685161, guid: 6a853f62f022d094580c2fa496448691,
+    type: 3}

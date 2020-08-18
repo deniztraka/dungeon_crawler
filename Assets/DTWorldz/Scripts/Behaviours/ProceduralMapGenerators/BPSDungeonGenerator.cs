@@ -15,71 +15,81 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
     {
         public DungeonTemplate DungeonTemplate;
 
+        public GameObject Dungeon;
+        public GameObject LevelPrefab;
+
         private GameObject player;
-
-        private List<Vector3> testPaths;
-
-
-        // Tilemaps
-        public Tilemap FloorMap;
-        public Tilemap FloorDecorationsMap;
-        public Tilemap WallMap;
-        public Tilemap WallDecorationsMap;
-
-        public Transform EnvironmentParent;
-
         private Random random;
+        private List<LevelBehaviour> levels;
 
         public void ClearMap()
         {
-            FloorMap.ClearAllTiles();
-            FloorDecorationsMap.ClearAllTiles();
-            WallMap.ClearAllTiles();
-            WallDecorationsMap.ClearAllTiles();
-
-            int childs = EnvironmentParent.transform.childCount;
-            for (int i = childs - 1; i > 0; i--)
+            int childsCount = Dungeon.transform.childCount;
+            for (int i = childsCount - 1; i >= 0; i--)
             {
-                DestroyImmediate(EnvironmentParent.transform.GetChild(i).gameObject);
+                DestroyImmediate(Dungeon.transform.GetChild(i).gameObject);
             }
+            levels = new List<LevelBehaviour>();
         }
 
-        public void BuildMap()
+        private void BuildLevel(int levelNumber)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            //calculate width acording to level number
+            var width = Math.Floor(DungeonTemplate.Width * Math.Pow(0.75, levelNumber));
+            width = width < DungeonTemplate.MaxRoomSize ? DungeonTemplate.MaxRoomSize : width;
 
-            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : DateTime.Now.Millisecond);
+            var levelPositionX = DungeonTemplate.Width * levelNumber + levelNumber * 10;
+
+            var levelGameObject = Instantiate(LevelPrefab, new Vector3(levelPositionX, 0, 0), Quaternion.identity, Dungeon.transform);
+            var levelBehaviour = levelGameObject.GetComponent<LevelBehaviour>();
+            levels.Add(levelBehaviour);
 
             // Set Default Tiles
-            for (int i = 0; i < DungeonTemplate.Width; i++)
+            for (int i = 0; i < width; i++)
             {
-                for (int j = 0; j < DungeonTemplate.Height; j++)
+                for (int j = 0; j < width; j++)
                 {
-                    FloorMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.BackgroundTile);
-                    WallMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.WallTile);
+                    levelBehaviour.FloorMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.BackgroundTile);
+                    levelBehaviour.WallMap.SetTile(new Vector3Int(i, j, 0), DungeonTemplate.WallTile);
                 }
             }
 
             var roomTree = new BinaryTree(random);
-            roomTree.Add(new Room(new Rect(0, 0, DungeonTemplate.Width, DungeonTemplate.Height)));
+            roomTree.Add(new Room(new Rect(0, 0, (float)width, (float)width)));
             recurseBSP(roomTree.Root);
             roomTree.Root.CreateRooms();
-            BuildLeafs(roomTree.Root, roomTree);
-            BuildCorridors(roomTree.Root, roomTree);
-            BuildDecorations(roomTree.Root, roomTree);
-            BuildLights(roomTree.Root, roomTree);
+            levelBehaviour.SetLevelNumber(levelNumber);
+            levelBehaviour.SetTree(roomTree);
 
-            //Debug.Log(roomTree.GetTreeDepth());
-            //put treasure into smallest room
-            var smallestNode = roomTree.FindMin(roomTree.Root);
-            BuildTreasure(smallestNode);
-
-            //move player into biggest room
-            var largestNode = roomTree.FindMax(roomTree.Root);
-            BuildStartRoom(largestNode);
+            BuildLeafs(roomTree.Root, levelBehaviour);
+            BuildCorridors(roomTree.Root, levelBehaviour);
+            BuildDecorations(roomTree.Root, levelBehaviour);
+            BuildLights(roomTree.Root, levelBehaviour);
         }
 
-        private void BuildLights(BinaryTreeNode node, BinaryTree tree)
+        public void BuildMap()
+        {
+            if (levels == null)
+            {
+                levels = new List<LevelBehaviour>();
+            }
+
+            player = GameObject.FindGameObjectWithTag("Player");
+
+            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : DateTime.Now.Millisecond);
+
+            var levelCount = random.Next(1, DungeonTemplate.MaxLevelCount);
+            for (int i = 0; i < levelCount; i++)
+            {
+                BuildLevel(i);
+            }
+
+            //move player into biggest room in first level
+            levels[0].BuildStartRoom(player);
+            levels[levelCount-1].BuildTreaseRoom(DungeonTemplate);
+        }
+
+        private void BuildLights(BinaryTreeNode node, LevelBehaviour levelBehaviour)
         {
             // Fail if the node was null
             if (node == null)
@@ -90,32 +100,32 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             // Iterate if the room is a leaf, otherwise recurse
             if (node.LeftNode == null && node.RightNode == null)
             {
-                var lightPositions = GetRoomLightPositions(node.Room);
+                var lightPositions = GetRoomLightPositions(node.Room, levelBehaviour);
                 foreach (var pos in lightPositions.Top)
                 {
-                    var light = Instantiate(DungeonTemplate.RoomTemplate.TopLight, pos, DungeonTemplate.RoomTemplate.TopLight.transform.rotation, EnvironmentParent);
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.TopLight, pos, DungeonTemplate.RoomTemplate.TopLight.transform.rotation, levelBehaviour.EnvironmentParent);
                 }
                 foreach (var pos in lightPositions.Bottom)
                 {
-                    var light = Instantiate(DungeonTemplate.RoomTemplate.BottomLight, pos, DungeonTemplate.RoomTemplate.BottomLight.transform.rotation, EnvironmentParent);
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.BottomLight, pos, DungeonTemplate.RoomTemplate.BottomLight.transform.rotation, levelBehaviour.EnvironmentParent);
                 }
                 foreach (var pos in lightPositions.Left)
                 {
-                    var light = Instantiate(DungeonTemplate.RoomTemplate.LeftLight, pos, DungeonTemplate.RoomTemplate.LeftLight.transform.rotation, EnvironmentParent);
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.LeftLight, pos, DungeonTemplate.RoomTemplate.LeftLight.transform.rotation, levelBehaviour.EnvironmentParent);
                 }
                 foreach (var pos in lightPositions.Right)
                 {
-                    var light = Instantiate(DungeonTemplate.RoomTemplate.RightLight, pos, DungeonTemplate.RoomTemplate.RightLight.transform.rotation, EnvironmentParent);
+                    var light = Instantiate(DungeonTemplate.RoomTemplate.RightLight, pos, DungeonTemplate.RoomTemplate.RightLight.transform.rotation, levelBehaviour.EnvironmentParent);
                 }
             }
             else
             {
-                BuildLights(node.LeftNode, tree);
-                BuildLights(node.RightNode, tree);
+                BuildLights(node.LeftNode, levelBehaviour);
+                BuildLights(node.RightNode, levelBehaviour);
             }
         }
 
-        private LightPositions GetRoomLightPositions(Room room)
+        private LightPositions GetRoomLightPositions(Room room, LevelBehaviour levelBehaviour)
         {
             var positions = new LightPositions();
             var height = room.InnerRect.height;
@@ -128,32 +138,32 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 for (int y = (int)room.InnerRect.yMin; y < (int)room.InnerRect.yMax; y++)
                 {
                     //top lights
-                    if (y == room.InnerRect.yMax - 1 && WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
+                    if (y == room.InnerRect.yMax - 1 && levelBehaviour.WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
                     {
-                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        var objectPosition = levelBehaviour.FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                         positions.Top.Add(new Vector3(objectPosition.x, objectPosition.y - 0.01f, objectPosition.z));
                     }
 
                     //bottom lights
-                    if (y == room.InnerRect.yMin && WallMap.GetTile(new Vector3Int(x, y - 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
+                    if (y == room.InnerRect.yMin && levelBehaviour.WallMap.GetTile(new Vector3Int(x, y - 1, 0)) != null && x == room.InnerRect.xMax - (Math.Ceiling(width / 2)))
                     {
-                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y - 1, 0));
+                        var objectPosition = levelBehaviour.FloorMap.GetCellCenterWorld(new Vector3Int(x, y - 1, 0));
                         positions.Bottom.Add(new Vector3(objectPosition.x, objectPosition.y - 0.01f, objectPosition.z));
                     }
 
                     //left lights
-                    if (x == room.InnerRect.xMin && WallMap.GetTile(new Vector3Int(x - 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
+                    if (x == room.InnerRect.xMin && levelBehaviour.WallMap.GetTile(new Vector3Int(x - 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
                     {
-                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        var objectPosition = levelBehaviour.FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                         positions.Left.Add(new Vector3(objectPosition.x - 0.6f, objectPosition.y, objectPosition.z));
                     }
 
 
                     // && WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2)-1)
                     //right lights
-                    if (x == room.InnerRect.xMax - 1 && WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
+                    if (x == room.InnerRect.xMax - 1 && levelBehaviour.WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null && y == room.InnerRect.yMin + (Math.Floor(height / 2) - 1))
                     {
-                        var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        var objectPosition = levelBehaviour.FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                         positions.Right.Add(new Vector3(objectPosition.x + 0.6f, objectPosition.y, objectPosition.z));
                     }
 
@@ -168,36 +178,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //BuildMap();
         }
 
-        private void BuildStartRoom(BinaryTreeNode node)
-        {
-            if (player != null)
-            {
-                //move player in the center of the room            
-                var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
-                player.transform.position = position;
-            }
-        }
-
-        private void BuildTreasure(BinaryTreeNode node)
-        {
-            // Fail if the node was null
-            if (node == null)
-            {
-                return;
-            }
-
-            if (DungeonTemplate.RoomTemplate.Treasures.Length > 0)
-            {
-                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
-
-
-                var obj = Instantiate(DungeonTemplate.RoomTemplate.Treasures[random.Next(0, DungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
-                node.Room.Objects.Add(obj);
-
-            }
-        }
-
-        private void BuildDecorations(BinaryTreeNode node, BinaryTree tree)
+        private void BuildDecorations(BinaryTreeNode node, LevelBehaviour levelBehaviour)
         {
             // Fail if the node was null
             if (node == null)
@@ -217,12 +198,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         //Room Top Wall Decorations
                         if (DungeonTemplate.RoomTemplate.UpperWallDecorations.Length > 0 && y == (int)node.Room.InnerRect.yMax - 1)
                         {
-                            var wallTile = WallMap.GetTile(new Vector3Int(x, y + 1, 0));
+                            var wallTile = levelBehaviour.WallMap.GetTile(new Vector3Int(x, y + 1, 0));
                             if (wallTile != null)
                             {
                                 if (DungeonTemplate.RoomTemplate.DecorationChance > random.NextDouble())
                                 {
-                                    WallDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.UpperWallDecorations[random.Next(0, DungeonTemplate.RoomTemplate.UpperWallDecorations.Length)]);
+                                    levelBehaviour.WallDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.UpperWallDecorations[random.Next(0, DungeonTemplate.RoomTemplate.UpperWallDecorations.Length)]);
                                 }
                             }
                         }
@@ -233,7 +214,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
                             if (DungeonTemplate.RoomTemplate.DecorationChance > random.NextDouble())
                             {
-                                FloorDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.FloorDecorations[random.Next(0, DungeonTemplate.RoomTemplate.FloorDecorations.Length)]);
+                                levelBehaviour.FloorDecorationsMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.RoomTemplate.FloorDecorations[random.Next(0, DungeonTemplate.RoomTemplate.FloorDecorations.Length)]);
                             }
 
                         }
@@ -243,15 +224,15 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         {
                             //if there is no any decoration && chance factor ofcourse && make sure containers locations will be near wall
                             if (node.Room.Objects.Count < node.Room.MaxNumberOfObjects && //there shouldn't be too much objects
-                                FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && //there should be no floor decoration on that tile
+                                levelBehaviour.FloorDecorationsMap.GetTile(new Vector3Int(x, y, 0)) == null && //there should be no floor decoration on that tile
                                 DungeonTemplate.RoomTemplate.ContainerChance > random.NextDouble() && //chance factor
                                 (y == (int)node.Room.InnerRect.yMax - 1 || y == (int)node.Room.InnerRect.yMin + 1 || x == (int)node.Room.InnerRect.xMax - 1 || x == (int)node.Room.InnerRect.xMin)
                             )
                             {
-                                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                var objectPosition = levelBehaviour.FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                                 //to centralize the object within cell
                                 var newPos = new Vector3(objectPosition.x, objectPosition.y, objectPosition.z);
-                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Containers[random.Next(0, DungeonTemplate.RoomTemplate.Containers.Length)], newPos, Quaternion.identity, EnvironmentParent);
+                                var obj = Instantiate(DungeonTemplate.RoomTemplate.Containers[random.Next(0, DungeonTemplate.RoomTemplate.Containers.Length)], newPos, Quaternion.identity, levelBehaviour.EnvironmentParent);
                                 node.Room.Objects.Add(obj);
                             }
                         }
@@ -261,12 +242,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
             else
             {
-                BuildDecorations(node.LeftNode, tree);
-                BuildDecorations(node.RightNode, tree);
+                BuildDecorations(node.LeftNode, levelBehaviour);
+                BuildDecorations(node.RightNode, levelBehaviour);
             }
         }
 
-        private void BuildCorridors(BinaryTreeNode root, BinaryTree tree)
+        private void BuildCorridors(BinaryTreeNode root, LevelBehaviour levelBehaviour)
         {
             // Fail if the input was null
             if (root == null)
@@ -283,8 +264,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     {
 
 
-                        FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
-                        WallMap.SetTile(new Vector3Int(x, y, 0), null);
+                        levelBehaviour.FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
+                        levelBehaviour.WallMap.SetTile(new Vector3Int(x, y, 0), null);
 
 
 
@@ -292,8 +273,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     }
                 }
             }
-            BuildCorridors(root.LeftNode, tree);
-            BuildCorridors(root.RightNode, tree);
+            BuildCorridors(root.LeftNode, levelBehaviour);
+            BuildCorridors(root.RightNode, levelBehaviour);
         }
 
         public void recurseBSP(BinaryTreeNode node)
@@ -323,10 +304,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
         }
 
-        public void BuildLeafs(BinaryTreeNode node, BinaryTree tree)
+        public void BuildLeafs(BinaryTreeNode node, LevelBehaviour levelBehaviour)
         {
-            //Debug.Log("Call of draw");
-
             // Fail if the input was null
             if (node == null)
             {
@@ -341,8 +320,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 {
                     for (int y = (int)node.Room.InnerRect.yMin; y < (int)node.Room.InnerRect.yMax; y++)
                     {
-                        FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
-                        WallMap.SetTile(new Vector3Int(x, y, 0), null);
+                        levelBehaviour.FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
+                        levelBehaviour.WallMap.SetTile(new Vector3Int(x, y, 0), null);
                     }
                 }
 
@@ -351,33 +330,33 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
             else
             {
-                BuildLeafs(node.LeftNode, tree);
-                BuildLeafs(node.RightNode, tree);
+                BuildLeafs(node.LeftNode, levelBehaviour);
+                BuildLeafs(node.RightNode, levelBehaviour);
             }
         }
 
         void Update()
         {
-            //to test astar alghoritm
-            if (player != null && Input.GetMouseButtonDown(0))
-            {
-                testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            }
+            // //to test astar alghoritm
+            // if (player != null && Input.GetMouseButtonDown(0))
+            // {
+            //     testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            // }
         }
         void OnDrawGizmosSelected()
         {
-            if (testPaths != null && testPaths.Count > 0)
-            {
-                Gizmos.color = Color.blue;
-                foreach (var point in testPaths)
-                {
-                    Gizmos.DrawWireSphere(point, 0.5f);
-                }
+            // if (testPaths != null && testPaths.Count > 0)
+            // {
+            //     Gizmos.color = Color.blue;
+            //     foreach (var point in testPaths)
+            //     {
+            //         Gizmos.DrawWireSphere(point, 0.5f);
+            //     }
 
-                Gizmos.color = Color.red;
+            //     Gizmos.color = Color.red;
 
-                Gizmos.DrawWireSphere(testPaths[0], 0.5f);
-            }
+            //     Gizmos.DrawWireSphere(testPaths[0], 0.5f);
+            // }
         }
     }
 }
