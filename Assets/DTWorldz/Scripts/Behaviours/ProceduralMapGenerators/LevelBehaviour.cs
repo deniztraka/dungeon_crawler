@@ -23,6 +23,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private BinaryTreeNode exitNode;
         private BinaryTreeNode levelDownNode;
 
+        private GameObject ladderDown;
+        private GameObject exit;
+
         internal void SetLevelNumber(int levelNumber)
         {
             this.levelNumber = levelNumber;
@@ -81,7 +84,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
             var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
             //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
-            var obj = Instantiate(dungeonTemplate.LadderDownPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
         }
 
         internal void AddLadderUp(DungeonTemplate dungeonTemplate)
@@ -98,7 +101,15 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         {            
             var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
             //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
-            var obj = Instantiate(exitPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+            exit = Instantiate(exitPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+        }
+
+        public GameObject GetExitObject(){
+            return exit;
+        }
+
+        public GameObject GetLadderDownObject(){
+            return ladderDown;
         }
     }
 }

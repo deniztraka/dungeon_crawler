@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Items.Utils;
 using DTWorldz.Models;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
@@ -17,6 +18,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public GameObject Dungeon;
         public GameObject LevelPrefab;
+        public TeleporterBehaviour TeleporterPrefab;
 
         private GameObject player;
         private Random random;
@@ -89,19 +91,42 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 BuildLevelTransitions(i);
             }
 
+            for (int i = 0; i < levels.Count; i++)
+            {
+                BuildTeleporters(i);
+            }
+
             //move player into biggest room in first level
             levels[0].MovePlayer(player);
         }
 
+        private void BuildTeleporters(int levelNumber)
+        {
+            //if there is another level down below
+            if (levelNumber + 1 < levels.Count)
+            {
+                //get ladder down for this level
+                var thisLadderDownObject = levels[levelNumber].GetLadderDownObject();
+                var ladderDownTeleporter = thisLadderDownObject.GetComponentInChildren<TeleporterBehaviour>();
+
+                //get exit for one level below
+                var belowLevelExit = levels[levelNumber + 1].GetExitObject();
+                var belowLevelTeleporter = belowLevelExit.GetComponentInChildren<TeleporterBehaviour>();
+
+                ladderDownTeleporter.TeleportTo = belowLevelTeleporter.transform.position +  belowLevelTeleporter.TeleportPosition;
+                belowLevelTeleporter.TeleportTo = ladderDownTeleporter.transform.position + ladderDownTeleporter.TeleportPosition;
+            }           
+        }
+
         private void BuildLevelTransitions(int levelNumber)
         {
-            Debug.Log("LEVEL:" + levelNumber);
+            //Debug.Log("LEVEL:" + levelNumber);
             var levelBehaviour = levels[levelNumber];
 
             // ilk kat ise
             if (levelNumber == 0)
             {
-                Debug.Log("dungeon Exit for level:" + levelNumber);
+                //Debug.Log("dungeon Exit for level:" + levelNumber);
                 //bu levela dungeondan çıkış kapısı koy 
                 levelBehaviour.AddDungeonExit(DungeonTemplate);
             }
@@ -109,7 +134,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //bir level yukarısı var ise
             if (levelNumber > 0)
             {
-                Debug.Log("ladder Up for level:" + levelNumber);
+                //Debug.Log("ladder Up for level:" + levelNumber);
                 //bu levela yukarı çıkış kapısı koy     
                 levelBehaviour.AddLadderUp(DungeonTemplate);
             }
@@ -117,7 +142,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //bir level aşağısı var ise
             if (levelNumber + 1 < levels.Count)
             {
-                Debug.Log("ladder Down for level:" + levelNumber);
+                //Debug.Log("ladder Down for level:" + levelNumber);
                 //bu levela aşağı iniş kapısı koy  
                 levelBehaviour.AddLadderDown(DungeonTemplate);
             }
