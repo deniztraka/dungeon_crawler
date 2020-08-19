@@ -71,6 +71,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public void BuildMap()
         {
+            if(Dungeon.transform.childCount > 0){
+                ClearMap();
+            }
+            
             if (levels == null)
             {
                 levels = new List<LevelBehaviour>();

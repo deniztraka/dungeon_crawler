@@ -37,7 +37,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         }
 
         public void MovePlayer(GameObject player)
-        {           
+        {
             if (player != null && FloorMap != null && exitNode != null)
             {
                 //move player in the center of the room            
@@ -72,7 +72,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 exitNode = tree.FindMax(tree.Root);
             }
 
-            AddLevelExit(dungeonTemplate.ExitDoorPrefab);
+            AddLevelExit(dungeonTemplate.ExitDoorPrefab, true);
         }
 
         internal void AddLadderDown(DungeonTemplate dungeonTemplate)
@@ -94,21 +94,34 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 exitNode = tree.FindMax(tree.Root);
             }
 
-            AddLevelExit(dungeonTemplate.LadderUpPrefab);                    
+            AddLevelExit(dungeonTemplate.LadderUpPrefab, false);
         }
 
-        internal void AddLevelExit(GameObject exitPrefab)
-        {            
-            var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
-            //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
-            exit = Instantiate(exitPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+        internal void AddLevelExit(GameObject exitPrefab, Boolean isDungeonExit)
+        {
+            var exitPosition = Vector3.zero;
+
+            //if its dungeon exit, make it center of the room
+            // if (isDungeonExit)
+            // {
+            //     exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
+            // }
+            // else
+            // {
+            //     exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.min.x, (int)exitNode.Room.InnerRect.max.y - 1, 0));
+            // }
+
+            exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
+            exit = Instantiate(exitPrefab, exitPosition, Quaternion.identity, EnvironmentParent);
         }
 
-        public GameObject GetExitObject(){
+        public GameObject GetExitObject()
+        {
             return exit;
         }
 
-        public GameObject GetLadderDownObject(){
+        public GameObject GetLadderDownObject()
+        {
             return ladderDown;
         }
     }

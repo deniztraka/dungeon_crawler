@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469881670155710633}
   - component: {fileID: 8469881670155710632}
+  - component: {fileID: 3929974742471256707}
   m_Layer: 0
   m_Name: LadderDown
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -410591489
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 9038758965380681209, guid: c2af4bb3854969d4cb2f76aacb65cd71,
+  m_Sprite: {fileID: 8712482080748105353, guid: 8f3baa3346971744db6a941a323eefc0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,6 +84,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3929974742471256707
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469881670155710635}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.40625, y: 0.46875}
+      - {x: -0.40625656, y: 0.40625003}
+      - {x: 0.4054114, y: 0.40278354}
+      - {x: 0.4053438, y: -0.4100871}
+      - {x: -0.41134346, y: -0.40970892}
+      - {x: -0.40937465, y: -0.46875}
+      - {x: 0.40625, y: -0.46875}
+      - {x: 0.46875, y: -0.40625}
+      - {x: 0.46875, y: 0.40625}
+      - {x: 0.40625, y: 0.46875}
 --- !u!1001 &4332679663947765737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471606426957797184, guid: 861a67f44fcedd14196eb07f691dbc0e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8471606426957797185, guid: 861a67f44fcedd14196eb07f691dbc0e,
         type: 3}
