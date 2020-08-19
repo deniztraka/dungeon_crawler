@@ -84,9 +84,43 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 BuildLevel(i);
             }
 
+            for (int i = 0; i < levels.Count; i++)
+            {
+                BuildLevelTransitions(i);
+            }
+
             //move player into biggest room in first level
-            levels[0].BuildStartRoom(player);
-            levels[levelCount-1].BuildTreaseRoom(DungeonTemplate);
+            levels[0].MovePlayer(player);
+        }
+
+        private void BuildLevelTransitions(int levelNumber)
+        {
+            Debug.Log("LEVEL:" + levelNumber);
+            var levelBehaviour = levels[levelNumber];
+
+            // ilk kat ise
+            if (levelNumber == 0)
+            {
+                Debug.Log("dungeon Exit for level:" + levelNumber);
+                //bu levela dungeondan çıkış kapısı koy 
+                levelBehaviour.AddDungeonExit(DungeonTemplate);
+            }
+
+            //bir level yukarısı var ise
+            if (levelNumber > 0)
+            {
+                Debug.Log("ladder Up for level:" + levelNumber);
+                //bu levela yukarı çıkış kapısı koy     
+                levelBehaviour.AddLadderUp(DungeonTemplate);
+            }
+
+            //bir level aşağısı var ise
+            if (levelNumber + 1 < levels.Count)
+            {
+                Debug.Log("ladder Down for level:" + levelNumber);
+                //bu levela aşağı iniş kapısı koy  
+                levelBehaviour.AddLadderDown(DungeonTemplate);
+            }
         }
 
         private void BuildLights(BinaryTreeNode node, LevelBehaviour levelBehaviour)

@@ -24,3 +24,9 @@ MonoBehaviour:
   RoomTemplate: {fileID: 11400000, guid: 0df8f0636eebab14b8fd15a4c465fc2a, type: 2}
   TreasurePrefab: {fileID: 4663308623770685161, guid: 6a853f62f022d094580c2fa496448691,
     type: 3}
+  ExitDoorPrefab: {fileID: 8322162386451360747, guid: 5fcc4386bd083074cac8a9f074bf8537,
+    type: 3}
+  LadderDownPrefab: {fileID: 8469881670155710635, guid: 32550990a843f48489ac73d904fad762,
+    type: 3}
+  LadderUpPrefab: {fileID: 5564952070873997582, guid: 19c24364d04e1264a8957783c6339329,
+    type: 3}

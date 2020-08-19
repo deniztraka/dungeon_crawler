@@ -20,5 +20,11 @@ namespace DTWorldz.ScriptableObjects
         public RoomTemplate RoomTemplate;
         public GameObject TreasurePrefab;
 
+        public GameObject ExitDoorPrefab;
+
+        public GameObject LadderDownPrefab;
+
+        public GameObject LadderUpPrefab;
+
     }
 }

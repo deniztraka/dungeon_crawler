@@ -20,6 +20,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private int levelNumber;
         private BinaryTree tree;
         private System.Random random;
+        private BinaryTreeNode exitNode;
+        private BinaryTreeNode levelDownNode;
 
         internal void SetLevelNumber(int levelNumber)
         {
@@ -31,13 +33,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             this.tree = tree;
         }
 
-        public void BuildStartRoom(GameObject player)
-        {
-            var largestNode = tree.FindMax(tree.Root);
-            if (player != null && FloorMap != null)
+        public void MovePlayer(GameObject player)
+        {           
+            if (player != null && FloorMap != null && exitNode != null)
             {
                 //move player in the center of the room            
-                var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)largestNode.Room.InnerRect.center.x, (int)largestNode.Room.InnerRect.center.y, 0));
+                var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
                 player.transform.position = position;
             }
         }
@@ -59,6 +60,45 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 smallestNode.Room.Objects.Add(obj);
 
             }
+        }
+
+        internal void AddDungeonExit(DungeonTemplate dungeonTemplate)
+        {
+            if (exitNode == null)
+            {
+                exitNode = tree.FindMax(tree.Root);
+            }
+
+            AddLevelExit(dungeonTemplate.ExitDoorPrefab);
+        }
+
+        internal void AddLadderDown(DungeonTemplate dungeonTemplate)
+        {
+            if (levelDownNode == null)
+            {
+                levelDownNode = tree.FindMin(tree.Root);
+            }
+
+            var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
+            //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
+            var obj = Instantiate(dungeonTemplate.LadderDownPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+        }
+
+        internal void AddLadderUp(DungeonTemplate dungeonTemplate)
+        {
+            if (exitNode == null)
+            {
+                exitNode = tree.FindMax(tree.Root);
+            }
+
+            AddLevelExit(dungeonTemplate.LadderUpPrefab);                    
+        }
+
+        internal void AddLevelExit(GameObject exitPrefab)
+        {            
+            var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
+            //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
+            var obj = Instantiate(exitPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
         }
     }
 }
