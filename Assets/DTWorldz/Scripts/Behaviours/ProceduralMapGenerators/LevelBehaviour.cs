@@ -82,9 +82,16 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 levelDownNode = tree.FindMin(tree.Root);
             }
 
-            var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
-            //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
-            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+            var ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
+            
+            //clean objects surraounding
+            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 2), 0f);
+            foreach (var item in overlappedItems)
+            {
+                DestroyImmediate(item.gameObject);
+            }  
+
+            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
         }
 
         internal void AddLadderUp(DungeonTemplate dungeonTemplate)
@@ -99,20 +106,42 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         internal void AddLevelExit(GameObject exitPrefab, Boolean isDungeonExit)
         {
-            var exitPosition = Vector3.zero;
+            var ladderPosition = Vector3.zero;
 
             //if its dungeon exit, make it center of the room
-            // if (isDungeonExit)
-            // {
-            //     exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
-            // }
-            // else
-            // {
-            //     exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.min.x, (int)exitNode.Room.InnerRect.max.y - 1, 0));
-            // }
+            if (isDungeonExit)
+            {
+                ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
+            }
+            else
+            {
+                //try to find a good place on left wall
+                for (int x = (int)exitNode.Room.InnerRect.xMin; x < (int)exitNode.Room.InnerRect.xMax; x++)
+                {
+                    for (int y = (int)exitNode.Room.InnerRect.yMin; y < (int)exitNode.Room.InnerRect.yMax; y++)
+                    {
+                        //left lights
+                        if (x == exitNode.Room.InnerRect.xMin && WallMap.GetTile(new Vector3Int(x - 1, y, 0)) != null)
+                        {
+                            ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                        }
+                    }
+                }
 
-            exitPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
-            exit = Instantiate(exitPrefab, exitPosition, Quaternion.identity, EnvironmentParent);
+                // if there is no place to put ladder on left wall, put it on center
+                if (ladderPosition == Vector3.zero)
+                {
+                    ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
+                }
+            }
+
+            //clean objects in front of the ladder
+            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 1), 0f);
+            foreach (var item in overlappedItems)
+            {
+                DestroyImmediate(item.gameObject);
+            }            
+            exit = Instantiate(exitPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
         }
 
         public GameObject GetExitObject()
