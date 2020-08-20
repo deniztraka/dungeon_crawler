@@ -565,6 +565,9 @@ MonoBehaviour:
   WallMap: {fileID: 3487505189383605956}
   WallDecorationsMap: {fileID: 3487505188914858802}
   EnvironmentParent: {fileID: 3487505188582661050}
+  CleaningLayer:
+    serializedVersion: 2
+    m_Bits: 3328
 --- !u!1 &3487505189383605959
 GameObject:
   m_ObjectHideFlags: 0

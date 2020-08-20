@@ -16,6 +16,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public Tilemap WallMap;
         public Tilemap WallDecorationsMap;
         public Transform EnvironmentParent;
+        public LayerMask CleaningLayer;
 
         private int levelNumber;
         private BinaryTree tree;
@@ -85,11 +86,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             var ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
 
             //clean objects surraounding
-            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 2), 0f);
+            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 2), 0f, CleaningLayer);
             foreach (var item in overlappedItems)
             {
                 if (item.tag != "Player")
                 {
+                    //Debug.Log("down" + item.name);
                     DestroyImmediate(item.gameObject);
                 }
             }
@@ -139,11 +141,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             //clean objects in front of the ladder
-            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 1), 0f);
+            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 1), 0f, CleaningLayer);
             foreach (var item in overlappedItems)
             {
                 if (item.tag != "Player")
                 {
+                    //Debug.Log("exit" + item.name);
                     DestroyImmediate(item.gameObject);
                 }
             }
