@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb00ff0cfb79d5948a792d8aefb57c40, type: 3}
   m_Name: DungeonTemplate
   m_EditorClassIdentifier: 
-  Seed: 3
+  Seed: -1
   MaxLevelCount: 5
   Width: 30
   Height: 30
@@ -24,7 +24,7 @@ MonoBehaviour:
   RoomTemplate: {fileID: 11400000, guid: 0df8f0636eebab14b8fd15a4c465fc2a, type: 2}
   TreasurePrefab: {fileID: 4663308623770685161, guid: 6a853f62f022d094580c2fa496448691,
     type: 3}
-  ExitDoorPrefab: {fileID: 8322162386451360747, guid: 5fcc4386bd083074cac8a9f074bf8537,
+  ExitDoorPrefab: {fileID: 2155490288143554631, guid: c8df18a31b311f940be57ed82e8b9441,
     type: 3}
   LadderDownPrefab: {fileID: 8469881670155710635, guid: 32550990a843f48489ac73d904fad762,
     type: 3}

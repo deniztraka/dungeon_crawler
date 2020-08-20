@@ -15,10 +15,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
     public class BPSDungeonGenerator : MonoBehaviour
     {
         public DungeonTemplate DungeonTemplate;
+        public int Seed = -1;
 
         public GameObject Dungeon;
         public GameObject LevelPrefab;
-        public TeleporterBehaviour TeleporterPrefab;
 
         private GameObject player;
         private Random random;
@@ -74,7 +74,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             if(Dungeon.transform.childCount > 0){
                 ClearMap();
             }
-            
+
             if (levels == null)
             {
                 levels = new List<LevelBehaviour>();
@@ -82,7 +82,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
             player = GameObject.FindGameObjectWithTag("Player");
 
-            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : DateTime.Now.Millisecond);
+            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond));
 
             var levelCount = random.Next(1, DungeonTemplate.MaxLevelCount);
             for (int i = 0; i < levelCount; i++)
