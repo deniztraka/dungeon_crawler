@@ -83,13 +83,16 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             var ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)levelDownNode.Room.InnerRect.center.x, (int)levelDownNode.Room.InnerRect.center.y, 0));
-            
+
             //clean objects surraounding
             var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 2), 0f);
             foreach (var item in overlappedItems)
             {
-                DestroyImmediate(item.gameObject);
-            }  
+                if (item.tag != "Player")
+                {
+                    DestroyImmediate(item.gameObject);
+                }
+            }
 
             ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
         }
@@ -139,8 +142,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, new Vector2(2, 1), 0f);
             foreach (var item in overlappedItems)
             {
-                DestroyImmediate(item.gameObject);
-            }            
+                if (item.tag != "Player")
+                {
+                    DestroyImmediate(item.gameObject);
+                }
+            }
             exit = Instantiate(exitPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
         }
 
