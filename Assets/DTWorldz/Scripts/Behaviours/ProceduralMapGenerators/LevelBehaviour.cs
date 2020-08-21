@@ -17,6 +17,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public Tilemap WallDecorationsMap;
         public Transform EnvironmentParent;
         public LayerMask CleaningLayer;
+        public TileBase TestTile;
 
         private int levelNumber;
         private BinaryTree tree;
@@ -40,7 +41,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public void MovePlayer(GameObject player)
         {
             if (player != null && FloorMap != null && exitNode != null)
-            {                
+            {
                 //move player in the center of the room            
                 //var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
                 player.transform.position = exit.transform.position;
@@ -109,6 +110,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             AddLevelExit(dungeonTemplate.LadderUpPrefab, false);
         }
 
+        internal void AddChest(DungeonTemplate dungeonTemplate)
+        {
+            BuildTreaseRoom(dungeonTemplate);
+        }
+
         internal void AddLevelExit(GameObject exitPrefab, Boolean isDungeonExit)
         {
             var ladderPosition = Vector3.zero;
@@ -123,18 +129,18 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     for (int y = (int)exitNode.Room.InnerRect.yMin; y < (int)exitNode.Room.InnerRect.yMax; y++)
                     {
                         //Debug.Log(y + "-" + (exitNode.Room.InnerRect.yMax - 1) + "  :  " + (WallMap.GetTile(new Vector3Int(x, y, 0)) != null).ToString());
-
-                        //Debug.Log(WallMap.GetTile(new Vector3Int(11, 27, 0)) != null);
-
-
                         //top wall
                         if (ladderPosition == Vector3.zero &&
                          y == exitNode.Room.InnerRect.yMax - 1 &&
                           WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null &&
-                          WallMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) != null)
+                          WallMap.GetTile(new Vector3Int(x + 1, y + 1, 0)) != null &&
+                          WallMap.GetTile(new Vector3Int(x - 1, y + 1, 0)) != null &&
+                          WallMap.GetTile(new Vector3Int(x + 2, y + 1, 0)) != null &&
+                          WallMap.GetTile(new Vector3Int(x - 2, y + 1, 0)) != null)
                         {
-                            Debug.Log(x + "-" + y);
-                            ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x + 1, y, 0));
+                            // Debug.Log(x + "-" + y);
+                            // Debug.Log(WallMap.GetTile(new Vector3Int(x - 2, y + 1, 0)));                            
+                            ladderPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                         }
                     }
                 }
@@ -168,7 +174,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             //clean objects in front of the ladder
-            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, isDungeonExit ? new Vector2(3,3) : new Vector2(2, 1), 0f, CleaningLayer);
+            var overlappedItems = Physics2D.OverlapBoxAll(ladderPosition, isDungeonExit ? new Vector2(3, 3) : new Vector2(2, 1), 0f, CleaningLayer);
             foreach (var item in overlappedItems)
             {
                 if (item.tag != "Player")

@@ -81,8 +81,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             player = GameObject.FindGameObjectWithTag("Player");
+            var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);                       
 
-            random = new System.Random(DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond));
+            random = new System.Random(seed);
 
             var levelCount = random.Next(1, DungeonTemplate.MaxLevelCount);
             for (int i = 0; i < levelCount; i++)
@@ -98,10 +99,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             for (int i = 0; i < levels.Count; i++)
             {
                 BuildTeleporters(i);
-            }
-
+            }            
             //move player into biggest room in first level
             levels[0].MovePlayer(player);
+
+            levels[levels.Count-1].AddChest(DungeonTemplate);
+
+            Debug.Log("Dungeon is created with seed:"+seed.ToString());
         }
 
         private void BuildTeleporters(int levelNumber)
