@@ -87,7 +87,7 @@ namespace DTWorldz.Behaviours
         public void SetIsRunning(bool isRunning)
         {
             this.isRunning = isRunning;
-            
+
         }
 
         internal void GoIdle()
@@ -104,7 +104,7 @@ namespace DTWorldz.Behaviours
 
         // Update is called once per frame
         void Update()
-        {            
+        {
             CheckMovementPaths();
             if (Input.GetMouseButtonDown(0))
             {
@@ -200,7 +200,8 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public float GetResultingSpeed(){
+        public float GetResultingSpeed()
+        {
             return resultingSpeed;
         }
 
@@ -212,17 +213,20 @@ namespace DTWorldz.Behaviours
 
         void OnDrawGizmosSelected()
         {
-            if (paths != null && paths.Count > 0)
+            if (DrawGizmos)
             {
-                Gizmos.color = Color.yellow;
-                foreach (var point in paths)
+                if (paths != null && paths.Count > 0)
                 {
-                    Gizmos.DrawWireSphere(point, 0.5f);
+                    Gizmos.color = Color.yellow;
+                    foreach (var point in paths)
+                    {
+                        Gizmos.DrawWireSphere(point, 0.5f);
+                    }
+
+                    Gizmos.color = Color.red;
+
+                    Gizmos.DrawWireSphere(paths[0], 0.5f);
                 }
-
-                Gizmos.color = Color.red;
-
-                Gizmos.DrawWireSphere(paths[0], 0.5f);
             }
         }
     }
