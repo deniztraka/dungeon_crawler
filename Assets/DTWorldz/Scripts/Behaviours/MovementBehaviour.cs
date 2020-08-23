@@ -11,9 +11,12 @@ namespace DTWorldz.Behaviours
     [RequireComponent(typeof(Rigidbody2D))]
     public class MovementBehaviour : MonoBehaviour
     {
+        public bool DrawGizmos = false;
         public float Speed = 3f;   //Movement Speed 
         public float RunningSpeed = 5f;   //Movement Speed
         public List<Animator> AnimationSlots;
+
+        public GameObject FollowingTarget;
 
         [SerializeField]
         private Direction direction;
@@ -22,7 +25,9 @@ namespace DTWorldz.Behaviours
         private List<Vector3> paths;
         [SerializeField]
         private Tilemap wallMap;
+        [SerializeField]
         private float resultingSpeed = 1f;
+        [SerializeField]
         private bool isRunning = false;
         private bool attackingTrigger = false;
         private Vector2 movement;           //Movement Axis
@@ -31,12 +36,33 @@ namespace DTWorldz.Behaviours
         private AttackBehaviour attackBehaviour;
         private Vector3 targetPoint;
 
+        public float AwareDistance = 5f;
+        public float CloseDistance = 3f;
+        public float AttackDistance = 1f;
+
         // Start is called before the first frame update
         void Start()
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             direction = Direction.Right;
+
+
+        }
+
+        internal void SetTargetPaths()
+        {
+            if (FollowingTarget != null)
+            {
+                SetTargetPoint(FollowingTarget.transform.position);
+            }
+        }
+
+        public void SetFollowingTarget(GameObject target)
+        {
+            FollowingTarget = target;
+            SetTargetPaths();
+            animator.SetTrigger("Follow");
         }
 
         public void SetMovementGrid(Tilemap wallMap)
@@ -54,18 +80,22 @@ namespace DTWorldz.Behaviours
                 {
                     paths.RemoveAt(0);
                     movement = (paths[0] - transform.position).normalized;
-                    // Debug.Log(paths.Count);
-                    // Debug.Log((paths[1] - transform.position).normalized);
                 }
             }
+        }
+
+        public void SetIsRunning(bool isRunning)
+        {
+            this.isRunning = isRunning;
+            
         }
 
         internal void GoIdle()
         {
             paths = new List<Vector3>();
             targetPoint = transform.position;
+            isRunning = false;
         }
-
 
         internal Tilemap GetMovementMap()
         {
@@ -74,11 +104,12 @@ namespace DTWorldz.Behaviours
 
         // Update is called once per frame
         void Update()
-        {
+        {            
             CheckMovementPaths();
-            //HandleAnimations();
-
-
+            if (Input.GetMouseButtonDown(0))
+            {
+                SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
+            }
         }
 
         private void CheckMovementPaths()
@@ -118,7 +149,6 @@ namespace DTWorldz.Behaviours
                 var deltaY = transform.position.y - paths[0].y;
                 var rad = Math.Atan2(deltaY, deltaX);
                 var deg = rad * (180 / Math.PI);
-                //Debug.Log(deg);
 
                 if (deg > -45 && deg < 45)
                 {
@@ -170,8 +200,13 @@ namespace DTWorldz.Behaviours
             }
         }
 
+        public float GetResultingSpeed(){
+            return resultingSpeed;
+        }
+
         private void FixedUpdate()
         {
+            resultingSpeed = isRunning ? RunningSpeed : Speed;
             rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
         }
 
@@ -189,11 +224,6 @@ namespace DTWorldz.Behaviours
 
                 Gizmos.DrawWireSphere(paths[0], 0.5f);
             }
-
-            // Gizmos.color = Color.blue;
-
-            // Gizmos.DrawWireSphere(targetPoint, 0.5f);
-
         }
     }
 }

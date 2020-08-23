@@ -23157,6 +23157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c17ad231868cd7479cba4103a5bbb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrawGizmos: 1
 --- !u!114 &831543751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23169,11 +23170,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4166e3744971ede40a8cc627b5f83c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
-  RunningSpeed: 5
+  DrawGizmos: 1
+  Speed: 1
+  RunningSpeed: 1.5
   AnimationSlots: []
+  FollowingTarget: {fileID: 0}
   direction: 0
   wallMap: {fileID: 917021534}
+  resultingSpeed: 1
+  isRunning: 0
+  AwareDistance: 5
+  CloseDistance: 3
+  AttackDistance: 1
 --- !u!95 &831543752
 Animator:
   serializedVersion: 3
@@ -53368,6 +53376,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2954527099329333206, guid: dea4439d701ee2043bab38c27cf741ae,
+        type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954527099329333206, guid: dea4439d701ee2043bab38c27cf741ae,
+        type: 3}
+      propertyPath: RunningSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2954527099329333213, guid: dea4439d701ee2043bab38c27cf741ae,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,7 +8,7 @@ namespace DTWorldz.Behaviours.AI.States
         public float IdleChance = 0.5f;
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            StateName = "Wander";
+            StateName = "Wandering";
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
         }
