@@ -20,6 +20,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public GameObject Dungeon;
         public GameObject LevelPrefab;
 
+        public GameObject TestPrefab;
+
         private GameObject player;
         private Random random;
         private List<LevelBehaviour> levels;
@@ -71,7 +73,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public void BuildMap()
         {
-            if(Dungeon.transform.childCount > 0){
+            if (Dungeon.transform.childCount > 0)
+            {
                 ClearMap();
             }
 
@@ -81,7 +84,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
 
             player = GameObject.FindGameObjectWithTag("Player");
-            var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);                       
+            var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);
 
             random = new System.Random(seed);
 
@@ -99,13 +102,22 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             for (int i = 0; i < levels.Count; i++)
             {
                 BuildTeleporters(i);
-            }            
+            }
             //move player into biggest room in first level
             levels[0].MovePlayer(player);
 
-            levels[levels.Count-1].AddChest(DungeonTemplate);
+            levels[levels.Count - 1].AddChest(DungeonTemplate);
 
-            Debug.Log("Dungeon is created with seed:"+seed.ToString());
+            TestFeatures();
+
+            Debug.Log("Dungeon is created with seed:" + seed.ToString());
+        }
+
+        private void TestFeatures()
+        {
+            var obj = Instantiate(TestPrefab, new Vector3(23.5f, 15.5f, 0), Quaternion.identity);
+            var movementBehaviour = obj.GetComponent<MovementBehaviour>();
+            movementBehaviour.SetMovementGrid(levels[0].WallMap);
         }
 
         private void BuildTeleporters(int levelNumber)
@@ -121,9 +133,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 var belowLevelExit = levels[levelNumber + 1].GetExitObject();
                 var belowLevelTeleporter = belowLevelExit.GetComponentInChildren<TeleporterBehaviour>();
 
-                ladderDownTeleporter.TeleportTo = belowLevelTeleporter.transform.position +  belowLevelTeleporter.TeleportPosition;
+                ladderDownTeleporter.TeleportTo = belowLevelTeleporter.transform.position + belowLevelTeleporter.TeleportPosition;
+                ladderDownTeleporter.SetTeleportsToLevel(levels[levelNumber + 1]);
+
                 belowLevelTeleporter.TeleportTo = ladderDownTeleporter.transform.position + ladderDownTeleporter.TeleportPosition;
-            }           
+                belowLevelTeleporter.SetTeleportsToLevel(levels[levelNumber]);
+            }
         }
 
         private void BuildLevelTransitions(int levelNumber)
@@ -137,6 +152,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 //Debug.Log("dungeon Exit for level:" + levelNumber);
                 //bu levela dungeondan çıkış kapısı koy 
                 levelBehaviour.AddDungeonExit(DungeonTemplate);
+
             }
 
             //bir level yukarısı var ise
@@ -404,11 +420,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         void Update()
         {
-            // //to test astar alghoritm
-            // if (player != null && Input.GetMouseButtonDown(0))
-            // {
-            //     testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            // }
+            //to test astar alghoritm
+            if (Input.GetMouseButtonDown(0))
+            {
+                //testPaths = AStar.FindPath(WallMap, player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+            }
         }
         void OnDrawGizmosSelected()
         {

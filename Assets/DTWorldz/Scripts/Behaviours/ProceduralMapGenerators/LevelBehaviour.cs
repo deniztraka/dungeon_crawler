@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Items.Utils;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         internal void SetTree(BinaryTree tree)
         {
             this.tree = tree;
-        }
+        }        
 
         public void MovePlayer(GameObject player)
         {
@@ -44,7 +45,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             {
                 //move player in the center of the room            
                 //var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
-                player.transform.position = exit.transform.position;
+                player.transform.position = exit.transform.position;                
+                var movementBehaviour = player.GetComponent<PlayerMovementBehaviour>();
+                movementBehaviour.SetMovementGrid(WallMap);
             }
         }
 
@@ -97,7 +100,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 }
             }
 
-            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
+            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);           
         }
 
         internal void AddLadderUp(DungeonTemplate dungeonTemplate)
@@ -184,6 +187,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 }
             }
             exit = Instantiate(exitPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
+           
         }
 
         public GameObject GetExitObject()
