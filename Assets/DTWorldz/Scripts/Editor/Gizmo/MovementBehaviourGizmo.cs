@@ -13,15 +13,17 @@ namespace DTWorldz.Editor.Gizmo
         {
             if (movementBehaviour.DrawGizmos)
             {
-                var awareDistanceColor = Color.yellow;
-                awareDistanceColor.a = 0.25f;
-                Gizmos.color = awareDistanceColor;
-                Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.AwareDistance);
-
                 var closeDistanceColor = Color.red;
                 closeDistanceColor.a = 0.25f;
                 Gizmos.color = closeDistanceColor;
                 Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.CloseDistance);
+
+                var awareDistanceColor = Color.yellow;
+                awareDistanceColor.a = 0.05f;
+                Gizmos.color = awareDistanceColor;
+                Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.AwareDistance);
+
+                
 
                 Gizmos.color = Color.white;
                 var positionY = movementBehaviour.transform.position.y;
