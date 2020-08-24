@@ -143,6 +143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrawGizmos: 0
+  IdleChance: 0.5
+  WanderChance: 0.5
+  MinDecisionDelay: 1
+  MaxDecisionDelay: 5
+  FollowRefreshFrequency: 1
 --- !u!1 &7559222451528981159
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4069433135438937170, guid: c2af4bb3854969d4cb2f76aacb65cd71,
+  m_Sprite: {fileID: 1817936226874115096, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

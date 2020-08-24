@@ -24,6 +24,8 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
         aliveObjects = new List<GameObject>();
         random = new Random(DateTime.Now.Millisecond);
         spawnTime = SpawnFrequency;
@@ -84,7 +86,8 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     public GameObject Spawn(GameObject gameObject)
     {
         var randomPosition = GetRandomPointInside();
-        if(randomPosition == Vector3.zero){
+        if (randomPosition == Vector3.zero)
+        {
             return null;
         }
 
