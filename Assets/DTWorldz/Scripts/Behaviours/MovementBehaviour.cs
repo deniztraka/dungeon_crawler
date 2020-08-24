@@ -14,6 +14,8 @@ namespace DTWorldz.Behaviours
         public bool DrawGizmos = false;
         public float Speed = 3f;   //Movement Speed 
         public float RunningSpeed = 5f;   //Movement Speed
+
+
         public List<Animator> AnimationSlots;
 
         public GameObject FollowingTarget;

@@ -5,8 +5,6 @@ namespace DTWorldz.Behaviours.AI.States
 {
     public class MobileIdleStateBehaviour : BaseMobileStateBehaviour
     {
-        public float WanderChance = 0.5f;
-
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             StateName = "Idle";
@@ -17,11 +15,11 @@ namespace DTWorldz.Behaviours.AI.States
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
-            var randomDecisionDelay = Random.Next(MinDecisionDelay, MaxDecisionDelay);
+            var randomDecisionDelay = Random.Next(MobileStateBehaviour.MinDecisionDelay, MobileStateBehaviour.MaxDecisionDelay);
 
             if (DecisionTime <= 0)
             {
-                if (Random.NextDouble() < WanderChance)
+                if (Random.NextDouble() < MobileStateBehaviour.WanderChance)
                 {
                     animator.SetTrigger("Wander");
                 }

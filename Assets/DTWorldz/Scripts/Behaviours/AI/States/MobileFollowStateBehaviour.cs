@@ -6,7 +6,6 @@ namespace DTWorldz.Behaviours.AI.States
     public class MobileFollowStateBehaviour : BaseMobileStateBehaviour
     {
         public float RefreshTime;
-        public float RefreshFrequency = 1;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -20,7 +19,7 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (RefreshTime <= 0)
             {
-                RefreshTime = RefreshFrequency;
+                RefreshTime = MobileStateBehaviour.FollowRefreshFrequency;
                 MovementBehaviour.SetTargetPaths();
             }
             else
