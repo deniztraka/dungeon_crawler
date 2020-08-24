@@ -43,9 +43,22 @@ namespace DTWorldz.Behaviours.AI.States
 
         private void SetNewTarget(Animator animator)
         {
+            //if spawner exists
+            var spawner = MovementBehaviour.GetSpawner();
+            if (spawner != null)
+            {
+                var randomPosition = spawner.GetRandomPointInside();
+                if (randomPosition == Vector3.zero)
+                {
+                    return;
+                }
 
+                MovementBehaviour.SetTargetPoint(randomPosition);
+                return;
+            }
+
+            //else try random target
             var newMovementTarget = animator.transform.position + new Vector3(Random.Next(-2, 3), Random.Next(-2, 3), 0);
-            
             var wallMap = MovementBehaviour.GetMovementMap();
             if (wallMap != null)
             {
@@ -56,7 +69,6 @@ namespace DTWorldz.Behaviours.AI.States
                     return;
                 }
             }
-
             MovementBehaviour.SetTargetPoint(newMovementTarget);
         }
 

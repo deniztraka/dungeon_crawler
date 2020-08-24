@@ -20,7 +20,7 @@ namespace DTWorldz.Behaviours
 
         [SerializeField]
         private Direction direction;
-
+        private ObjectSpawnerBehaviour spawnerBehaviour;
 
         private List<Vector3> paths;
         [SerializeField]
@@ -48,6 +48,16 @@ namespace DTWorldz.Behaviours
             direction = Direction.Right;
 
 
+        }
+
+        public void SetSpawner(ObjectSpawnerBehaviour spawner)
+        {
+            this.spawnerBehaviour = spawner;
+        }
+
+        public ObjectSpawnerBehaviour GetSpawner()
+        {
+            return spawnerBehaviour;
         }
 
         internal void SetTargetPaths()
