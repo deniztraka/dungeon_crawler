@@ -34,12 +34,7 @@ namespace DTWorldz.Behaviours
 
         // Start is called before the first frame update
         void Start()
-        {
-            var wallsObj = GameObject.Find("Walls");
-            if (wallsObj != null)
-            {
-                wallMap = wallsObj.GetComponent<Tilemap>();
-            }
+        {            
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
@@ -222,10 +217,9 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        // private void SetDirection(float angle)
-        // {
-        //     throw new NotImplementedException();
-        // }
+        public void SetMovementGrid(Tilemap wallMap){
+            this.wallMap = wallMap;
+        }
 
         private void FixedUpdate()
         {
