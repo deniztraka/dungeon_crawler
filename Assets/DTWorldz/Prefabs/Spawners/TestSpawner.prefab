@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPrefabs:
+  - {fileID: 7559222450374734856, guid: 865c5291ff7685e4994c1dedfd99115c, type: 3}
+  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
   - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
   CurrentLevel: {fileID: 0}
   SpawnFrequency: 5
@@ -93,8 +95,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -410591489
   m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -7165292069063793679, guid: c2af4bb3854969d4cb2f76aacb65cd71,
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -253465061580148930, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

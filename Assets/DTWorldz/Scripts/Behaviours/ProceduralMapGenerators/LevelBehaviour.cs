@@ -37,7 +37,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         internal void SetTree(BinaryTree tree)
         {
             this.tree = tree;
-        }        
+        }
 
         public void MovePlayer(GameObject player)
         {
@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             {
                 //move player in the center of the room            
                 //var position = FloorMap.GetCellCenterWorld(new Vector3Int((int)exitNode.Room.InnerRect.center.x, (int)exitNode.Room.InnerRect.center.y, 0));
-                player.transform.position = exit.transform.position;                
+                player.transform.position = exit.transform.position;
                 var movementBehaviour = player.GetComponent<PlayerMovementBehaviour>();
                 movementBehaviour.SetMovementGrid(WallMap);
             }
@@ -67,6 +67,39 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 var obj = Instantiate(dungeonTemplate.TreasurePrefab, objectPosition, Quaternion.identity, EnvironmentParent);
                 smallestNode.Room.Objects.Add(obj);
 
+            }
+        }
+
+        internal void GenerateSpawners(GameObject correspondingSpawnerPrefab)
+        {
+            GenerateSpawner(tree.Root, correspondingSpawnerPrefab);
+        }
+
+        private void GenerateSpawner(BinaryTreeNode node, GameObject correspondingSpawnerPrefab)
+        {
+            // Fail if the node was null
+            if (node == null)
+            {
+                return;
+            }
+
+            // Iterate if the room is a leaf, otherwise recurse
+            if (node.LeftNode == null && node.RightNode == null)
+            {
+                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
+                //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
+                var spawner = Instantiate(correspondingSpawnerPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+                var spawnerBehaviour = spawner.GetComponent<ObjectSpawnerBehaviour>();
+                spawnerBehaviour.RangeY = node.Room.InnerRect.height - 1;
+                spawnerBehaviour.RangeX = node.Room.InnerRect.width - 1;
+                spawnerBehaviour.CurrentLevel = this;
+                var aliveCount = (int)Math.Floor((decimal)(node.Room.GetSurcafeArea() / 10));
+                spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 2));
+            }
+            else
+            {
+                GenerateSpawner(node.LeftNode, correspondingSpawnerPrefab);
+                GenerateSpawner(node.RightNode, correspondingSpawnerPrefab);
             }
         }
 
@@ -100,7 +133,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 }
             }
 
-            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);           
+            ladderDown = Instantiate(dungeonTemplate.LadderDownPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
         }
 
         internal void AddLadderUp(DungeonTemplate dungeonTemplate)
@@ -187,7 +220,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 }
             }
             exit = Instantiate(exitPrefab, ladderPosition, Quaternion.identity, EnvironmentParent);
-           
+
         }
 
         public GameObject GetExitObject()

@@ -10,7 +10,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
 {
     public List<GameObject> SpawnPrefabs;
     public LevelBehaviour CurrentLevel;
-    public float SpawnFrequency;
+    public int SpawnFrequency;
     public int MaxAliveCount;
     public float RangeX;
     public float RangeY;
@@ -28,7 +28,16 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         spriteRenderer.enabled = false;
         aliveObjects = new List<GameObject>();
         random = new Random(DateTime.Now.Millisecond);
-        spawnTime = SpawnFrequency;
+        spawnTime = 0;
+        
+        for (int i = 0; i < MaxAliveCount; i++)
+        {
+            var spawnedObject = Spawn(SpawnPrefabs[random.Next(0, SpawnPrefabs.Count)]);
+            if (spawnedObject != null)
+            {
+                aliveObjects.Add(spawnedObject);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -65,6 +74,11 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         var isNotFoundYet = true;
         var maxTryCount = 10;
         var tryCount = 0;
+        if (CurrentLevel == null)
+        {
+            return Vector3.zero;
+        }
+
         while (isNotFoundYet && tryCount <= maxTryCount)
         {
             randomPosition = gameObject.transform.position + new Vector3(

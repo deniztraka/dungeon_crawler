@@ -18,7 +18,7 @@ namespace DTWorldz.Editor.Gizmo
                 var positionY = mobileStateBehaviour.transform.position.y;
                 var positionX = mobileStateBehaviour.transform.position.x;
                 var gizmoPosition = new Vector3(positionX + 0.3f, positionY + 0.6f, 0);
-                Handles.Label(gizmoPosition, "mState:" + mobileStateBehaviour.GetState());
+                Handles.Label(gizmoPosition, "mState:" + mobileStateBehaviour.GetState());            
             }
         }
     }

@@ -26,6 +26,63 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private Random random;
         private List<LevelBehaviour> levels;
 
+        public void BuildMap()
+        {
+            if (Dungeon.transform.childCount > 0)
+            {
+                ClearMap();
+            }
+
+            if (levels == null)
+            {
+                levels = new List<LevelBehaviour>();
+            }
+
+            player = GameObject.FindGameObjectWithTag("Player");
+            var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);
+
+            random = new System.Random(seed);
+
+            var levelCount = random.Next(1, DungeonTemplate.MaxLevelCount);
+            for (int i = 0; i < levelCount; i++)
+            {
+                BuildLevel(i);
+            }
+
+            for (int i = 0; i < levels.Count; i++)
+            {
+                BuildLevelTransitions(i);
+            }
+
+            for (int i = 0; i < levels.Count; i++)
+            {
+                BuildTeleporters(i);
+            }
+
+            BuildSpawners();
+
+            //move player into biggest room in first level
+            levels[0].MovePlayer(player);
+
+            levels[levels.Count - 1].AddChest(DungeonTemplate);
+
+            TestFeatures();
+
+            Debug.Log("Dungeon is created with seed:" + seed.ToString());
+        }
+
+        private void BuildSpawners()
+        {
+            for (int i = 0; i < levels.Count; i++)
+            {
+                var correspondingSpawner = DungeonTemplate.SpawnerObjects[i];
+                if (correspondingSpawner != null)
+                {
+                    levels[i].GenerateSpawners(correspondingSpawner);
+                }
+            }
+        }
+
         public void ClearMap()
         {
             int childsCount = Dungeon.transform.childCount;
@@ -71,53 +128,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             BuildLights(roomTree.Root, levelBehaviour);
         }
 
-        public void BuildMap()
-        {
-            if (Dungeon.transform.childCount > 0)
-            {
-                ClearMap();
-            }
-
-            if (levels == null)
-            {
-                levels = new List<LevelBehaviour>();
-            }
-
-            player = GameObject.FindGameObjectWithTag("Player");
-            var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);
-
-            random = new System.Random(seed);
-
-            var levelCount = random.Next(1, DungeonTemplate.MaxLevelCount);
-            for (int i = 0; i < levelCount; i++)
-            {
-                BuildLevel(i);
-            }
-
-            for (int i = 0; i < levels.Count; i++)
-            {
-                BuildLevelTransitions(i);
-            }
-
-            for (int i = 0; i < levels.Count; i++)
-            {
-                BuildTeleporters(i);
-            }
-            //move player into biggest room in first level
-            levels[0].MovePlayer(player);
-
-            levels[levels.Count - 1].AddChest(DungeonTemplate);
-
-            TestFeatures();
-
-            Debug.Log("Dungeon is created with seed:" + seed.ToString());
-        }
-
         private void TestFeatures()
         {
-            var obj = Instantiate(TestPrefab, new Vector3(23.5f, 15.5f, 0), Quaternion.identity);
-            var movementBehaviour = obj.GetComponent<MovementBehaviour>();
-            movementBehaviour.SetMovementGrid(levels[0].WallMap);
+            // var obj = Instantiate(TestPrefab, new Vector3(23.5f, 15.5f, 0), Quaternion.identity);
+            // var movementBehaviour = obj.GetComponent<MovementBehaviour>();
+            // movementBehaviour.SetMovementGrid(levels[0].WallMap);
         }
 
         private void BuildTeleporters(int levelNumber)

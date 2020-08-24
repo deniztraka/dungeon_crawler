@@ -31,7 +31,7 @@ namespace DTWorldz.Behaviours.AI.States
 
             MobileStateBehaviour.SetState(StateName);
             Random = new Random(DateTime.Now.Millisecond);
-            randomDecisionDelay = Random.Next(MobileStateBehaviour.MinDecisionDelay, MobileStateBehaviour.MaxDecisionDelay);
+            randomDecisionDelay = UnityEngine.Random.Range(MobileStateBehaviour.MinDecisionDelay, MobileStateBehaviour.MaxDecisionDelay);
 
             DecisionTime = 0;
         }
@@ -45,27 +45,6 @@ namespace DTWorldz.Behaviours.AI.States
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
             DecisionTime = 0;
-        }
-
-        // public Boolean CheckState(Animator animator, String stateName, float chance){
-        //     if (DecisionTime <= 0)
-        //     {
-        //         var nextDouble = Random.NextDouble();
-        //         //Debug.Log("NextDouble:" + nextDouble);
-        //         if (nextDouble < chance)
-        //         {
-        //             //return true;
-        //         }
-
-        //         DecisionTime = randomDecisionDelay;
-        //         return true;
-        //         //Debug.Log("DecisitonTimeAfter:" + DecisionTime);
-        //     }
-        //     else
-        //     {
-        //         DecisionTime -= Time.deltaTime;
-        //         return false;
-        //     }
-        // }
+        }       
     }
 }

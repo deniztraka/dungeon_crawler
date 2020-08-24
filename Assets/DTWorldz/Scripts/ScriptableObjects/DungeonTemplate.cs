@@ -26,5 +26,7 @@ namespace DTWorldz.ScriptableObjects
 
         public GameObject LadderUpPrefab;
 
+        public List<GameObject> SpawnerObjects;
+
     }
 }
