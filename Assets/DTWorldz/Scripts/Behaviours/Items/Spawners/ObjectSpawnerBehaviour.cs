@@ -9,6 +9,7 @@ using Random = System.Random;
 public class ObjectSpawnerBehaviour : MonoBehaviour
 {
     public List<GameObject> SpawnPrefabs;
+    public List<GameObject> BossPrefabs;
     public LevelBehaviour CurrentLevel;
     public int SpawnFrequency;
     public int MaxAliveCount;
@@ -21,6 +22,9 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     [SerializeField]
     private float spawnTime;
     private Random random;
+
+    public bool SpawnBoss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +33,8 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         aliveObjects = new List<GameObject>();
         random = new Random(DateTime.Now.Millisecond);
         spawnTime = 0;
-        
+
+        //Spawn at start
         for (int i = 0; i < MaxAliveCount; i++)
         {
             var spawnedObject = Spawn(SpawnPrefabs[random.Next(0, SpawnPrefabs.Count)]);
@@ -37,6 +42,12 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
             {
                 aliveObjects.Add(spawnedObject);
             }
+        }
+
+        //spawn boss
+        if (SpawnBoss && BossPrefabs != null && BossPrefabs.Count > 0)
+        {
+            Spawn(BossPrefabs[random.Next(0, BossPrefabs.Count)]);
         }
     }
 

@@ -67,6 +67,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 var obj = Instantiate(dungeonTemplate.TreasurePrefab, objectPosition, Quaternion.identity, EnvironmentParent);
                 smallestNode.Room.Objects.Add(obj);
 
+                var spawner = smallestNode.Room.GetSpawner();
+                spawner.SpawnBoss = true;
+
+
             }
         }
 
@@ -95,6 +99,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 spawnerBehaviour.CurrentLevel = this;
                 var aliveCount = (int)Math.Floor((decimal)(node.Room.GetSurcafeArea() / 10));
                 spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 2));
+                node.Room.SetSpawner(spawnerBehaviour);
             }
             else
             {

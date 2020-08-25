@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7559222450374734853}
   - component: {fileID: 7559222450374734858}
   - component: {fileID: 7559222450374734859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TestMobileSkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b48ffc694b7a74cbc0f39e6e02d039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  currentHealth: 0
+  MaxHealth: 20
 --- !u!95 &7559222450374734853
 Animator:
   serializedVersion: 3
@@ -158,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559222451528981158}
   - component: {fileID: 7559222451528981153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}

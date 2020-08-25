@@ -6,6 +6,7 @@ namespace DTWorldz.Behaviours
 {
     public class HealthBehaviour : MonoBehaviour
     {
+        [SerializeField]
         private float currentHealth;
 
         public float MaxHealth = 100;
@@ -27,6 +28,7 @@ namespace DTWorldz.Behaviours
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
+            //Debug.Log(gameObject.name + " took damage.");
             if (OnHealthChanged != null)
             {
                 OnHealthChanged(currentHealth, MaxHealth);
@@ -37,6 +39,7 @@ namespace DTWorldz.Behaviours
                 currentHealth = 0;
                 if (OnDeath != null)
                 {
+                    //Debug.Log(gameObject.name + " is dead.");
                     OnDeath(currentHealth, MaxHealth);
                 }
             }

@@ -25,12 +25,12 @@ namespace DTWorldz.Behaviours.Items.Deco
 
         private void HealthChanged(float currentHealth, float maxHealth)
         {
-            Debug.Log("health is changed");
+            //Debug.Log("health is changed");
         }
 
         private void OnDeath(float currentHealth, float maxHealth)
         {
-            Debug.Log("dead");
+            //Debug.Log("dead");
             Destroy(gameObject, 1);
         }
     }

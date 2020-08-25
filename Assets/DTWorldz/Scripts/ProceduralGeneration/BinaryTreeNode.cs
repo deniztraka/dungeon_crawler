@@ -17,12 +17,13 @@ namespace DTWorldz.ProceduralGeneration
         private List<Rect> corridors = new List<Rect>();
         private Random random;
 
+
         public BinaryTreeNode(Room room, Random random)
         {
             Room = room;
             this.random = random;
 
-        }
+        }       
 
         private void SetChildNodes(BinaryTreeNode node1, BinaryTreeNode node2)
         {

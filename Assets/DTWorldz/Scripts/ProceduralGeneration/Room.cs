@@ -6,14 +6,18 @@ namespace DTWorldz.ProceduralGeneration
 {
     public class Room
     {
+
+        private ObjectSpawnerBehaviour spawnerBehaviour;
         public Rect Rect { get; set; }
-        public Rect InnerRect { get; set; }  
+        public Rect InnerRect { get; set; }
         public List<GameObject> Objects;
-        public int MaxNumberOfObjects {
-            get{
+        public int MaxNumberOfObjects
+        {
+            get
+            {
                 return (int)Math.Ceiling(InnerRect.size.x * InnerRect.size.y / 10);
             }
-        }       
+        }
 
         public Room(Rect rect)
         {
@@ -24,6 +28,16 @@ namespace DTWorldz.ProceduralGeneration
         public int GetSurcafeArea()
         {
             return (int)Rect.size.x * (int)Rect.size.y;
+        }
+
+        public void SetSpawner(ObjectSpawnerBehaviour spawnerBehaviour)
+        {
+            this.spawnerBehaviour = spawnerBehaviour;
+        }
+
+        public ObjectSpawnerBehaviour GetSpawner()
+        {
+            return this.spawnerBehaviour;
         }
     }
 }

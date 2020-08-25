@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7674728969632660761}
   - component: {fileID: 6334232590123523519}
   m_Layer: 0
-  m_Name: TestSpawner
+  m_Name: HardSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,9 +47,15 @@ MonoBehaviour:
   SpawnPrefabs:
   - {fileID: 7559222450374734856, guid: 865c5291ff7685e4994c1dedfd99115c, type: 3}
   - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
+  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
   - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  BossPrefabs:
+  - {fileID: 7559222450374734856, guid: 59a432a969220374a8bbd651153b5f01, type: 3}
   CurrentLevel: {fileID: 0}
-  SpawnFrequency: 5
+  SpawnFrequency: 60
   MaxAliveCount: 2
   RangeX: 7
   RangeY: 6

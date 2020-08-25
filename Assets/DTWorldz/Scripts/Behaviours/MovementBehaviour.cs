@@ -118,10 +118,10 @@ namespace DTWorldz.Behaviours
         void Update()
         {
             CheckMovementPaths();
-            if (Input.GetMouseButtonDown(0))
-            {
-                SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
-            }
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
+            // }
         }
 
         private void CheckMovementPaths()
