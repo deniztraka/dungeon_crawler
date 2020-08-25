@@ -11,7 +11,7 @@ namespace DTWorldz.Editor.Gizmo
         static void DrawTrapGizmo(TrapBehaviour trap, GizmoType gizmoType)
         {
             Gizmos.color = Color.white;
-            Handles.Label(trap.transform.position, trap.State);
+            Handles.Label(trap.transform.position, "trap state:"+trap.State);
 
             Gizmos.color = trap.Color;
             Gizmos.DrawCube(trap.transform.position, new Vector3(1, 1, 0));

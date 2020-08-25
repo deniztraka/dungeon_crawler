@@ -6,7 +6,9 @@ namespace DTWorldz.Behaviours.Items.Deco
 {
     public class TrapBehaviour : MonoBehaviour
     {
+        public int RefreshTime;
         public Color Color;
+        public Sprite ReadySprite;
         public List<Sprite> AnimationSprites;    
         public float AnimationFrequency;     
         public LayerMask Layer;
