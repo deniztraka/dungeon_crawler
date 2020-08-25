@@ -11,7 +11,7 @@ namespace DTWorldz.Behaviours.Items.Deco
         public Sprite ReadySprite;
         public List<Sprite> AnimationSprites;    
         public float AnimationFrequency;     
-        public LayerMask Layer;
+        public LayerMask LayerMask;
         public float Damage;
         public string State;
         private Animator stateAnimator;
@@ -21,15 +21,9 @@ namespace DTWorldz.Behaviours.Items.Deco
             stateAnimator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.gameObject.layer == LayerMaskToLayer(Layer))
+            if (LayerMask == (LayerMask | (1 << collider.gameObject.layer)))            
             {
                 stateAnimator.SetTrigger("Damage");
                 var otherHealthBehaviour = collider.gameObject.GetComponent<HealthBehaviour>();
@@ -38,15 +32,5 @@ namespace DTWorldz.Behaviours.Items.Deco
                 }
             }
         }
-
-        private int LayerMaskToLayer(LayerMask layerMask) {
-         int layerNumber = 0;
-         int layer = layerMask.value;
-         while(layer > 0) {
-             layer = layer >> 1;
-             layerNumber++;
-         }
-         return layerNumber - 1;
-     }
     }
 }
