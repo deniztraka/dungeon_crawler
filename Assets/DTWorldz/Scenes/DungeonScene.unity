@@ -27209,7 +27209,7 @@ MonoBehaviour:
   AnimationFrequency: 0.1
   Layer:
     serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 4096
   Damage: 10
   State: 
 --- !u!95 &851180177
