@@ -10,6 +10,7 @@ namespace DTWorldz.Behaviours.AI.States.Traps
         protected TrapBehaviour TrapBehaviour;
         protected Collider2D Collider;
         protected SpriteRenderer SpriteRenderer;
+        protected Sprite IdleSprite;
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
@@ -26,6 +27,7 @@ namespace DTWorldz.Behaviours.AI.States.Traps
             if (SpriteRenderer == null)
             {
                 SpriteRenderer = animator.gameObject.GetComponent<SpriteRenderer>();
+                IdleSprite = SpriteRenderer.sprite;
             }
 
             TrapBehaviour.State = StateName;

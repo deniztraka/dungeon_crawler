@@ -12,7 +12,7 @@ namespace DTWorldz.Behaviours.AI.States.Traps
             base.OnStateEnter(animator, stateInfo, layerIndex);
             if (SpriteRenderer != null)
             {
-                SpriteRenderer.sprite = null;
+                SpriteRenderer.sprite = IdleSprite != null ? IdleSprite : null;
             }
 
             if (Collider != null)

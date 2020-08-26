@@ -29,6 +29,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private GameObject ladderDown;
         private GameObject exit;
 
+        internal void SetRandom(System.Random random)
+        {
+            this.random = random;
+        }
+
         internal void SetLevelNumber(int levelNumber)
         {
             this.levelNumber = levelNumber;
@@ -63,7 +68,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             if (dungeonTemplate.RoomTemplate.Treasures.Length > 0)
             {
                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)smallestNode.Room.InnerRect.center.x, (int)smallestNode.Room.InnerRect.center.y, 0));
-                //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
                 var obj = Instantiate(dungeonTemplate.TreasurePrefab, objectPosition, Quaternion.identity, EnvironmentParent);
                 smallestNode.Room.Objects.Add(obj);
 
@@ -71,6 +75,78 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 spawner.SpawnBoss = true;
 
 
+            }
+        }
+
+        internal void GenerateTraps(DungeonTemplate dungeonTemplate)
+        {
+            GenerateTrap(tree.Root, dungeonTemplate);
+        }
+
+        private void GenerateTrap(BinaryTreeNode node, DungeonTemplate dungeonTemplate)
+        {
+            // Fail if the node was null
+            if (node == null)
+            {
+                return;
+            }
+
+            // Iterate if the room is a leaf, otherwise recurse
+            if (node.LeftNode == null && node.RightNode == null)
+            {
+                var room = node.Room;
+                for (int x = (int)room.InnerRect.xMin; x < (int)room.InnerRect.xMax; x++)
+                {
+                    for (int y = (int)room.InnerRect.yMin; y < (int)room.InnerRect.yMax; y++)
+                    {
+                        //floor tiles
+                        if (dungeonTemplate.RoomTemplate.TrapTemplate.FloorTrapPrefabs != null && dungeonTemplate.RoomTemplate.TrapTemplate.FloorTrapPrefabs.Count > 0 && dungeonTemplate.RoomTemplate.TrapChance > random.NextDouble())
+                        {
+                            if (y != (int)room.InnerRect.yMax - 1 && y != (int)room.InnerRect.yMin && x != (int)room.InnerRect.xMax - 1 && x != (int)room.InnerRect.xMin)
+                            {
+                                var chosenTrapPrefab = dungeonTemplate.RoomTemplate.TrapTemplate.FloorTrapPrefabs[random.Next(0, dungeonTemplate.RoomTemplate.TrapTemplate.FloorTrapPrefabs.Count)];
+                                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                var instantiatedTrapObject = Instantiate(chosenTrapPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
+                            }
+                        }
+
+                        //top wall
+                        if (dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs != null && dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs.Count > 0 && dungeonTemplate.RoomTemplate.TrapChance > random.NextDouble())
+                        {
+                            if (y == room.InnerRect.yMax - 1 && WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null)
+                            {                                
+                                var chosenTrapPrefab = dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs[random.Next(0, dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs.Count)];
+                                var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                var instantiatedTrapObject = Instantiate(chosenTrapPrefab, new Vector3(objectPosition.x, objectPosition.y, 0), Quaternion.identity, EnvironmentParent);
+                            }
+                        }
+
+                        //right wall
+                        if (dungeonTemplate.RoomTemplate.TrapTemplate.RightWallTrapPrefabs != null && dungeonTemplate.RoomTemplate.TrapTemplate.RightWallTrapPrefabs.Count > 0 && dungeonTemplate.RoomTemplate.TrapChance > random.NextDouble())
+                        {
+                            if (x == room.InnerRect.xMax - 1 && WallMap.GetTile(new Vector3Int(x + 1, y, 0)) != null)
+                            {
+                                //var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                //positions.Right.Add(new Vector3(objectPosition.x + 0.6f, objectPosition.y, objectPosition.z));
+                            }
+                        }
+
+                        //left wall
+                        if (dungeonTemplate.RoomTemplate.TrapTemplate.LeftWallTrapPrefabs != null && dungeonTemplate.RoomTemplate.TrapTemplate.LeftWallTrapPrefabs.Count > 0 && dungeonTemplate.RoomTemplate.TrapChance > random.NextDouble())
+                        {
+                            if (x == room.InnerRect.xMin && WallMap.GetTile(new Vector3Int(x - 1, y, 0)) != null)
+                            {
+                                //var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
+                                //positions.Left.Add(new Vector3(objectPosition.x - 0.6f, objectPosition.y, objectPosition.z));
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                GenerateTrap(node.LeftNode, dungeonTemplate);
+                GenerateTrap(node.RightNode, dungeonTemplate);
             }
         }
 
@@ -91,7 +167,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             if (node.LeftNode == null && node.RightNode == null)
             {
                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int((int)node.Room.InnerRect.center.x, (int)node.Room.InnerRect.center.y, 0));
-                //var obj = Instantiate(dungeonTemplate.RoomTemplate.Treasures[random.Next(0, dungeonTemplate.RoomTemplate.Treasures.Length)], objectPosition, Quaternion.identity, EnvironmentParent);
                 var spawner = Instantiate(correspondingSpawnerPrefab, objectPosition, Quaternion.identity, EnvironmentParent);
                 var spawnerBehaviour = spawner.GetComponent<ObjectSpawnerBehaviour>();
                 spawnerBehaviour.RangeY = node.Room.InnerRect.height - 1;
