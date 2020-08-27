@@ -74,8 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5859045247806993216, guid: c2af4bb3854969d4cb2f76aacb65cd71,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,9 +82,9 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &146534676883139450
 Animator:
   serializedVersion: 3
@@ -121,8 +120,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.14814815}
+    oldSize: {x: 1, y: 3.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -145,17 +144,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RefreshTime: 3
   Color: {r: 0.11006868, g: 1, b: 0, a: 0.05490196}
-  ReadySprite: {fileID: -3777550615242853001, guid: c2af4bb3854969d4cb2f76aacb65cd71,
+  ReadySprite: {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8,
     type: 3}
   AnimationSprites:
-  - {fileID: 2756286812782624283, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: -6089016867799133897, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: -8506978508464598130, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: -2653487790013752591, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: -8506978508464598130, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: -6089016867799133897, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  - {fileID: 2756286812782624283, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
-  AnimationFrequency: 0.1
+  - {fileID: -7492585446141206388, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 1866968179409091297, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 8031945405137517567, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -7640437111875786089, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 1217041677071922473, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -7833611848955264965, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 1004403559647719590, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 1933423011868860120, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -144606374002424472, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -8551023551429159290, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 8970236989548119331, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -2753494002488094471, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -4507226987005501047, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 5306403417228843367, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 7111000320741671305, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 5978108133011045339, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -3290602394541962888, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 4645782217084747470, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -6702515425551352486, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 8473427316359121597, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 6101702889096881370, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -7885450208394010341, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: -9044577269153366928, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  - {fileID: 7215411902843132041, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
+  AnimationFrequency: 0.05
   LayerMask:
     serializedVersion: 2
     m_Bits: 4608
