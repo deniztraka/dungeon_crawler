@@ -23,7 +23,7 @@ namespace DTWorldz.ProceduralGeneration
             Room = room;
             this.random = random;
 
-        }       
+        }
 
         private void SetChildNodes(BinaryTreeNode node1, BinaryTreeNode node2)
         {
@@ -126,7 +126,7 @@ namespace DTWorldz.ProceduralGeneration
 
                 Room.InnerRect = new Rect(Room.Rect.x + roomX, Room.Rect.y + roomY, roomWidth, roomHeight);
             }
-        }
+        }        
 
         private void CreateCorridorBetweenChilds()
         {

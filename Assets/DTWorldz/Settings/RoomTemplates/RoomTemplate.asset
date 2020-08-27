@@ -15,6 +15,7 @@ MonoBehaviour:
   DecorationChance: 0.2
   ObjectsChance: 0.05
   ContainerChance: 0.1
+  TrapChance: 0.05
   FloorDecorations:
   - {fileID: 11400000, guid: ca3d4f0163df2fa47a9387c6d786ffea, type: 2}
   UpperWallDecorations:
@@ -51,6 +52,7 @@ MonoBehaviour:
   - {fileID: 3690855269219818583, guid: b0e95033eb9a0e04abb8f9bcc3f910a5, type: 3}
   Treasures:
   - {fileID: 4663308623770685161, guid: 6a853f62f022d094580c2fa496448691, type: 3}
+  TrapTemplate: {fileID: 11400000, guid: 393697ada4db5044d9ed06cae60ad4ea, type: 2}
   TopLight: {fileID: 4974044864229606424, guid: 16d8ced6bcb512c419fe8d92680070ca,
     type: 3}
   BottomLight: {fileID: 7450360844087733834, guid: ff63c23db58a51f41b60ee1612bdce4d,

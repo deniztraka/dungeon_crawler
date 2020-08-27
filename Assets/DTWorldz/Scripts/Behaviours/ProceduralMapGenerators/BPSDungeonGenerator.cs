@@ -51,6 +51,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
             for (int i = 0; i < levels.Count; i++)
             {
+                BuildTraps(i);
+            }
+
+            for (int i = 0; i < levels.Count; i++)
+            {
                 BuildLevelTransitions(i);
             }
 
@@ -59,7 +64,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 BuildTeleporters(i);
             }
 
-            BuildSpawners();
+            for (int i = 0; i < levels.Count; i++)
+            {
+                BuildSpawners(i);
+            }
 
             //move player into biggest room in first level
             levels[0].MovePlayer(player);
@@ -71,15 +79,17 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             Debug.Log("Dungeon is created with seed:" + seed.ToString());
         }
 
-        private void BuildSpawners()
+        private void BuildTraps(int levelIndex)
         {
-            for (int i = 0; i < levels.Count; i++)
+            levels[levelIndex].GenerateTraps(DungeonTemplate);
+        }
+
+        private void BuildSpawners(int levelIndex)
+        {
+            var correspondingSpawner = DungeonTemplate.SpawnerObjects[levelIndex];
+            if (correspondingSpawner != null)
             {
-                var correspondingSpawner = DungeonTemplate.SpawnerObjects[i];
-                if (correspondingSpawner != null)
-                {
-                    levels[i].GenerateSpawners(correspondingSpawner);
-                }
+                levels[levelIndex].GenerateSpawners(correspondingSpawner);
             }
         }
 
@@ -119,6 +129,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             roomTree.Add(new Room(new Rect(0, 0, (float)width, (float)width)));
             recurseBSP(roomTree.Root);
             roomTree.Root.CreateRooms();
+            levelBehaviour.SetRandom(random);
             levelBehaviour.SetLevelNumber(levelNumber);
             levelBehaviour.SetTree(roomTree);
 
