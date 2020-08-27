@@ -32,6 +32,8 @@ namespace DTWorldz.Behaviours
         private AttackBehaviour attackBehaviour;
         public List<Animator> AnimationSlots;
 
+        public Joystick Joystick;
+
         // Start is called before the first frame update
         void Start()
         {            
@@ -45,59 +47,67 @@ namespace DTWorldz.Behaviours
         void Update()
         {
             HandleInput();
-            CheckMovementPaths();
+            //CheckMovementPaths();
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
             attackingTrigger = false;
 
-            if (wallMap != null && Input.GetMouseButtonDown(0))
-            {
-                paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                if (paths != null && paths.Count > 1)
-                {
-                    paths.RemoveAt(0);
-                    movement = (paths[0] - transform.position).normalized;
-                    // Debug.Log(paths.Count);
-                    // Debug.Log((paths[1] - transform.position).normalized);
-                }
-            }
+            // if (wallMap != null && Input.GetMouseButtonDown(0))
+            // {
+            //     paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //     if (paths != null && paths.Count > 1)
+            //     {
+            //         paths.RemoveAt(0);
+            //         movement = (paths[0] - transform.position).normalized;
+            //         // Debug.Log(paths.Count);
+            //         // Debug.Log((paths[1] - transform.position).normalized);
+            //     }
+            // }
         }
 
-        private void CheckMovementPaths()
-        {
-            if (ClickAndGoEnabled)
-            {
-                if (paths != null && paths.Count > 0)
-                {
-                    var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
-                    for (int i = 0; i < colliders.Length; i++)
-                    {
-                        if (colliders[i].gameObject == gameObject)
-                        {
-                            paths.RemoveAt(0);
-                            if (paths.Count > 0)
-                            {
-                                movement = (paths[0] - transform.position).normalized;
-                            }
-                            else
-                            {
-                                movement = Vector2.zero;
-                            }
-                            break;
-                        }
-                    }
-                }
+        // private void CheckMovementPaths()
+        // {
+        //     if (ClickAndGoEnabled)
+        //     {
+        //         if (paths != null && paths.Count > 0)
+        //         {
+        //             var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
+        //             for (int i = 0; i < colliders.Length; i++)
+        //             {
+        //                 if (colliders[i].gameObject == gameObject)
+        //                 {
+        //                     paths.RemoveAt(0);
+        //                     if (paths.Count > 0)
+        //                     {
+        //                         movement = (paths[0] - transform.position).normalized;
+        //                     }
+        //                     else
+        //                     {
+        //                         movement = Vector2.zero;
+        //                     }
+        //                     break;
+        //                 }
+        //             }
+        //         }
 
 
 
-            }
-        }
+        //     }
+        // }
 
         private void HandleInput()
         {
-            if (!ClickAndGoEnabled)
-            {
+            // if (!ClickAndGoEnabled)
+            // {
+                // movement.x = Input.GetAxisRaw("Horizontal");
+                // movement.y = Input.GetAxisRaw("Vertical");
+            // }
+
+            if(Joystick != null){
+                movement.x = Joystick.Direction.x;
+                movement.y = Joystick.Direction.y;
+            } else {
                 movement.x = Input.GetAxisRaw("Horizontal");
                 movement.y = Input.GetAxisRaw("Vertical");
             }

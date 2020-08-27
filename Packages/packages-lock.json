@@ -10,7 +10,7 @@
       "hash": "40d84cc071d0150cba7951ed024150a0a9e62534"
     },
     "com.unity.2d.common": {
-      "version": "3.0.0",
+      "version": "3.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
