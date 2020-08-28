@@ -15,11 +15,11 @@ public class BPSDungeonGeneratorEditor : Editor
         EditorGUILayout.HelpBox("Dungen Generation", MessageType.Info);
         EditorGUILayout.BeginHorizontal();
         if(GUILayout.Button("Build")){
-            generator.BuildMap();
+            generator.BuildDungeon();
         }
 
         if(GUILayout.Button("Clear")){
-            generator.ClearMap();
+            generator.ClearDungeon();
         }
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndVertical();
