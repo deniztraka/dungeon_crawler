@@ -108,7 +108,7 @@ namespace DTWorldz.Behaviours
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
                 movement.y = Input.GetAxisRaw("Vertical");
-            }
+            }            
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
