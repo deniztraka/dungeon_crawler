@@ -95,6 +95,19 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public void ClearMap()
         {
+            var spawners = GameObject.FindGameObjectsWithTag("Spawner");
+            for (int i = spawners.Length - 1; i >= 0; i--)
+            {
+                var spawner = spawners[i].GetComponent<ObjectSpawnerBehaviour>();
+                var aliveObjects = spawner.GetAliveObjects();
+                for (int j = aliveObjects.Count - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(aliveObjects[j].gameObject);
+                }
+
+                DestroyImmediate(spawners[i].gameObject);
+            }
+
             int childsCount = Dungeon.transform.childCount;
             for (int i = childsCount - 1; i >= 0; i--)
             {

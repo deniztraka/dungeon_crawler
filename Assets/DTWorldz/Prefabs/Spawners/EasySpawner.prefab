@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6334232590123523519}
   m_Layer: 0
   m_Name: EasySpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
   - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
   - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  BossPrefabs: []
   CurrentLevel: {fileID: 0}
   SpawnFrequency: 5
   MaxAliveCount: 2
@@ -60,6 +61,7 @@ MonoBehaviour:
   Color: {r: 0.4245283, g: 0, b: 0, a: 0.12941177}
   aliveObjects: []
   spawnTime: 0
+  SpawnBoss: 0
 --- !u!212 &6334232590123523519
 SpriteRenderer:
   m_ObjectHideFlags: 0

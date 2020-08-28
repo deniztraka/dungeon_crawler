@@ -51,7 +51,10 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    public List<GameObject> GetAliveObjects()
+    {
+        return aliveObjects;
+    }
     void Update()
     {
         if (SpawnPrefabs != null && SpawnPrefabs.Count > 0 && spawnTime <= 0)
