@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours
             this.direction = direction;
         }
 
-        internal void Attack()
+        public void Attack()
         {
             var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
             foreach (var collider in colliders)

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5328125669103109271}
   - component: {fileID: 5328125669103109268}
   - component: {fileID: 5328125669103109267}
+  - component: {fileID: 1793401368}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -163,8 +164,24 @@ MonoBehaviour:
   RunningSpeed: 2
   ClickAndGoEnabled: 0
   direction: 0
-  attackingFrequency: 0.5
+  attackingFrequency: 1
+  attackTime: 0
   AnimationSlots: []
+  Joystick: {fileID: 0}
+--- !u!114 &1793401368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b48ffc694b7a74cbc0f39e6e02d039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  MaxHealth: 100
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 72
-  m_RefResolutionX: 640
-  m_RefResolutionY: 360
+  m_RefResolutionX: 800
+  m_RefResolutionY: 480
   m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0

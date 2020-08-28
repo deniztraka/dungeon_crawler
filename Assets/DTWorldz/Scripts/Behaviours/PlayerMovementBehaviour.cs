@@ -25,6 +25,7 @@ namespace DTWorldz.Behaviours
         private bool attackingTrigger = false;
         [SerializeField]
         private float attackingFrequency = 0.5f;
+        [SerializeField]
         private float attackTime = 0;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
@@ -36,7 +37,7 @@ namespace DTWorldz.Behaviours
 
         // Start is called before the first frame update
         void Start()
-        {            
+        {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
@@ -98,16 +99,13 @@ namespace DTWorldz.Behaviours
 
         private void HandleInput()
         {
-            // if (!ClickAndGoEnabled)
-            // {
-                // movement.x = Input.GetAxisRaw("Horizontal");
-                // movement.y = Input.GetAxisRaw("Vertical");
-            // }
-
-            if(Joystick != null){
+            if (Joystick != null)
+            {
                 movement.x = Joystick.Direction.x;
                 movement.y = Joystick.Direction.y;
-            } else {
+            }
+            else
+            {
                 movement.x = Input.GetAxisRaw("Horizontal");
                 movement.y = Input.GetAxisRaw("Vertical");
             }
@@ -121,25 +119,28 @@ namespace DTWorldz.Behaviours
                 isRunning = true;
             }
 
-            if (attackTime <= 0)
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                if (Input.GetKeyUp(KeyCode.Space))
-                {
-                    attackingTrigger = true;
-                    Attack();
-                    attackTime = attackingFrequency;
-                }
+                Attack();
+            }
 
-            }
-            else
-            {
-                attackTime -= Time.deltaTime;
-            }
+            attackTime -= Time.deltaTime;
+            attackTime = attackTime <= 0 ? 0 : attackTime;
         }
 
-        private void Attack()
+        private void TriggerAttack()
         {
             attackBehaviour.Attack();
+            attackTime = attackingFrequency;
+        }
+
+        public void Attack()
+        {
+            if (attackTime <= 0)
+            {
+                TriggerAttack();
+                attackingTrigger = true;
+            }
         }
 
         private float GetAngle()
@@ -196,7 +197,7 @@ namespace DTWorldz.Behaviours
                         direction = Direction.Up;
                     }
                 }
-            }            
+            }
         }
 
         private void HandleAnimations()
@@ -212,7 +213,7 @@ namespace DTWorldz.Behaviours
                 }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
 
-                SetDirection(movement.x, movement.y);                
+                SetDirection(movement.x, movement.y);
             }
             else
             {
@@ -227,7 +228,8 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public void SetMovementGrid(Tilemap wallMap){
+        public void SetMovementGrid(Tilemap wallMap)
+        {
             this.wallMap = wallMap;
         }
 
