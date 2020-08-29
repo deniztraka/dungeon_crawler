@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6334232590123523519}
   m_Layer: 0
   m_Name: NormalSpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +62,7 @@ MonoBehaviour:
   Color: {r: 0.4245283, g: 0, b: 0, a: 0.12941177}
   aliveObjects: []
   spawnTime: 0
+  SpawnBoss: 0
 --- !u!212 &6334232590123523519
 SpriteRenderer:
   m_ObjectHideFlags: 0

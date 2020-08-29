@@ -26,11 +26,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         private Random random;
         private List<LevelBehaviour> levels;
 
-        public void BuildMap()
+        public void BuildDungeon()
         {
             if (Dungeon.transform.childCount > 0)
             {
-                ClearMap();
+                ClearDungeon();
             }
 
             if (levels == null)
@@ -93,14 +93,29 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             }
         }
 
-        public void ClearMap()
+        public void ClearDungeon()
         {
+            ClearMobiles();
             int childsCount = Dungeon.transform.childCount;
             for (int i = childsCount - 1; i >= 0; i--)
             {
                 DestroyImmediate(Dungeon.transform.GetChild(i).gameObject);
             }
             levels = new List<LevelBehaviour>();
+        }
+
+        public void ClearMobiles()
+        {
+            var spawners = GameObject.FindGameObjectsWithTag("Spawner");
+            for (int i = spawners.Length - 1; i >= 0; i--)
+            {
+                var spawner = spawners[i].GetComponent<ObjectSpawnerBehaviour>();
+                var aliveObjects = spawner.GetAliveObjects();
+                for (int j = aliveObjects.Count - 1; j >= 0; j--)
+                {
+                    DestroyImmediate(aliveObjects[j].gameObject);
+                }
+            }
         }
 
         private void BuildLevel(int levelNumber)
@@ -284,7 +299,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         void Start()
         {
-            //BuildMap();
+            if (Dungeon.transform.childCount == 0)
+            {
+                BuildDungeon();
+            }
         }
 
         private void BuildDecorations(BinaryTreeNode node, LevelBehaviour levelBehaviour)
@@ -433,9 +451,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         levelBehaviour.WallMap.SetTile(new Vector3Int(x, y, 0), null);
                     }
                 }
-
-
-
             }
             else
             {

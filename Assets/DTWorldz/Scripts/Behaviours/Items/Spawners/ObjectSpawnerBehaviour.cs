@@ -47,11 +47,18 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         //spawn boss
         if (SpawnBoss && BossPrefabs != null && BossPrefabs.Count > 0)
         {
-            Spawn(BossPrefabs[random.Next(0, BossPrefabs.Count)]);
+            var spawnedObject = Spawn(BossPrefabs[random.Next(0, BossPrefabs.Count)]);
+            if (spawnedObject != null)
+            {
+                aliveObjects.Add(spawnedObject);
+            }
         }
     }
 
-    // Update is called once per frame
+    public List<GameObject> GetAliveObjects()
+    {
+        return aliveObjects;
+    }
     void Update()
     {
         if (SpawnPrefabs != null && SpawnPrefabs.Count > 0 && spawnTime <= 0)

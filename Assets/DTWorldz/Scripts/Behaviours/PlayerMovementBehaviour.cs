@@ -25,6 +25,7 @@ namespace DTWorldz.Behaviours
         private bool attackingTrigger = false;
         [SerializeField]
         private float attackingFrequency = 0.5f;
+        [SerializeField]
         private float attackTime = 0;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
@@ -32,9 +33,11 @@ namespace DTWorldz.Behaviours
         private AttackBehaviour attackBehaviour;
         public List<Animator> AnimationSlots;
 
+        public Joystick Joystick;
+
         // Start is called before the first frame update
         void Start()
-        {            
+        {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
@@ -45,91 +48,59 @@ namespace DTWorldz.Behaviours
         void Update()
         {
             HandleInput();
-            CheckMovementPaths();
+            //CheckMovementPaths();
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
-            attackingTrigger = false;
-
-            if (wallMap != null && Input.GetMouseButtonDown(0))
-            {
-                paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                if (paths != null && paths.Count > 1)
-                {
-                    paths.RemoveAt(0);
-                    movement = (paths[0] - transform.position).normalized;
-                    // Debug.Log(paths.Count);
-                    // Debug.Log((paths[1] - transform.position).normalized);
-                }
-            }
-        }
-
-        private void CheckMovementPaths()
-        {
-            if (ClickAndGoEnabled)
-            {
-                if (paths != null && paths.Count > 0)
-                {
-                    var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
-                    for (int i = 0; i < colliders.Length; i++)
-                    {
-                        if (colliders[i].gameObject == gameObject)
-                        {
-                            paths.RemoveAt(0);
-                            if (paths.Count > 0)
-                            {
-                                movement = (paths[0] - transform.position).normalized;
-                            }
-                            else
-                            {
-                                movement = Vector2.zero;
-                            }
-                            break;
-                        }
-                    }
-                }
-
-
-
-            }
+            attackingTrigger = false;           
         }
 
         private void HandleInput()
         {
-            if (!ClickAndGoEnabled)
+            if (Joystick != null)
             {
-                movement.x = Input.GetAxisRaw("Horizontal");
-                movement.y = Input.GetAxisRaw("Vertical");
-            }
-
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                isRunning = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                isRunning = true;
-            }
-
-            if (attackTime <= 0)
-            {
-                if (Input.GetKeyUp(KeyCode.Space))
-                {
-                    attackingTrigger = true;
-                    Attack();
-                    attackTime = attackingFrequency;
-                }
-
+                movement.x = Joystick.Direction.x;
+                movement.y = Joystick.Direction.y;
             }
             else
             {
-                attackTime -= Time.deltaTime;
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
+            }            
+
+            // if (Input.GetKeyUp(KeyCode.LeftShift))
+            // {
+            //     isRunning = false;
+            // }
+            // else if (Input.GetKeyDown(KeyCode.LeftShift))
+            // {
+            //     isRunning = true;
+            // }
+
+            isRunning = Joystick.IsAtAtMax;
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                Attack();
             }
+
+            attackTime -= Time.deltaTime;
+            attackTime = attackTime <= 0 ? 0 : attackTime;
         }
 
-        private void Attack()
+        private void TriggerAttack()
         {
             attackBehaviour.Attack();
+            attackTime = attackingFrequency;
+        }
+
+        public void Attack()
+        {
+            if (attackTime <= 0)
+            {
+                TriggerAttack();
+                attackingTrigger = true;
+            }
         }
 
         private float GetAngle()
@@ -186,7 +157,7 @@ namespace DTWorldz.Behaviours
                         direction = Direction.Up;
                     }
                 }
-            }            
+            }
         }
 
         private void HandleAnimations()
@@ -202,7 +173,7 @@ namespace DTWorldz.Behaviours
                 }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
 
-                SetDirection(movement.x, movement.y);                
+                SetDirection(movement.x, movement.y);
             }
             else
             {
@@ -217,7 +188,8 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public void SetMovementGrid(Tilemap wallMap){
+        public void SetMovementGrid(Tilemap wallMap)
+        {
             this.wallMap = wallMap;
         }
 
