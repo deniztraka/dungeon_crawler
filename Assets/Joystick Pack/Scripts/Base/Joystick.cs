@@ -21,6 +21,13 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         set { deadZone = Mathf.Abs(value); }
     }
 
+    private bool isAtAtMax;
+    public bool IsAtAtMax
+    {
+        get { return isAtAtMax; }
+        set { isAtAtMax = value; }
+    }
+
     public AxisOptions AxisOptions { get { return AxisOptions; } set { axisOptions = value; } }
     public bool SnapX { get { return snapX; } set { snapX = value; } }
     public bool SnapY { get { return snapY; } set { snapY = value; } }
@@ -55,6 +62,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        isAtAtMax = false;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)
@@ -74,6 +82,10 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         FormatInput();
         HandleInput(input.magnitude, input.normalized, radius, cam);
         handle.anchoredPosition = input * radius * handleRange;
+
+        var handlePosition = RectTransformUtility.WorldToScreenPoint(cam, handle.position);        
+        //works for only same x,y size
+        isAtAtMax = Vector2.Distance(handlePosition, position) >= radius.x;
     }
 
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)

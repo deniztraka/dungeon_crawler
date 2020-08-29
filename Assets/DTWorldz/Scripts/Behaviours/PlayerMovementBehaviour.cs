@@ -52,50 +52,8 @@ namespace DTWorldz.Behaviours
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
-            attackingTrigger = false;
-
-            // if (wallMap != null && Input.GetMouseButtonDown(0))
-            // {
-            //     paths = AStar.FindPath(wallMap, transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            //     if (paths != null && paths.Count > 1)
-            //     {
-            //         paths.RemoveAt(0);
-            //         movement = (paths[0] - transform.position).normalized;
-            //         // Debug.Log(paths.Count);
-            //         // Debug.Log((paths[1] - transform.position).normalized);
-            //     }
-            // }
+            attackingTrigger = false;           
         }
-
-        // private void CheckMovementPaths()
-        // {
-        //     if (ClickAndGoEnabled)
-        //     {
-        //         if (paths != null && paths.Count > 0)
-        //         {
-        //             var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
-        //             for (int i = 0; i < colliders.Length; i++)
-        //             {
-        //                 if (colliders[i].gameObject == gameObject)
-        //                 {
-        //                     paths.RemoveAt(0);
-        //                     if (paths.Count > 0)
-        //                     {
-        //                         movement = (paths[0] - transform.position).normalized;
-        //                     }
-        //                     else
-        //                     {
-        //                         movement = Vector2.zero;
-        //                     }
-        //                     break;
-        //                 }
-        //             }
-        //         }
-
-
-
-        //     }
-        // }
 
         private void HandleInput()
         {
@@ -110,14 +68,16 @@ namespace DTWorldz.Behaviours
                 movement.y = Input.GetAxisRaw("Vertical");
             }            
 
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                isRunning = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                isRunning = true;
-            }
+            // if (Input.GetKeyUp(KeyCode.LeftShift))
+            // {
+            //     isRunning = false;
+            // }
+            // else if (Input.GetKeyDown(KeyCode.LeftShift))
+            // {
+            //     isRunning = true;
+            // }
+
+            isRunning = Joystick.IsAtAtMax;
 
             if (Input.GetKeyUp(KeyCode.Space))
             {

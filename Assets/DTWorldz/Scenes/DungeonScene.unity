@@ -306,6 +306,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5328125669872118437, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: m_AssetsPPU
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328125669872118437, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: m_RefResolutionX
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328125669872118437, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: m_RefResolutionY
+      value: 720
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
 --- !u!1 &450200911
@@ -369,7 +384,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -761,6 +776,11 @@ PrefabInstance:
       propertyPath: snapY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18,
+        type: 3}
+      propertyPath: deadZone
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,12 +849,12 @@ PrefabInstance:
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 260
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
@@ -946,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
@@ -961,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 8170153792821263258, guid: 0d230cc8be529a542a08cb878ab14b18,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 125
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
@@ -1540,7 +1560,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1420357544}
         m_TargetAssemblyTypeName: DTWorldz.Behaviours.ProceduralMapGenerators.BPSDungeonGenerator,
           Assembly-CSharp
-        m_MethodName: BuildMap
+        m_MethodName: BuildDungeon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
