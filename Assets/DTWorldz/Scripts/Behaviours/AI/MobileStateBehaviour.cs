@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.AI.States;
+using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.AI

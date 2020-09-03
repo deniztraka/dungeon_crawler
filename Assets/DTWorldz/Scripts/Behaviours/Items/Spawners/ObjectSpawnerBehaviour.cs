@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours;
+using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.ProceduralMapGenerators;
 using UnityEngine;
 using Random = System.Random;

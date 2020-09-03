@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 5328125669872118437, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_AssetsPPU
-      value: 128
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 5328125669872118437, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
@@ -320,6 +320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RefResolutionY
       value: 720
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328125669872118438, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: orthographic size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}

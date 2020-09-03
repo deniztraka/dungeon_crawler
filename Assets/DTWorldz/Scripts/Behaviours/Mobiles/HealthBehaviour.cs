@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DTWorldz.Behaviours
+namespace DTWorldz.Behaviours.Mobiles
 {
     public class HealthBehaviour : MonoBehaviour
     {

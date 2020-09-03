@@ -6,7 +6,7 @@ using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace DTWorldz.Behaviours
+namespace DTWorldz.Behaviours.Mobiles
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class MovementBehaviour : MonoBehaviour
