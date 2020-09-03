@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorlds.Behaviours.Effects;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.Mobiles
@@ -10,6 +11,7 @@ namespace DTWorldz.Behaviours.Mobiles
         private float currentHealth;
 
         public float MaxHealth = 100;
+        public BodyType BodyType;
 
         public float CurrentHealth
         {
@@ -28,9 +30,22 @@ namespace DTWorldz.Behaviours.Mobiles
             currentHealth = MaxHealth;
         }
 
+
+        IEnumerator CreateBloodStainsAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            BloodStainsPool.Instance.Create(transform.position);
+        }
+
         public void TakeDamage(float damage, DamageType type)
         {
             currentHealth -= damage;
+
+            if (BodyType == BodyType.Flesh && type == DamageType.Physical)
+            {
+                StartCoroutine(CreateBloodStainsAfterSeconds(0.5f));
+            }
+
             if (OnDamageTaken != null)
             {
                 OnDamageTaken(damage, type);

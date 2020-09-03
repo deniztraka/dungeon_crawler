@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1638070613172111848
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.333193
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.472748
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.929472
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758143648899403674, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164138700915624813, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_Name
+      value: BloodStain
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622278203124085891, guid: 8d3a2920accd83c4795e70ed3d7940ba,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4417029592071856075, guid: 8b3257475b69c5e43b855cbe29974d1e,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d3a2920accd83c4795e70ed3d7940ba, type: 3}

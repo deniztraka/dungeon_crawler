@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   MaxHealth: 20
+  BodyType: 2
 --- !u!114 &5112134002440256462
 MonoBehaviour:
   m_ObjectHideFlags: 0

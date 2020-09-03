@@ -29,11 +29,11 @@ namespace DTWorldz.Behaviours.Utils
 
         protected virtual void OnDamageTaken(float damageAmount, DamageType type)
         {
-            if (damageTakenEffect != null && !damageTakenEffect.isPlaying)
+            if (type == DamageType.Physical && damageTakenEffect != null && !damageTakenEffect.isPlaying)
             {
                 damageTakenEffect.Play();
             }
-            Debug.Log(gameObject.name + " is taken " + damageAmount + " " + type.ToString() + " damage.");
+            //Debug.Log(gameObject.name + " is taken " + damageAmount + " " + type.ToString() + " damage.");
         }
     }
 }
