@@ -46,18 +46,34 @@ namespace DTWorldz.Behaviours
             this.direction = direction;
         }
 
-        public void Attack()
+        IEnumerator LateAttack(float delay)
         {
+            yield return new WaitForSeconds(delay);
             var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
-            foreach (var collider in colliders)
+            if (colliders != null && colliders.Length > 0)
             {
-                var healthBehaviour = collider.gameObject.GetComponent<HealthBehaviour>();
+                var firstCollider = colliders[0];
+                var healthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
                 if (healthBehaviour != null)
                 {
-                    healthBehaviour.TakeDamage(5);
+                    healthBehaviour.TakeDamage(5, DamageType.Physical);
                 }
             }
+
+            // foreach (var collider in colliders)
+            // {
+            //     var healthBehaviour = collider.gameObject.GetComponent<HealthBehaviour>();
+            //     if (healthBehaviour != null)
+            //     {
+            //         healthBehaviour.TakeDamage(5, DamageType.Physical);
+            //     }
+            // }
+        }
+
+        public void Attack()
+        {
+            StartCoroutine(LateAttack(0.5f));
+
         }
     }
-
 }

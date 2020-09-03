@@ -18,17 +18,24 @@ namespace DTWorldz.Behaviours.Mobiles
         }
 
         public delegate void HealthChanged(float currentHealth, float maxHealth);
+        public delegate void DamageTaken(float damageAmount, DamageType type);
+        public event DamageTaken OnDamageTaken;
         public event HealthChanged OnHealthChanged;
         public event HealthChanged OnDeath;
 
-        void Start(){
+        void Start()
+        {
             currentHealth = MaxHealth;
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(float damage, DamageType type)
         {
             currentHealth -= damage;
-            //Debug.Log(gameObject.name + " took damage.");
+            if (OnDamageTaken != null)
+            {
+                OnDamageTaken(damage, type);
+            }
+
             if (OnHealthChanged != null)
             {
                 OnHealthChanged(currentHealth, MaxHealth);
@@ -43,8 +50,6 @@ namespace DTWorldz.Behaviours.Mobiles
                     OnDeath(currentHealth, MaxHealth);
                 }
             }
-
-
         }
     }
 }

@@ -35,7 +35,7 @@ namespace DTWorldz.Behaviours.AI
 
         private void OnDeath(float currentHealth, float maxHealth)
         {
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.5f);
         }
 
         public void SetState(string state)

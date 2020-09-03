@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5328125669103109268}
   - component: {fileID: 5328125669103109267}
   - component: {fileID: 1793401368}
-  - component: {fileID: 7056954239779205625}
+  - component: {fileID: 3583550365272171738}
+  - component: {fileID: 6368350200322091047}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   MaxHealth: 100
---- !u!114 &7056954239779205625
+--- !u!114 &3583550365272171738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,11 +193,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5328125669103109266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b48ffc694b7a74cbc0f39e6e02d039, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ce5aa52aba0adf4ca4c84eae0dffbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  MaxHealth: 100
+--- !u!114 &6368350200322091047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31c7db63530e86498ba241fe7e4b87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageTakenEffectPrefab: {fileID: 3011963687234632193, guid: e67204b6aa6dc0b409360c9c7e7d169f,
+    type: 3}
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,8 +413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 72
-  m_RefResolutionX: 800
-  m_RefResolutionY: 480
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
   m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0

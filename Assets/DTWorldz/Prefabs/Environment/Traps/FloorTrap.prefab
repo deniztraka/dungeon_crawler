@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RefreshTime: 3
+  DamageType: 1
   Color: {r: 0.11006868, g: 1, b: 0, a: 0.05490196}
   ReadySprite: {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8,
     type: 3}
