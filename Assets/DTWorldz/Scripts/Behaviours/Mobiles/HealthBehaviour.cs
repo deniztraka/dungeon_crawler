@@ -43,7 +43,7 @@ namespace DTWorldz.Behaviours.Mobiles
 
             if (BodyType == BodyType.Flesh && type == DamageType.Physical)
             {
-                StartCoroutine(CreateBloodStainsAfterSeconds(0.5f));
+                StartCoroutine(CreateBloodStainsAfterSeconds(0.35f));
             }
 
             if (OnDamageTaken != null)
