@@ -15,7 +15,9 @@ namespace DTWorldz.Editor.Gizmo
             var positionY = attackBehaviour.transform.position.y + collider.offset.y;
             var positionX = attackBehaviour.transform.position.x + collider.offset.x;
             var gizmoPosition = new Vector3(positionX, positionY, 0);
-            Gizmos.DrawWireCube(gizmoPosition, collider.size);            
+            Gizmos.DrawWireCube(gizmoPosition, collider.size + attackBehaviour.GetSizeEdition());  
+            
+                      
         }
     }
 }
