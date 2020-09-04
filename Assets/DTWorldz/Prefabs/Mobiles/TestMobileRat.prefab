@@ -183,12 +183,14 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 0a025151e0776024faa802ffabdc169d, type: 3}
     Volume: 0.25
     Pitch: 1
+    MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
   - Name: Wander
     Clip: {fileID: 8300000, guid: 84b5682fc25b5404fb5e4b5e6ec54a19, type: 3}
     Volume: 0.25
     Pitch: 1
+    MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
 --- !u!1 &7559222451528981159

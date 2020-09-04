@@ -20,6 +20,10 @@ namespace DTWorldz.Behaviours.Audios
                 sound.Source.volume = sound.Volume;
                 sound.Source.pitch = sound.Pitch;
                 sound.Source.loop = sound.Loop;
+                sound.Source.spatialBlend = 1f;
+                sound.Source.minDistance = 1;
+                sound.Source.maxDistance = sound.MaxDistance;
+                sound.Source.rolloffMode = AudioRolloffMode.Linear;
             }
         }
 

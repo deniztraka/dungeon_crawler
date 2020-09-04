@@ -230,6 +230,7 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
     Volume: 0.75
     Pitch: 0.5
+    MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
 --- !u!81 &1608416613
@@ -333,12 +334,14 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 29be7f7a2a780404889237489e6f6fdd, type: 3}
     Volume: 0.75
     Pitch: 0.5
+    MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
   - Name: Hit
     Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
     Volume: 0.75
     Pitch: 0.5
+    MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
 --- !u!1 &5328125669872118432
