@@ -2946,6 +2946,66 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[0].Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Name
+      value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[0].Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Name
+      value: Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Volume
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603770442896455508, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[1].Pitch
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
 --- !u!1 &303545678

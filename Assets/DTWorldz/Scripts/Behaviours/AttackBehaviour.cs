@@ -71,6 +71,7 @@ namespace DTWorldz.Behaviours
                 var healthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
                 if (healthBehaviour != null)
                 {
+                    audioManager.Play("Hit");
                     healthBehaviour.TakeDamage(5, DamageType.Physical);
                 }
             }
