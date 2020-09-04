@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1793401368}
   - component: {fileID: 3583550365272171738}
   - component: {fileID: 6368350200322091047}
+  - component: {fileID: 5664529902210715090}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   MaxHealth: 100
+  BodyType: 0
 --- !u!114 &3583550365272171738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +212,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageTakenEffectPrefab: {fileID: 3011963687234632193, guid: e67204b6aa6dc0b409360c9c7e7d169f,
     type: 3}
+--- !u!114 &5664529902210715090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Walking
+    Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
+    Volume: 0.174
+    Pitch: 0.5
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +242,7 @@ GameObject:
   - component: {fileID: 5328125669390350691}
   - component: {fileID: 5328125669390350688}
   - component: {fileID: 5328125669390350689}
+  - component: {fileID: 7603770442896455508}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -284,6 +306,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7603770442896455508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669390350690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Swing
+    Clip: {fileID: 8300000, guid: 29be7f7a2a780404889237489e6f6fdd, type: 3}
+    Volume: 0.239
+    Pitch: 0.5
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &5328125669872118432
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,8 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 72
-  m_RefResolutionX: 1280
+  m_AssetsPPU: 128
+  m_RefResolutionX: 1520
   m_RefResolutionY: 720
   m_UpscaleRT: 0
   m_PixelSnapping: 1

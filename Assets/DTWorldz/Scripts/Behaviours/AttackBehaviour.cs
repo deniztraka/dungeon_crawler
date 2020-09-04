@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Models;
 using UnityEngine;
@@ -15,12 +16,16 @@ namespace DTWorldz.Behaviours
         private Direction direction;
         private BoxCollider2D coll;
         private Vector2 collSizeDirectionAddition;
+        
+        private AudioManager audioManager;
+        
 
         // Start is called before the first frame update
         void Start()
         {
             coll = GetComponent<BoxCollider2D>();
             collSizeDirectionAddition = Vector2.zero;
+            audioManager = gameObject.GetComponent<AudioManager>();
         }
 
         // Update is called once per frame
@@ -82,6 +87,7 @@ namespace DTWorldz.Behaviours
 
         public void Attack()
         {
+            audioManager.Play("Swing");
             StartCoroutine(LateAttack(0.5f));
 
         }

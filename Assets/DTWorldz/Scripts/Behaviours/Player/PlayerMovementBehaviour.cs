@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using DTWorldz.Models;
 using Toolbox;
 using UnityEngine;
@@ -31,6 +32,7 @@ namespace DTWorldz.Behaviours
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
         private AttackBehaviour attackBehaviour;
+        private AudioManager audioManager;
         public List<Animator> AnimationSlots;
 
         public Joystick Joystick;
@@ -40,6 +42,7 @@ namespace DTWorldz.Behaviours
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
+            audioManager = gameObject.GetComponent<AudioManager>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
             direction = Direction.Right;
         }
@@ -52,7 +55,7 @@ namespace DTWorldz.Behaviours
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
             //reset attacking trigger
-            attackingTrigger = false;           
+            attackingTrigger = false;
         }
 
         private void HandleInput()
@@ -66,7 +69,7 @@ namespace DTWorldz.Behaviours
             {
                 movement.x = Input.GetAxisRaw("Horizontal");
                 movement.y = Input.GetAxisRaw("Vertical");
-            }            
+            }
 
             // if (Input.GetKeyUp(KeyCode.LeftShift))
             // {
@@ -195,7 +198,49 @@ namespace DTWorldz.Behaviours
 
         private void FixedUpdate()
         {
+            PlayMovementSounds();
             rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
+        }
+
+        private void PlayMovementSounds()
+        {
+            if (audioManager != null)
+            {
+                if (isRunning)
+                {
+                    audioManager.Play("Walking");
+                    audioManager.SetCurrentPitch(0.6f);
+                }
+                else if (movement.magnitude > 0)
+                {
+                    audioManager.Play("Walking");
+                    audioManager.SetCurrentPitch(0.5f);
+                }
+
+                if(movement.magnitude == 0)
+                {
+                    audioManager.SetCurrentPitch(0.5f);
+                    audioManager.Stop("Walking"); 
+                }
+                //Debug.Log(movement.magnitude);
+
+                // if (movement.magnitude > 0 && !isRunning)
+                // {
+
+                //     audioManager.Stop("Running");
+                //     audioManager.Play("Walking");
+                // }
+                // else
+                // if (movement.magnitude > 0 && isRunning)
+                // {
+                //     audioManager.Play("Running");
+                // }
+                // else if (movement.magnitude == 0)
+                // {
+                //     audioManager.Stop("Walking");
+                //     audioManager.Stop("Running");
+                // }
+            }
         }
 
         void OnDrawGizmosSelected()
