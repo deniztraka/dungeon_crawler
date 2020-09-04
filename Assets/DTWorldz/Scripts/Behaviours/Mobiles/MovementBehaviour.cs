@@ -220,7 +220,7 @@ namespace DTWorldz.Behaviours.Mobiles
         private void FixedUpdate()
         {
             resultingSpeed = isRunning ? RunningSpeed : Speed;
-            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
+            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);            
         }
 
         void OnDrawGizmosSelected()

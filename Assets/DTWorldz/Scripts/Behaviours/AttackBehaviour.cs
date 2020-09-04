@@ -10,15 +10,16 @@ namespace DTWorldz.Behaviours
 {
     public class AttackBehaviour : MonoBehaviour
     {
+        public float KnockbackForce;
         public float AttackRange;
         [SerializeField]
         private LayerMask layer = 0;
         private Direction direction;
         private BoxCollider2D coll;
         private Vector2 collSizeDirectionAddition;
-        
+
         private AudioManager audioManager;
-        
+
 
         // Start is called before the first frame update
         void Start()
@@ -52,7 +53,8 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public Vector2 GetSizeEdition(){
+        public Vector2 GetSizeEdition()
+        {
             return collSizeDirectionAddition;
         }
 
@@ -68,29 +70,25 @@ namespace DTWorldz.Behaviours
             if (colliders != null && colliders.Length > 0)
             {
                 var firstCollider = colliders[0];
-                var healthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
-                if (healthBehaviour != null)
+                var enemyHealthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
+                if (enemyHealthBehaviour != null)
                 {
                     audioManager.Play("Hit");
-                    healthBehaviour.TakeDamage(5, DamageType.Physical);
+                    enemyHealthBehaviour.TakeDamage(5, DamageType.Physical);
+                    if (KnockbackForce > 0)
+                    {
+                        var difference = enemyHealthBehaviour.transform.position - this.transform.position;
+                        difference = difference.normalized * KnockbackForce;
+                        enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);                        
+                    }
                 }
             }
-
-            // foreach (var collider in colliders)
-            // {
-            //     var healthBehaviour = collider.gameObject.GetComponent<HealthBehaviour>();
-            //     if (healthBehaviour != null)
-            //     {
-            //         healthBehaviour.TakeDamage(5, DamageType.Physical);
-            //     }
-            // }
         }
 
         public void Attack()
         {
             audioManager.Play("Swing");
             StartCoroutine(LateAttack(0.5f));
-
         }
     }
 }

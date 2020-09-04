@@ -227,7 +227,7 @@ MonoBehaviour:
   Sounds:
   - Name: Walking
     Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
-    Volume: 0.174
+    Volume: 0.75
     Pitch: 0.5
     Source: {fileID: 0}
     Loop: 0
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnockbackForce: 0.1
   AttackRange: 0
   layer:
     serializedVersion: 2
@@ -321,7 +322,13 @@ MonoBehaviour:
   Sounds:
   - Name: Swing
     Clip: {fileID: 8300000, guid: 29be7f7a2a780404889237489e6f6fdd, type: 3}
-    Volume: 0.239
+    Volume: 0.75
+    Pitch: 0.5
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
+    Volume: 0.75
     Pitch: 0.5
     Source: {fileID: 0}
     Loop: 0
