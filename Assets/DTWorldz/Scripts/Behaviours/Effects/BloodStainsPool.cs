@@ -51,6 +51,7 @@ namespace DTWorlds.Behaviours.Effects
                 dequedObject.SetActive(true);
                 dequedObject.transform.position = position;
                 dequedObject.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
+                dequedObject.transform.localScale = new Vector3(Random.Range(0.5f, 1), Random.Range(0.5f, 1), 1);
                 bloodStainsPool.Enqueue(dequedObject);
             }
         }
