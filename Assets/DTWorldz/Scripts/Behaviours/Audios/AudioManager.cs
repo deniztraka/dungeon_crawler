@@ -36,9 +36,11 @@ namespace DTWorldz.Behaviours.Audios
                 return;
             }
 
-            var sound = Array.Find(Sounds, s => s.Name.Equals(name));
-            if (sound != null)
+            var sounds = Array.FindAll(Sounds, s => s.Name.Equals(name));
+            if (sounds != null && sounds.Length > 0 )
             {
+                var randomSoundIndex = UnityEngine.Random.Range(0,sounds.Length);
+                var sound = sounds[randomSoundIndex];
                 sound.Source.pitch = sound.Pitch;
                 sound.Source.Play();
                 lastSound = sound;

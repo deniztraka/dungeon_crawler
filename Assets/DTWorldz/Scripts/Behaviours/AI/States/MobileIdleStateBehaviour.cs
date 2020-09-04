@@ -19,6 +19,11 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (DecisionTime <= 0)
             {
+                if (AudioManager != null && UnityEngine.Random.value < 0.9f)
+                {
+                    AudioManager.Play("Idle");
+                }
+
                 if (Random.NextDouble() < MobileStateBehaviour.WanderChance)
                 {
                     animator.SetTrigger("Wander");
@@ -30,6 +35,8 @@ namespace DTWorldz.Behaviours.AI.States
             {
                 DecisionTime -= Time.deltaTime;
             }
+
+
 
         }
 

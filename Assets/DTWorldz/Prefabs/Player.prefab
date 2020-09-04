@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3583550365272171738}
   - component: {fileID: 6368350200322091047}
   - component: {fileID: 5664529902210715090}
+  - component: {fileID: 1608416613}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -231,6 +232,14 @@ MonoBehaviour:
     Pitch: 0.5
     Source: {fileID: 0}
     Loop: 0
+--- !u!81 &1608416613
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +351,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5328125669872118439}
   - component: {fileID: 5328125669872118438}
-  - component: {fileID: 5328125669872118433}
   - component: {fileID: 5328125669872118436}
   - component: {fileID: 5328125669872118437}
   m_Layer: 0
@@ -409,14 +417,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5328125669872118433
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328125669872118432}
-  m_Enabled: 1
 --- !u!114 &5328125669872118436
 MonoBehaviour:
   m_ObjectHideFlags: 0

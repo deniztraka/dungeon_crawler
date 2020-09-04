@@ -19,6 +19,11 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (DecisionTime <= 0)
             {
+                if (AudioManager != null && UnityEngine.Random.value < 0.9f)
+                {
+                    AudioManager.Play("Wander");
+                }
+
                 var nextDouble = Random.NextDouble();
                 //Debug.Log("NextDouble:" + nextDouble);
                 if (nextDouble < MobileStateBehaviour.IdleChance)

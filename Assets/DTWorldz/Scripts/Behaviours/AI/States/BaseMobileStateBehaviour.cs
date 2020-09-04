@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -16,6 +17,7 @@ namespace DTWorldz.Behaviours.AI.States
         protected float DecisionTime;
         protected MobileStateBehaviour MobileStateBehaviour;
         protected MovementBehaviour MovementBehaviour;
+        protected AudioManager AudioManager;
         private float randomDecisionDelay;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,11 +26,11 @@ namespace DTWorldz.Behaviours.AI.States
 
             MobileStateBehaviour = animator.gameObject.GetComponent<MobileStateBehaviour>();
             MovementBehaviour = animator.gameObject.GetComponent<MovementBehaviour>();
-
+            AudioManager = animator.gameObject.GetComponent<AudioManager>();
             if (MobileHealth == null)
             {
                 MobileHealth = animator.gameObject.GetComponent<HealthBehaviour>();
-            }
+            }            
 
             MobileStateBehaviour.SetState(StateName);
             Random = new Random(DateTime.Now.Millisecond);
