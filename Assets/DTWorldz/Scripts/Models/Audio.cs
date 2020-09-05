@@ -13,8 +13,8 @@ namespace DTWorldz.Models
         public float Volume;
         [Range(.1f, 3f)]
         public float Pitch;
+        public float MaxDistance;
         [HideInInspector]
-        public int MaxDistance = 4;
         public AudioSource Source;
         public bool Loop;
     }

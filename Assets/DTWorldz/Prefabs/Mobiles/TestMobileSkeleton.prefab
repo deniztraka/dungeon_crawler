@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7559222450374734858}
   - component: {fileID: 7559222450374734859}
   - component: {fileID: 3439235369702658953}
+  - component: {fileID: 1541576519559154459}
   m_Layer: 9
   m_Name: TestMobileSkeleton
   m_TagString: Untagged
@@ -165,6 +166,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageTakenEffectPrefab: {fileID: 3011963687234632193, guid: 01f2d79804191ac44bb8af73acfbea48,
     type: 3}
+--- !u!114 &1541576519559154459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559222450374734856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Idle
+    Clip: {fileID: 8300000, guid: d4b3be25d11ca8d4f842e14b985e8d32, type: 3}
+    Volume: 0.35
+    Pitch: 1
+    MaxDistance: 5
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Wander
+    Clip: {fileID: 8300000, guid: 197641e6baec85149bb58dd62b8b60f5, type: 3}
+    Volume: 0.35
+    Pitch: 1
+    MaxDistance: 5
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &7559222451528981159
 GameObject:
   m_ObjectHideFlags: 0
