@@ -88,6 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   MaxHealth: 100
+  BodyType: 1
 --- !u!95 &7559222450374734853
 Animator:
   serializedVersion: 3

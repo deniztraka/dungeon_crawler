@@ -6,7 +6,7 @@ using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace DTWorldz.Behaviours
+namespace DTWorldz.Behaviours.Mobiles
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class MovementBehaviour : MonoBehaviour
@@ -220,7 +220,7 @@ namespace DTWorldz.Behaviours
         private void FixedUpdate()
         {
             resultingSpeed = isRunning ? RunningSpeed : Speed;
-            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
+            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);            
         }
 
         void OnDrawGizmosSelected()

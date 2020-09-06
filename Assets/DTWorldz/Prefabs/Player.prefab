@@ -15,7 +15,10 @@ GameObject:
   - component: {fileID: 5328125669103109268}
   - component: {fileID: 5328125669103109267}
   - component: {fileID: 1793401368}
-  - component: {fileID: 7056954239779205625}
+  - component: {fileID: 3583550365272171738}
+  - component: {fileID: 6368350200322091047}
+  - component: {fileID: 5664529902210715090}
+  - component: {fileID: 1608416613}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -164,6 +167,7 @@ MonoBehaviour:
   Speed: 1
   RunningSpeed: 2
   ClickAndGoEnabled: 0
+  IsJoyStickEnabled: 1
   direction: 0
   attackingFrequency: 0.5
   attackTime: 0
@@ -183,7 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   MaxHealth: 100
---- !u!114 &7056954239779205625
+  BodyType: 0
+--- !u!114 &3583550365272171738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,11 +197,72 @@ MonoBehaviour:
   m_GameObject: {fileID: 5328125669103109266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b48ffc694b7a74cbc0f39e6e02d039, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ce5aa52aba0adf4ca4c84eae0dffbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  MaxHealth: 100
+--- !u!114 &6368350200322091047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31c7db63530e86498ba241fe7e4b87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageTakenEffectPrefab: {fileID: 3011963687234632193, guid: e67204b6aa6dc0b409360c9c7e7d169f,
+    type: 3}
+--- !u!114 &5664529902210715090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Walking
+    Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 7224d7ecbfa49ae41b7b43e45de9ab79, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 9ca01b1f7e8c417449cf383ea9652521, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+--- !u!81 &1608416613
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +274,7 @@ GameObject:
   - component: {fileID: 5328125669390350691}
   - component: {fileID: 5328125669390350688}
   - component: {fileID: 5328125669390350689}
+  - component: {fileID: 7603770442896455508}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -241,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnockbackForce: 0.1
   AttackRange: 0
   layer:
     serializedVersion: 2
@@ -271,6 +339,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7603770442896455508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669390350690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Swing
+    Clip: {fileID: 8300000, guid: 29be7f7a2a780404889237489e6f6fdd, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &5328125669872118432
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +369,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5328125669872118439}
   - component: {fileID: 5328125669872118438}
-  - component: {fileID: 5328125669872118433}
   - component: {fileID: 5328125669872118436}
   - component: {fileID: 5328125669872118437}
   m_Layer: 0
@@ -348,14 +435,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5328125669872118433
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328125669872118432}
-  m_Enabled: 1
 --- !u!114 &5328125669872118436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,9 +478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 72
-  m_RefResolutionX: 800
-  m_RefResolutionY: 480
+  m_AssetsPPU: 128
+  m_RefResolutionX: 1520
+  m_RefResolutionY: 720
   m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0

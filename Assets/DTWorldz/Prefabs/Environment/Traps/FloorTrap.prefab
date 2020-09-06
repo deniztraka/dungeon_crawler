@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 146534676883139450}
   - component: {fileID: 146534676883139448}
   - component: {fileID: 146534676883139451}
+  - component: {fileID: 3738181496899081568}
   m_Layer: 10
   m_Name: FloorTrap
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RefreshTime: 3
+  DamageType: 1
   Color: {r: 0.11006868, g: 1, b: 0, a: 0.05490196}
   ReadySprite: {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8,
     type: 3}
@@ -177,3 +179,23 @@ MonoBehaviour:
     m_Bits: 4096
   Damage: 10
   State: 
+--- !u!114 &3738181496899081568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146534676883139429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Trigger
+    Clip: {fileID: 8300000, guid: c7c6697e30807974ab9e6ec0ebdfa0b6, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 3
+    Source: {fileID: 0}
+    Loop: 0

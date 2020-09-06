@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine;
 
-namespace DTWorldz.Behaviours
+namespace DTWorldz.Behaviours.Items.Deco
 {
     [RequireComponent(typeof(Light2D))]
     public class FlickeringLightBehaviour : MonoBehaviour

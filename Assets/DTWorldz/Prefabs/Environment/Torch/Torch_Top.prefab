@@ -102,6 +102,8 @@ GameObject:
   - component: {fileID: 6520119110155886530}
   - component: {fileID: 7003312584263104586}
   - component: {fileID: 7086853260088856280}
+  - component: {fileID: 5954529114147362162}
+  - component: {fileID: 1492416495285587282}
   m_Layer: 0
   m_Name: Torch_Top
   m_TagString: Untagged
@@ -139,6 +141,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -194,3 +197,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5954529114147362162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974044864229606424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc75ba6a96c43645834916c65dc7e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlickeringLight: {fileID: 1651558883819249957}
+--- !u!114 &1492416495285587282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974044864229606424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Ignite
+    Clip: {fileID: 8300000, guid: efa44f24e55ca9244b6a1ceba4f29228, type: 3}
+    Volume: 0.35
+    Pitch: 1
+    MaxDistance: 3
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Idle
+    Clip: {fileID: 8300000, guid: bdb36111ba480384f9a4cf147d6f4ace, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    MaxDistance: 3
+    Source: {fileID: 0}
+    Loop: 1
+  - Name: Extinguish
+    Clip: {fileID: 8300000, guid: 7d222fd49e288e94eb71e2b62d209c23, type: 3}
+    Volume: 0.25
+    Pitch: 1
+    MaxDistance: 3
+    Source: {fileID: 0}
+    Loop: 0

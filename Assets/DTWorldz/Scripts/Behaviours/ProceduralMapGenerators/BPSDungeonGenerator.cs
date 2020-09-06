@@ -22,6 +22,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public GameObject TestPrefab;
 
+        public bool DecorateSpawners;
+
         private GameObject player;
         private Random random;
         private List<LevelBehaviour> levels;
@@ -64,9 +66,12 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 BuildTeleporters(i);
             }
 
-            for (int i = 0; i < levels.Count; i++)
+            if (DecorateSpawners)
             {
-                BuildSpawners(i);
+                for (int i = 0; i < levels.Count; i++)
+                {
+                    BuildSpawners(i);
+                }
             }
 
             //move player into biggest room in first level
