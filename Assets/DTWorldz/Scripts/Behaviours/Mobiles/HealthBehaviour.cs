@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorlds.Behaviours.Effects;
+using DTWorldz.Behaviours.Audios;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.Mobiles
@@ -24,10 +25,12 @@ namespace DTWorldz.Behaviours.Mobiles
         public event DamageTaken OnDamageTaken;
         public event HealthChanged OnHealthChanged;
         public event HealthChanged OnDeath;
-
+        
+        private AudioManager audioManager;
         void Start()
         {
             currentHealth = MaxHealth;
+            audioManager = GetComponent<AudioManager>();
         }
 
 
@@ -41,13 +44,17 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             currentHealth -= damage;
 
+            if(audioManager != null){
+                audioManager.Play("Hit");
+            }
+
             if (BodyType == BodyType.Flesh && type == DamageType.Physical)
             {
                 StartCoroutine(CreateBloodStainsAfterSeconds(0.35f));
             }
 
             if (OnDamageTaken != null)
-            {
+            {                
                 OnDamageTaken(damage, type);
             }
 
@@ -61,7 +68,7 @@ namespace DTWorldz.Behaviours.Mobiles
                 currentHealth = 0;
                 if (OnDeath != null)
                 {
-                    //Debug.Log(gameObject.name + " is dead.");
+                    audioManager.Play("Dead");
                     OnDeath(currentHealth, MaxHealth);
                 }
             }

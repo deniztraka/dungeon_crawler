@@ -15,6 +15,7 @@ namespace DTWorldz.Behaviours
         public float Speed = 3f;   //Movement Speed of the Player
         public float RunningSpeed = 5f;   //Movement Speed of the Player
         public bool ClickAndGoEnabled = false;
+        public bool IsJoyStickEnabled = false;
 
         [SerializeField]
         private Direction direction;
@@ -60,7 +61,7 @@ namespace DTWorldz.Behaviours
 
         private void HandleInput()
         {
-            if (Joystick != null)
+            if (Joystick != null && IsJoyStickEnabled)
             {
                 movement.x = Joystick.Direction.x;
                 movement.y = Joystick.Direction.y;
@@ -71,16 +72,20 @@ namespace DTWorldz.Behaviours
                 movement.y = Input.GetAxisRaw("Vertical");
             }
 
-            // if (Input.GetKeyUp(KeyCode.LeftShift))
-            // {
-            //     isRunning = false;
-            // }
-            // else if (Input.GetKeyDown(KeyCode.LeftShift))
-            // {
-            //     isRunning = true;
-            // }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                isRunning = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isRunning = true;
+            }
 
-            isRunning = Joystick.IsAtAtMax;
+
+            if (Joystick != null && IsJoyStickEnabled)
+            {
+                isRunning = Joystick.IsAtAtMax;
+            }
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
@@ -217,10 +222,10 @@ namespace DTWorldz.Behaviours
                     audioManager.SetCurrentPitch(0.5f);
                 }
 
-                if(movement.magnitude == 0)
+                if (movement.magnitude == 0)
                 {
                     audioManager.SetCurrentPitch(0.5f);
-                    audioManager.Stop("Walking"); 
+                    audioManager.Stop("Walking");
                 }
                 //Debug.Log(movement.magnitude);
 

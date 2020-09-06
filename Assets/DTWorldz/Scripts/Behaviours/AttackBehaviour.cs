@@ -73,7 +73,7 @@ namespace DTWorldz.Behaviours
                 var enemyHealthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
                 if (enemyHealthBehaviour != null)
                 {
-                    audioManager.Play("Hit");
+                    //audioManager.Play("Hit");
                     enemyHealthBehaviour.TakeDamage(5, DamageType.Physical);
                     if (KnockbackForce > 0)
                     {
@@ -85,9 +85,15 @@ namespace DTWorldz.Behaviours
             }
         }
 
+        IEnumerator PlaySwing(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+             audioManager.Play("Swing");
+        }
+
         public void Attack()
         {
-            audioManager.Play("Swing");
+            StartCoroutine(PlaySwing(0.2f));           
             StartCoroutine(LateAttack(0.5f));
         }
     }

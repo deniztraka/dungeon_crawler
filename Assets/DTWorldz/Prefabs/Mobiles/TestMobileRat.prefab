@@ -193,6 +193,34 @@ MonoBehaviour:
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
+    Volume: 0.1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 9ca01b1f7e8c417449cf383ea9652521, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Dead
+    Clip: {fileID: 8300000, guid: 19096839935a3cb439f5f797f186809f, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 7224d7ecbfa49ae41b7b43e45de9ab79, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &7559222451528981159
 GameObject:
   m_ObjectHideFlags: 0

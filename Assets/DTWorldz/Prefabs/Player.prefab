@@ -167,6 +167,7 @@ MonoBehaviour:
   Speed: 1
   RunningSpeed: 2
   ClickAndGoEnabled: 0
+  IsJoyStickEnabled: 1
   direction: 0
   attackingFrequency: 0.5
   attackTime: 0
@@ -228,8 +229,29 @@ MonoBehaviour:
   Sounds:
   - Name: Walking
     Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
-    Volume: 0.75
+    Volume: 0.5
     Pitch: 0.5
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 7224d7ecbfa49ae41b7b43e45de9ab79, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 9ca01b1f7e8c417449cf383ea9652521, type: 3}
+    Volume: 1
+    Pitch: 1
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
@@ -332,14 +354,7 @@ MonoBehaviour:
   Sounds:
   - Name: Swing
     Clip: {fileID: 8300000, guid: 29be7f7a2a780404889237489e6f6fdd, type: 3}
-    Volume: 0.75
-    Pitch: 0.5
-    MaxDistance: 4
-    Source: {fileID: 0}
-    Loop: 0
-  - Name: Hit
-    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
-    Volume: 0.75
+    Volume: 0.5
     Pitch: 0.5
     MaxDistance: 4
     Source: {fileID: 0}
