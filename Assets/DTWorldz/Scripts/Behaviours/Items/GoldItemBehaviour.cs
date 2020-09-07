@@ -47,7 +47,7 @@ namespace DTWorldz.Behaviours.Items.Utils
 
         }
 
-        public void OnAfterInstantiation()
+        public void OnAfterDrop()
         {
             
         }

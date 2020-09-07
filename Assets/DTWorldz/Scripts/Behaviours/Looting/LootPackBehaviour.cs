@@ -20,7 +20,6 @@ namespace DTWorldz.Behaviours.Looting
 
         void DropLoot(float killedMobHealth, float killedMobMaxHealth)
         {
-            Debug.Log("Drop!");
             foreach (var lootEntry in DropTemplate.Entries)
             {
                 if (UnityEngine.Random.value < lootEntry.Chance)
@@ -32,7 +31,7 @@ namespace DTWorldz.Behaviours.Looting
                     var instantiatedLootItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
                     var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
                     lootItem.SetCount(itemCount);
-                    lootItem.OnAfterInstantiation();
+                    lootItem.OnAfterDrop();
                 }
             }
         }
