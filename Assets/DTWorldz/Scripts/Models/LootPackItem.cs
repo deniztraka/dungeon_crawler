@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using DTWorldz.Interfaces;
 using UnityEngine;
 namespace DTWorldz.Models
 {
     [Serializable]
-    public class LootPackEntry
+    public class LootPackItem
     {
-        public float Chance;
-        public List<LootPackItem> Items;
+        public GameObject ItemPrefab;
+        public int CountMin;
+        public int CountMax;
     }
 }

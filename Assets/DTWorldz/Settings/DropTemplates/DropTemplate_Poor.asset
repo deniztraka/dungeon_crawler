@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aaeccd99490cb34ba7a6974a6d21bcc, type: 3}
   m_Name: DropTemplate_Poor
   m_EditorClassIdentifier: 
-  Entries: []
+  Entries:
+  - Chance: 1
+    Items:
+    - ItemPrefab: {fileID: 9007150693246369999, guid: ad07656590d3fab4faf2aed56827ffe3,
+        type: 3}
+      CountMin: 3
+      CountMax: 10

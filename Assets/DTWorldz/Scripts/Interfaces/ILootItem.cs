@@ -6,6 +6,9 @@ namespace DTWorldz.Interfaces
 {
     public interface ILootItem
     {
-        GameObject ItemPrefab { get; set; }
+        int Count { get; }
+        void SetCount(int count);
+        bool IsStackable { get; set; }
+        void OnAfterInstantiation();
     }
 }

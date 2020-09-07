@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7559222450374734859}
   - component: {fileID: 4061465674616278193}
   - component: {fileID: 3023635879620413508}
+  - component: {fileID: 8992242071911772111}
   m_Layer: 9
   m_Name: TestMobileRat
   m_TagString: Untagged
@@ -221,6 +222,19 @@ MonoBehaviour:
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+--- !u!114 &8992242071911772111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559222450374734856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTemplate: {fileID: 11400000, guid: 2746f2d288764b44aa129aed8c72b48f, type: 2}
 --- !u!1 &7559222451528981159
 GameObject:
   m_ObjectHideFlags: 0
