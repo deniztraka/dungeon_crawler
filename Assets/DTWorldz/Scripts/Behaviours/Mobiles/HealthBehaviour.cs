@@ -25,7 +25,7 @@ namespace DTWorldz.Behaviours.Mobiles
         public event DamageTaken OnDamageTaken;
         public event HealthChanged OnHealthChanged;
         public event HealthChanged OnDeath;
-        
+
         private AudioManager audioManager;
         void Start()
         {
@@ -42,9 +42,15 @@ namespace DTWorldz.Behaviours.Mobiles
 
         public void TakeDamage(float damage, DamageType type)
         {
+            if (currentHealth == -1)
+            {
+                return;
+            }
+
             currentHealth -= damage;
 
-            if(audioManager != null){
+            if (audioManager != null)
+            {
                 audioManager.Play("Hit");
             }
 
@@ -54,7 +60,7 @@ namespace DTWorldz.Behaviours.Mobiles
             }
 
             if (OnDamageTaken != null)
-            {                
+            {
                 OnDamageTaken(damage, type);
             }
 
@@ -65,7 +71,7 @@ namespace DTWorldz.Behaviours.Mobiles
 
             if (currentHealth <= 0)
             {
-                currentHealth = 0;
+                currentHealth = -1;
                 if (OnDeath != null)
                 {
                     audioManager.Play("Dead");

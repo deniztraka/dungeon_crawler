@@ -18,6 +18,17 @@ namespace DTWorldz.Behaviours.Looting
             healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(DropLoot);
         }
 
+
+
+        IEnumerator LateDrop(GameObject prefab, Vector3 position, int count, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            var instantiatedLootItem = Instantiate(prefab, position, Quaternion.identity);
+            var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;            
+            lootItem.SetCount(count);
+            lootItem.OnAfterDrop();
+        }
+
         void DropLoot(float killedMobHealth, float killedMobMaxHealth)
         {
             foreach (var lootEntry in DropTemplate.Entries)
@@ -27,11 +38,7 @@ namespace DTWorldz.Behaviours.Looting
                     var lootPackItem = lootEntry.Items[UnityEngine.Random.Range(0, lootEntry.Items.Count)];
                     var itemCount = UnityEngine.Random.Range(lootPackItem.CountMin, lootPackItem.CountMax);
                     var itemPrefab = lootPackItem.ItemPrefab;
-
-                    var instantiatedLootItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
-                    var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
-                    lootItem.SetCount(itemCount);
-                    lootItem.OnAfterDrop();
+                    StartCoroutine(LateDrop(itemPrefab, transform.position, itemCount, 0.5f));
                 }
             }
         }

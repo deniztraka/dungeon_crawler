@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
@@ -21,6 +22,12 @@ namespace DTWorldz.Behaviours.Player
             //         health.TakeDamage(5, DamageType.Physical);
             //     }
             // }
+        }
+
+        internal void CollectGold(int count)
+        {
+            var isPlural = count > 1;
+            Debug.Log(count + " gold piece" + (isPlural ? "s " : " ")  + (isPlural ? "are" : "is") + " collected.");
         }
     }
 }
