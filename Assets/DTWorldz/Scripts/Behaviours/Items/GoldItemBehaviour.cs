@@ -113,11 +113,13 @@ namespace DTWorldz.Behaviours.Items.Utils
             {
                 var playerBehaviour = collider.gameObject.GetComponent<PlayerBehaviour>();
                 playerBehaviour.CollectGold(this.count);
+
                 var spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
                 var tempColor = spriteRenderer.color;
                 tempColor.a = 0f;
-                spriteRenderer.color = tempColor;                
-                collider.enabled = false;
+                spriteRenderer.color = tempColor;    
+                var thisCollider = gameObject.GetComponentInChildren<Collider2D>();            
+                thisCollider.enabled = false;
 
                 if (audioManager != null)
                 {
