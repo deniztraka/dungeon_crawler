@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DropTemplate_Many
   m_EditorClassIdentifier: 
   Entries:
-  - Chance: 1
+  - Chance: 0.25
     Items:
     - ItemPrefab: {fileID: 9007150693246369999, guid: ad07656590d3fab4faf2aed56827ffe3,
         type: 3}
-      CountMin: 10
-      CountMax: 50
+      CountMin: 5
+      CountMax: 25
