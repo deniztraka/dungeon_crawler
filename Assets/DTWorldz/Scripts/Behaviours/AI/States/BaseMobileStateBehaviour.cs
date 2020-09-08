@@ -30,7 +30,7 @@ namespace DTWorldz.Behaviours.AI.States
             if (MobileHealth == null)
             {
                 MobileHealth = animator.gameObject.GetComponent<HealthBehaviour>();
-            }            
+            }
 
             MobileStateBehaviour.SetState(StateName);
             Random = new Random(DateTime.Now.Millisecond);
@@ -42,12 +42,16 @@ namespace DTWorldz.Behaviours.AI.States
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
+            if (MobileHealth.CurrentHealth <= 0)
+            {
+                animator.SetTrigger("Dead");
+            }
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
             DecisionTime = 0;
-        }       
+        }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1964688947036678270}
   - component: {fileID: 5112134002440256462}
   - component: {fileID: -4428339535055122090}
+  - component: {fileID: 2644508389936687226}
   m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
@@ -176,9 +177,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - Name: Hit
-    Clip: {fileID: 8300000, guid: 94b4afeebe7d2e64fb5b9a2db8755a64, type: 3}
+    Clip: {fileID: 8300000, guid: 84b83caef89a2b64d9886242e3a62d6a, type: 3}
     Volume: 1
     Pitch: 1
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+--- !u!114 &2644508389936687226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273079249387786720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DropTemplate: {fileID: 11400000, guid: bcd0083884981c747a6c74aad14ce0c6, type: 2}
