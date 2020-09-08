@@ -47,9 +47,7 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
-            direction = Direction.Right;
-
-
+            direction = Direction.Right;            
         }
 
         public void SetSpawner(ObjectSpawnerBehaviour spawner)
@@ -118,6 +116,7 @@ namespace DTWorldz.Behaviours.Mobiles
         void Update()
         {
             CheckMovementPaths();
+            HandleAnimations();
             // if (Input.GetMouseButtonDown(0))
             // {
             //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
@@ -187,6 +186,7 @@ namespace DTWorldz.Behaviours.Mobiles
             {
                 if (movement != Vector2.zero)
                 {
+                    
                     animator.SetFloat("Horizontal", movement.x);
                     animator.SetFloat("Vertical", movement.y);
                     foreach (var animator in AnimationSlots)
@@ -202,6 +202,7 @@ namespace DTWorldz.Behaviours.Mobiles
                 {
                     resultingSpeed = 0;
                 }
+                
                 animator.SetFloat("MovementSpeed", resultingSpeed);
                 animator.SetBool("Attack", attackingTrigger);
                 foreach (var animatorSlot in AnimationSlots)
@@ -220,7 +221,7 @@ namespace DTWorldz.Behaviours.Mobiles
         private void FixedUpdate()
         {
             resultingSpeed = isRunning ? RunningSpeed : Speed;
-            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);            
+            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
         }
 
         void OnDrawGizmosSelected()

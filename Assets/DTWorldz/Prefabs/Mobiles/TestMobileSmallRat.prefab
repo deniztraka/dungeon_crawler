@@ -126,7 +126,8 @@ MonoBehaviour:
   DrawGizmos: 0
   Speed: 1
   RunningSpeed: 2
-  AnimationSlots: []
+  AnimationSlots:
+  - {fileID: 7248027196913600427}
   FollowingTarget: {fileID: 0}
   direction: 0
   wallMap: {fileID: 0}
@@ -135,6 +136,7 @@ MonoBehaviour:
   AwareDistance: 5
   CloseDistance: 3
   AttackDistance: 1
+  RigAnimator: {fileID: 7248027196913600427}
 --- !u!114 &7559222450374734859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +331,7 @@ Animator:
   m_GameObject: {fileID: 7559222451528981159}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 918226b5cab1e8a4e97993364069f088, type: 2}
+  m_Controller: {fileID: 9100000, guid: f581db5b8d052ca428672cc0af8be5a5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7674728969632660760}
-  - component: {fileID: 7674728969632660761}
   - component: {fileID: 6334232590123523519}
+  - component: {fileID: 7674728969632660761}
   m_Layer: 0
   m_Name: EasySpawner
   m_TagString: Spawner
@@ -32,36 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7674728969632660761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7674728969632660766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5608bae604c1cd946a2040c065e9c35a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPrefabs:
-  - {fileID: 7559222450374734856, guid: 865c5291ff7685e4994c1dedfd99115c, type: 3}
-  - {fileID: 7559222450374734856, guid: 865c5291ff7685e4994c1dedfd99115c, type: 3}
-  - {fileID: 7559222450374734856, guid: 865c5291ff7685e4994c1dedfd99115c, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
-  BossPrefabs: []
-  CurrentLevel: {fileID: 0}
-  SpawnFrequency: 5
-  MaxAliveCount: 2
-  RangeX: 7
-  RangeY: 6
-  Color: {r: 0.4245283, g: 0, b: 0, a: 0.12941177}
-  aliveObjects: []
-  spawnTime: 0
-  SpawnBoss: 0
 --- !u!212 &6334232590123523519
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,3 +84,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7674728969632660761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7674728969632660766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5608bae604c1cd946a2040c065e9c35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefabs:
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
+  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
+  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
+  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
+  BossPrefabs: []
+  CurrentLevel: {fileID: 0}
+  SpawnFrequency: 5
+  MaxAliveCount: 2
+  RangeX: 7
+  RangeY: 6
+  Color: {r: 0.4245283, g: 0, b: 0, a: 0.12941177}
+  aliveObjects: []
+  spawnTime: 0
+  SpawnBoss: 0
