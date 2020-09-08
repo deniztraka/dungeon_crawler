@@ -18,4 +18,4 @@ MonoBehaviour:
     - ItemPrefab: {fileID: 9007150693246369999, guid: ad07656590d3fab4faf2aed56827ffe3,
         type: 3}
       CountMin: 1
-      CountMax: 5
+      CountMax: 50
