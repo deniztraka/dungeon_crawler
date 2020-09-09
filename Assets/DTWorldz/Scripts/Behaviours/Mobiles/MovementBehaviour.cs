@@ -50,11 +50,13 @@ namespace DTWorldz.Behaviours.Mobiles
             animator = this.GetComponent<Animator>();
             direction = Direction.Right;
             healthBehaviour = this.GetComponent<HealthBehaviour>();
-            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeathAnim);
+            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeath);
         }
 
-        void TriggerDeathAnim(float currentHealth, float maxHealth)
+        void TriggerDeath(float currentHealth, float maxHealth)
         {
+            paths= new List<Vector3>();
+            movement = Vector2.zero;
             foreach (var anim in AnimationSlots)
             {
                 anim.SetTrigger("Dead");
