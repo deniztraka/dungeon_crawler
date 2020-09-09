@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Models;
+using EZCameraShake;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours
@@ -66,6 +67,9 @@ namespace DTWorldz.Behaviours
         IEnumerator LateAttack(float delay)
         {
             yield return new WaitForSeconds(delay);
+
+            CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
+
             var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size + collSizeDirectionAddition, 0f, layer);
             if (colliders != null && colliders.Length > 0)
             {
