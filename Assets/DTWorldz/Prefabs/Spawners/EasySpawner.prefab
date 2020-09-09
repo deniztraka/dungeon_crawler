@@ -100,11 +100,12 @@ MonoBehaviour:
   - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
   - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
   - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: dd9dbb41d03e3b240871384e7d6e4e9a, type: 3}
-  - {fileID: 7559222450374734856, guid: 20dc3c83820c0b941b969025378cdb90, type: 3}
-  BossPrefabs: []
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  BossPrefabs:
+  - {fileID: 7559222450374734856, guid: 59a432a969220374a8bbd651153b5f01, type: 3}
   CurrentLevel: {fileID: 0}
   SpawnFrequency: 5
   MaxAliveCount: 2

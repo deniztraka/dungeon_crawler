@@ -37,6 +37,7 @@ namespace DTWorldz.Behaviours.Mobiles
         private Animator animator;           //animator
         private AttackBehaviour attackBehaviour;
         private Vector3 targetPoint;
+        private HealthBehaviour healthBehaviour;
 
         public float AwareDistance = 5f;
         public float CloseDistance = 3f;
@@ -47,7 +48,17 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
-            direction = Direction.Right;            
+            direction = Direction.Right;
+            healthBehaviour = this.GetComponent<HealthBehaviour>();
+            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeathAnim);
+        }
+
+        void TriggerDeathAnim(float currentHealth, float maxHealth)
+        {
+            foreach (var anim in AnimationSlots)
+            {
+                anim.SetTrigger("Dead");
+            }
         }
 
         public void SetSpawner(ObjectSpawnerBehaviour spawner)
@@ -186,13 +197,13 @@ namespace DTWorldz.Behaviours.Mobiles
             {
                 if (movement != Vector2.zero)
                 {
-                    
+
                     animator.SetFloat("Horizontal", movement.x);
                     animator.SetFloat("Vertical", movement.y);
-                    foreach (var animator in AnimationSlots)
+                    foreach (var anim in AnimationSlots)
                     {
-                        animator.SetFloat("Horizontal", movement.x);
-                        animator.SetFloat("Vertical", movement.y);
+                        anim.SetFloat("Horizontal", movement.x);
+                        anim.SetFloat("Vertical", movement.y);
                     }
                     resultingSpeed = isRunning ? RunningSpeed : Speed;
 
@@ -202,7 +213,7 @@ namespace DTWorldz.Behaviours.Mobiles
                 {
                     resultingSpeed = 0;
                 }
-                
+
                 animator.SetFloat("MovementSpeed", resultingSpeed);
                 animator.SetBool("Attack", attackingTrigger);
                 foreach (var animatorSlot in AnimationSlots)
