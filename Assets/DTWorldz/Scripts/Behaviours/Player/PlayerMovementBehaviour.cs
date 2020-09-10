@@ -87,14 +87,18 @@ namespace DTWorldz.Behaviours
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                attackingTrigger = attackBehaviour.Attack();
-                if(attackingTrigger){
-                    CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
-                }
+                Attack();
             }
         }
 
-
+        public void Attack()
+        {
+            attackingTrigger = attackBehaviour.Attack();
+            if (attackingTrigger)
+            {
+                CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
+            }
+        }
 
         private float GetAngle()
         {
@@ -178,7 +182,7 @@ namespace DTWorldz.Behaviours
             {
                 animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
                 animatorSlot.SetBool("Attack", attackingTrigger);
-            }            
+            }
         }
 
         public void SetMovementGrid(Tilemap wallMap)
