@@ -27,27 +27,30 @@ namespace DTWorldz.Behaviours.AI.States
                 RefreshTime -= Time.deltaTime;
             }
 
-            var goIdle = false;
-            if (MovementBehaviour.FollowingTarget != null)
-            {
-                var distanceFromTarget = GetDistanceFrom(MovementBehaviour.FollowingTarget.transform.position);
+            CheckAttack();
 
-                MovementBehaviour.SetIsRunning(distanceFromTarget > MovementBehaviour.CloseDistance && distanceFromTarget < MovementBehaviour.AwareDistance);                
-                if (distanceFromTarget > MovementBehaviour.AwareDistance)
-                {
-                    goIdle = true;
-                }
-            }
-            else
+            if (MovementBehaviour.FollowingTarget == null)
             {
-                goIdle = true;
+                GoIdle(animator);
+                return;
             }
 
-            if (goIdle)
+            //follow
+            var distanceFromTarget = GetDistanceFrom(MovementBehaviour.FollowingTarget.transform.position);
+            MovementBehaviour.SetIsRunning(distanceFromTarget > MovementBehaviour.CloseDistance && distanceFromTarget < MovementBehaviour.AwareDistance);
+
+            //go idle if not in aware distance
+            if (distanceFromTarget > MovementBehaviour.AwareDistance)
             {
-                MovementBehaviour.FollowingTarget = null;
-                animator.SetTrigger("Idle");
+                GoIdle(animator);
+                return;
             }
+        }
+
+        private void GoIdle(Animator animator)
+        {
+            MovementBehaviour.FollowingTarget = null;
+            animator.SetTrigger("Idle");
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

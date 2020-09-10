@@ -13,16 +13,21 @@ namespace DTWorldz.Editor.Gizmo
         static void DrawFollowZoneGizmo(MovementBehaviour movementBehaviour, GizmoType gizmoType)
         {
             if (movementBehaviour.DrawGizmos)
-            {
-                var closeDistanceColor = Color.red;
-                closeDistanceColor.a = 0.25f;
+            {            
+                var awareDistanceColor = Color.green;
+                awareDistanceColor.a = 0.025f;
+                Gizmos.color = awareDistanceColor;
+                Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.AwareDistance);
+
+                var closeDistanceColor = Color.yellow;
+                closeDistanceColor.a = 0.05f;
                 Gizmos.color = closeDistanceColor;
                 Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.CloseDistance);
 
-                var awareDistanceColor = Color.yellow;
-                awareDistanceColor.a = 0.05f;
-                Gizmos.color = awareDistanceColor;
-                Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.AwareDistance);
+                 var attackDistanceColor = Color.red;
+                attackDistanceColor.a = 0.1f;
+                Gizmos.color = attackDistanceColor;
+                Gizmos.DrawSphere(movementBehaviour.transform.position, movementBehaviour.AttackDistance);
 
                 
 

@@ -19,6 +19,9 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (DecisionTime <= 0)
             {
+
+                CheckHostility();
+
                 if (AudioManager != null && UnityEngine.Random.value < 0.25f)
                 {
                     AudioManager.Play("Wander");

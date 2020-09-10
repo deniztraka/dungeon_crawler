@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3023635879620413508}
   - component: {fileID: 8992242071911772111}
   m_Layer: 9
-  m_Name: TestMobileSmallRat
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawGizmos: 0
   Speed: 1
-  RunningSpeed: 2
+  RunningSpeed: 1.6
   AnimationSlots:
   - {fileID: 7248027196913600427}
   FollowingTarget: {fileID: 0}
@@ -154,6 +154,7 @@ MonoBehaviour:
   MinDecisionDelay: 1
   MaxDecisionDelay: 5
   FollowRefreshFrequency: 1
+  IsPeaceful: 1
 --- !u!114 &4061465674616278193
 MonoBehaviour:
   m_ObjectHideFlags: 0

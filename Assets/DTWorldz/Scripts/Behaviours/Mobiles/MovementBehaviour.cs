@@ -31,9 +31,15 @@ namespace DTWorldz.Behaviours.Mobiles
         private float resultingSpeed = 1f;
         [SerializeField]
         private bool isRunning = false;
+
+        
+
         private bool attackingTrigger = false;
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Rigidbody Component
+
+        
+
         private Animator animator;           //animator
         private AttackBehaviour attackBehaviour;
         private Vector3 targetPoint;
@@ -43,14 +49,21 @@ namespace DTWorldz.Behaviours.Mobiles
         public float CloseDistance = 3f;
         public float AttackDistance = 1f;
 
+        internal Direction GetDirection()
+        {
+            return direction;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             direction = Direction.Right;
+            attackBehaviour = GetComponentInChildren<AttackBehaviour>();
             healthBehaviour = this.GetComponent<HealthBehaviour>();
             healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeath);
+            FollowingTarget = null;
         }
 
         void TriggerDeath(float currentHealth, float maxHealth)
@@ -88,12 +101,17 @@ namespace DTWorldz.Behaviours.Mobiles
             animator.SetTrigger("Follow");
         }
 
+        internal object GetFollowingTarget()
+        {
+            return FollowingTarget;
+        }
+
         public void SetMovementGrid(Tilemap wallMap)
         {
             this.wallMap = wallMap;
         }
 
-        public void SetTargetPoint(Vector3 target)
+        internal void SetTargetPoint(Vector3 target)
         {
             targetPoint = target;
             if (wallMap != null)
@@ -130,6 +148,7 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             CheckMovementPaths();
             HandleAnimations();
+            attackBehaviour.SetDirection(direction);
             // if (Input.GetMouseButtonDown(0))
             // {
             //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));

@@ -83,7 +83,7 @@ namespace DTWorldz.Behaviours
                     {
                         var difference = enemyHealthBehaviour.transform.position - this.transform.position;
                         difference = difference.normalized * KnockbackForce;
-                        enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);                        
+                        enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);
                     }
                 }
             }
@@ -92,12 +92,15 @@ namespace DTWorldz.Behaviours
         IEnumerator PlaySwing(float delay)
         {
             yield return new WaitForSeconds(delay);
-             audioManager.Play("Swing");
+            if (audioManager != null)
+            {
+                audioManager.Play("Swing");
+            }
         }
 
         public void Attack()
         {
-            StartCoroutine(PlaySwing(0.2f));           
+            StartCoroutine(PlaySwing(0.2f));
             StartCoroutine(LateAttack(0.5f));
         }
     }

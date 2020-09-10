@@ -16,6 +16,8 @@ namespace DTWorldz.Behaviours.AI
         public int MaxDecisionDelay = 5;
         public float FollowRefreshFrequency = 1;
 
+        public bool IsPeaceful = true;
+
         private string state;
         private HealthBehaviour healthBehaviour;
 
