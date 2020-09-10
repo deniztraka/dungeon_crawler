@@ -20,7 +20,7 @@ namespace DTWorldz.Behaviours.AI.States
             if (DecisionTime <= 0)
             {
 
-                CheckHostility();
+                CheckHostility(animator);
 
                 if (AudioManager != null && UnityEngine.Random.value < 0.25f)
                 {

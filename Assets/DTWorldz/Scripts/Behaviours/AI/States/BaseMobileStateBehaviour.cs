@@ -34,12 +34,19 @@ namespace DTWorldz.Behaviours.AI.States
             DecisionTime = 0;
         }
 
-
-
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
-            AttackBehaviour.SetDirection(MovementBehaviour.GetDirection());
+            if (AttackBehaviour != null)
+            {
+                AttackBehaviour.SetDirection(MovementBehaviour.GetDirection());
+            }
+
+            if (StateName != "Attack")
+            {
+                CheckAttack(animator);
+            }
+
             if (MobileHealth.CurrentHealth <= 0)
             {
                 animator.SetTrigger("Dead");
@@ -70,7 +77,7 @@ namespace DTWorldz.Behaviours.AI.States
         {
             if (MobileStateBehaviour != null && !MobileStateBehaviour.IsAngry)
             {
-                Debug.Log("not angry");
+                //Debug.Log("not angry");
                 return;
             }
 
@@ -81,23 +88,26 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (MovementBehaviour != null && MovementBehaviour.FollowingTarget == null)
             {
-                Debug.Log("no following target");
+                //Debug.Log("no following target");
                 return;
             }
 
             var distance = Vector2.Distance(MovementBehaviour.FollowingTarget.transform.position, this.MovementBehaviour.transform.position);
+            //Debug.Log(distance);
             if (distance > AttackBehaviour.AttackRange)
             {
-                Debug.Log("distance not enough");
+                //Debug.Log("distance not enough");
+                //GoIdle(animator);
                 return;
             }
 
-
-            var attacked = AttackBehaviour.Attack();
-            MovementBehaviour.SetAttackingTrigger(attacked);
+            if (StateName != "Attack")
+            {
+                animator.SetTrigger("Attack");
+            }
         }
 
-        protected void CheckHostility()
+        protected void CheckHostility(Animator animator)
         {
             if (MovementBehaviour == null && MobileStateBehaviour == null)
             {
@@ -129,6 +139,7 @@ namespace DTWorldz.Behaviours.AI.States
             MovementBehaviour.SetFollowingTarget(closestEnemy);
             MovementBehaviour.SetIsRunning(true);
             MobileStateBehaviour.IsAngry = true;
+            animator.SetTrigger("Follow");
         }
 
         private void SetComponents(Animator animator)
@@ -153,6 +164,11 @@ namespace DTWorldz.Behaviours.AI.States
             {
                 MobileHealth = animator.gameObject.GetComponent<HealthBehaviour>();
             }
+        }
+
+        public void GoIdle(Animator animator)
+        {
+            animator.SetTrigger("Idle");
         }
     }
 }

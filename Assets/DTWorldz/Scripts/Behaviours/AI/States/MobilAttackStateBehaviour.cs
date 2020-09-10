@@ -5,46 +5,55 @@ namespace DTWorldz.Behaviours.AI.States
 {
     public class MobilAttackStateBehaviour : BaseMobileStateBehaviour
     {
-        private bool attackingTrigger = false;
-        
-        [SerializeField]
-        private float attackTime = 0;
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             StateName = "Attack";
-            
-            Debug.Log("attack state enter");
             base.OnStateEnter(animator, stateInfo, layerIndex);
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            base.OnStateUpdate(animator, stateInfo, layerIndex);            
-            Debug.Log("attack state update");
-            Attack();            
+            base.OnStateUpdate(animator, stateInfo, layerIndex);
 
-            attackTime -= Time.deltaTime;
-            attackTime = attackTime <= 0 ? 0 : attackTime;
-        }
-
-        private void TriggerAttack()
-        {
-            AttackBehaviour.Attack();
-            attackTime = AttackBehaviour.AttackingFrequency;
-        }
-
-        public void Attack()
-        {
-            if (attackTime <= 0)
+            if (MobileStateBehaviour != null && !MobileStateBehaviour.IsAngry)
             {
-                TriggerAttack();
-                attackingTrigger = true;
+                GoIdle(animator);
             }
+
+            if (AttackBehaviour == null)
+            {
+                GoIdle(animator);
+            }
+
+            if (MovementBehaviour != null && MovementBehaviour.FollowingTarget == null)
+            {
+                GoIdle(animator);
+            }
+
+            if (MovementBehaviour.FollowingTarget != null)
+            {
+                var distance = Vector2.Distance(MovementBehaviour.FollowingTarget.transform.position, this.MovementBehaviour.transform.position);
+                //Debug.Log(distance);
+                if (distance > AttackBehaviour.AttackRange)
+                {
+                    GoIdle(animator);
+                }
+            }
+
+
+
+
+            Attack();
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateExit(animator, stateInfo, layerIndex);
+        }
+
+        void Attack()
+        {
+            var attacked = AttackBehaviour.Attack();
         }
     }
 }

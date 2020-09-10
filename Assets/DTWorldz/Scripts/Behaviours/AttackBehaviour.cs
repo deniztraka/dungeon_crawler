@@ -22,6 +22,22 @@ namespace DTWorldz.Behaviours
 
         private AudioManager audioManager;
 
+        public delegate void AttackingHandler();
+        public event AttackingHandler OnBeforeAttack;
+        public event AttackingHandler OnAfterAttack;
+
+        public Vector2 AttackingColliderSizeUp;
+        public Vector2 AttackingColliderOffsetUp;
+
+        public Vector2 AttackingColliderSizeLeft;
+        public Vector2 AttackingColliderOffsetLeft;
+
+        public Vector2 AttackingColliderSizeDown;
+        public Vector2 AttackingColliderOffsetDown;
+
+        public Vector2 AttackingColliderSizeRight;
+        public Vector2 AttackingColliderOffsetRight;
+
 
         public float AttackingFrequency = 0.5f;
 
@@ -33,7 +49,6 @@ namespace DTWorldz.Behaviours
         void Start()
         {
             coll = GetComponent<BoxCollider2D>();
-            collSizeDirectionAddition = Vector2.zero;
             audioManager = gameObject.GetComponent<AudioManager>();
         }
 
@@ -43,20 +58,21 @@ namespace DTWorldz.Behaviours
             switch (direction)
             {
                 case Direction.Up:
-                    coll.offset = new Vector2(0, 1f + AttackRange);
-                    collSizeDirectionAddition = new Vector2(0.5f, 0f);
+                    coll.offset = AttackingColliderOffsetUp;
+                    coll.size = AttackingColliderSizeUp;
+
                     break;
                 case Direction.Left:
-                    coll.offset = new Vector2(-.75f - AttackRange, .5f);
-                    collSizeDirectionAddition = new Vector2(0.5f, 0.5f);
+                    coll.offset = AttackingColliderOffsetLeft;
+                    coll.size = AttackingColliderSizeLeft;
                     break;
                 case Direction.Down:
-                    coll.offset = new Vector2(0, -.25f - AttackRange);
-                    collSizeDirectionAddition = new Vector2(0.5f, 0f);
+                    coll.offset = AttackingColliderOffsetDown;
+                    coll.size = AttackingColliderSizeDown;
                     break;
                 case Direction.Right:
-                    coll.offset = new Vector2(.75f + AttackRange, .5f);
-                    collSizeDirectionAddition = new Vector2(0.5f, 0.5f);
+                    coll.offset = AttackingColliderOffsetRight;
+                    coll.size = AttackingColliderSizeRight;
                     break;
             }
 
@@ -99,6 +115,11 @@ namespace DTWorldz.Behaviours
                     }
                 }
             }
+
+            if (OnAfterAttack != null)
+            {
+                OnAfterAttack();
+            }
         }
 
         IEnumerator PlaySwing(float delay)
@@ -114,6 +135,10 @@ namespace DTWorldz.Behaviours
         {
             if (attackTime <= 0)
             {
+                if (OnBeforeAttack != null)
+                {
+                    OnBeforeAttack();
+                }
                 StartCoroutine(PlaySwing(0.2f));
                 StartCoroutine(LateAttack(0.5f));
                 attackTime = AttackingFrequency;

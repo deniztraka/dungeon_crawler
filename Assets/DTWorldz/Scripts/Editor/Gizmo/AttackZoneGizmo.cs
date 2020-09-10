@@ -8,16 +8,17 @@ namespace DTWorldz.Editor.Gizmo
 {
     public class AttackZoneGizmo : MonoBehaviour
     {
-        [DrawGizmo(GizmoType.NotInSelectionHierarchy)]
-        static void DrawAttackZone(AttackBehaviour attackBehaviour, GizmoType gizmoType){
+        [DrawGizmo(GizmoType.Selected)]
+        static void DrawAttackZone(AttackBehaviour attackBehaviour, GizmoType gizmoType)
+        {
             var collider = attackBehaviour.gameObject.GetComponent<BoxCollider2D>();
             Gizmos.color = Color.red;
             var positionY = attackBehaviour.transform.position.y + collider.offset.y;
             var positionX = attackBehaviour.transform.position.x + collider.offset.x;
             var gizmoPosition = new Vector3(positionX, positionY, 0);
-            Gizmos.DrawWireCube(gizmoPosition, collider.size + attackBehaviour.GetSizeEdition());  
-            
-                      
+            Gizmos.DrawWireCube(gizmoPosition, collider.size);
+
+
         }
     }
 }

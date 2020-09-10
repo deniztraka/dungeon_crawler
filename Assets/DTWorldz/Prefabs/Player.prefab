@@ -108,7 +108,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021334171, y: 0.35}
+  m_Offset: {x: 0, y: 0.35}
   serializedVersion: 2
   m_Radius: 0.3
 --- !u!50 &5328125669103109271
@@ -166,10 +166,8 @@ MonoBehaviour:
   Speed: 1
   RunningSpeed: 2
   ClickAndGoEnabled: 0
-  IsJoyStickEnabled: 1
+  IsJoyStickEnabled: 0
   direction: 0
-  attackingFrequency: 0.5
-  attackTime: 0
   AnimationSlots: []
   Joystick: {fileID: 0}
 --- !u!114 &1793401368
@@ -307,11 +305,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 1
   KnockbackForce: 0.1
   AttackRange: 0
   layer:
     serializedVersion: 2
     m_Bits: 768
+  AttackingColliderSizeUp: {x: 1.25, y: 1.25}
+  AttackingColliderOffsetUp: {x: 0, y: 1}
+  AttackingColliderSizeLeft: {x: 1, y: 1.25}
+  AttackingColliderOffsetLeft: {x: -0.5, y: 0.5}
+  AttackingColliderSizeDown: {x: 1.25, y: 0.75}
+  AttackingColliderOffsetDown: {x: 0, y: -0.25}
+  AttackingColliderSizeRight: {x: 1, y: 1.25}
+  AttackingColliderOffsetRight: {x: 0.5, y: 0.5}
+  AttackingFrequency: 0.5
+  attackTime: 0
 --- !u!61 &5328125669390350689
 BoxCollider2D:
   m_ObjectHideFlags: 0

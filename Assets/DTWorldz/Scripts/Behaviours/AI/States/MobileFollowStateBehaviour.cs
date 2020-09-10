@@ -20,7 +20,7 @@ namespace DTWorldz.Behaviours.AI.States
             if (RefreshTime <= 0)
             {
                 RefreshTime = MobileStateBehaviour.FollowRefreshFrequency;
-                CheckHostility();
+                CheckHostility(animator);
                 MovementBehaviour.SetTargetPaths();
             }
             else
@@ -44,15 +44,9 @@ namespace DTWorldz.Behaviours.AI.States
                 GoIdle(animator);
                 return;
             }
-
-            CheckAttack(animator);
         }
 
-        private void GoIdle(Animator animator)
-        {
-            MovementBehaviour.FollowingTarget = null;
-            animator.SetTrigger("Idle");
-        }
+        
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
