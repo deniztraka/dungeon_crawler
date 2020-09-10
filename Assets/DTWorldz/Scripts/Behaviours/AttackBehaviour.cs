@@ -11,6 +11,7 @@ namespace DTWorldz.Behaviours
 {
     public class AttackBehaviour : MonoBehaviour
     {
+        public bool IsPlayer;
         public float KnockbackForce;
         public float AttackRange;
         [SerializeField]
@@ -20,6 +21,12 @@ namespace DTWorldz.Behaviours
         private Vector2 collSizeDirectionAddition;
 
         private AudioManager audioManager;
+
+
+        public float AttackingFrequency = 0.5f;
+
+        [SerializeField]
+        private float attackTime = 0;
 
 
         // Start is called before the first frame update
@@ -52,6 +59,9 @@ namespace DTWorldz.Behaviours
                     collSizeDirectionAddition = new Vector2(0.5f, 0.5f);
                     break;
             }
+
+            attackTime -= Time.deltaTime;
+            attackTime = attackTime <= 0 ? 0 : attackTime;
         }
 
         public Vector2 GetSizeEdition()
@@ -68,8 +78,10 @@ namespace DTWorldz.Behaviours
         {
             yield return new WaitForSeconds(delay);
 
-            CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
-
+            if (IsPlayer)
+            {
+                CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
+            }
             var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size + collSizeDirectionAddition, 0f, layer);
             if (colliders != null && colliders.Length > 0)
             {
@@ -98,10 +110,16 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public void Attack()
+        public bool Attack()
         {
-            StartCoroutine(PlaySwing(0.2f));
-            StartCoroutine(LateAttack(0.5f));
+            if (attackTime <= 0)
+            {
+                StartCoroutine(PlaySwing(0.2f));
+                StartCoroutine(LateAttack(0.5f));
+                attackTime = AttackingFrequency;
+                return true;
+            }
+            return false;
         }
     }
 }

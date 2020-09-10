@@ -21,6 +21,14 @@ namespace DTWorldz.Behaviours.AI
         private string state;
         private HealthBehaviour healthBehaviour;
 
+        [SerializeField]
+        private bool isAngry;
+        public bool IsAngry
+        {
+            get { return isAngry; }
+            set { isAngry = value; }
+        }
+
         void Start()
         {
             healthBehaviour = GetComponent<HealthBehaviour>();
@@ -37,7 +45,7 @@ namespace DTWorldz.Behaviours.AI
 
         private void OnDeath(float currentHealth, float maxHealth)
         {
-            
+
         }
 
         public void SetState(string state)

@@ -19,7 +19,7 @@ namespace DTWorldz.Behaviours.AI.States
         protected MovementBehaviour MovementBehaviour;
         protected AudioManager AudioManager;
         protected AttackBehaviour AttackBehaviour;
-        private float randomDecisionDelay;        
+        private float randomDecisionDelay;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -27,7 +27,7 @@ namespace DTWorldz.Behaviours.AI.States
 
             SetComponents(animator);
 
-            MobileStateBehaviour.SetState(StateName);            
+            MobileStateBehaviour.SetState(StateName);
             Random = new Random(DateTime.Now.Millisecond);
             randomDecisionDelay = UnityEngine.Random.Range(MobileStateBehaviour.MinDecisionDelay, MobileStateBehaviour.MaxDecisionDelay);
 
@@ -66,9 +66,35 @@ namespace DTWorldz.Behaviours.AI.States
             return null;
         }
 
-        protected void CheckAttack()
+        protected void CheckAttack(Animator animator)
         {
+            if (MobileStateBehaviour != null && !MobileStateBehaviour.IsAngry)
+            {
+                Debug.Log("not angry");
+                return;
+            }
 
+            if (AttackBehaviour == null)
+            {
+                return;
+            }
+
+            if (MovementBehaviour != null && MovementBehaviour.FollowingTarget == null)
+            {
+                Debug.Log("no following target");
+                return;
+            }
+
+            var distance = Vector2.Distance(MovementBehaviour.FollowingTarget.transform.position, this.MovementBehaviour.transform.position);
+            if (distance > AttackBehaviour.AttackRange)
+            {
+                Debug.Log("distance not enough");
+                return;
+            }
+
+
+            var attacked = AttackBehaviour.Attack();
+            MovementBehaviour.SetAttackingTrigger(attacked);
         }
 
         protected void CheckHostility()
@@ -99,10 +125,10 @@ namespace DTWorldz.Behaviours.AI.States
                 return;
             }
 
-
             //if we still here, lets chase it
             MovementBehaviour.SetFollowingTarget(closestEnemy);
             MovementBehaviour.SetIsRunning(true);
+            MobileStateBehaviour.IsAngry = true;
         }
 
         private void SetComponents(Animator animator)

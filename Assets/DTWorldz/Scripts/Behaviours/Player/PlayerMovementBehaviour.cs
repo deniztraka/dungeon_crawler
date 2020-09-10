@@ -6,6 +6,7 @@ using DTWorldz.Models;
 using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using EZCameraShake;
 
 namespace DTWorldz.Behaviours
 {
@@ -24,17 +25,15 @@ namespace DTWorldz.Behaviours
 
         private float resultingSpeed = 1f;   //Movement Speed of the Player
         private bool isRunning = false;
-        private bool attackingTrigger = false;
-        [SerializeField]
-        private float attackingFrequency = 0.5f;
-        [SerializeField]
-        private float attackTime = 0;
+
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Player Rigidbody Component
         private Animator animator;           //animator
         private AttackBehaviour attackBehaviour;
         private AudioManager audioManager;
         public List<Animator> AnimationSlots;
+
+        private bool attackingTrigger = false;
 
         public Joystick Joystick;
 
@@ -55,7 +54,6 @@ namespace DTWorldz.Behaviours
             //CheckMovementPaths();
             HandleAnimations();
             attackBehaviour.SetDirection(direction);
-            //reset attacking trigger
             attackingTrigger = false;
         }
 
@@ -89,27 +87,14 @@ namespace DTWorldz.Behaviours
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                Attack();
-            }
-
-            attackTime -= Time.deltaTime;
-            attackTime = attackTime <= 0 ? 0 : attackTime;
-        }
-
-        private void TriggerAttack()
-        {
-            attackBehaviour.Attack();
-            attackTime = attackingFrequency;
-        }
-
-        public void Attack()
-        {
-            if (attackTime <= 0)
-            {
-                TriggerAttack();
-                attackingTrigger = true;
+                attackingTrigger = attackBehaviour.Attack();
+                if(attackingTrigger){
+                    CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
+                }
             }
         }
+
+
 
         private float GetAngle()
         {
@@ -193,7 +178,7 @@ namespace DTWorldz.Behaviours
             {
                 animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
                 animatorSlot.SetBool("Attack", attackingTrigger);
-            }
+            }            
         }
 
         public void SetMovementGrid(Tilemap wallMap)
@@ -227,24 +212,6 @@ namespace DTWorldz.Behaviours
                     audioManager.SetCurrentPitch(0.5f);
                     audioManager.Stop("Walking");
                 }
-                //Debug.Log(movement.magnitude);
-
-                // if (movement.magnitude > 0 && !isRunning)
-                // {
-
-                //     audioManager.Stop("Running");
-                //     audioManager.Play("Walking");
-                // }
-                // else
-                // if (movement.magnitude > 0 && isRunning)
-                // {
-                //     audioManager.Play("Running");
-                // }
-                // else if (movement.magnitude == 0)
-                // {
-                //     audioManager.Stop("Walking");
-                //     audioManager.Stop("Running");
-                // }
             }
         }
 

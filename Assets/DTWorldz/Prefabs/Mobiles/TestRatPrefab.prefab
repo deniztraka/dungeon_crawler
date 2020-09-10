@@ -44,11 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPlayer: 0
   KnockbackForce: 0
   AttackRange: 0.5
   layer:
     serializedVersion: 2
     m_Bits: 4096
+  AttackingFrequency: 2
+  attackTime: 0
 --- !u!61 &5298828209945341386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -231,6 +234,7 @@ MonoBehaviour:
   MaxDecisionDelay: 5
   FollowRefreshFrequency: 1
   IsPeaceful: 0
+  isAngry: 0
 --- !u!114 &4061465674616278193
 MonoBehaviour:
   m_ObjectHideFlags: 0

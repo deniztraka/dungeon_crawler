@@ -54,6 +54,10 @@ namespace DTWorldz.Behaviours.Mobiles
             return direction;
         }
 
+        public void SetAttackingTrigger(bool val){
+            attackingTrigger = val;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -153,6 +157,7 @@ namespace DTWorldz.Behaviours.Mobiles
             // {
             //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
             // }
+            attackingTrigger = false;
         }
 
         private void CheckMovementPaths()

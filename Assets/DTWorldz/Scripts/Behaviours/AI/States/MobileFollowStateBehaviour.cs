@@ -20,14 +20,13 @@ namespace DTWorldz.Behaviours.AI.States
             if (RefreshTime <= 0)
             {
                 RefreshTime = MobileStateBehaviour.FollowRefreshFrequency;
+                CheckHostility();
                 MovementBehaviour.SetTargetPaths();
             }
             else
             {
                 RefreshTime -= Time.deltaTime;
-            }
-
-            CheckAttack();
+            }            
 
             if (MovementBehaviour.FollowingTarget == null)
             {
@@ -45,6 +44,8 @@ namespace DTWorldz.Behaviours.AI.States
                 GoIdle(animator);
                 return;
             }
+
+            CheckAttack(animator);
         }
 
         private void GoIdle(Animator animator)

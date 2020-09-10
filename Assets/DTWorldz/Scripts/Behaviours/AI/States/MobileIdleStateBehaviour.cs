@@ -10,6 +10,7 @@ namespace DTWorldz.Behaviours.AI.States
             StateName = "Idle";
             base.OnStateEnter(animator, stateInfo, layerIndex);
             MovementBehaviour.GoIdle();
+            MobileStateBehaviour.IsAngry = false;
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
