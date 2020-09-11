@@ -97,13 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPrefabs:
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
-  - {fileID: 7559222450374734856, guid: ee8e99ba7a3b80545bd1b869ac433c92, type: 3}
+  - {fileID: 7559222450374734856, guid: d3e247e7634bf8b4199fd2761f5cbcc5, type: 3}
+  - {fileID: 7559222450374734856, guid: d3e247e7634bf8b4199fd2761f5cbcc5, type: 3}
+  - {fileID: 7559222450374734856, guid: d3e247e7634bf8b4199fd2761f5cbcc5, type: 3}
   BossPrefabs:
   - {fileID: 7559222450374734856, guid: 59a432a969220374a8bbd651153b5f01, type: 3}
   CurrentLevel: {fileID: 0}

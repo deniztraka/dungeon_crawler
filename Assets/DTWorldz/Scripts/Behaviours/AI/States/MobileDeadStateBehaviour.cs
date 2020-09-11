@@ -19,6 +19,7 @@ namespace DTWorldz.Behaviours.AI.States
         private void GoDeadState(GameObject gameObject){
             MovementBehaviour.enabled = false;
             MobileHealth.enabled = false;
+            
             // var spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
             // var tempColor = spriteRenderer.color;
             // tempColor.a = 0.5f;
@@ -26,6 +27,8 @@ namespace DTWorldz.Behaviours.AI.States
 
             var collider = gameObject.GetComponentInChildren<Collider2D>();
             collider.enabled = false;
+            var rigidBody2d = gameObject.GetComponent<Rigidbody2D>();
+            rigidBody2d.bodyType = RigidbodyType2D.Static;
 
             // var rigidbody2d = gameObject.GetComponentInChildren<Rigidbody2D>();
             // rigidbody2d.AddForce(Vector2.up * 50, ForceMode2D.Force);
