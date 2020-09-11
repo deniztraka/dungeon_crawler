@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours.Mobiles
             if (currentHealth == -1)
             {
                 return;
-            }            
+            }
 
             currentHealth -= damage;
 
@@ -74,7 +74,10 @@ namespace DTWorldz.Behaviours.Mobiles
                 currentHealth = -1;
                 if (OnDeath != null)
                 {
-                    audioManager.Play("Dead");
+                    if (audioManager != null)
+                    {
+                        audioManager.Play("Dead");
+                    }
                     OnDeath(currentHealth, MaxHealth);
                 }
             }
