@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 618796324424763278}
   - component: {fileID: 5298828209945341386}
   - component: {fileID: 6387558931913570696}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: AttackBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}

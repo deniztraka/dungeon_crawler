@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours.Mobiles
             if (currentHealth == -1)
             {
                 return;
-            }
+            }            
 
             currentHealth -= damage;
 
