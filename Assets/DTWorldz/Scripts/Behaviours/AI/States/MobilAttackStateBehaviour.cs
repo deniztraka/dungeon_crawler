@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorldz.Behaviours.AI.States
 {
@@ -18,30 +19,38 @@ namespace DTWorldz.Behaviours.AI.States
             if (MobileStateBehaviour != null && !MobileStateBehaviour.IsAngry)
             {
                 GoIdle(animator);
+                return;
             }
 
             if (AttackBehaviour == null)
             {
                 GoIdle(animator);
+                return;
             }
 
             if (MovementBehaviour != null && MovementBehaviour.FollowingTarget == null)
             {
                 GoIdle(animator);
+                return;
             }
 
             if (MovementBehaviour.FollowingTarget != null)
             {
+                var targetHealth = MovementBehaviour.FollowingTarget.gameObject.GetComponent<HealthBehaviour>();
+                if (targetHealth.CurrentHealth < 0)
+                {
+                    GoIdle(animator);
+                    return;
+                }
+
                 var distance = Vector2.Distance(MovementBehaviour.FollowingTarget.transform.position, this.MovementBehaviour.transform.position);
                 //Debug.Log(distance);
                 if (distance > AttackBehaviour.AttackRange)
                 {
                     GoIdle(animator);
+                    return;
                 }
             }
-
-
-
 
             Attack();
         }

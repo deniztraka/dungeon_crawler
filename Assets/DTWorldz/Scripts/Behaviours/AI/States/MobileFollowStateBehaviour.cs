@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorldz.Behaviours.AI.States
 {
@@ -26,12 +27,21 @@ namespace DTWorldz.Behaviours.AI.States
             else
             {
                 RefreshTime -= Time.deltaTime;
-            }            
+            }
 
             if (MovementBehaviour.FollowingTarget == null)
             {
                 GoIdle(animator);
                 return;
+            }
+            else
+            {
+                var targetHealth = MovementBehaviour.FollowingTarget.gameObject.GetComponent<HealthBehaviour>();
+                if (targetHealth.CurrentHealth < 0)
+                {
+                    GoIdle(animator);
+                    return;
+                }
             }
 
             //follow
@@ -46,7 +56,7 @@ namespace DTWorldz.Behaviours.AI.States
             }
         }
 
-        
+
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {

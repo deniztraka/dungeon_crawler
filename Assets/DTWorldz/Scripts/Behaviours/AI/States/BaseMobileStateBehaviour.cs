@@ -64,6 +64,11 @@ namespace DTWorldz.Behaviours.AI.States
             //todo:use an enemy matrix to get closest enemy type
             //currently only enemy is player
             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            var playerHealth = playerGameObject.GetComponent<HealthBehaviour>();
+            if (playerHealth.CurrentHealth < 0)
+            {
+                return null;
+            }
             var playerDistance = Vector2.Distance(this.MovementBehaviour.transform.position, playerGameObject.transform.position);
             if (playerDistance < MovementBehaviour.AwareDistance)
             {
@@ -90,6 +95,15 @@ namespace DTWorldz.Behaviours.AI.States
             {
                 //Debug.Log("no following target");
                 return;
+            }
+
+            if (MovementBehaviour.FollowingTarget != null)
+            {
+                var targetHealth = MovementBehaviour.FollowingTarget.gameObject.GetComponent<HealthBehaviour>();
+                if (targetHealth.CurrentHealth < 0)
+                {
+                    return;
+                }
             }
 
             var distance = Vector2.Distance(MovementBehaviour.FollowingTarget.transform.position, this.MovementBehaviour.transform.position);
