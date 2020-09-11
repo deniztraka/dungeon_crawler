@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  MaxHealth: 20
+  MaxHealth: 5
   BodyType: 0
 --- !u!95 &7559222450374734853
 Animator:

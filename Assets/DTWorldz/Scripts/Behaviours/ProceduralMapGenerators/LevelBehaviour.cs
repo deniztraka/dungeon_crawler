@@ -174,7 +174,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 spawnerBehaviour.RangeX = node.Room.InnerRect.width - 1;
                 spawnerBehaviour.CurrentLevel = this;
                 var aliveCount = (int)Math.Floor((decimal)(node.Room.GetSurcafeArea() / 10));
-                spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 2));
+                spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 3));
                 node.Room.SetSpawner(spawnerBehaviour);
             }
             else
