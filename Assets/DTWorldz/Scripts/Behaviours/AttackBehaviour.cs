@@ -98,7 +98,7 @@ namespace DTWorldz.Behaviours
             {
                 CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
             }
-            var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size + collSizeDirectionAddition, 0f, layer);
+            var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
             if (colliders != null && colliders.Length > 0)
             {
                 var firstCollider = colliders[0];
