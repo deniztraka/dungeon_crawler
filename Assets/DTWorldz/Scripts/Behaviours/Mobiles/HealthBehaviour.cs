@@ -34,11 +34,7 @@ namespace DTWorldz.Behaviours.Mobiles
         }
 
 
-        IEnumerator CreateBloodStainsAfterSeconds(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-            BloodStainsPool.Instance.Create(transform.position);
-        }
+        
 
         public void TakeDamage(float damage, DamageType type)
         {
@@ -49,15 +45,12 @@ namespace DTWorldz.Behaviours.Mobiles
 
             currentHealth -= damage;
 
-            if (audioManager != null)
+            if (audioManager != null && UnityEngine.Random.value > 0.5f)
             {
                 audioManager.Play("Hit");
             }
 
-            if (BodyType == BodyType.Flesh && type == DamageType.Physical)
-            {
-                StartCoroutine(CreateBloodStainsAfterSeconds(0.35f));
-            }
+            
 
             if (OnDamageTaken != null)
             {

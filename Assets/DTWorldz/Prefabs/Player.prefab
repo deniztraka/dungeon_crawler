@@ -232,24 +232,38 @@ MonoBehaviour:
     Source: {fileID: 0}
     Loop: 0
   - Name: Hit
-    Clip: {fileID: 8300000, guid: a61b869918709184dad33a4eaffe7bd2, type: 3}
-    Volume: 1
-    Pitch: 1
-    MaxDistance: 4
+    Clip: {fileID: 8300000, guid: 4d6b4ed4464eaf64c83ddf5bb9a8bb56, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
   - Name: Hit
-    Clip: {fileID: 8300000, guid: 7224d7ecbfa49ae41b7b43e45de9ab79, type: 3}
-    Volume: 1
-    Pitch: 1
-    MaxDistance: 4
+    Clip: {fileID: 8300000, guid: cfc3235abbbe19d40a62d55485a0025b, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
   - Name: Hit
-    Clip: {fileID: 8300000, guid: 9ca01b1f7e8c417449cf383ea9652521, type: 3}
-    Volume: 1
-    Pitch: 1
-    MaxDistance: 4
+    Clip: {fileID: 8300000, guid: a6348bd2938853b489a6455e5af5c387, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 74b952f59e346154db46ce7bff4451a7, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 1856052c9f02a114fb613317ec3cfd1e, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
 --- !u!81 &1608416613

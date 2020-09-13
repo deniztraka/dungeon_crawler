@@ -6,6 +6,7 @@ using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Models;
 using EZCameraShake;
 using UnityEngine;
+using DTWorlds.Behaviours.Effects;
 
 namespace DTWorldz.Behaviours
 {
@@ -105,13 +106,20 @@ namespace DTWorldz.Behaviours
                 var enemyHealthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
                 if (enemyHealthBehaviour != null)
                 {
-                    //audioManager.Play("Hit");
+                    audioManager.Play("Hit");
                     enemyHealthBehaviour.TakeDamage(5, DamageType.Physical);
                     if (KnockbackForce > 0)
                     {
                         var difference = enemyHealthBehaviour.transform.position - this.transform.position;
                         difference = difference.normalized * KnockbackForce;
                         enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);
+                    }
+                    if (IsPlayer)
+                    {
+                        if (enemyHealthBehaviour.BodyType == BodyType.Flesh)
+                        {
+                            StartCoroutine(CreateBloodStainsAfterSeconds(0.35f));
+                        }
                     }
                 }
             }
@@ -120,6 +128,12 @@ namespace DTWorldz.Behaviours
             {
                 OnAfterAttack();
             }
+        }
+
+        IEnumerator CreateBloodStainsAfterSeconds(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            BloodStainsPool.Instance.Create(transform.position);
         }
 
         IEnumerator PlaySwing(float delay)
