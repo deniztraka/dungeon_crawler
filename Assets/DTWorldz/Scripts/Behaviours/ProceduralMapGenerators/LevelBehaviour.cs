@@ -72,9 +72,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 smallestNode.Room.Objects.Add(obj);
 
                 var spawner = smallestNode.Room.GetSpawner();
-                spawner.SpawnBoss = true;
-
-
+                if (spawner != null)
+                {
+                    spawner.SpawnBoss = true;
+                }
             }
         }
 
@@ -114,7 +115,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         if (dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs != null && dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs.Count > 0 && dungeonTemplate.RoomTemplate.TrapChance > random.NextDouble())
                         {
                             if (y == room.InnerRect.yMax - 1 && WallMap.GetTile(new Vector3Int(x, y + 1, 0)) != null)
-                            {                                
+                            {
                                 var chosenTrapPrefab = dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs[random.Next(0, dungeonTemplate.RoomTemplate.TrapTemplate.TopWallTrapPrefabs.Count)];
                                 var objectPosition = FloorMap.GetCellCenterWorld(new Vector3Int(x, y, 0));
                                 var instantiatedTrapObject = Instantiate(chosenTrapPrefab, new Vector3(objectPosition.x, objectPosition.y, 0), Quaternion.identity, EnvironmentParent);
@@ -173,7 +174,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 spawnerBehaviour.RangeX = node.Room.InnerRect.width - 1;
                 spawnerBehaviour.CurrentLevel = this;
                 var aliveCount = (int)Math.Floor((decimal)(node.Room.GetSurcafeArea() / 10));
-                spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 2));
+                spawnerBehaviour.MaxAliveCount = (int)Math.Ceiling((decimal)(aliveCount / 3));
                 node.Room.SetSpawner(spawnerBehaviour);
             }
             else

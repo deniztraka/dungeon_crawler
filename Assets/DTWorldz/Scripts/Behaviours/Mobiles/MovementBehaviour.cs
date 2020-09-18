@@ -31,25 +31,62 @@ namespace DTWorldz.Behaviours.Mobiles
         private float resultingSpeed = 1f;
         [SerializeField]
         private bool isRunning = false;
+        [SerializeField]
+        private bool isAttacking = false;
+
+
+
         private bool attackingTrigger = false;
+
         private Vector2 movement;           //Movement Axis
         private Rigidbody2D rigidbody2d;      //Rigidbody Component
-        private Animator animator;           //animator
+
         private AttackBehaviour attackBehaviour;
         private Vector3 targetPoint;
-
+        private HealthBehaviour healthBehaviour;
         public float AwareDistance = 5f;
         public float CloseDistance = 3f;
-        public float AttackDistance = 1f;
+
+        internal Direction GetDirection()
+        {
+            return direction;
+        }
 
         // Start is called before the first frame update
         void Start()
         {
             rigidbody2d = this.GetComponent<Rigidbody2D>();
-            animator = this.GetComponent<Animator>();
+            //animator = this.GetComponent<Animator>();
             direction = Direction.Right;
+            attackBehaviour = GetComponentInChildren<AttackBehaviour>();
+            healthBehaviour = this.GetComponent<HealthBehaviour>();
+            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeath);
+            FollowingTarget = null;
+            if (attackBehaviour != null)
+            {
+                attackBehaviour.OnBeforeAttack += new AttackBehaviour.AttackingHandler(BeforeAttack);
+                attackBehaviour.OnAfterAttack += new AttackBehaviour.AttackingHandler(AfterAttack);
+            }
+        }
 
+        private void AfterAttack()
+        {
+            isAttacking = false;
+        }
 
+        private void BeforeAttack()
+        {
+            isAttacking = true;
+        }
+
+        void TriggerDeath(float currentHealth, float maxHealth)
+        {
+            paths = new List<Vector3>();
+            movement = Vector2.zero;
+            foreach (var anim in AnimationSlots)
+            {
+                anim.SetTrigger("Dead");
+            }
         }
 
         public void SetSpawner(ObjectSpawnerBehaviour spawner)
@@ -74,7 +111,12 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             FollowingTarget = target;
             SetTargetPaths();
-            animator.SetTrigger("Follow");
+            //animator.SetTrigger("Follow");
+        }
+
+        internal object GetFollowingTarget()
+        {
+            return FollowingTarget;
         }
 
         public void SetMovementGrid(Tilemap wallMap)
@@ -82,12 +124,17 @@ namespace DTWorldz.Behaviours.Mobiles
             this.wallMap = wallMap;
         }
 
-        public void SetTargetPoint(Vector3 target)
+        internal void SetTargetPoint(Vector3 target)
         {
             targetPoint = target;
             if (wallMap != null)
             {
                 paths = AStar.FindPath(wallMap, transform.position, targetPoint);
+                if (paths != null && paths.Count > 0)
+                {
+                    paths[paths.Count - 1] = targetPoint;
+                }
+
                 if (paths != null && paths.Count > 1)
                 {
                     paths.RemoveAt(0);
@@ -118,10 +165,16 @@ namespace DTWorldz.Behaviours.Mobiles
         void Update()
         {
             CheckMovementPaths();
+            HandleAnimations();
+            if (attackBehaviour != null)
+            {
+                attackBehaviour.SetDirection(direction);
+            }
             // if (Input.GetMouseButtonDown(0))
             // {
             //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
-            // }
+            // }     
+            //movement = Vector2.zero;       
         }
 
         private void CheckMovementPaths()
@@ -129,7 +182,7 @@ namespace DTWorldz.Behaviours.Mobiles
 
             if (paths != null && paths.Count > 0)
             {
-                var colliders = Physics2D.OverlapCircleAll(paths[0], 0.5f);
+                var colliders = Physics2D.OverlapCircleAll(paths[0], 0.25f);
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     if (colliders[i].gameObject == gameObject)
@@ -183,33 +236,36 @@ namespace DTWorldz.Behaviours.Mobiles
 
         private void HandleAnimations()
         {
-            if (animator != null)
+            if (movement != Vector2.zero)
             {
-                if (movement != Vector2.zero)
-                {
-                    animator.SetFloat("Horizontal", movement.x);
-                    animator.SetFloat("Vertical", movement.y);
-                    foreach (var animator in AnimationSlots)
-                    {
-                        animator.SetFloat("Horizontal", movement.x);
-                        animator.SetFloat("Vertical", movement.y);
-                    }
-                    resultingSpeed = isRunning ? RunningSpeed : Speed;
 
-                    SetDirection(movement.x, movement.y);
-                }
-                else
+                // animator.SetFloat("Horizontal", movement.x);
+                // animator.SetFloat("Vertical", movement.y);
+                foreach (var anim in AnimationSlots)
                 {
-                    resultingSpeed = 0;
+                    anim.SetFloat("Horizontal", movement.x);
+                    anim.SetFloat("Vertical", movement.y);
                 }
-                animator.SetFloat("MovementSpeed", resultingSpeed);
-                animator.SetBool("Attack", attackingTrigger);
-                foreach (var animatorSlot in AnimationSlots)
-                {
-                    animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
-                    animatorSlot.SetBool("Attack", attackingTrigger);
-                }
+                resultingSpeed = isRunning ? RunningSpeed : Speed;
+
+                SetDirection(movement.x, movement.y);
             }
+            else
+            {
+                resultingSpeed = 0;
+            }
+
+            // animator.SetFloat("MovementSpeed", resultingSpeed);
+            // animator.SetBool("Attack", attackingTrigger);
+            foreach (var animatorSlot in AnimationSlots)
+            {
+                animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
+                // if (animatorSlot.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                // {
+                animatorSlot.SetBool("Attack", isAttacking);
+                // }
+            }
+
         }
 
         public float GetResultingSpeed()
@@ -220,7 +276,7 @@ namespace DTWorldz.Behaviours.Mobiles
         private void FixedUpdate()
         {
             resultingSpeed = isRunning ? RunningSpeed : Speed;
-            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);            
+            rigidbody2d.MovePosition(rigidbody2d.position + movement * resultingSpeed * Time.fixedDeltaTime);
         }
 
         void OnDrawGizmosSelected()
@@ -232,12 +288,12 @@ namespace DTWorldz.Behaviours.Mobiles
                     Gizmos.color = Color.yellow;
                     foreach (var point in paths)
                     {
-                        Gizmos.DrawWireSphere(point, 0.5f);
+                        Gizmos.DrawWireSphere(point, 0.25f);
                     }
 
                     Gizmos.color = Color.red;
 
-                    Gizmos.DrawWireSphere(paths[0], 0.5f);
+                    Gizmos.DrawWireSphere(paths[0], 0.25f);
                 }
             }
         }

@@ -16,8 +16,18 @@ namespace DTWorldz.Behaviours.AI
         public int MaxDecisionDelay = 5;
         public float FollowRefreshFrequency = 1;
 
+        public bool IsPeaceful = true;
+
         private string state;
         private HealthBehaviour healthBehaviour;
+
+        [SerializeField]
+        private bool isAngry;
+        public bool IsAngry
+        {
+            get { return isAngry; }
+            set { isAngry = value; }
+        }
 
         void Start()
         {
@@ -35,7 +45,7 @@ namespace DTWorldz.Behaviours.AI
 
         private void OnDeath(float currentHealth, float maxHealth)
         {
-            
+
         }
 
         public void SetState(string state)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 namespace DTWorldz.Behaviours.AI.States
 {
@@ -20,6 +21,7 @@ namespace DTWorldz.Behaviours.AI.States
             if (RefreshTime <= 0)
             {
                 RefreshTime = MobileStateBehaviour.FollowRefreshFrequency;
+                CheckHostility(animator);
                 MovementBehaviour.SetTargetPaths();
             }
             else
@@ -27,28 +29,34 @@ namespace DTWorldz.Behaviours.AI.States
                 RefreshTime -= Time.deltaTime;
             }
 
-            var goIdle = false;
-            if (MovementBehaviour.FollowingTarget != null)
+            if (MovementBehaviour.FollowingTarget == null)
             {
-                var distanceFromTarget = GetDistanceFrom(MovementBehaviour.FollowingTarget.transform.position);
-
-                MovementBehaviour.SetIsRunning(distanceFromTarget > MovementBehaviour.CloseDistance && distanceFromTarget < MovementBehaviour.AwareDistance);                
-                if (distanceFromTarget > MovementBehaviour.AwareDistance)
-                {
-                    goIdle = true;
-                }
+                GoIdle(animator);
+                return;
             }
             else
             {
-                goIdle = true;
+                var targetHealth = MovementBehaviour.FollowingTarget.gameObject.GetComponent<HealthBehaviour>();
+                if (targetHealth.CurrentHealth < 0)
+                {
+                    GoIdle(animator);
+                    return;
+                }
             }
 
-            if (goIdle)
+            //follow
+            var distanceFromTarget = GetDistanceFrom(MovementBehaviour.FollowingTarget.transform.position);
+            MovementBehaviour.SetIsRunning(distanceFromTarget > MovementBehaviour.CloseDistance && distanceFromTarget < MovementBehaviour.AwareDistance);
+
+            //go idle if not in aware distance
+            if (distanceFromTarget > MovementBehaviour.AwareDistance)
             {
-                MovementBehaviour.FollowingTarget = null;
-                animator.SetTrigger("Idle");
+                GoIdle(animator);
+                return;
             }
         }
+
+
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {

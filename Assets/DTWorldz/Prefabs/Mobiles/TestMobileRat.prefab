@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawGizmos: 0
   Speed: 1
-  RunningSpeed: 2
+  RunningSpeed: 1.5
   AnimationSlots: []
   FollowingTarget: {fileID: 0}
   direction: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   MinDecisionDelay: 1
   MaxDecisionDelay: 5
   FollowRefreshFrequency: 1
+  IsPeaceful: 1
 --- !u!114 &4061465674616278193
 MonoBehaviour:
   m_ObjectHideFlags: 0

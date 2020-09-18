@@ -8,7 +8,9 @@ namespace DTWorldz.Behaviours.AI.States
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             StateName = "Idle";
-            base.OnStateEnter(animator, stateInfo, layerIndex);
+            base.OnStateEnter(animator, stateInfo, layerIndex);            
+            MobileStateBehaviour.IsAngry = false;            
+            MovementBehaviour.FollowingTarget = null;
             MovementBehaviour.GoIdle();
         }
 
@@ -19,6 +21,8 @@ namespace DTWorldz.Behaviours.AI.States
 
             if (DecisionTime <= 0)
             {
+                CheckHostility(animator);
+
                 if (AudioManager != null && UnityEngine.Random.value < 0.25f)
                 {
                     AudioManager.Play("Idle");
