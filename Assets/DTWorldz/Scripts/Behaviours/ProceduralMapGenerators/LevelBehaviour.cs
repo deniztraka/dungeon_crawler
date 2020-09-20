@@ -12,6 +12,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
     public class LevelBehaviour : MonoBehaviour
     {
         // Tilemaps
+        public Tilemap MinimapFloor;
         public Tilemap FloorMap;
         public Tilemap FloorDecorationsMap;
         public Tilemap WallMap;

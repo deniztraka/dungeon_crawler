@@ -399,9 +399,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                         levelBehaviour.FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                         levelBehaviour.WallMap.SetTile(new Vector3Int(x, y, 0), null);
 
-
-
-
+                        levelBehaviour.MinimapFloor.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                     }
                 }
             }
@@ -454,6 +452,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                     {
                         levelBehaviour.FloorMap.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                         levelBehaviour.WallMap.SetTile(new Vector3Int(x, y, 0), null);
+                        levelBehaviour.MinimapFloor.SetTile(new Vector3Int(x, y, 0), DungeonTemplate.FloorTile);
                     }
                 }
             }

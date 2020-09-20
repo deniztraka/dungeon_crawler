@@ -14,6 +14,7 @@ namespace DTWorldz.ScriptableObjects
         public int MinRoomSize = 4;
         public int MaxRoomSize = 10;
 
+        public TileBase MinimapFloorTile;
         public TileBase FloorTile;
         public TileBase WallTile;
         public TileBase BackgroundTile;
