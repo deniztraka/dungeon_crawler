@@ -13,6 +13,8 @@ namespace DTWorldz.Behaviours.Mobiles
 
         public AttackBehaviour AttackBehaviour;
 
+        public float IncreaseAmountEverySecond = 1;
+
         public float CurrentHealth
         {
             get { return currentVal; }
@@ -45,6 +47,21 @@ namespace DTWorldz.Behaviours.Mobiles
             if (OnHealthChanged != null)
             {
                 OnHealthChanged(MaxHealth, MaxHealth);
+            }
+
+            InvokeRepeating("IncreaseOverTime", 1f, 1f);
+        }
+
+        void IncreaseOverTime()
+        {
+            currentVal += IncreaseAmountEverySecond;
+            if (currentVal >= MaxHealth)
+            {
+                currentVal = MaxHealth;
+            }
+            if (OnHealthChanged != null)
+            {
+                OnHealthChanged(currentVal, MaxHealth);
             }
         }
 

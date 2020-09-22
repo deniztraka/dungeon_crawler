@@ -208,6 +208,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 10
   BodyType: 0
+  IncreaseAmountEverySecond: 0.1
 --- !u!95 &7559222450374734853
 Animator:
   serializedVersion: 3

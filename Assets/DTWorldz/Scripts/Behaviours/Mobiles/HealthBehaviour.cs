@@ -26,7 +26,10 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             get { return maxHealth; }
             set { maxHealth = value; }
-        }       
+        }
+
+
+        public float IncreaseAmountEverySecond = 1;
 
         public delegate void DamageTaken(float damageAmount, DamageType type);
         public event DamageTaken OnDamageTaken;
@@ -43,8 +46,25 @@ namespace DTWorldz.Behaviours.Mobiles
             {
                 OnHealthChanged(MaxHealth, MaxHealth);
             }
+
+            InvokeRepeating("IncreaseOverTime", 1f, 1f);
         }
 
+        void IncreaseOverTime()
+        {
+            if (currentHealth >= 0)
+            {
+                currentHealth += IncreaseAmountEverySecond;
+                if (currentHealth >= MaxHealth)
+                {
+                    currentHealth = MaxHealth;
+                }
+                if (OnHealthChanged != null)
+                {
+                    OnHealthChanged(currentHealth, MaxHealth);
+                }
+            }
+        }
 
 
 

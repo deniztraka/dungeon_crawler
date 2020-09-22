@@ -605,6 +605,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &31522853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1803,6 +1804,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &93214684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,6 +2799,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &141072600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3861,6 +3864,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &217725446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7270,6 +7274,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1793401368, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
+      propertyPath: IncreaseAmountEverySecond
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109266, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_Name
@@ -7280,6 +7288,11 @@ PrefabInstance:
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 1525022938}
+    - target: {fileID: 5328125669103109267, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: IsJoyStickEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8734,6 +8747,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &385862153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9129,6 +9143,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &405482962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20691,6 +20706,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &712394758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27265,6 +27281,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &877590588
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27461,6 +27478,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &879033330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28466,6 +28484,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &893491127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34773,6 +34792,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &966396961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37104,6 +37124,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1012294013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40393,6 +40414,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1087144819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41879,6 +41901,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1236440236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42515,6 +42538,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1266033734
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44462,6 +44486,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1510416799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44658,6 +44683,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1514940785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46925,6 +46951,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1609419336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52598,6 +52625,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1780659825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67005,6 +67033,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &1971674694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73146,6 +73175,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &2099905268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73342,6 +73372,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &2102481912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73671,6 +73702,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 100
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!61 &2131680716
 BoxCollider2D:
   m_ObjectHideFlags: 0
