@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Interfaces;
 using DTWorldz.Models;
 using Toolbox;
 using UnityEngine;
@@ -60,7 +61,7 @@ namespace DTWorldz.Behaviours.Mobiles
             direction = Direction.Right;
             attackBehaviour = GetComponentInChildren<AttackBehaviour>();
             healthBehaviour = this.GetComponent<HealthBehaviour>();
-            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(TriggerDeath);
+            healthBehaviour.OnDeath += new HealthChanged(TriggerDeath);
             FollowingTarget = null;
             if (attackBehaviour != null)
             {
@@ -69,14 +70,16 @@ namespace DTWorldz.Behaviours.Mobiles
             }
         }
 
-        private void AfterAttack()
+        private bool AfterAttack()
         {
             isAttacking = false;
+            return true;
         }
 
-        private void BeforeAttack()
+        private bool BeforeAttack()
         {
             isAttacking = true;
+            return true;
         }
 
         void TriggerDeath(float currentHealth, float maxHealth)

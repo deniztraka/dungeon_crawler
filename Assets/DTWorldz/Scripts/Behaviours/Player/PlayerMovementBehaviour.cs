@@ -94,10 +94,10 @@ namespace DTWorldz.Behaviours
         public void Attack()
         {
             attackingTrigger = attackBehaviour.Attack();
-            if (attackingTrigger)
-            {
-                CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
-            }
+            // if (attackingTrigger)
+            // {
+            //     CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
+            // }
         }
 
         private float GetAngle()
