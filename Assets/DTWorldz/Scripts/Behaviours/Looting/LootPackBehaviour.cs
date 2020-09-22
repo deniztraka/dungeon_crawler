@@ -15,7 +15,7 @@ namespace DTWorldz.Behaviours.Looting
         void Start()
         {
             healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
-            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(DropLoot);
+            healthBehaviour.OnDeath += new HealthChanged(DropLoot);
         }
 
 

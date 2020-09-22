@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DTWorldz.Behaviours.AI.States;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Interfaces;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.AI
@@ -34,8 +35,8 @@ namespace DTWorldz.Behaviours.AI
             healthBehaviour = GetComponent<HealthBehaviour>();
             if (healthBehaviour != null)
             {
-                healthBehaviour.OnHealthChanged += new HealthBehaviour.HealthChanged(HealthChanged);
-                healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(OnDeath);
+                healthBehaviour.OnHealthChanged += new HealthChanged(HealthChanged);
+                healthBehaviour.OnDeath += new HealthChanged(OnDeath);
             }
         }
 

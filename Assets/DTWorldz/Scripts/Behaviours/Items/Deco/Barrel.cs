@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Interfaces;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Items.Deco
 {
@@ -13,8 +14,8 @@ namespace DTWorldz.Behaviours.Items.Deco
             healthBehaviour = GetComponent<HealthBehaviour>();
             if (healthBehaviour != null)
             {
-                healthBehaviour.OnHealthChanged += new HealthBehaviour.HealthChanged(HealthChanged);
-                healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(OnDeath);                
+                healthBehaviour.OnHealthChanged += new HealthChanged(HealthChanged);
+                healthBehaviour.OnDeath += new HealthChanged(OnDeath);                
             }
         }
 

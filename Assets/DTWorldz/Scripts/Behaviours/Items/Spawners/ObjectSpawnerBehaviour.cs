@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.ProceduralMapGenerators;
+using DTWorldz.Interfaces;
 using UnityEngine;
 using Random = System.Random;
 
@@ -135,7 +136,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         var healthBehaviour = spawnedObject.GetComponent<HealthBehaviour>();
         if (healthBehaviour != null)
         {
-            healthBehaviour.OnDeath += new HealthBehaviour.HealthChanged(OnSpawnedObjectDead);
+            healthBehaviour.OnDeath += new HealthChanged(OnSpawnedObjectDead);
         }
         return spawnedObject;
     }
