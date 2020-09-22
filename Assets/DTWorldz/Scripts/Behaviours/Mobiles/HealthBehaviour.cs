@@ -12,6 +12,7 @@ namespace DTWorldz.Behaviours.Mobiles
         [SerializeField]
         private float currentHealth;
 
+        [SerializeField]
         private float maxHealth = 100;
         public BodyType BodyType;
 

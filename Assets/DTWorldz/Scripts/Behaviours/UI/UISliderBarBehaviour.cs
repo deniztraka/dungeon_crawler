@@ -7,34 +7,34 @@ namespace DTWorldz.Behaviours.UI
 {
     public class UISliderBarBehaviour : MonoBehaviour
     {        
-        private IHealth healthBehaviour;
-        private Slider slider;
+        protected IHealth HealthBehaviour;
+        public Slider Slider;
 
         public GameObject HealthObject;
 
-        void Start()
+        public virtual void Start()
         {
-            slider = GetComponent<Slider>();
+            Slider = GetComponent<Slider>();
             if(HealthObject != null){
-                healthBehaviour = HealthObject.GetComponent(typeof(IHealth)) as IHealth;
+                HealthBehaviour = HealthObject.GetComponent(typeof(IHealth)) as IHealth;
             }
-            if (healthBehaviour != null)
+            if (HealthBehaviour != null)
             {
-                healthBehaviour.OnHealthChanged += new HealthChanged(ValueChanged);
+                HealthBehaviour.OnHealthChanged += new HealthChanged(ValueChanged);
                 Init();
             }
         }
 
-        void ValueChanged(float currentVal, float maxVal)
+        protected void ValueChanged(float currentVal, float maxVal)
         {
-            slider.value = currentVal;
-            slider.maxValue = maxVal;
+            Slider.value = currentVal;
+            Slider.maxValue = maxVal;
         }
 
-        private void Init()
+        protected void Init()
         {
-            slider.maxValue = healthBehaviour.MaxHealth;
-            slider.value = healthBehaviour.CurrentHealth;
+            Slider.maxValue = HealthBehaviour.MaxHealth;
+            Slider.value = HealthBehaviour.CurrentHealth;
         }
     }
 }

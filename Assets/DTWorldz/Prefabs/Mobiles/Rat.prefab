@@ -87,6 +87,7 @@ MonoBehaviour:
   AttackingColliderOffsetRight: {x: 0.5, y: 0.25}
   AttackingFrequency: 2
   attackTime: 0
+  ActionPoint: 5
 --- !u!114 &264422793972424826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  MaxHealth: 5
+  maxHealth: 10
   BodyType: 0
 --- !u!95 &7559222450374734853
 Animator:

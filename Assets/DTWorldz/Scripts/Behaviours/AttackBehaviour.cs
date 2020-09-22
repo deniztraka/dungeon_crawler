@@ -23,7 +23,7 @@ namespace DTWorldz.Behaviours
 
         private AudioManager audioManager;
 
-        public delegate void AttackingHandler();
+        public delegate bool AttackingHandler();
         public event AttackingHandler OnBeforeAttack;
         public event AttackingHandler OnAfterAttack;
 
@@ -44,6 +44,8 @@ namespace DTWorldz.Behaviours
 
         [SerializeField]
         private float attackTime = 0;
+
+        public float ActionPoint = 5;
 
 
         // Start is called before the first frame update
@@ -151,7 +153,10 @@ namespace DTWorldz.Behaviours
             {
                 if (OnBeforeAttack != null)
                 {
-                    OnBeforeAttack();
+                    var result = OnBeforeAttack();
+                    if(!result){
+                        return false;
+                    }
                 }
                 StartCoroutine(PlaySwing(0.2f));
                 StartCoroutine(LateAttack(0.5f));

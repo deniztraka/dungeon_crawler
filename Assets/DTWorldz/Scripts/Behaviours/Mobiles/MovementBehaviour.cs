@@ -70,14 +70,16 @@ namespace DTWorldz.Behaviours.Mobiles
             }
         }
 
-        private void AfterAttack()
+        private bool AfterAttack()
         {
             isAttacking = false;
+            return true;
         }
 
-        private void BeforeAttack()
+        private bool BeforeAttack()
         {
             isAttacking = true;
+            return true;
         }
 
         void TriggerDeath(float currentHealth, float maxHealth)
