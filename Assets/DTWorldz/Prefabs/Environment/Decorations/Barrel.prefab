@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  MaxHealth: 20
+  maxHealth: 10
   BodyType: 2
+  IncreaseAmountEverySecond: 1
 --- !u!114 &5112134002440256462
 MonoBehaviour:
   m_ObjectHideFlags: 0
