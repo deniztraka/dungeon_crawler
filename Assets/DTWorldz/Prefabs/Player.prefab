@@ -375,7 +375,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
+  maxHealth: 100
   BodyType: 0
+  IncreaseAmountEverySecond: 0.25
 --- !u!114 &1935074653500690952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVal: 100
   AttackBehaviour: {fileID: 5328125669390350688}
+  IncreaseAmountEverySecond: 1
 --- !u!114 &3583550365272171738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce5aa52aba0adf4ca4c84eae0dffbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActionButtonBehaviour: {fileID: 0}
+  HealthPotionButtonBehaviour: {fileID: 0}
+  StaminaPotionButtonBehaviour: {fileID: 0}
 --- !u!114 &6368350200322091047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +546,7 @@ MonoBehaviour:
   AttackingColliderOffsetRight: {x: 0.5, y: 0.5}
   AttackingFrequency: 0.5
   attackTime: 0
-  ActionPoint: 5
+  ActionPoint: 2
 --- !u!61 &5328125669390350689
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/DTWorldz/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/DTWorldz/Scenes/DungeonScene.unity
-    guid: 91355b183cf40844db4e1519c5a7f428
+    guid: b6d6f700bd26cec4cad6bf0625355c9b
   m_configObjects: {}

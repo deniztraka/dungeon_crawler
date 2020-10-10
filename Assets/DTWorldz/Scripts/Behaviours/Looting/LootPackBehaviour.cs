@@ -23,8 +23,9 @@ namespace DTWorldz.Behaviours.Looting
         IEnumerator LateDrop(GameObject prefab, Vector3 position, int count, float delay)
         {
             yield return new WaitForSeconds(delay);
-            var instantiatedLootItem = Instantiate(prefab, position, Quaternion.identity);
-            var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;            
+            var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-0.5f, 0.5f), position.y + UnityEngine.Random.Range(-0.5f, 0.5f), position.z);
+            var instantiatedLootItem = Instantiate(prefab, randomPosition, Quaternion.identity);
+            var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
             lootItem.SetCount(count);
             lootItem.OnAfterDrop();
         }
@@ -33,13 +34,21 @@ namespace DTWorldz.Behaviours.Looting
         {
             foreach (var lootEntry in DropTemplate.Entries)
             {
-                if (UnityEngine.Random.value < lootEntry.Chance)
+                var dropCount = UnityEngine.Random.Range(1, lootEntry.MaxCount);
+                
+                
+                for (int i = 0; i < dropCount; i++)
                 {
-                    var lootPackItem = lootEntry.Items[UnityEngine.Random.Range(0, lootEntry.Items.Count)];
-                    var itemCount = UnityEngine.Random.Range(lootPackItem.CountMin, lootPackItem.CountMax);
-                    var itemPrefab = lootPackItem.ItemPrefab;
-                    StartCoroutine(LateDrop(itemPrefab, transform.position, itemCount, 0.5f));
+                    var dropChance = UnityEngine.Random.value;
+                    if (dropChance < lootEntry.Chance)
+                    {
+                        var lootPackItem = lootEntry.Items[UnityEngine.Random.Range(0, lootEntry.Items.Count)];
+                        var itemCount = UnityEngine.Random.Range(lootPackItem.CountMin, lootPackItem.CountMax);
+                        var itemPrefab = lootPackItem.ItemPrefab;
+                        StartCoroutine(LateDrop(itemPrefab, transform.position, itemCount, 0.5f));
+                    }
                 }
+
             }
         }
     }

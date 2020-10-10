@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecorationChance: 0.2
   ObjectsChance: 0.05
-  ContainerChance: 0.1
+  ContainerChance: 0.25
   TrapChance: 0.05
   FloorDecorations:
   - {fileID: 11400000, guid: ca3d4f0163df2fa47a9387c6d786ffea, type: 2}

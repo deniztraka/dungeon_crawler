@@ -8,6 +8,7 @@ namespace DTWorldz.Models
     [Serializable]
     public class LootPackEntry
     {
+        public int MaxCount = 1;
         public float Chance;
         public List<LootPackItem> Items;
     }

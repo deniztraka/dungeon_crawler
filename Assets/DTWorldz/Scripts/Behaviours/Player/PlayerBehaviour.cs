@@ -9,8 +9,8 @@ namespace DTWorldz.Behaviours.Player
     public class PlayerBehaviour : MonoBehaviour
     {
         public ActionButtonBehaviour ActionButtonBehaviour;
-        public ActionButtonBehaviour HealthPotionButtonBehaviour;
-        public ActionButtonBehaviour StaminaPotionButtonBehaviour;
+        public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
+        public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
         // Start is called before the first frame update
         void Start()
         {
@@ -36,6 +36,16 @@ namespace DTWorldz.Behaviours.Player
         {
             var isPlural = count > 1;
             Debug.Log(count + " gold piece" + (isPlural ? "s " : " ")  + (isPlural ? "are" : "is") + " collected.");
+        }
+
+        internal void CollectHealthPotion()
+        {
+            HealthPotionButtonBehaviour.AddPotion();
+        }
+
+        internal void CollectStaminaPotion()
+        {
+            StaminaPotionButtonBehaviour.AddPotion();
         }
     }
 }

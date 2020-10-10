@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours.UI
                 Destroy(effectObj, 3f);
 
             }
-            playerStam.CurrentHealth += 10;
+            playerStam.CurrentHealth += 25;
             count--;
             UpdateText();
         }
@@ -58,6 +58,7 @@ namespace DTWorldz.Behaviours.UI
         public void AddPotion()
         {
             count++;
+            UpdateText();
         }
     }
 }
