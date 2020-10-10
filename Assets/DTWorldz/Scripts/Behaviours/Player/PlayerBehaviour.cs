@@ -9,14 +9,17 @@ namespace DTWorldz.Behaviours.Player
     public class PlayerBehaviour : MonoBehaviour
     {
         public ActionButtonBehaviour ActionButtonBehaviour;
+        public ActionButtonBehaviour HealthPotionButtonBehaviour;
+        public ActionButtonBehaviour StaminaPotionButtonBehaviour;
         // Start is called before the first frame update
         void Start()
         {
             var movementBehaviour = GetComponent<PlayerMovementBehaviour>();
             var attackBehaviour = GetComponentInChildren<AttackBehaviour>();
-            ActionButtonBehaviour.SetAction(movementBehaviour.Attack, attackBehaviour.AttackingFrequency);
-
+            ActionButtonBehaviour.SetAction(movementBehaviour.Attack, attackBehaviour.AttackingFrequency);                  
         }
+
+
 
         // Update is called once per frame
         void Update()

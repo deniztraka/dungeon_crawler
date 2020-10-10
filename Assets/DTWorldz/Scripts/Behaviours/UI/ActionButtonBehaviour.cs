@@ -8,7 +8,7 @@ namespace DTWorldz.Behaviours.UI
 {
     public class ActionButtonBehaviour : MonoBehaviour
     {
-        private bool isCooldown = false;
+        public bool IsCooldown = false;
         private float cooldownTime = 0f;
 
         public UnityEvent ActionEvent;
@@ -18,7 +18,7 @@ namespace DTWorldz.Behaviours.UI
         public Image ActionImage;
 
         // Start is called before the first frame update
-        void Start()
+        public virtual void Start()
         {
             if (Button == null)
             {
@@ -37,21 +37,21 @@ namespace DTWorldz.Behaviours.UI
         }
 
         // Update is called once per frame
-        void Update()
+        public virtual void Update()
         {
-            if (!isCooldown)
+            if (!IsCooldown)
             {
                 Button.enabled = true;
                 FillImage.fillAmount = 1;
             }
             else
             {
-
-                FillImage.fillAmount -= 1 / cooldownTime * Time.deltaTime;
-                if (FillImage.fillAmount <= 0)
+                
+                FillImage.fillAmount += 1 / cooldownTime * Time.deltaTime;
+                if (FillImage.fillAmount >= 1)
                 {
-                    FillImage.fillAmount = 0;
-                    isCooldown = false;
+                    FillImage.fillAmount = 1;
+                    IsCooldown = false;
                 }
             }
         }
@@ -60,8 +60,9 @@ namespace DTWorldz.Behaviours.UI
         {
             if (ActionEvent != null)
             {
+                FillImage.fillAmount = 0;
                 Animator.Play("OnClick");
-                isCooldown = true;
+                IsCooldown = true;
                 Button.enabled = false;
                 ActionEvent.Invoke();
             }
