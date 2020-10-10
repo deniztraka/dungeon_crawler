@@ -11,6 +11,7 @@ namespace DTWorldz.Behaviours.UI
         public Text CountText;
         int count = 1;
         HealthBehaviour playerHealth;
+        public GameObject EffectPrefab;
         public override void Start()
         {
             base.Start();
@@ -24,8 +25,10 @@ namespace DTWorldz.Behaviours.UI
             UpdateText();
         }
 
-        public override void Update() {
-            if(count <= 0){
+        public override void Update()
+        {
+            if (count <= 0)
+            {
                 return;
             }
             base.Update();
@@ -33,16 +36,25 @@ namespace DTWorldz.Behaviours.UI
 
         public void DrinkHealth()
         {
+            if (EffectPrefab != null)
+            {
+                var effectObj = Instantiate(EffectPrefab, playerHealth.transform.position, Quaternion.identity, playerHealth.transform);
+                // var particleSystem = effectObj.GetComponents<ParticleSystem>();
+                Destroy(effectObj, 3f);
+
+            }
             playerHealth.CurrentHealth += 10;
             count--;
             UpdateText();
         }
 
-        private void UpdateText(){
+        private void UpdateText()
+        {
             CountText.text = count.ToString();
         }
 
-        public void AddPotion(){
+        public void AddPotion()
+        {
             count++;
         }
     }

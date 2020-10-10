@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 namespace DTWorldz.Behaviours.UI
 {
-
-
     public class StaminaPotionButtonBehaviour : ActionButtonBehaviour
     {
         public Text CountText;
         int count = 1;
+
+        public GameObject EffectPrefab;
 
         StamBehaviour playerStam;
 
@@ -38,6 +38,13 @@ namespace DTWorldz.Behaviours.UI
 
         public void DrinkStamina()
         {
+            if (EffectPrefab != null)
+            {
+                var effectObj = Instantiate(EffectPrefab, playerStam.transform.position, Quaternion.identity, playerStam.transform);
+                // var particleSystem = effectObj.GetComponents<ParticleSystem>();
+                Destroy(effectObj, 3f);
+
+            }
             playerStam.CurrentHealth += 10;
             count--;
             UpdateText();
