@@ -210,6 +210,9 @@ MonoBehaviour:
   maxHealth: 5
   BodyType: 0
   IncreaseAmountEverySecond: 0.1
+  FloatingDamagesPrefab: {fileID: 7281084229103414222, guid: e992246e106c63e4d8da12df2a0dd67e,
+    type: 3}
+  DamagePointsYOffset: 0.5
 --- !u!95 &7559222450374734853
 Animator:
   serializedVersion: 3

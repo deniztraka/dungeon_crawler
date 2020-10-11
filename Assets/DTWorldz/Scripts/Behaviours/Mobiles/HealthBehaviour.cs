@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DTWorlds.Behaviours.Effects;
 using DTWorldz.Behaviours.Audios;
@@ -35,7 +36,8 @@ namespace DTWorldz.Behaviours.Mobiles
         public event DamageTaken OnDamageTaken;
         public event HealthChanged OnHealthChanged;
         public event HealthChanged OnDeath;
-
+        public GameObject FloatingDamagesPrefab;
+        public float DamagePointsYOffset;
         private AudioManager audioManager;
 
         void Start()
@@ -77,12 +79,15 @@ namespace DTWorldz.Behaviours.Mobiles
 
             currentHealth -= damage;
 
+            if (FloatingDamagesPrefab != null)
+            {
+                PopUpFloatingDamages(damage);
+            }
+
             if (audioManager != null && UnityEngine.Random.value > 0.5f)
             {
                 audioManager.Play("Hit");
             }
-
-
 
             if (OnDamageTaken != null)
             {
@@ -106,6 +111,16 @@ namespace DTWorldz.Behaviours.Mobiles
                     OnDeath(currentHealth, MaxHealth);
                 }
             }
+        }
+
+        private void PopUpFloatingDamages(float damage)
+        {
+            var randomXOffSet = UnityEngine.Random.Range(-0.1f, 0.2f);
+            var newPos = new Vector3(transform.position.x + randomXOffSet, transform.position.y + DamagePointsYOffset, transform.position.z);
+            
+            var floatingDamage = Instantiate(FloatingDamagesPrefab, newPos, Quaternion.identity, transform);
+            var textMesh = floatingDamage.GetComponent<TextMesh>();
+            textMesh.text = String.Format("{0:0}", damage);
         }
     }
 }
