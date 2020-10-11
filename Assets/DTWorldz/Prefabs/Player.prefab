@@ -470,8 +470,22 @@ MonoBehaviour:
     MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
+  - Name: Drink
+    Clip: {fileID: 8300000, guid: 49e62e4795a73cb438aecffbbb8faf0a, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
   - Name: Hit
     Clip: {fileID: 8300000, guid: 1856052c9f02a114fb613317ec3cfd1e, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Loot
+    Clip: {fileID: 8300000, guid: d9a2377fa63152b4c82b8f7c014b7467, type: 3}
     Volume: 1
     Pitch: 1
     MaxDistance: 2
@@ -530,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 5
   IsPlayer: 1
   KnockbackForce: 0.1
   AttackRange: 0

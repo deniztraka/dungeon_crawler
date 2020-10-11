@@ -12,6 +12,7 @@ namespace DTWorldz.Behaviours
 {
     public class AttackBehaviour : MonoBehaviour
     {
+        public float Damage = 5;
         public bool IsPlayer;
         public float KnockbackForce;
         public float AttackRange;
@@ -109,7 +110,7 @@ namespace DTWorldz.Behaviours
                 if (enemyHealthBehaviour != null)
                 {
                     audioManager.Play("Hit");
-                    enemyHealthBehaviour.TakeDamage(5, DamageType.Physical);
+                    enemyHealthBehaviour.TakeDamage(Damage, DamageType.Physical);
                     if (KnockbackForce > 0)
                     {
                         var difference = enemyHealthBehaviour.transform.position - this.transform.position;

@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb095885cd2200541aeb099470be1eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
   IsPlayer: 0
   KnockbackForce: 0
   AttackRange: 1
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 10
+  maxHealth: 5
   BodyType: 0
   IncreaseAmountEverySecond: 0.1
 --- !u!95 &7559222450374734853
