@@ -45,7 +45,7 @@ namespace DTWorldz.Behaviours.UI
             Slider.value = HealthBehaviour.CurrentHealth;
             if (MaxHealthText)
             {
-                MaxHealthText.text = String.Format("{0:0}", HealthBehaviour.MaxHealth) + "\\ ";
+                MaxHealthText.text = String.Format("{0:0}", HealthBehaviour.MaxHealth) + " \\";
             }
             if (CurrentHealthValueText)
             {
