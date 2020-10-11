@@ -9,6 +9,7 @@ namespace DTWorldz.Behaviours.UI
 {
     public class HealthBarSliderBehaviour : UISliderBarBehaviour
     {
+       
         public override void Start()
         {
             Slider = GetComponent<Slider>();
