@@ -40,6 +40,7 @@ namespace DTWorldz.Behaviours.UI
         // Update is called once per frame
         public virtual void Update()
         {
+            
             if (!IsCooldown)
             {
                 Button.enabled = true;
@@ -73,7 +74,7 @@ namespace DTWorldz.Behaviours.UI
         {
             ActionEvent.RemoveAllListeners();
             ActionEvent.AddListener(action);
-            cooldownTime = cooldown;
+            cooldownTime = cooldown + 0.1f;
         }
 
         public void SetAction(UnityAction action, float cooldown, Sprite actionImage)
@@ -85,7 +86,7 @@ namespace DTWorldz.Behaviours.UI
 
         public void SetCoolDown(float cooldown)
         {
-            cooldownTime = cooldown;
+            cooldownTime = cooldown + 0.1f;
         }
 
         public void SetActionImage(Sprite actionImage)
