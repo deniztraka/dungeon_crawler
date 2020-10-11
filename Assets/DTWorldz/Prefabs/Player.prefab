@@ -593,6 +593,13 @@ MonoBehaviour:
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+  - Name: Hit
+    Clip: {fileID: 8300000, guid: 71a6aaa2936126a4dbb209b5e37e3214, type: 3}
+    Volume: 0.5
+    Pitch: 0.5
+    MaxDistance: 4
+    Source: {fileID: 0}
+    Loop: 0
 --- !u!1 &5328125669936124228
 GameObject:
   m_ObjectHideFlags: 0

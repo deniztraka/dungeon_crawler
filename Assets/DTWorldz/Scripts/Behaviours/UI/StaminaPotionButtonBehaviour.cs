@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Behaviours.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +15,7 @@ namespace DTWorldz.Behaviours.UI
 
         public GameObject EffectPrefab;
 
-        StamBehaviour playerStam;
+        PlayerBehaviour player;
 
         public override void Start()
         {
@@ -22,9 +24,11 @@ namespace DTWorldz.Behaviours.UI
             {
                 CountText = gameObject.GetComponentInChildren<Text>();
             }
+            
             SetAction(DrinkStamina, 3f);
             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
-            playerStam = playerGameObject.GetComponent<StamBehaviour>();
+            player = playerGameObject.GetComponent<PlayerBehaviour>();
+            UpdateText();
         }
 
         public override void Update()
@@ -40,12 +44,13 @@ namespace DTWorldz.Behaviours.UI
         {
             if (EffectPrefab != null)
             {
-                var effectObj = Instantiate(EffectPrefab, playerStam.transform.position, Quaternion.identity, playerStam.transform);
+                var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
                 // var particleSystem = effectObj.GetComponents<ParticleSystem>();
                 Destroy(effectObj, 3f);
 
             }
-            playerStam.CurrentHealth += 25;
+            player.DrinkStaminaPotion();
+            
             count--;
             UpdateText();
         }

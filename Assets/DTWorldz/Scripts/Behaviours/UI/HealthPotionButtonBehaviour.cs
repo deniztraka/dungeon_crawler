@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Behaviours.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ namespace DTWorldz.Behaviours.UI
     {
         public Text CountText;
         int count = 1;
-        HealthBehaviour playerHealth;
+        PlayerBehaviour player;
         public GameObject EffectPrefab;
         public override void Start()
         {
@@ -20,8 +21,8 @@ namespace DTWorldz.Behaviours.UI
                 CountText = gameObject.GetComponentInChildren<Text>();
             }
             SetAction(DrinkHealth, 3f);
-            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
-            playerHealth = playerGameObject.GetComponent<HealthBehaviour>();
+             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            player = playerGameObject.GetComponent<PlayerBehaviour>();
             UpdateText();
         }
 
@@ -38,12 +39,12 @@ namespace DTWorldz.Behaviours.UI
         {
             if (EffectPrefab != null)
             {
-                var effectObj = Instantiate(EffectPrefab, playerHealth.transform.position, Quaternion.identity, playerHealth.transform);
+                var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
                 // var particleSystem = effectObj.GetComponents<ParticleSystem>();
                 Destroy(effectObj, 3f);
 
             }
-            playerHealth.CurrentHealth += 20;
+            player.DrinkHealthPotion();
             count--;
             UpdateText();
         }

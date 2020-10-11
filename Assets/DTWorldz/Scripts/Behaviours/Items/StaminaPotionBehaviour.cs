@@ -57,11 +57,6 @@ namespace DTWorldz.Behaviours.Items.Utils
                 spriteRenderer.color = tempColor;    
                 var thisCollider = gameObject.GetComponentInChildren<Collider2D>();            
                 thisCollider.enabled = false;
-
-                if (audioManager != null)
-                {
-                    audioManager.Play("Pickup");
-                }
                 Destroy(this.gameObject, 1);
             }
         }

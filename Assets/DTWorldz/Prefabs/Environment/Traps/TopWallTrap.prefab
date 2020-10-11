@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6028020253264983759}
   - component: {fileID: 6028020253264983757}
   - component: {fileID: 6028020253264983758}
+  - component: {fileID: 2787823757203309037}
   m_Layer: 10
   m_Name: TopWallTrap
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RefreshTime: 3
+  DamageType: 0
   Color: {r: 0.9888284, g: 1, b: 0, a: 0.05490196}
   ReadySprite: {fileID: 3627711494985953990, guid: 7294e7fc8d0d4324993f9185b36a250f,
     type: 3}
@@ -152,9 +154,29 @@ MonoBehaviour:
   - {fileID: -8307740657285220284, guid: 7294e7fc8d0d4324993f9185b36a250f, type: 3}
   - {fileID: -5866754572457935667, guid: 7294e7fc8d0d4324993f9185b36a250f, type: 3}
   - {fileID: 8602948405794325322, guid: 7294e7fc8d0d4324993f9185b36a250f, type: 3}
-  AnimationFrequency: 0.1
+  AnimationFrequency: 0.5
   LayerMask:
     serializedVersion: 2
     m_Bits: 4096
   Damage: 10
   State: 
+--- !u!114 &2787823757203309037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028020253264983760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Trigger
+    Clip: {fileID: 8300000, guid: 1da80c995901f2147852591ddd34af0a, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 0
+    Source: {fileID: 0}
+    Loop: 0

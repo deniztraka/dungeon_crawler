@@ -41,11 +41,14 @@ namespace DTWorldz.Behaviours.Audios
             }
 
             var sounds = Array.FindAll(Sounds, s => s.Name.Equals(name));
-            if (sounds != null && sounds.Length > 0 )
+            if (sounds != null && sounds.Length > 0)
             {
-                var randomSoundIndex = UnityEngine.Random.Range(0,sounds.Length);
+                var randomSoundIndex = UnityEngine.Random.Range(0, sounds.Length);
                 var sound = sounds[randomSoundIndex];
-                sound.Source.pitch = sound.Pitch;
+                if (name == "Walking")
+                {
+                    sound.Source.pitch = sound.Pitch;
+                }
                 sound.Source.Play();
                 lastSound = sound;
             }
@@ -55,7 +58,10 @@ namespace DTWorldz.Behaviours.Audios
         {
             if (lastSound != null && lastSound.Source != null && lastSound.Source.isPlaying)
             {
-                lastSound.Source.pitch = pitch;
+                if (lastSound.Name == "Walking")
+                {
+                    lastSound.Source.pitch = pitch;
+                }
             }
         }
 
