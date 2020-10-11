@@ -790,6 +790,12 @@ PrefabInstance:
       propertyPath: StaminaPotionButtonBehaviour
       value: 
       objectReference: {fileID: 996801266}
+    - target: {fileID: 3583550365272171738, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: GoldLootPrefab
+      value: 
+      objectReference: {fileID: 927623544467564687, guid: 4c6fd02849403a842a4047bf8361c0ad,
+        type: 3}
     - target: {fileID: 5328125669103109266, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_Name
@@ -800,6 +806,11 @@ PrefabInstance:
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 1525022938}
+    - target: {fileID: 5328125669103109267, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: IsJoyStickEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_LocalPosition.x

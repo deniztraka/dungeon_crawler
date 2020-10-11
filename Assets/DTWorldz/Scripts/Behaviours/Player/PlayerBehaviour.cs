@@ -15,6 +15,8 @@ namespace DTWorldz.Behaviours.Player
         public ActionButtonBehaviour ActionButtonBehaviour;
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
+        public GameObject GoldLootPrefab;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -42,7 +44,10 @@ namespace DTWorldz.Behaviours.Player
         internal void CollectGold(int count)
         {
             var isPlural = count > 1;
-            Debug.Log(count + " gold piece" + (isPlural ? "s " : " ") + (isPlural ? "are" : "is") + " collected.");
+            if (GoldLootPrefab != null)
+            {
+                PopUpFloatingGold(count);
+            }
         }
 
         internal void DrinkHealthPotion()
@@ -66,6 +71,16 @@ namespace DTWorldz.Behaviours.Player
         {
             audioManager.Play("Loot");
             StaminaPotionButtonBehaviour.AddPotion();
+        }
+
+        private void PopUpFloatingGold(float goldCount)
+        {
+            var randomXOffSet = UnityEngine.Random.Range(-0.1f, 0.2f);
+            var newPos = new Vector3(transform.position.x + randomXOffSet, transform.position.y + 1.5f, transform.position.z);
+
+            var floatingDamage = Instantiate(GoldLootPrefab, newPos, Quaternion.identity, transform);
+            var floatingText = floatingDamage.GetComponent<FloatingGoldLootTextBehaviour>();
+            floatingText.SetText(String.Format("{0:0}", goldCount));
         }
     }
 }

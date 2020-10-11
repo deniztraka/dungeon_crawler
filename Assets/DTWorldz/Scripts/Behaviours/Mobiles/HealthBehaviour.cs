@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorlds.Behaviours.Effects;
 using DTWorldz.Behaviours.Audios;
+using DTWorldz.Behaviours.UI;
 using DTWorldz.Interfaces;
 using UnityEngine;
 
@@ -119,8 +120,8 @@ namespace DTWorldz.Behaviours.Mobiles
             var newPos = new Vector3(transform.position.x + randomXOffSet, transform.position.y + DamagePointsYOffset, transform.position.z);
             
             var floatingDamage = Instantiate(FloatingDamagesPrefab, newPos, Quaternion.identity, transform);
-            var textMesh = floatingDamage.GetComponent<TextMesh>();
-            textMesh.text = String.Format("{0:0}", damage);
+            var floatingText = floatingDamage.GetComponent<FloatingTextBehaviour>();
+            floatingText.SetText(String.Format("{0:0}", damage));
         }
     }
 }
