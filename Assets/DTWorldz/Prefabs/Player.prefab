@@ -378,6 +378,9 @@ MonoBehaviour:
   maxHealth: 100
   BodyType: 0
   IncreaseAmountEverySecond: 0.25
+  FloatingDamagesPrefab: {fileID: 7281084229103414222, guid: e992246e106c63e4d8da12df2a0dd67e,
+    type: 3}
+  DamagePointsYOffset: 1.5
 --- !u!114 &1935074653500690952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +411,8 @@ MonoBehaviour:
   ActionButtonBehaviour: {fileID: 0}
   HealthPotionButtonBehaviour: {fileID: 0}
   StaminaPotionButtonBehaviour: {fileID: 0}
+  GoldLootPrefab: {fileID: 927623544467564687, guid: 4c6fd02849403a842a4047bf8361c0ad,
+    type: 3}
 --- !u!114 &6368350200322091047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,5 +808,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light2D: {fileID: 0}
-  MaxIntensity: 1.5
-  MinIntensity: 0.5
+  MaxIntensity: 1
+  MinIntensity: 0.25

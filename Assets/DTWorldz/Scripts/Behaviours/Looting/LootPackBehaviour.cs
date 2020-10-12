@@ -9,34 +9,41 @@ namespace DTWorldz.Behaviours.Looting
 {
     public class LootPackBehaviour : MonoBehaviour
     {
+        public float SpreadDistance = 0.5f;
         public ItemDropTemplate DropTemplate;
         private HealthBehaviour healthBehaviour;
         // Start is called before the first frame update
         void Start()
         {
             healthBehaviour = gameObject.GetComponent<HealthBehaviour>();
-            healthBehaviour.OnDeath += new HealthChanged(DropLoot);
+            if (healthBehaviour)
+            {
+                healthBehaviour.OnDeath += new HealthChanged(DropLoot);
+            }
         }
-
-
 
         IEnumerator LateDrop(GameObject prefab, Vector3 position, int count, float delay)
         {
             yield return new WaitForSeconds(delay);
-            var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-0.5f, 0.5f), position.y + UnityEngine.Random.Range(-0.5f, 0.5f), position.z);
+            var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.y + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.z);
             var instantiatedLootItem = Instantiate(prefab, randomPosition, Quaternion.identity);
             var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
             lootItem.SetCount(count);
             lootItem.OnAfterDrop();
         }
 
-        void DropLoot(float killedMobHealth, float killedMobMaxHealth)
+        internal void DropLoot()
+        {
+            DropLoot(0, 0);
+        }
+
+        private void DropLoot(float killedMobHealth, float killedMobMaxHealth)
         {
             foreach (var lootEntry in DropTemplate.Entries)
             {
                 var dropCount = UnityEngine.Random.Range(1, lootEntry.MaxCount);
-                
-                
+
+
                 for (int i = 0; i < dropCount; i++)
                 {
                     var dropChance = UnityEngine.Random.value;

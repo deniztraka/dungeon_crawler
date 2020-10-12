@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 4663308623770685162}
   - component: {fileID: 4663308623770685163}
   - component: {fileID: 4663308623770685160}
+  - component: {fileID: 868546346}
+  - component: {fileID: 5037953529423282094}
+  - component: {fileID: 911634593986120634}
+  - component: {fileID: 868546343}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -47,6 +51,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -109,3 +114,72 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.46225357}
   m_EdgeRadius: 0
+--- !u!114 &868546346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663308623770685161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83be750f4a8a064ba9b0d8a46fe7829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionDistance: 0
+--- !u!114 &5037953529423282094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663308623770685161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpreadDistance: 1
+  DropTemplate: {fileID: 11400000, guid: b3f86cee1fd8a944cb0c7ad2557affe1, type: 2}
+--- !u!114 &911634593986120634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663308623770685161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Open
+    Clip: {fileID: 8300000, guid: 388bc88c2bd7dc243b080d1c6d011b13, type: 3}
+    Volume: 0.75
+    Pitch: 1
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
+  - Name: Close
+    Clip: {fileID: 8300000, guid: 6ad3b34c10ea698419180fec77a32a41, type: 3}
+    Volume: 0.75
+    Pitch: 1
+    MaxDistance: 2
+    Source: {fileID: 0}
+    Loop: 0
+--- !u!114 &868546343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663308623770685161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39a239d31f3cdc40b48d6593ddfabab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  OpenSprite: {fileID: -2429167034021554340, guid: 8b3257475b69c5e43b855cbe29974d1e,
+    type: 3}
