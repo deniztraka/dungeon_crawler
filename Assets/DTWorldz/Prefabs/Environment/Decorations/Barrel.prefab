@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5112134002440256462}
   - component: {fileID: -4428339535055122090}
   - component: {fileID: 2644508389936687226}
+  - component: {fileID: 9038641708860484024}
   m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 59a002e3841272d468fb5ee8b6f92487, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,6 +152,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 10
   BodyType: 2
+  OnDamageTakenTintColor: {r: 0.5471698, g: 0, b: 0, a: 0.5372549}
   IncreaseAmountEverySecond: 1
   FloatingDamagesPrefab: {fileID: 7281084229103414222, guid: e992246e106c63e4d8da12df2a0dd67e,
     type: 3}
@@ -199,4 +201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpreadDistance: 0.5
   DropTemplate: {fileID: 11400000, guid: 25594f35f4a9f484f92932d8f82dc9e1, type: 2}
+--- !u!114 &9038641708860484024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273079249387786720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6893fa1527270f948afbfeaee5536ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

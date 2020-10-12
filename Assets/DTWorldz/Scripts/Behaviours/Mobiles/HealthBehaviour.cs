@@ -17,6 +17,7 @@ namespace DTWorldz.Behaviours.Mobiles
         [SerializeField]
         private float maxHealth = 100;
         public BodyType BodyType;
+        public Color OnDamageTakenTintColor;
 
         public float CurrentHealth
         {
@@ -40,9 +41,11 @@ namespace DTWorldz.Behaviours.Mobiles
         public GameObject FloatingDamagesPrefab;
         public float DamagePointsYOffset;
         private AudioManager audioManager;
+        private MaterialTintColor materialTintColor;
 
         void Start()
         {
+            materialTintColor = GetComponent<MaterialTintColor>();
             currentHealth = MaxHealth;
             audioManager = GetComponent<AudioManager>();
             if (OnHealthChanged != null)
@@ -79,6 +82,10 @@ namespace DTWorldz.Behaviours.Mobiles
             }
 
             currentHealth -= damage;
+            if (materialTintColor != null)
+            {
+                materialTintColor.SetTintColor(OnDamageTakenTintColor);
+            }
 
             if (FloatingDamagesPrefab != null)
             {
@@ -118,7 +125,7 @@ namespace DTWorldz.Behaviours.Mobiles
         {
             var randomXOffSet = UnityEngine.Random.Range(-0.1f, 0.2f);
             var newPos = new Vector3(transform.position.x + randomXOffSet, transform.position.y + DamagePointsYOffset, transform.position.z);
-            
+
             var floatingDamage = Instantiate(FloatingDamagesPrefab, newPos, Quaternion.identity, transform);
             var floatingText = floatingDamage.GetComponent<FloatingTextBehaviour>();
             floatingText.SetText(String.Format("{0:0}", damage));
