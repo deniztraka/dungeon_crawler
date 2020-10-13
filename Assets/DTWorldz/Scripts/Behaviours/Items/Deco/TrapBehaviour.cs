@@ -8,6 +8,8 @@ namespace DTWorldz.Behaviours.Items.Deco
 {
     public class TrapBehaviour : MonoBehaviour
     {
+        public delegate void TrapStateHandler(string stateName);
+        public event TrapStateHandler OnStateChanged;
         public int RefreshTime;
         public DamageType DamageType;
         public Color Color;
@@ -16,13 +18,29 @@ namespace DTWorldz.Behaviours.Items.Deco
         public float AnimationFrequency;
         public LayerMask LayerMask;
         public float Damage;
-        public string State;
-        private Animator stateAnimator;        
+        [SerializeField]
+        private string state;
+        public string State
+        {
+            get { return state; }
+            set
+            {
+                if (!state.Equals(value))
+                {
+                    if(OnStateChanged != null){
+                        OnStateChanged(value);
+                    }
+                }
+                state = value;
+            }
+        }
+
+        private Animator stateAnimator;
         private AudioManager audioManager;
 
-        void Start()
+        public virtual void Start()
         {
-            stateAnimator = GetComponent<Animator>();            
+            stateAnimator = GetComponent<Animator>();
             audioManager = GetComponent<AudioManager>();
         }
 
@@ -45,7 +63,6 @@ namespace DTWorldz.Behaviours.Items.Deco
 
         protected virtual void TakeDamage(HealthBehaviour healthBehaviour)
         {
-
             healthBehaviour.TakeDamage(Damage, DamageType);
         }
     }

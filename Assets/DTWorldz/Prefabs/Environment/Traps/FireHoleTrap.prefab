@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 146534676883139449}
   - component: {fileID: 146534676883139450}
   - component: {fileID: 146534676883139448}
-  - component: {fileID: 146534676883139451}
   - component: {fileID: 3738181496899081568}
+  - component: {fileID: 6551458990951861976}
   m_Layer: 10
-  m_Name: FloorTrap
+  m_Name: FireHoleTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.5, y: 14.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1982198026073172471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &146534676883139451
+--- !u!114 &3738181496899081568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,15 +141,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 146534676883139429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a495539772972419f2e28a9fd7f7c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: Trigger
+    Clip: {fileID: 8300000, guid: c7c6697e30807974ab9e6ec0ebdfa0b6, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 3
+    Source: {fileID: 0}
+    Loop: 0
+--- !u!114 &6551458990951861976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146534676883139429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39157f8767dceb41abf49ae4455e8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RefreshTime: 3
   DamageType: 1
-  Color: {r: 0.11006868, g: 1, b: 0, a: 0.05490196}
-  ReadySprite: {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8,
-    type: 3}
+  Color: {r: 0.10980392, g: 1, b: 0, a: 0.05882353}
+  ReadySprite: {fileID: 0}
   AnimationSprites:
+  - {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
   - {fileID: -7492585446141206388, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
   - {fileID: 1866968179409091297, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
   - {fileID: 8031945405137517567, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
@@ -178,24 +199,77 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4608
   Damage: 10
-  State: 
---- !u!114 &3738181496899081568
+  state: 
+  Light: {fileID: 0}
+--- !u!1 &1068981560518169562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982198026073172471}
+  - component: {fileID: 7075073636484056160}
+  m_Layer: 10
+  m_Name: Point Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982198026073172471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068981560518169562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 146534676883139428}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7075073636484056160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146534676883139429}
+  m_GameObject: {fileID: 1068981560518169562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds:
-  - Name: Trigger
-    Clip: {fileID: 8300000, guid: c7c6697e30807974ab9e6ec0ebdfa0b6, type: 3}
-    Volume: 1
-    Pitch: 1
-    MaxDistance: 3
-    Source: {fileID: 0}
-    Loop: 0
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.669
+  m_Color: {r: 1, g: 0.42140436, b: 0, a: 1}
+  m_Intensity: 3.31
+  m_LightVolumeOpacity: 0.009
+  m_ApplyToSortingLayers: 00000000ffde86e7ef1dc207b9387422
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.38
+  m_PointLightOuterRadius: 3.16
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
