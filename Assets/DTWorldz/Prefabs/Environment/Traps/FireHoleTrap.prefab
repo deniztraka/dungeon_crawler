@@ -167,7 +167,8 @@ MonoBehaviour:
   RefreshTime: 3
   DamageType: 1
   Color: {r: 0.10980392, g: 1, b: 0, a: 0.05882353}
-  ReadySprite: {fileID: 0}
+  ReadySprite: {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8,
+    type: 3}
   AnimationSprites:
   - {fileID: 6775097207581815460, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
   - {fileID: -7492585446141206388, guid: 3406aab0b84b443429867be6431bdcd8, type: 3}
