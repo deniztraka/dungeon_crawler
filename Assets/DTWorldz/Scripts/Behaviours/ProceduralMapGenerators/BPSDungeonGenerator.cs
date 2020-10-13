@@ -22,6 +22,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
 
         public GameObject TestPrefab;
 
+        public GameObject CameraHolder;
+
         public bool DecorateSpawners;
 
         private GameObject player;
@@ -77,9 +79,15 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
             //move player into biggest room in first level
             levels[0].MovePlayer(player);
 
+
             levels[levels.Count - 1].AddChest(DungeonTemplate);
 
             TestFeatures();
+
+            if (CameraHolder)
+            {
+                CameraHolder.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -1);
+            }
 
             Debug.Log("Dungeon is created with seed:" + seed.ToString());
         }

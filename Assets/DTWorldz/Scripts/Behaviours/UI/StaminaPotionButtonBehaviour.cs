@@ -25,7 +25,7 @@ namespace DTWorldz.Behaviours.UI
                 CountText = gameObject.GetComponentInChildren<Text>();
             }
             
-            SetAction(DrinkStamina, 3f);
+            SetAction(DrinkStamina, 2f);
             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
             player = playerGameObject.GetComponent<PlayerBehaviour>();
             UpdateText();
@@ -46,7 +46,7 @@ namespace DTWorldz.Behaviours.UI
             {
                 var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
                 // var particleSystem = effectObj.GetComponents<ParticleSystem>();
-                Destroy(effectObj, 3f);
+                Destroy(effectObj, 2f);
 
             }
             player.DrinkStaminaPotion();
