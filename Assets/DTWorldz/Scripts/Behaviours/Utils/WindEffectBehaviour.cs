@@ -31,7 +31,7 @@ namespace DTWorldz.Behaviours.Utils
         {
 
 
-            if (collider.tag == "Player")
+            if (collider.tag == "Player" || collider.tag == "Mobile")
             {
                 if (currentSpeed < 2.5f)
                 {

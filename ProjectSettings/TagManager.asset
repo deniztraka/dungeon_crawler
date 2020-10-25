@@ -10,6 +10,7 @@ TagManager:
   - Decorate
   - Dungeon
   - Spawner
+  - Mobile
   layers:
   - Default
   - TransparentFX
