@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/DTWorldz/Scenes/Act1Scene.unity
     guid: 447876c6ac84a16428af486ab288b79b
   - enabled: 1
-    path: Assets/DTWorldz/Scenes/DungeonScene.unity
-    guid: b6d6f700bd26cec4cad6bf0625355c9b
+    path: Assets/DTWorldz/Scenes/Act1CemetaryScene.unity
+    guid: 0819abc3862a35f49bf3efaecf558f83
   m_configObjects: {}

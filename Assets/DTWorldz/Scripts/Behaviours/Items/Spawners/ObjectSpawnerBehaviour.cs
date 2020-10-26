@@ -26,6 +26,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     private Random random;
 
     public bool SpawnBoss;
+    public bool IsContinues = true;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,10 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     }
     void Update()
     {
+        if(!IsContinues){
+            return;
+        }
+
         if (SpawnPrefabs != null && SpawnPrefabs.Count > 0 && spawnTime <= 0)
         {
             CleanAliveList();
