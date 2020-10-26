@@ -13,7 +13,10 @@ namespace DTWorldz.Behaviours.Utils
         void Start()
         {
             var playerGameObject = GameObject.FindWithTag("Player");
-            playerGameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            var newPos = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            var cameraHolderObject = GameObject.Find("CameraHolder");
+            playerGameObject.transform.position = newPos;
+            cameraHolderObject.transform.position = new Vector3(newPos.x, newPos.y, -1);
         }
 
         public void OnTriggerEnter2D(Collider2D collider)
@@ -24,7 +27,9 @@ namespace DTWorldz.Behaviours.Utils
                 if (playerAreaModel != null)
                 {
                     SceneManager.LoadSceneAsync(playerAreaModel.AreaName);
-                } else {
+                }
+                else
+                {
                     Debug.Log("I didn't come from anywhere.");
                 }
             }

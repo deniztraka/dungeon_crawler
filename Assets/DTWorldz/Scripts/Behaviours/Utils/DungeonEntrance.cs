@@ -10,6 +10,7 @@ namespace DTWorldz.Behaviours.Utils
     public class DungeonEntrance : MonoBehaviour
     {
         public PlayerAreaStack PlayerAreaStack;
+        public string TargetSceneName;
         // Start is called before the first frame update
         void Start()
         {
@@ -17,8 +18,11 @@ namespace DTWorldz.Behaviours.Utils
             if (lastArea != null && lastArea.UniqueObjectName == gameObject.name)
             {
                 lastArea = PlayerAreaStack.Pop();
+                var newPos = new Vector3(lastArea.LastPosition.x, lastArea.LastPosition.y, lastArea.LastPosition.z);
                 var playerObject = GameObject.FindWithTag("Player");
-                playerObject.transform.position = new Vector3(lastArea.LastPosition.x, lastArea.LastPosition.y, lastArea.LastPosition.z);
+                var cameraHolderObject = GameObject.Find("CameraHolder");
+                playerObject.transform.position = newPos;
+                cameraHolderObject.transform.position = new Vector3(newPos.x, newPos.y, -1);         
             }
         }
 
@@ -27,10 +31,8 @@ namespace DTWorldz.Behaviours.Utils
         {
             if (collider.tag == "Player")
             {
-                Debug.Log(transform.position);
-                PlayerAreaStack.Push(new PlayerAreaStackModel(new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), "Act1Scene", gameObject.name));
-                
-                SceneManager.LoadSceneAsync("Act1CemetaryScene");
+                PlayerAreaStack.Push(new PlayerAreaStackModel(new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), SceneManager.GetActiveScene().name, gameObject.name));                
+                SceneManager.LoadSceneAsync(TargetSceneName);
             }
         }
     }
