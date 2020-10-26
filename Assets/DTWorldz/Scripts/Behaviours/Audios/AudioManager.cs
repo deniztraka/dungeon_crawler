@@ -10,6 +10,7 @@ namespace DTWorldz.Behaviours.Audios
     {
         private Audio lastSound;
         public Audio[] Sounds;
+        public bool AutoPlayFirst = false;
 
         public void Awake()
         {
@@ -24,6 +25,13 @@ namespace DTWorldz.Behaviours.Audios
                 sound.Source.minDistance = 1;
                 sound.Source.maxDistance = sound.MaxDistance;
                 sound.Source.rolloffMode = AudioRolloffMode.Linear;
+            }
+        }
+
+        public void Start()
+        {
+            if(AutoPlayFirst && Sounds != null && Sounds.Length > 0){
+                Play(Sounds[0].Name);
             }
         }
 
