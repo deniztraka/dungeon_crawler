@@ -20684,7 +20684,7 @@ MonoBehaviour:
   Sounds:
   - Name: AmbientLoop
     Clip: {fileID: 8300000, guid: 69fac121bb43dc34da5a25e4e98a4c0c, type: 3}
-    Volume: 1
+    Volume: 0.5
     Pitch: 1
     MaxDistance: 0
     Source: {fileID: 0}
