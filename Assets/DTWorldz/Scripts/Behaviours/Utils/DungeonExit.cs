@@ -26,7 +26,8 @@ namespace DTWorldz.Behaviours.Utils
                 var playerAreaModel = PlayerAreaStack.Peek();
                 if (playerAreaModel != null)
                 {
-                    SceneManager.LoadSceneAsync(playerAreaModel.AreaName);
+                    var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
+                    asyncSceneLoader.LoadScene(playerAreaModel.AreaName);
                 }
                 else
                 {
