@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.UI;
+using DTWorldz.DataModel;
+using DTWorldz.SaveSystem;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Player
 {
     public class PlayerBehaviour : MonoBehaviour
     {
+        private int goldAmount;        
+        
         AudioManager audioManager;
         HealthBehaviour health;
         StamBehaviour stamina;
@@ -26,23 +30,14 @@ namespace DTWorldz.Behaviours.Player
             health = GetComponent<HealthBehaviour>();
             stamina = GetComponent<StamBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
-        }
 
-
-
-        // Update is called once per frame
-        void Update()
-        {
-            // if(Input.GetMouseButton(0)){
-            //     var health = gameObject.GetComponent<HealthBehaviour>();
-            //     if(health != null){
-            //         health.TakeDamage(5, DamageType.Physical);
-            //     }
-            // }
+            SaveSystemManager.Instance.OnGameSave += new SaveSystemManager.SaveSystemHandler(OnSave);
+            SaveSystemManager.Instance.OnGameLoad += new SaveSystemManager.SaveSystemHandler(OnLoad);
         }
 
         internal void CollectGold(int count)
         {
+            goldAmount += count;
             var isPlural = count > 1;
             if (GoldLootPrefab != null)
             {
@@ -81,6 +76,20 @@ namespace DTWorldz.Behaviours.Player
             var floatingDamage = Instantiate(GoldLootPrefab, newPos, Quaternion.identity, transform);
             var floatingText = floatingDamage.GetComponent<FloatingGoldLootTextBehaviour>();
             floatingText.SetText(String.Format("{0:0}", goldCount));
+        }
+
+        private void OnLoad()
+        {
+            var playerDataModel = new PlayerDataModel();
+            playerDataModel.Load();
+            goldAmount = playerDataModel.GoldAmount;
+        }
+
+        private void OnSave()
+        {            
+            var playerDataModel = new PlayerDataModel();
+            playerDataModel.GoldAmount = 10;
+            playerDataModel.Save(); 
         }
     }
 }
