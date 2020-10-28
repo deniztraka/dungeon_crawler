@@ -31,5 +31,10 @@ namespace DTWorldz.Behaviours
                 TestCanvas.SetActive(IsTestMode);
             }
         }
+
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }
