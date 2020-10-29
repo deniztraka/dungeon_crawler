@@ -13,21 +13,24 @@ namespace DTWorldz.DataModel
     {
         public int GoldAmount;
         public int HealthPotionAmount;    
-        public int StamPotionAmount;
-
+        public int StamPotionAmount;        
+        public string Name;
 
         public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
         {
         }
 
+
         public bool Load()
         {
+            
             var tempModel = base.OnLoad<PlayerDataModel>();
             if (tempModel != null)
             {
                 this.GoldAmount = tempModel.GoldAmount;
                 this.HealthPotionAmount = tempModel.HealthPotionAmount;
                 this.StamPotionAmount = tempModel.StamPotionAmount;
+                this.Name = tempModel.Name;
                 return true;
             }
             return false;

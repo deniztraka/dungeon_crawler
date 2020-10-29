@@ -25,8 +25,7 @@ namespace DTWorldz.SaveSystem
 
         internal void ClearSaveData()
         {
-            var persistentPath = Application.persistentDataPath;
-            Debug.Log(persistentPath);
+            var persistentPath = Application.persistentDataPath;            
             string filePath = Path.Combine(persistentPath, SavePath);
             if (Directory.Exists(filePath))
             {
@@ -48,6 +47,13 @@ namespace DTWorldz.SaveSystem
             {
                 OnGameLoad();
             }
+        }
+
+        public bool HasSavedGame()
+        {
+            var persistentPath = Application.persistentDataPath;
+            string filePath = Path.Combine(persistentPath, SavePath);
+            return Directory.Exists(filePath);
         }
     }
 }

@@ -17,7 +17,6 @@ namespace DTWorldz.Behaviours.Player
 
         private SaveSystemManager saveSystemManager;
         private PlayerDataModel playerDataModel;
-        private bool hasData;
 
         AudioManager audioManager;
         HealthBehaviour health;
@@ -26,6 +25,9 @@ namespace DTWorldz.Behaviours.Player
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
         public GameObject GoldLootPrefab;
+
+        public delegate void DataLoaderHandler();
+        public event DataLoaderHandler OnAfterDataLoad;
 
         // Start is called before the first frame update
         void Start()
@@ -43,16 +45,30 @@ namespace DTWorldz.Behaviours.Player
             saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
             if (saveSystemManager)
             {
-                saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(OnSave);
+                saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(Save);
 
-                //saveSystemManager.OnGameLoad += new SaveSystemManager.SaveSystemHandler(OnLoad);
-                hasData = Load();
+                OnAfterDataLoad += new DataLoaderHandler(UpdateUI);
+                Load();
             }
+        }
+
+        private void UpdateUI()
+        {
+            var characterBarCanvas = GameObject.FindObjectOfType<CharacterBarCanvas>();
+            if (characterBarCanvas != null)
+            {
+                characterBarCanvas.UpdateCharacterTitleText(playerDataModel.Name);
+            }
+        }
+
+        public void CreateDataModel()
+        {
+            playerDataModel = new PlayerDataModel(saveSystemManager);
         }
 
         internal void CollectGold(int count)
         {
-            goldAmount += count;
+            playerDataModel.GoldAmount += count;
             var isPlural = count > 1;
             if (GoldLootPrefab != null)
             {
@@ -62,27 +78,27 @@ namespace DTWorldz.Behaviours.Player
 
         internal void DrinkHealthPotion()
         {
-            healthPotionAmount--;
+            playerDataModel.HealthPotionAmount--;
             audioManager.Play("Drink");
             health.CurrentHealth += 20;
         }
         internal void DrinkStaminaPotion()
         {
-            stamPotionAmount--;
+            playerDataModel.StamPotionAmount--;
             audioManager.Play("Drink");
             stamina.CurrentHealth += 30;
         }
 
         internal void CollectHealthPotion()
         {
-            healthPotionAmount++;
+            playerDataModel.HealthPotionAmount++;
             audioManager.Play("Loot");
             HealthPotionButtonBehaviour.AddPotion();
         }
 
         internal void CollectStaminaPotion()
         {
-            stamPotionAmount++;
+            playerDataModel.StamPotionAmount++;
             audioManager.Play("Loot");
             StaminaPotionButtonBehaviour.AddPotion();
         }
@@ -97,38 +113,55 @@ namespace DTWorldz.Behaviours.Player
             floatingText.SetText(String.Format("{0:0}", goldCount));
         }
 
-        private bool Load()
+        public bool Load()
         {
-            var hasSaveData = false;
-            if (saveSystemManager != null)
+            if (saveSystemManager != null && saveSystemManager.HasSavedGame())
             {
                 playerDataModel = new PlayerDataModel(saveSystemManager);
-                hasSaveData = playerDataModel.Load();
-                if (hasSaveData)
+                playerDataModel.Load();
+
+                if (StaminaPotionButtonBehaviour != null)
                 {
-                    goldAmount = playerDataModel.GoldAmount;
+                    for (int i = 0; i < playerDataModel.StamPotionAmount; i++)
+                    {
+                        StaminaPotionButtonBehaviour.AddPotion();
+                    }
                 }
+
+                if (HealthPotionButtonBehaviour != null)
+                {
+                    for (int i = 0; i < playerDataModel.HealthPotionAmount; i++)
+                    {
+                        HealthPotionButtonBehaviour.AddPotion();
+                    }
+                }
+                if (OnAfterDataLoad != null)
+                {
+
+                    OnAfterDataLoad();
+                }
+
+                return true;
             }
-            Debug.Log(hasSaveData);
-            return hasSaveData;
+            return false;
         }
 
-        private void OnSave()
+        public void Save()
         {
             if (saveSystemManager != null)
             {
-                // update dataModel here
-                playerDataModel.GoldAmount = goldAmount;
-
-                playerDataModel.HealthPotionAmount = healthPotionAmount;
-                playerDataModel.StamPotionAmount = stamPotionAmount;
                 playerDataModel.Save();
             }
         }
 
-        public bool HasSaveData()
+        public PlayerDataModel GetDataModel()
         {
-            return hasData;
+            return playerDataModel;
+        }
+
+        public void SetCharacterName(string name)
+        {
+            playerDataModel.Name = name;
         }
     }
 }

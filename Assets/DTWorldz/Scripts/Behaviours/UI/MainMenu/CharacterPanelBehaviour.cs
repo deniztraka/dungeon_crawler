@@ -5,6 +5,8 @@ namespace DTWorldz.Behaviours.UI
 {
     public class CharacterPanelBehaviour : MonoBehaviour
     {
+        public Canvas SavedCharacterCanvas;
+        public Canvas NewCharacterCanvas;
         // Start is called before the first frame update
         void Start()
         {
