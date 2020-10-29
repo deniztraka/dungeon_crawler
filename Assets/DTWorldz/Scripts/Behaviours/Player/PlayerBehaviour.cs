@@ -22,13 +22,18 @@ namespace DTWorldz.Behaviours.Player
         public GameObject GoldLootPrefab;
 
         private SaveSystemManager saveSystemManager;
+        private PlayerDataModel playerDataModel;
+        private bool hasData;
 
         // Start is called before the first frame update
         void Start()
         {
             var movementBehaviour = GetComponent<PlayerMovementBehaviour>();
             var attackBehaviour = GetComponentInChildren<AttackBehaviour>();
-            ActionButtonBehaviour.SetAction(movementBehaviour.Attack, attackBehaviour.AttackingFrequency);
+            if (ActionButtonBehaviour)
+            {
+                ActionButtonBehaviour.SetAction(movementBehaviour.Attack, attackBehaviour.AttackingFrequency);
+            }
             health = GetComponent<HealthBehaviour>();
             stamina = GetComponent<StamBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
@@ -36,7 +41,7 @@ namespace DTWorldz.Behaviours.Player
             saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
             saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(OnSave);
             //saveSystemManager.OnGameLoad += new SaveSystemManager.SaveSystemHandler(OnLoad);
-            OnLoad();
+            hasData = Load();
         }
 
         internal void CollectGold(int count)
@@ -82,25 +87,34 @@ namespace DTWorldz.Behaviours.Player
             floatingText.SetText(String.Format("{0:0}", goldCount));
         }
 
-        private void OnLoad()
+        private bool Load()
         {
+            var hasSaveData = false;
             if (saveSystemManager != null)
             {
-                var playerDataModel = new PlayerDataModel(saveSystemManager);
-                playerDataModel.Load();
-                goldAmount = playerDataModel.GoldAmount;
-                Debug.Log(goldAmount);
+                playerDataModel = new PlayerDataModel(saveSystemManager);
+                hasSaveData = playerDataModel.Load();
+                if (hasSaveData)
+                {
+                    goldAmount = playerDataModel.GoldAmount;                    
+                }                
             }
+            Debug.Log(hasSaveData);
+            return hasSaveData;
         }
 
         private void OnSave()
         {
             if (saveSystemManager != null)
             {
-                var playerDataModel = new PlayerDataModel(saveSystemManager);
+                // update dataModel here
                 playerDataModel.GoldAmount = goldAmount;
                 playerDataModel.Save();
             }
+        }
+
+        public bool HasSaveData(){
+            return hasData;
         }
     }
 }

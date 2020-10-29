@@ -7,6 +7,11 @@ namespace DTWorldz.Behaviours.UI
 {
     public class MainMenuScreenBehaviour : MonoBehaviour
     {
+        void Start()
+        {
+
+        }
+
         public void NewGame()
         {
             var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();

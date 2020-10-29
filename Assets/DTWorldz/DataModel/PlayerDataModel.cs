@@ -18,13 +18,15 @@ namespace DTWorldz.DataModel
         {
         }
 
-        public void Load()
+        public bool Load()
         {
             var tempModel = base.OnLoad<PlayerDataModel>();
             if (tempModel != null)
             {
                 this.GoldAmount = tempModel.GoldAmount;
+                return true;
             }
+            return false;
         }
 
         public void Save()
