@@ -22,12 +22,12 @@ namespace DTWorldz.Behaviours.Utils
         public void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.tag == "Player")
-            {
+            {                
                 var playerAreaModel = PlayerAreaStack.Peek();
                 if (playerAreaModel != null)
                 {
                     var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
-                    asyncSceneLoader.LoadScene(playerAreaModel.AreaName);
+                    asyncSceneLoader.LoadScene(playerAreaModel.AreaName, true);
                 }
                 else
                 {

@@ -37,6 +37,8 @@ public class PlayerAreaStackEditor : Editor
                 GUILayout.Label("-------------------------------------------------");
             }
 
+            GUILayout.Label("IsActive: " + (ts.IsActive.ToString()));
+
             if (GUILayout.Button("Remove All"))
             {
                 stack = new Stack<PlayerAreaStackModel>();

@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b6d07eb6ae4ae4385aba2e4e42fcde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAct: 
   IsTestMode: 0
   TestCanvas: {fileID: 0}
 --- !u!114 &109004953 stripped
@@ -457,6 +458,7 @@ GameObject:
   - component: {fileID: 282305379}
   - component: {fileID: 282305378}
   - component: {fileID: 282305377}
+  - component: {fileID: 282305381}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -544,6 +546,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &282305381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282305376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46958e4bc69651499cbfa456965908c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AsyncSceneLoader: {fileID: 109004953}
 --- !u!1 &449881020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,10 +1202,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109004953}
-        m_TargetAssemblyTypeName: AsyncSceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 282305381}
+        m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.MainMenuScreenBehaviour,
+          Assembly-CSharp
+        m_MethodName: NewGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2111,9 +2127,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 38845741}
-        m_TargetAssemblyTypeName: DTWorldz.Behaviours.GameManager, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 282305381}
+        m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.MainMenuScreenBehaviour,
+          Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2574,10 +2591,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109004953}
-        m_TargetAssemblyTypeName: AsyncSceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 282305381}
+        m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.MainMenuScreenBehaviour,
+          Assembly-CSharp
+        m_MethodName: SelectCharacter
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2786,6 +2804,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7515994078200393127, guid: 7ddcc27db8172a84a97a989d0b4317e1,
+        type: 3}
+      propertyPath: PlayerAreaStack
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ad1d6e2f14b4c648b7bd0a271cbe344,
+        type: 2}
     - target: {fileID: 7515994078353435234, guid: 7ddcc27db8172a84a97a989d0b4317e1,
         type: 3}
       propertyPath: m_AnchorMax.x

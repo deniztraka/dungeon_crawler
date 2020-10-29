@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 413dece559b29984b8c977c8418ab1a6, type: 3}
+  m_Material: {fileID: 2100000, guid: 37bbba8700a06e04eb40e2f0c68dd47e, type: 3}
   m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -459,7 +459,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 413dece559b29984b8c977c8418ab1a6, type: 3}
+    m_Font: {fileID: 12800000, guid: 37bbba8700a06e04eb40e2f0c68dd47e, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -518,7 +518,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7515994078132023618}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -617,6 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressText: {fileID: 7515994077787115550}
   slider: {fileID: 7515994077153575992}
+  PlayerAreaStack: {fileID: 11400000, guid: 3ad1d6e2f14b4c648b7bd0a271cbe344, type: 2}
 --- !u!1 &7515994078225929040
 GameObject:
   m_ObjectHideFlags: 0

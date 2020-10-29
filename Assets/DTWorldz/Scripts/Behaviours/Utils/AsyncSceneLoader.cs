@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,13 +14,18 @@ public class AsyncSceneLoader : MonoBehaviour
     private Canvas canvas;
     private AsyncOperation operation;
 
+    public PlayerAreaStack PlayerAreaStack;
+
     void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
         DontDestroyOnLoad(gameObject);        
     }
     
-    public void LoadScene(string sceneName){
+    public void LoadScene(string sceneName, bool areaStackIsActive){
+        if(PlayerAreaStack != null){
+            PlayerAreaStack.IsActive = areaStackIsActive;
+        }
         UpdateUI(0);
         Time.timeScale = 0f;
         canvas.enabled = true;

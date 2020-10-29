@@ -11,6 +11,7 @@ namespace DTWorldz.ScriptableObjects
     {
         [SerializeField]
         private Stack<PlayerAreaStackModel> lastPlayerAreas;
+        public bool IsActive;
 
         public PlayerAreaStackModel Pop()
         {
@@ -38,6 +39,15 @@ namespace DTWorldz.ScriptableObjects
             }
             lastPlayerAreas.Push(model);
         }  
+
+        public int GetCount()
+        {
+            if (lastPlayerAreas == null)
+            {
+                return 0;
+            }
+            return lastPlayerAreas.Count;
+        } 
 
         public Stack<PlayerAreaStackModel> GetLastPlayerAreas(){
             return lastPlayerAreas;

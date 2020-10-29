@@ -7,6 +7,8 @@ namespace DTWorldz.Behaviours
 
     public class GameManager : MonoBehaviour
     {
+        [SerializeField]
+        private string currentAct;
         public static GameManager Instance { get; private set; }
 
         public bool IsTestMode;
@@ -35,6 +37,10 @@ namespace DTWorldz.Behaviours
         public void Quit()
         {
             Application.Quit();
+        }
+
+        public void SetCurrentAct(string actName){
+            currentAct = actName;
         }
     }
 }
