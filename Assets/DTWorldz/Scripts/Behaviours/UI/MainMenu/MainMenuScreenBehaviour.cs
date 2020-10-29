@@ -1,28 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.SaveSystem;
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.UI
 {
-
-
-
     public class MainMenuScreenBehaviour : MonoBehaviour
     {
-        public AsyncSceneLoader AsyncSceneLoader;
         public void NewGame()
         {
-            AsyncSceneLoader.LoadScene("Act1Scene", false);
+            var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
+            asyncSceneLoader.LoadScene("Act1Scene", false, false);
+            var saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
+            saveSystemManager.ClearSaveData();
         }
 
         public void SelectCharacter()
         {
-            AsyncSceneLoader.LoadScene("Act1Scene", false);
+            var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
+            asyncSceneLoader.LoadScene("Act1Scene", false, false);
         }
 
         public void Exit()
         {
-            GameManager.Instance.Quit();
+            var gameManager = GameObject.FindObjectOfType<GameManager>();
+            gameManager.Quit();
         }
     }
 }

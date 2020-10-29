@@ -9,21 +9,12 @@ namespace DTWorldz.Behaviours
     {
         [SerializeField]
         private string currentAct;
-        public static GameManager Instance { get; private set; }
 
         public bool IsTestMode;
         public GameObject TestCanvas;
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                //DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            DontDestroyOnLoad(gameObject);            
         }
         // Start is called before the first frame update
         void Start()
@@ -41,6 +32,10 @@ namespace DTWorldz.Behaviours
 
         public void SetCurrentAct(string actName){
             currentAct = actName;
+        }
+
+        public string GetCurrentAct(){
+            return currentAct;;
         }
     }
 }

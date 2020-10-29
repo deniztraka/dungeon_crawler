@@ -8,6 +8,7 @@ namespace DTWorldz.DataModel
 {
     public abstract class BaseDataModel : ISavable
     {
+        private SaveSystemManager saveSystemManager;
         private string dataObjName;
         public string DataObjName
         {
@@ -15,15 +16,16 @@ namespace DTWorldz.DataModel
             set { dataObjName = value; }
         }
 
-        protected BaseDataModel(string dataObjName)
+        protected BaseDataModel(SaveSystemManager saveSystemManager, string dataObjName)
         {
+            this.saveSystemManager = saveSystemManager;
             this.dataObjName = dataObjName;
         }
 
         public virtual T OnLoad<T>()
         {
             var persistentPath = Application.persistentDataPath;
-            string filePath = Path.Combine(persistentPath, SaveSystemManager.Instance.SavePath);
+            string filePath = Path.Combine(persistentPath, saveSystemManager.SavePath);
             filePath = Path.Combine(filePath, DataObjName + ".dnz");
             var obj = default(T);
             if (File.Exists(filePath))
@@ -44,7 +46,7 @@ namespace DTWorldz.DataModel
         {
 
             var persistentPath = Application.persistentDataPath;
-            string filePath = Path.Combine(persistentPath, SaveSystemManager.Instance.SavePath);
+            string filePath = Path.Combine(persistentPath, saveSystemManager.SavePath);
 
             if (!Directory.Exists(filePath))
             {

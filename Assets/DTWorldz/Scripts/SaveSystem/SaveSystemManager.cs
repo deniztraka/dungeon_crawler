@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 namespace DTWorldz.SaveSystem
@@ -9,23 +11,25 @@ namespace DTWorldz.SaveSystem
         public delegate void SaveSystemHandler();
         public event SaveSystemHandler OnGameSave;
         public event SaveSystemHandler OnGameLoad;
-
-        public static SaveSystemManager Instance { get; private set; }
         public string SavePath = "SaveData";
 
-        void Start(){
-            LoadGame();
+        void Start()
+        {
+            //LoadGame();
         }
 
         private void Awake()
         {
-            if (Instance == null)
+            DontDestroyOnLoad(gameObject);
+        }
+
+        internal void ClearSaveData()
+        {
+            var persistentPath = Application.persistentDataPath;
+            string filePath = Path.Combine(persistentPath, SavePath);
+            if (Directory.Exists(filePath))
             {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
+                Directory.Delete(filePath, true);
             }
         }
 

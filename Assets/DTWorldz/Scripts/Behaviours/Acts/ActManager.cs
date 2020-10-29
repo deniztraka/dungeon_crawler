@@ -32,7 +32,11 @@ namespace DTWorldz.Behaviours
 
             if (SetCurrentAct)
             {
-                GameManager.Instance.SetCurrentAct(currentSceneName);
+                var gameManager = GameObject.FindObjectOfType<GameManager>();
+                if(gameManager != null){
+                    gameManager.SetCurrentAct(currentSceneName);
+                }
+                
             }
 
         }

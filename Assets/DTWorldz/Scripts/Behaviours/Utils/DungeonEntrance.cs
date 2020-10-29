@@ -34,7 +34,7 @@ namespace DTWorldz.Behaviours.Utils
                 PlayerAreaStack.IsActive = true;
                 PlayerAreaStack.Push(new PlayerAreaStackModel(new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), SceneManager.GetActiveScene().name, gameObject.name));
                 var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
-                asyncSceneLoader.LoadScene(TargetSceneName, true);
+                asyncSceneLoader.LoadScene(TargetSceneName, true, true);
             }
         }
     }

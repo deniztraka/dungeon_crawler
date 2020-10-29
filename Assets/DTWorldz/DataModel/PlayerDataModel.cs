@@ -14,7 +14,7 @@ namespace DTWorldz.DataModel
         public int GoldAmount;        
 
 
-        public PlayerDataModel() : base("player")
+        public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
         {
         }
 
