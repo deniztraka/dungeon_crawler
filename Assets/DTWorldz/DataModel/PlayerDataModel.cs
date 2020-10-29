@@ -11,7 +11,9 @@ namespace DTWorldz.DataModel
     [Serializable]
     public class PlayerDataModel : BaseDataModel
     {
-        public int GoldAmount;        
+        public int GoldAmount;
+        public int HealthPotionAmount;    
+        public int StamPotionAmount;
 
 
         public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
@@ -24,6 +26,8 @@ namespace DTWorldz.DataModel
             if (tempModel != null)
             {
                 this.GoldAmount = tempModel.GoldAmount;
+                this.HealthPotionAmount = tempModel.HealthPotionAmount;
+                this.StamPotionAmount = tempModel.StamPotionAmount;
                 return true;
             }
             return false;

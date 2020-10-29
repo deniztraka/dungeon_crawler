@@ -10,14 +10,22 @@ namespace DTWorldz.Behaviours.Items.Utils
     public class HealthPotionBehaviour : BaseItemBehaviour, ILootItem
     {
         [SerializeField]
-        private int count = 1;
+        private int count;
         private SpriteRenderer spriteRenderer;
         private Animator animator;
         private AudioManager audioManager;
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
 
-        public int Count => throw new NotImplementedException();
-
-        public bool IsStackable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private bool isStackable;
+        public bool IsStackable
+        {
+            get { return isStackable; }
+            set { isStackable = value; }
+        }
 
 
         // Start is called before the first frame update
@@ -26,6 +34,7 @@ namespace DTWorldz.Behaviours.Items.Utils
             spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
             animator = GetComponent<Animator>();
             audioManager = GetComponent<AudioManager>();
+            isStackable = false;
             if (audioManager != null)
             {
                 audioManager.Play("Drop");
@@ -40,7 +49,7 @@ namespace DTWorldz.Behaviours.Items.Utils
             }
         }
 
-       
+
 
         public override void OnTriggerEnter2D(Collider2D collider)
         {
@@ -54,8 +63,8 @@ namespace DTWorldz.Behaviours.Items.Utils
                 var spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
                 var tempColor = spriteRenderer.color;
                 tempColor.a = 0f;
-                spriteRenderer.color = tempColor;    
-                var thisCollider = gameObject.GetComponentInChildren<Collider2D>();            
+                spriteRenderer.color = tempColor;
+                var thisCollider = gameObject.GetComponentInChildren<Collider2D>();
                 thisCollider.enabled = false;
                 Destroy(this.gameObject, 1);
             }
@@ -63,7 +72,7 @@ namespace DTWorldz.Behaviours.Items.Utils
 
         public void SetCount(int count)
         {
-            count = 1;
+            this.count = count;
         }
     }
 }

@@ -12,6 +12,12 @@ namespace DTWorldz.Behaviours.Player
     public class PlayerBehaviour : MonoBehaviour
     {
         private int goldAmount;
+        private int healthPotionAmount;
+        private int stamPotionAmount;
+
+        private SaveSystemManager saveSystemManager;
+        private PlayerDataModel playerDataModel;
+        private bool hasData;
 
         AudioManager audioManager;
         HealthBehaviour health;
@@ -20,10 +26,6 @@ namespace DTWorldz.Behaviours.Player
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
         public GameObject GoldLootPrefab;
-
-        private SaveSystemManager saveSystemManager;
-        private PlayerDataModel playerDataModel;
-        private bool hasData;
 
         // Start is called before the first frame update
         void Start()
@@ -39,9 +41,13 @@ namespace DTWorldz.Behaviours.Player
             audioManager = gameObject.GetComponent<AudioManager>();
 
             saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
-            saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(OnSave);
-            //saveSystemManager.OnGameLoad += new SaveSystemManager.SaveSystemHandler(OnLoad);
-            hasData = Load();
+            if (saveSystemManager)
+            {
+                saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(OnSave);
+
+                //saveSystemManager.OnGameLoad += new SaveSystemManager.SaveSystemHandler(OnLoad);
+                hasData = Load();
+            }
         }
 
         internal void CollectGold(int count)
@@ -56,23 +62,27 @@ namespace DTWorldz.Behaviours.Player
 
         internal void DrinkHealthPotion()
         {
+            healthPotionAmount--;
             audioManager.Play("Drink");
             health.CurrentHealth += 20;
         }
         internal void DrinkStaminaPotion()
         {
+            stamPotionAmount--;
             audioManager.Play("Drink");
             stamina.CurrentHealth += 30;
         }
 
         internal void CollectHealthPotion()
         {
+            healthPotionAmount++;
             audioManager.Play("Loot");
             HealthPotionButtonBehaviour.AddPotion();
         }
 
         internal void CollectStaminaPotion()
         {
+            stamPotionAmount++;
             audioManager.Play("Loot");
             StaminaPotionButtonBehaviour.AddPotion();
         }
@@ -96,8 +106,8 @@ namespace DTWorldz.Behaviours.Player
                 hasSaveData = playerDataModel.Load();
                 if (hasSaveData)
                 {
-                    goldAmount = playerDataModel.GoldAmount;                    
-                }                
+                    goldAmount = playerDataModel.GoldAmount;
+                }
             }
             Debug.Log(hasSaveData);
             return hasSaveData;
@@ -109,11 +119,15 @@ namespace DTWorldz.Behaviours.Player
             {
                 // update dataModel here
                 playerDataModel.GoldAmount = goldAmount;
+
+                playerDataModel.HealthPotionAmount = healthPotionAmount;
+                playerDataModel.StamPotionAmount = stamPotionAmount;
                 playerDataModel.Save();
             }
         }
 
-        public bool HasSaveData(){
+        public bool HasSaveData()
+        {
             return hasData;
         }
     }

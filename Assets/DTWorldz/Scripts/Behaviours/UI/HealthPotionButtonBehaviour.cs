@@ -10,7 +10,7 @@ namespace DTWorldz.Behaviours.UI
     public class HealthPotionButtonBehaviour : ActionButtonBehaviour
     {
         public Text CountText;
-        int count = 1;
+        int count;
         PlayerBehaviour player;
         public GameObject EffectPrefab;
         public override void Start()
@@ -21,9 +21,10 @@ namespace DTWorldz.Behaviours.UI
                 CountText = gameObject.GetComponentInChildren<Text>();
             }
             SetAction(DrinkHealth, 2f);
-             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
             player = playerGameObject.GetComponent<PlayerBehaviour>();
             UpdateText();
+            SetFillAmount(count > 0 ? 1f : 0f);
         }
 
         public override void Update()
@@ -37,16 +38,19 @@ namespace DTWorldz.Behaviours.UI
 
         public void DrinkHealth()
         {
-            if (EffectPrefab != null)
+            if (count > 0)
             {
-                var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
-                // var particleSystem = effectObj.GetComponents<ParticleSystem>();
-                Destroy(effectObj, 2f);
+                if (EffectPrefab != null)
+                {
+                    var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
+                    // var particleSystem = effectObj.GetComponents<ParticleSystem>();
+                    Destroy(effectObj, 2f);
 
+                }
+                player.DrinkHealthPotion();
+                count--;
+                UpdateText();
             }
-            player.DrinkHealthPotion();
-            count--;
-            UpdateText();
         }
 
         private void UpdateText()

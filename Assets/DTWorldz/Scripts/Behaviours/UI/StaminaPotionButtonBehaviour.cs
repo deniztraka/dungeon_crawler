@@ -11,7 +11,7 @@ namespace DTWorldz.Behaviours.UI
     public class StaminaPotionButtonBehaviour : ActionButtonBehaviour
     {
         public Text CountText;
-        int count = 1;
+        int count;
 
         public GameObject EffectPrefab;
 
@@ -24,11 +24,12 @@ namespace DTWorldz.Behaviours.UI
             {
                 CountText = gameObject.GetComponentInChildren<Text>();
             }
-            
+
             SetAction(DrinkStamina, 2f);
             var playerGameObject = GameObject.FindGameObjectWithTag("Player");
             player = playerGameObject.GetComponent<PlayerBehaviour>();
             UpdateText();
+            SetFillAmount(count > 0 ? 1f : 0f);
         }
 
         public override void Update()
@@ -42,17 +43,20 @@ namespace DTWorldz.Behaviours.UI
 
         public void DrinkStamina()
         {
-            if (EffectPrefab != null)
+            if (count > 0)
             {
-                var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
-                // var particleSystem = effectObj.GetComponents<ParticleSystem>();
-                Destroy(effectObj, 2f);
+                if (EffectPrefab != null)
+                {
+                    var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
+                    // var particleSystem = effectObj.GetComponents<ParticleSystem>();
+                    Destroy(effectObj, 2f);
 
+                }
+                player.DrinkStaminaPotion();
+
+                count--;
+                UpdateText();
             }
-            player.DrinkStaminaPotion();
-            
-            count--;
-            UpdateText();
         }
 
         private void UpdateText()
