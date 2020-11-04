@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.SaveSystem;
 using UnityEngine;
@@ -18,6 +20,7 @@ namespace DTWorldz.Behaviours.UI
         public Text CharacterTitleText;
         private SaveSystemManager saveSystemManager;
         private string characterName;
+        private AudioManager audioManager;
 
         void Start()
         {
@@ -28,13 +31,15 @@ namespace DTWorldz.Behaviours.UI
             NewCharacterCanvas.enabled = !hasSavedGame;
             CreateCharacterButton.interactable = hasSavedGame;
 
+            audioManager = GetComponent<AudioManager>();
+
             TitleInputField.onEndEdit.AddListener(OnEndEdit);
             Player.OnAfterDataLoad += new PlayerBehaviour.DataLoaderHandler(UpdateCharacterPanel);
             Player.Load();
         }
 
         private void UpdateCharacterPanel()
-        {            
+        {
             var playerDataModel = Player.GetDataModel();
 
             if (playerDataModel != null)
@@ -54,6 +59,12 @@ namespace DTWorldz.Behaviours.UI
 
         public void NewGame()
         {
+            audioManager.Play("ButtonClick");
+            StartCoroutine(ExecuteAfterTime(CreateNewGame, 0.6f));
+        }
+
+        private void CreateNewGame()
+        {
             saveSystemManager.ClearSaveData();
             var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
             asyncSceneLoader.LoadScene("MainMenuScene", false, false);
@@ -61,11 +72,24 @@ namespace DTWorldz.Behaviours.UI
 
         public void SelectCharacter()
         {
+            audioManager.Play("ButtonClick");
+            StartCoroutine(ExecuteAfterTime(LadAct1Scene, 0.6f));
+        }
+
+
+        private void LadAct1Scene()
+        {
             var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
             asyncSceneLoader.LoadScene("Act1Scene", false, false);
         }
 
         public void CreateCharacter()
+        {
+            audioManager.Play("ButtonClick");
+            StartCoroutine(ExecuteAfterTime(CreateNewCharacter, 0.6f));
+        }
+
+        private void CreateNewCharacter()
         {
             NewCharacterCanvas.enabled = false;
             SavedCharacterCanvas.enabled = true;
@@ -74,12 +98,22 @@ namespace DTWorldz.Behaviours.UI
             Player.Save();
             var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
             asyncSceneLoader.LoadScene("MainMenuScene", false, false);
+        }
 
+        IEnumerator ExecuteAfterTime(Action task, float time)
+        {
+            yield return new WaitForSeconds(time);
+            task.Invoke();
         }
 
 
-
         public void Exit()
+        {
+            audioManager.Play("ButtonClick");
+            StartCoroutine(ExecuteAfterTime(ExitGame, 0.6f));
+        }
+
+        public void ExitGame()
         {
             var gameManager = GameObject.FindObjectOfType<GameManager>();
             gameManager.Quit();

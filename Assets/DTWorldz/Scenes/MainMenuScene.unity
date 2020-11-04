@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 282305379}
   - component: {fileID: 282305378}
   - component: {fileID: 282305377}
+  - component: {fileID: 282305382}
   - component: {fileID: 282305381}
   m_Layer: 5
   m_Name: MainMenuCanvas
@@ -715,6 +716,27 @@ MonoBehaviour:
   NewCharacterCanvas: {fileID: 352962558}
   TitleInputField: {fileID: 1936509702}
   CharacterTitleText: {fileID: 32940326}
+--- !u!114 &282305382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282305376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978395bb31cfc384daf17e59151bb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: ButtonClick
+    Clip: {fileID: 8300000, guid: ee9c70a97b2eee948934404c025b499f, type: 3}
+    Volume: 1
+    Pitch: 1
+    MaxDistance: 0
+    Source: {fileID: 0}
+    Loop: 0
+  AutoPlayFirst: 0
 --- !u!1 &352962555
 GameObject:
   m_ObjectHideFlags: 0
