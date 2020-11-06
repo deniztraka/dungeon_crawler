@@ -68,7 +68,10 @@ namespace DTWorldz.Behaviours.Player
 
         internal void CollectGold(int count)
         {
-            playerDataModel.GoldAmount += count;
+            if (playerDataModel != null)
+            {
+                playerDataModel.GoldAmount += count;
+            }
             var isPlural = count > 1;
             if (GoldLootPrefab != null)
             {
@@ -78,27 +81,40 @@ namespace DTWorldz.Behaviours.Player
 
         internal void DrinkHealthPotion()
         {
-            playerDataModel.HealthPotionAmount--;
+            if (playerDataModel != null)
+            {
+                playerDataModel.HealthPotionAmount--;
+            }
             audioManager.Play("Drink");
             health.CurrentHealth += 20;
         }
+
         internal void DrinkStaminaPotion()
         {
-            playerDataModel.StamPotionAmount--;
+            if (playerDataModel != null)
+            {
+                playerDataModel.StamPotionAmount--;
+            }
             audioManager.Play("Drink");
             stamina.CurrentHealth += 30;
         }
 
         internal void CollectHealthPotion()
         {
-            playerDataModel.HealthPotionAmount++;
+            if (playerDataModel != null)
+            {
+                playerDataModel.HealthPotionAmount++;
+            }
             audioManager.Play("Loot");
             HealthPotionButtonBehaviour.AddPotion();
         }
 
         internal void CollectStaminaPotion()
         {
-            playerDataModel.StamPotionAmount++;
+            if (playerDataModel != null)
+            {
+                playerDataModel.StamPotionAmount++;
+            }
             audioManager.Play("Loot");
             StaminaPotionButtonBehaviour.AddPotion();
         }

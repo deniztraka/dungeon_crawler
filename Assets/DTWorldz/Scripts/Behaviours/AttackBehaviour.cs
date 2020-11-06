@@ -7,6 +7,7 @@ using DTWorldz.Models;
 using EZCameraShake;
 using UnityEngine;
 using DTWorlds.Behaviours.Effects;
+using DTWorldz.Behaviours.UI;
 
 namespace DTWorldz.Behaviours
 {
@@ -111,6 +112,7 @@ namespace DTWorldz.Behaviours
                 {
                     audioManager.Play("Hit");
                     enemyHealthBehaviour.TakeDamage(Damage, DamageType.Physical);
+                    
                     if (KnockbackForce > 0)
                     {
                         var difference = enemyHealthBehaviour.transform.position - this.transform.position;
@@ -155,7 +157,8 @@ namespace DTWorldz.Behaviours
                 if (OnBeforeAttack != null)
                 {
                     var result = OnBeforeAttack();
-                    if(!result){
+                    if (!result)
+                    {
                         return false;
                     }
                 }
