@@ -66763,6 +66763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterPanelCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4431350179749486348, guid: 88f2fea34f2d4f140b7f8687c8074608,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4431350179749486349, guid: 88f2fea34f2d4f140b7f8687c8074608,
         type: 3}
       propertyPath: m_LocalPosition.x
