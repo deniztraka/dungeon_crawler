@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Models;
 using EZCameraShake;
 using UnityEngine;
 using DTWorlds.Behaviours.Effects;
-using DTWorldz.Behaviours.UI;
 
 namespace DTWorldz.Behaviours
 {

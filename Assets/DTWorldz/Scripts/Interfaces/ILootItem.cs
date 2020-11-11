@@ -8,7 +8,7 @@ namespace DTWorldz.Interfaces
     {
         int Count { get; }
         void SetCount(int count);
-        bool IsStackable { get; set; }
+        bool IsStackable { get; }
         void OnAfterDrop();
     }
 }
