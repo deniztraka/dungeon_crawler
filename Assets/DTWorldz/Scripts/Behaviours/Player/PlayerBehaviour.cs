@@ -52,6 +52,11 @@ namespace DTWorldz.Behaviours.Player
             }
         }
 
+        internal bool PickupItem(BaseItemBehaviour itemBehaviour)
+        {
+            return InventoryBehaviour.Instance.AddItem(itemBehaviour);
+        }
+
         private void UpdateUI()
         {
             var characterBarCanvas = GameObject.FindObjectOfType<CharacterBarCanvas>();

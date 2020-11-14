@@ -116,6 +116,7 @@ MonoBehaviour:
     MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
+  AutoPlayFirst: 0
 --- !u!1 &7559222450374734856
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+  AutoPlayFirst: 0
 --- !u!114 &8992242071911772111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpreadDistance: 0.5
-  DropTemplate: {fileID: 11400000, guid: 2746f2d288764b44aa129aed8c72b48f, type: 2}
+  DropTemplate: {fileID: 11400000, guid: 89f31e6f319d4dd4ea97978e8e4d4b07, type: 2}
 --- !u!114 &9092021335223201037
 MonoBehaviour:
   m_ObjectHideFlags: 0

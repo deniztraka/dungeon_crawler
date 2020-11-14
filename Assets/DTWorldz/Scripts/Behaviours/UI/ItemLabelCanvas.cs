@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Player;
 using UnityEngine;
 namespace DTWorldz.Behaviours.UI
 {
@@ -17,7 +18,6 @@ namespace DTWorldz.Behaviours.UI
 
         public void OnLabelClicked()
         {
-            Debug.Log("LabelClicked");
             PickupButtonsPanel.SetActive(true);
         }
 
@@ -34,13 +34,16 @@ namespace DTWorldz.Behaviours.UI
 
         public void OnPickupClicked()
         {
-            Debug.Log("PickedUp");
+            var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
+            var isSucceed = player.PickupItem(itemBehaviour);
+            if(isSucceed){
+                Destroy(itemBehaviour.gameObject);
+            }
             PickupButtonsPanel.SetActive(false);
         }
 
         public void OnCancelClicked()
         {
-            Debug.Log("Canceled");
             PickupButtonsPanel.SetActive(false);
         }
     }
