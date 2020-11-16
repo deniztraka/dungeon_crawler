@@ -10,11 +10,11 @@ namespace DTWorldz.Behaviours.UI.Inventory
         {
             if (DragAndDropItem.icon != null)
             {
-                DragAndDropSlot sourceSlot = DragAndDropItem.sourceCell;
+                DragAndDropSlot sourceSlot = DragAndDropItem.sourceCell;                
 
                 if (sourceSlot != null)
                 {
-                    sourceSlot.GetComponent<ItemSlotBehaviour>().DropItem();
+                    InventoryBehaviour.Instance.DropItem(sourceSlot.GetComponent<ItemSlotBehaviour>());                    
                 }
             }
         }

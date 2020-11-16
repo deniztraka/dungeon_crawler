@@ -12,8 +12,8 @@ namespace DTWorldz.DataModel
     public class PlayerDataModel : BaseDataModel
     {
         public int GoldAmount;
-        public int HealthPotionAmount;    
-        public int StamPotionAmount;        
+        public int HealthPotionAmount;
+        public int StamPotionAmount;
         public string Name;
 
         public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
@@ -23,7 +23,7 @@ namespace DTWorldz.DataModel
 
         public bool Load()
         {
-            
+
             var tempModel = base.OnLoad<PlayerDataModel>();
             if (tempModel != null)
             {

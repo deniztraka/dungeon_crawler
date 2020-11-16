@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace DTWorldz.Behaviours.UI.Inventory
 {
     public class SlotItemBehaviour : MonoBehaviour
-    {
-        //public Item Item;
-
+    {    
         public GameObject ItemQuantityPanel;
         public GameObject ItemTexturePanel;
+
+        public BaseItem Item;
 
         // internal void Stack(Item item)
         // {
@@ -41,6 +42,8 @@ namespace DTWorldz.Behaviours.UI.Inventory
             var spriteRenderer = itemBehaviour.GetComponentInChildren<SpriteRenderer>();
             var image = GetComponent<Image>();
             image.sprite = spriteRenderer.sprite;
+
+            this.Item = itemBehaviour.Item;
         }
     }
 }

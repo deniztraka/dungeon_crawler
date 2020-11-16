@@ -42,6 +42,11 @@ namespace DTWorldz.Behaviours.Player
             stamina = GetComponent<StamBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
 
+            RegisterToSaveSystem();
+        }
+
+        private void RegisterToSaveSystem()
+        {
             saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
             if (saveSystemManager)
             {
@@ -139,7 +144,7 @@ namespace DTWorldz.Behaviours.Player
             if (saveSystemManager != null && saveSystemManager.HasSavedGame())
             {
                 playerDataModel = new PlayerDataModel(saveSystemManager);
-                playerDataModel.Load();
+                playerDataModel.Load();                
 
                 if (StaminaPotionButtonBehaviour != null)
                 {
@@ -171,7 +176,7 @@ namespace DTWorldz.Behaviours.Player
         {
             if (saveSystemManager != null)
             {
-                playerDataModel.Save();
+                playerDataModel.Save();                
             }
         }
 

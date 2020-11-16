@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db85197f878f6e44c98069358028bc0c, type: 3}
   m_Name: PlayerAreaStack
   m_EditorClassIdentifier: 
+  IsActive: 0

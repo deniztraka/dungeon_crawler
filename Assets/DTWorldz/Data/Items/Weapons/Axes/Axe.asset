@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdfbafa0ac9fd846a6829ddde7e9a00, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 4018588179695792918, guid: 241b9ef4ba4d47947a69674b557b3849, type: 3}
+  Name: War Axe
+  Icon: {fileID: -7368915215308609132, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
+  BaseMinDamage: 5
+  BaseMaxDamage: 8
+  MinStrength: 10
+  MinDexterity: 10
+  Type: 0

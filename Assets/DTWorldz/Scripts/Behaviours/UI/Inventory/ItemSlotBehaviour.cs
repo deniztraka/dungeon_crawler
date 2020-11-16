@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
 namespace DTWorldz.Behaviours.UI.Inventory
 {
@@ -61,31 +62,26 @@ namespace DTWorldz.Behaviours.UI.Inventory
 
         public void DropItem()
         {
-            var slotItemBehaviour = transform.GetComponentInChildren<SlotItemBehaviour>();
-            //slotItemBehaviour.DropItem();
+            var slotItem = transform.GetComponentInChildren<SlotItemBehaviour>();
             var playerObj = GameObject.FindWithTag("Player"); // playerın oldugu yere instantiate etçen
 
-            // TODO: Drop işini hallet
-            // slotun içindeki itemın ne olduğu belli olması gerkeio ki hangi itemı instantiate etçeğini bil
-            // bir seçenek, databaseden çek instantiate et modifierları koy.
-            // ama bundan önce inventory'e koyarken itemı tüm özellikleriyle düzgün koyman lazım.
-
-
-            //StartCoroutine(LateDrop(,playerObj.transform.position,1,0.5f));
-
-
-            if (OnItemRemoved != null)
-            {
-                OnItemRemoved();
-            }
-            HasItem = false;
+            StartCoroutine(LateDrop(slotItem, playerObj.transform.position, 1, 0.25f));
         }
 
-        IEnumerator LateDrop(GameObject prefab, Vector3 position, int count, float delay)
+        IEnumerator LateDrop(SlotItemBehaviour itemToDrop, Vector3 position, int count, float delay)
         {
             yield return new WaitForSeconds(delay);
             var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-0.5f, 0.5f), position.y + UnityEngine.Random.Range(-0.5f, 0.5f), position.z);
-            var instantiatedLootItem = Instantiate(prefab, randomPosition, Quaternion.identity);
+            var instantiatedLootItem = Instantiate(itemToDrop.Item.Prefab, randomPosition, Quaternion.identity);
+
+            DestroyImmediate(itemToDrop.gameObject);
+            HasItem = false;
+            if (OnItemRemoved != null)
+            {
+                Debug.Log("asd");
+                OnItemRemoved();
+            }
+            InventoryBehaviour.Instance.RefreshItemsData();
         }
 
         internal void AddItem(BaseItemBehaviour itemBehaviour)
@@ -146,16 +142,16 @@ namespace DTWorldz.Behaviours.UI.Inventory
         //     IsSelected = select;
         // }
 
-        // internal Item GetItem()
-        // {
-        //     var slotItemBehaviour = transform.GetComponentInChildren<SlotItemBehaviour>();
-        //     if (slotItemBehaviour != null)
-        //     {
-        //         return slotItemBehaviour.Item;
-        //     }
+        internal BaseItem GetItem()
+        {
+            var slotItemBehaviour = transform.GetComponentInChildren<SlotItemBehaviour>();
+            if (slotItemBehaviour != null)
+            {
+                return slotItemBehaviour.Item;
+            }
 
-        //     return null;
-        // }
+            return null;
+        }
 
         // internal void SetItemAmount(int newAmount)
         // {

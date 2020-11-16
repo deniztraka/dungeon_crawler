@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4018588179695792914}
   - component: {fileID: 4018588179695793005}
   m_Layer: 0
-  m_Name: Axe
+  m_Name: War Axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21bd4d3de64be74ea4e9b86a4cb60cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Item: {fileID: 11400000, guid: 68082d2b535f0be4ebe35cf5efe46fe7, type: 2}
   count: 1
   isStackable: 0
 --- !u!1001 &4018588179694034833
@@ -179,6 +180,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4018588179695792913}
     m_Modifications:
+    - target: {fileID: 4773408866602804416, guid: 22768fca566c2f84b97e0a1ee8f75065,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4773408866602804428, guid: 22768fca566c2f84b97e0a1ee8f75065,
         type: 3}
       propertyPath: m_Name

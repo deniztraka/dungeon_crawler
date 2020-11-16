@@ -14,8 +14,7 @@ namespace DTWorldz.Behaviours.AI.States
             GoDeadState(animator.gameObject);
             Destroy(animator.gameObject, 15);
         }
-
-        //todo: just an example dead animation here
+        
         private void GoDeadState(GameObject gameObject){
             MovementBehaviour.enabled = false;
             MobileHealth.enabled = false;
