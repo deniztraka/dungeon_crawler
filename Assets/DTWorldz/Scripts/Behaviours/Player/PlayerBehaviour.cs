@@ -70,6 +70,12 @@ namespace DTWorldz.Behaviours.Player
             {
                 characterBarCanvas.UpdateCharacterTitleText(playerDataModel.Name);
             }
+
+            var characterPanelCanvasBehaviour = GameObject.FindObjectOfType<CharacterPanelCanvasBehaviour>();
+            if (characterPanelCanvasBehaviour != null)
+            {
+                characterPanelCanvasBehaviour.UpdateGoldText(playerDataModel.GoldAmount);
+            }
         }
 
         public void CreateDataModel()
@@ -87,6 +93,12 @@ namespace DTWorldz.Behaviours.Player
             if (GoldLootPrefab != null)
             {
                 PopUpFloatingGold(count);
+            }
+
+            var characterPanelCanvasBehaviour = GameObject.FindObjectOfType<CharacterPanelCanvasBehaviour>();
+            if (characterPanelCanvasBehaviour != null)
+            {
+                characterPanelCanvasBehaviour.UpdateGoldText(playerDataModel.GoldAmount);
             }
         }
 
@@ -145,7 +157,7 @@ namespace DTWorldz.Behaviours.Player
             if (saveSystemManager != null && saveSystemManager.HasSavedGame())
             {
                 playerDataModel = new PlayerDataModel(saveSystemManager);
-                playerDataModel.Load();                
+                playerDataModel.Load();
 
                 if (StaminaPotionButtonBehaviour != null)
                 {
@@ -177,7 +189,7 @@ namespace DTWorldz.Behaviours.Player
         {
             if (saveSystemManager != null)
             {
-                playerDataModel.Save();                
+                playerDataModel.Save();
             }
         }
 

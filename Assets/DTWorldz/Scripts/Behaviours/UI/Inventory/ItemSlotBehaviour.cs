@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 namespace DTWorldz.Behaviours.UI.Inventory
 {
-    public class ItemSlotBehaviour : MonoBehaviour
+    public class ItemSlotBehaviour : MonoBehaviour, IPointerClickHandler
     {
         public bool IsSelected;
 
@@ -24,6 +26,23 @@ namespace DTWorldz.Behaviours.UI.Inventory
         public delegate void SlotEventHandler();
         public event SlotEventHandler OnItemAdded;
         public event SlotEventHandler OnItemRemoved;
+
+        public virtual void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.clickCount == 2)
+            {
+                var item = GetItem();
+                if (item != null)
+                {
+
+                    var inventoryBehaviour = transform.GetComponentInParent<InventoryBehaviour>();
+                    if (inventoryBehaviour != null)
+                    {
+                        inventoryBehaviour.ShowItem(item);
+                    }
+                }
+            }
+        }
 
 
 
@@ -77,7 +96,7 @@ namespace DTWorldz.Behaviours.UI.Inventory
             DestroyImmediate(itemToDrop.gameObject);
             HasItem = false;
             if (OnItemRemoved != null)
-            {                
+            {
                 OnItemRemoved();
             }
             InventoryBehaviour.Instance.RefreshItemsData();

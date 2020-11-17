@@ -50,6 +50,15 @@ public class InventoryBehaviour : MonoBehaviour
         }
     }
 
+    internal void ShowItem(BaseItem item)
+    {
+        var inventoryItemDetailPanel = transform.GetComponentInChildren<InventoryItemDetailPanel>();
+        if (inventoryItemDetailPanel != null)
+        {
+            inventoryItemDetailPanel.ShowItem(item);
+        }
+    }
+
     internal bool AddItem(BaseItemBehaviour itemBehaviour)
     {
         //check empty slot for this item
