@@ -29,7 +29,7 @@ namespace DTWorldz.Behaviours.UI.Inventory
 
         public virtual void OnPointerClick(PointerEventData eventData)
         {
-            if (eventData.clickCount == 2)
+            if (eventData.clickCount == 2 || (Input.touchCount > 0 && Input.GetTouch(0).tapCount == 2))
             {
                 var item = GetItem();
                 if (item != null)
