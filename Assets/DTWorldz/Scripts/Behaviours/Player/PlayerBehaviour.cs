@@ -59,6 +59,7 @@ namespace DTWorldz.Behaviours.Player
 
         internal bool PickupItem(BaseItemBehaviour itemBehaviour)
         {
+            audioManager.Play("Loot");
             return InventoryBehaviour.Instance.AddItem(itemBehaviour);
         }
 

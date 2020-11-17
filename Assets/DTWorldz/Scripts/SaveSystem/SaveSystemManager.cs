@@ -18,11 +18,6 @@ namespace DTWorldz.SaveSystem
             //LoadGame();
         }
 
-        private void Awake()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
         internal void ClearSaveData()
         {
             var persistentPath = Application.persistentDataPath;            

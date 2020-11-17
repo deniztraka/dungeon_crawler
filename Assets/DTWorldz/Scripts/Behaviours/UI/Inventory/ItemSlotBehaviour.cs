@@ -77,8 +77,7 @@ namespace DTWorldz.Behaviours.UI.Inventory
             DestroyImmediate(itemToDrop.gameObject);
             HasItem = false;
             if (OnItemRemoved != null)
-            {
-                Debug.Log("asd");
+            {                
                 OnItemRemoved();
             }
             InventoryBehaviour.Instance.RefreshItemsData();

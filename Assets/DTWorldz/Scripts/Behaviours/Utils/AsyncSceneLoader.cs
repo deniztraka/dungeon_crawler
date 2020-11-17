@@ -20,7 +20,6 @@ public class AsyncSceneLoader : MonoBehaviour
     void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
-        DontDestroyOnLoad(gameObject);
     }
 
     public void LoadScene(string sceneName, bool areaStackIsActive, bool save)
@@ -50,7 +49,8 @@ public class AsyncSceneLoader : MonoBehaviour
         {
             progress = Mathf.Clamp01(operation.progress / 0.9f);
             UpdateUI(progress);
-
+            
+            Time.timeScale = 1f;
             yield return null;
         }
 

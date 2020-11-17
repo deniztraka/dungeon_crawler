@@ -70,7 +70,6 @@ public class InventoryBehaviour : MonoBehaviour
         if (inventoryDataModel != null)
         {
             inventoryDataModel.Items = GetItems();
-            Debug.Log(inventoryDataModel.Items.Count);
         }
     }
 
