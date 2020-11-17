@@ -5,6 +5,7 @@ using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.UI;
 using DTWorldz.DataModel;
+using DTWorldz.Models.MobileStats;
 using DTWorldz.SaveSystem;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Player
@@ -75,6 +76,7 @@ namespace DTWorldz.Behaviours.Player
             if (characterPanelCanvasBehaviour != null)
             {
                 characterPanelCanvasBehaviour.UpdateGoldText(playerDataModel.GoldAmount);
+                characterPanelCanvasBehaviour.UpdateStats(playerDataModel.Strength.CurrentValue, playerDataModel.Dexterity.CurrentValue);
             }
         }
 
@@ -158,6 +160,10 @@ namespace DTWorldz.Behaviours.Player
             {
                 playerDataModel = new PlayerDataModel(saveSystemManager);
                 playerDataModel.Load();
+
+                health.MaxHealth = playerDataModel.Strength.CurrentValue * 5;
+                stamina.MaxHealth = playerDataModel.Dexterity.CurrentValue * 3;
+
 
                 if (StaminaPotionButtonBehaviour != null)
                 {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using DTWorldz.Models.MobileStats;
 using DTWorldz.SaveSystem;
 using UnityEngine;
 namespace DTWorldz.DataModel
@@ -16,8 +17,12 @@ namespace DTWorldz.DataModel
         public int StamPotionAmount;
         public string Name;
 
+        public Strength Strength;
+        public Dexterity Dexterity;
+
         public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
         {
+            
         }
 
 
@@ -31,6 +36,8 @@ namespace DTWorldz.DataModel
                 this.HealthPotionAmount = tempModel.HealthPotionAmount;
                 this.StamPotionAmount = tempModel.StamPotionAmount;
                 this.Name = tempModel.Name;
+                this.Dexterity = tempModel.Dexterity;
+                this.Strength = tempModel.Strength;
                 return true;
             }
             return false;

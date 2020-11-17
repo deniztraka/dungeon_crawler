@@ -11,6 +11,7 @@ namespace DTWorldz.ScriptableObjects.Items
     {
         public GameObject Prefab;
         public string Name;     
+        public string Description;
         public Sprite Icon;                   
     }
 }

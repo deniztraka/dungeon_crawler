@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4018588179695792918, guid: 241b9ef4ba4d47947a69674b557b3849, type: 3}
   Name: War Axe
+  Description: a good tool to split body and it's head
   Icon: {fileID: -7368915215308609132, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   BaseMinDamage: 5
   BaseMaxDamage: 8
