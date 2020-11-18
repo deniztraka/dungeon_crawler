@@ -176,6 +176,8 @@ MonoBehaviour:
     statValue: 0
   DexterityModifier:
     statValue: 0
+  MinDamage: 14
+  MaxDamage: 17
   count: 1
   isStackable: 0
 --- !u!1001 &4018588179694034833

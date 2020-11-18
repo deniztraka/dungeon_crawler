@@ -13,6 +13,9 @@ public class BaseItemBehaviour : MonoBehaviour
     public StatQuality StatQuality;
     public StrengthModifier StrengthModifier;
     public DexterityModifier DexterityModifier;
+
+    public int MinDamage;
+    public int MaxDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,5 +55,5 @@ public class BaseItemBehaviour : MonoBehaviour
                 DexterityModifier = (DexterityModifier)stat;
             }
         }
-    }
+    }    
 }

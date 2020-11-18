@@ -21,6 +21,9 @@ namespace DTWorldz.Behaviours.UI.Inventory
 
         public StatQuality StatQuality;
 
+        public int MinDamage;
+        public int MaxDamage;
+
         // internal void Stack(Item item)
         // {
         //    throw new NotImplementedException();
@@ -55,6 +58,8 @@ namespace DTWorldz.Behaviours.UI.Inventory
             StrengthModifier = itemBehaviour.StrengthModifier;
             DexterityModifier = itemBehaviour.DexterityModifier;
             StatQuality = itemBehaviour.StatQuality;
+            MinDamage = itemBehaviour.MinDamage;
+            MaxDamage = itemBehaviour.MaxDamage;
         }
     }
 }

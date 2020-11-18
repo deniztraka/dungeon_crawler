@@ -97,6 +97,8 @@ namespace DTWorldz.Behaviours.UI.Inventory
             baseItemBehaviour.StrengthModifier = itemToDrop.StrengthModifier;
             baseItemBehaviour.DexterityModifier = itemToDrop.DexterityModifier;
             baseItemBehaviour.StatQuality = itemToDrop.StatQuality;
+            baseItemBehaviour.MinDamage = itemToDrop.MinDamage;
+            baseItemBehaviour.MaxDamage = itemToDrop.MaxDamage;
 
             DestroyImmediate(itemToDrop.gameObject);
             HasItem = false;
@@ -176,6 +178,8 @@ namespace DTWorldz.Behaviours.UI.Inventory
                 itemModel.StrengthModifier = slotItemBehaviour.StrengthModifier;
                 itemModel.DexterityModifier = slotItemBehaviour.DexterityModifier; 
                 itemModel.StatQuality = slotItemBehaviour.StatQuality;               
+                itemModel.MinDamage = slotItemBehaviour.MinDamage;  
+                itemModel.MaxDamage = slotItemBehaviour.MaxDamage;  
                 return itemModel;
             }
 

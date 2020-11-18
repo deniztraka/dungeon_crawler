@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class WeaponBehaviour : BaseItemBehaviour, ILootItem
 {
-
     public int count = 1;
     public int Count
     {
@@ -44,5 +43,31 @@ public class WeaponBehaviour : BaseItemBehaviour, ILootItem
         {
 
         }
-    }    
+    }
+
+    public override void SetModifiers(int minStatCount, int maxStatCount, StatQuality statQuality)
+    {
+        base.SetModifiers(minStatCount, maxStatCount, statQuality);
+
+        // set min-max damage values
+        switch (StatQuality)
+        {
+            case StatQuality.Poor:
+                MinDamage -= 3;
+                break;
+            case StatQuality.Exceptional:
+                MaxDamage = (int)Mathf.Floor(Random.Range(MinDamage + 1, MinDamage + 5));
+                break;
+            case StatQuality.Rare:
+                MinDamage += 3;
+                MaxDamage = (int)Mathf.Floor(Random.Range(MinDamage + 1, MinDamage + 9));
+                break;
+            case StatQuality.Legendary:
+                MinDamage = (int)Mathf.Floor(Random.Range(MinDamage + 1, MinDamage + 9));
+                MaxDamage = (int)Mathf.Floor(Random.Range(MinDamage + 1, MinDamage + 13));
+                break;
+        }
+
+
+    }
 }

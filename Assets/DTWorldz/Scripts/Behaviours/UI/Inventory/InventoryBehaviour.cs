@@ -108,6 +108,8 @@ public class InventoryBehaviour : MonoBehaviour
                 itemBehaviour.StrengthModifier = itemModel.StrengthModifier;
                 itemBehaviour.DexterityModifier = itemModel.DexterityModifier;
                 itemBehaviour.StatQuality = itemModel.StatQuality;
+                itemBehaviour.MinDamage = itemModel.MinDamage;
+                itemBehaviour.MaxDamage = itemModel.MaxDamage;
                 AddItem(itemBehaviour);
             }
         }

@@ -16,6 +16,7 @@ public class InventoryItemDetailPanel : MonoBehaviour
     public Text ItemDesc;
     public Text QualityText;
     public Text StatModifiersText;
+    public Text PropsText;
 
     public Color PoorQualityColor;
     public Color RegularQualityColor;
@@ -31,6 +32,7 @@ public class InventoryItemDetailPanel : MonoBehaviour
         ItemDesc.text = itemModel.ItemTemplate.Description;
         QualityText.text = itemModel.StatQuality.ToString();
         StatModifiersText.text = GetStatsText(itemModel);
+        PropsText.text = GetPropsText(itemModel);
         // switch (item.StatQuality)
         // {
         //     case StatQuality.Poor:
@@ -51,18 +53,29 @@ public class InventoryItemDetailPanel : MonoBehaviour
         // }
     }
 
+    private string GetPropsText(ItemModel itemModel)
+    {
+        var sb = new StringBuilder();
+        if (itemModel.MaxDamage != 0)
+        {
+            sb.AppendFormat("{0}-{1} Damage", itemModel.MinDamage, itemModel.MaxDamage);
+            sb.AppendLine();
+        }
+        return sb.ToString();
+    }
+
     private string GetStatsText(ItemModel itemModel)
     {
         var sb = new StringBuilder();
         if (itemModel.StrengthModifier != null && itemModel.StrengthModifier.Value != 0)
         {
-            sb.AppendFormat("{0}{1} Strength", itemModel.StrengthModifier.Value > 0 ? "+ " : "- ", itemModel.StrengthModifier.Value);
+            sb.AppendFormat("{0}{1} Strength", itemModel.StrengthModifier.Value > 0 ? "+" : "-", itemModel.StrengthModifier.Value);
             sb.AppendLine();
         }
 
         if (itemModel.DexterityModifier != null && itemModel.DexterityModifier.Value != 0)
         {
-            sb.AppendFormat("{0}{1} Dexterity", itemModel.DexterityModifier.Value > 0 ? "+ " : "- ", itemModel.DexterityModifier.Value);
+            sb.AppendFormat("{0}{1} Dexterity", itemModel.DexterityModifier.Value > 0 ? "+" : "-", itemModel.DexterityModifier.Value);
             sb.AppendLine();
         }
 

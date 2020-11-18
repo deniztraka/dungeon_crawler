@@ -13,5 +13,7 @@ namespace DTWorldz.Models
         public BaseItem ItemTemplate;
         public DexterityModifier DexterityModifier;
         public StrengthModifier StrengthModifier;
+        public int MinDamage;
+        public int MaxDamage;        
     }
 }
