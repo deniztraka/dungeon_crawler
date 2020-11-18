@@ -21,8 +21,7 @@ namespace DTWorldz.DataModel
         public Dexterity Dexterity;
 
         public PlayerDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "player")
-        {
-            
+        {            
         }
 
 

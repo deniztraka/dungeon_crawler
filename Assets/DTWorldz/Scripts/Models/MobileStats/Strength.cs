@@ -8,7 +8,7 @@ namespace DTWorldz.Models.MobileStats
     [Serializable]
     public class Strength : BaseMobileStat
     {
-        public Strength() : base("Strength", 1, 100)
+        public Strength() : base("Strength", 10, 100)
         {
         }
     }

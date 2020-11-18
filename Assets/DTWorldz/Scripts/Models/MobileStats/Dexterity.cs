@@ -8,7 +8,8 @@ namespace DTWorldz.Models.MobileStats
     [Serializable]
     public class Dexterity : BaseMobileStat
     {
-        public Dexterity() : base("Dexterity", 1, 100)
+
+        public Dexterity() : base("Dexterity", 10, 100)
         {
         }
     }
