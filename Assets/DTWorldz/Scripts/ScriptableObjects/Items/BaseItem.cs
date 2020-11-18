@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models.MobileStats;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace DTWorldz.ScriptableObjects.Items
         public GameObject Prefab;
         public string Name;     
         public string Description;
-        public Sprite Icon;                   
+        public Sprite Icon;    
+             
     }
 }

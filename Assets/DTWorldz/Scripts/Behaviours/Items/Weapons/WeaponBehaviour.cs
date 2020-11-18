@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.Interfaces;
+using DTWorldz.Models.MobileStats;
 using UnityEngine;
 
 public class WeaponBehaviour : BaseItemBehaviour, ILootItem
 {
+
     public int count = 1;
     public int Count
     {
@@ -32,18 +34,6 @@ public class WeaponBehaviour : BaseItemBehaviour, ILootItem
     public void SetCount(int count)
     {
        count = 1;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public override void OnTriggerEnter2D(Collider2D collider)
