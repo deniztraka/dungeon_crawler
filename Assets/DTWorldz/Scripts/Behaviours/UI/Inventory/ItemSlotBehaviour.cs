@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models;
 using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -31,14 +32,14 @@ namespace DTWorldz.Behaviours.UI.Inventory
         {
             if (eventData.clickCount == 2 || (Input.touchCount > 0 && Input.GetTouch(0).tapCount == 2))
             {
-                var item = GetItem();
-                if (item != null)
+                var itemModel = GetItem();                
+                if (itemModel != null)
                 {
 
                     var inventoryBehaviour = transform.GetComponentInParent<InventoryBehaviour>();
                     if (inventoryBehaviour != null)
                     {
-                        inventoryBehaviour.ShowItem(item);
+                        inventoryBehaviour.ShowItem(itemModel);
                     }
                 }
             }
@@ -91,7 +92,11 @@ namespace DTWorldz.Behaviours.UI.Inventory
         {
             yield return new WaitForSeconds(delay);
             var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-0.5f, 0.5f), position.y + UnityEngine.Random.Range(-0.5f, 0.5f), position.z);
-            var instantiatedLootItem = Instantiate(itemToDrop.Item.Prefab, randomPosition, Quaternion.identity);
+            var instantiatedLootItem = Instantiate(itemToDrop.ItemTemplate.Prefab, randomPosition, Quaternion.identity);
+            var baseItemBehaviour = instantiatedLootItem.GetComponent<BaseItemBehaviour>();
+            baseItemBehaviour.StrengthModifier = itemToDrop.StrengthModifier;
+            baseItemBehaviour.DexterityModifier = itemToDrop.DexterityModifier;
+            baseItemBehaviour.StatQuality = itemToDrop.StatQuality;
 
             DestroyImmediate(itemToDrop.gameObject);
             HasItem = false;
@@ -160,12 +165,18 @@ namespace DTWorldz.Behaviours.UI.Inventory
         //     IsSelected = select;
         // }
 
-        internal BaseItem GetItem()
+        internal ItemModel GetItem()
         {
             var slotItemBehaviour = transform.GetComponentInChildren<SlotItemBehaviour>();
             if (slotItemBehaviour != null)
             {
-                return slotItemBehaviour.Item;
+
+                var itemModel = new ItemModel();                
+                itemModel.ItemTemplate = slotItemBehaviour.ItemTemplate;
+                itemModel.StrengthModifier = slotItemBehaviour.StrengthModifier;
+                itemModel.DexterityModifier = slotItemBehaviour.DexterityModifier; 
+                itemModel.StatQuality = slotItemBehaviour.StatQuality;               
+                return itemModel;
             }
 
             return null;

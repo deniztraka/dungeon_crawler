@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models;
 using DTWorldz.SaveSystem;
 using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
@@ -10,10 +11,10 @@ namespace DTWorldz.DataModel
     [Serializable]
     public class InventoryDataModel : BaseDataModel
     {
-        public List<BaseItem> Items;
+        public List<ItemModel> ItemModels;
         public InventoryDataModel(SaveSystemManager saveSystemManager) : base(saveSystemManager, "inventory")
         {
-            Items = new List<BaseItem>();
+            ItemModels = new List<ItemModel>();
         }
 
         public bool Load()
@@ -21,9 +22,9 @@ namespace DTWorldz.DataModel
             var tempModel = base.OnLoad<InventoryDataModel>();
             if (tempModel != null)
             {
-                foreach (var item in tempModel.Items)
+                foreach (var item in tempModel.ItemModels)
                 {
-                    Items.Add(item);
+                    ItemModels.Add(item);
                 }
                 return true;
             }

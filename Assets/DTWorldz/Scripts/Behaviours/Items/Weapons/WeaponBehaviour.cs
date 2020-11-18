@@ -28,21 +28,21 @@ public class WeaponBehaviour : BaseItemBehaviour, ILootItem
 
     public void OnAfterDrop()
     {
-        
+
     }
 
     public void SetCount(int count)
     {
-       count = 1;
+        count = 1;
     }
 
     public override void OnTriggerEnter2D(Collider2D collider)
-        {
-            base.OnTriggerEnter2D(collider);
+    {
+        base.OnTriggerEnter2D(collider);
 
-            if (collider.tag == "Player")
-            {
-               
-            }
+        if (collider.tag == "Player")
+        {
+
         }
+    }    
 }

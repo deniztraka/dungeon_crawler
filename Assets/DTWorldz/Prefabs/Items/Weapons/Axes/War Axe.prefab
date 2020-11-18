@@ -170,7 +170,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21bd4d3de64be74ea4e9b86a4cb60cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 68082d2b535f0be4ebe35cf5efe46fe7, type: 2}
+  ItemTemplate: {fileID: 11400000, guid: 68082d2b535f0be4ebe35cf5efe46fe7, type: 2}
+  StatQuality: 0
+  StrengthModifier:
+    statValue: 0
+  DexterityModifier:
+    statValue: 0
   count: 1
   isStackable: 0
 --- !u!1001 &4018588179694034833

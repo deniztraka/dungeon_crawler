@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.Interfaces;
+using DTWorldz.Models.MobileStats;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Items.Utils
 {
@@ -73,6 +74,11 @@ namespace DTWorldz.Behaviours.Items.Utils
         public void SetCount(int count)
         {
             this.count = count;
+        }
+
+        public override void SetModifiers(int minStatCount, int maxStatCount, StatQuality statQuality)
+        {
+            // no modifiers for health potion
         }
     }
 }

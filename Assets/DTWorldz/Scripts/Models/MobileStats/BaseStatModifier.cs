@@ -14,11 +14,17 @@ namespace DTWorldz.Models.MobileStats
             set { name = value; }
         }
 
+        [SerializeField]
         private int statValue;
         public int Value
         {
             get { return statValue; }
             set { statValue = value; }
+        }
+
+        public BaseStatModifier(string name)
+        {
+            this.name = name;
         }
 
         public BaseStatModifier(string name, int val)

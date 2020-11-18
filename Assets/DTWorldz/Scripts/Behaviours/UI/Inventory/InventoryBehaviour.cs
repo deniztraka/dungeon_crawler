@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.UI.Inventory;
 using DTWorldz.DataModel;
+using DTWorldz.Models;
 using DTWorldz.SaveSystem;
 using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
@@ -19,7 +20,6 @@ public class InventoryBehaviour : MonoBehaviour
     internal void DropItem(ItemSlotBehaviour itemSlotBehaviour)
     {
         itemSlotBehaviour.DropItem();
-        RefreshItemsData();
     }
 
     private void Awake()
@@ -44,18 +44,18 @@ public class InventoryBehaviour : MonoBehaviour
         saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
         if (saveSystemManager)
         {
-            OnAfterDataLoad += new DataLoaderHandler(UpdateUI);
+            OnAfterDataLoad += new DataLoaderHandler(FillInventory);
             Load();
             saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(Save);
         }
     }
 
-    internal void ShowItem(BaseItem item)
+    internal void ShowItem(ItemModel  itemModel)
     {
         var inventoryItemDetailPanel = transform.GetComponentInChildren<InventoryItemDetailPanel>();
         if (inventoryItemDetailPanel != null)
         {
-            inventoryItemDetailPanel.ShowItem(item);
+            inventoryItemDetailPanel.ShowItem(itemModel);
         }
     }
 
@@ -78,7 +78,7 @@ public class InventoryBehaviour : MonoBehaviour
     {
         if (inventoryDataModel != null)
         {
-            inventoryDataModel.Items = GetItems();
+            inventoryDataModel.ItemModels = GetItems();
         }
     }
 
@@ -98,12 +98,18 @@ public class InventoryBehaviour : MonoBehaviour
         return null;
     }
 
-    private void UpdateUI()
+    private void FillInventory()
     {
-        foreach (var item in inventoryDataModel.Items)
+        foreach (var itemModel in inventoryDataModel.ItemModels)
         {
-            var itemBehaviour = item.Prefab.GetComponent<BaseItemBehaviour>();
-            AddItem(itemBehaviour);
+            if (itemModel != null)
+            {
+                var itemBehaviour = itemModel.ItemTemplate.Prefab.GetComponent<BaseItemBehaviour>();
+                itemBehaviour.StrengthModifier = itemModel.StrengthModifier;
+                itemBehaviour.DexterityModifier = itemModel.DexterityModifier;
+                itemBehaviour.StatQuality = itemModel.StatQuality;
+                AddItem(itemBehaviour);
+            }
         }
     }
 
@@ -124,14 +130,15 @@ public class InventoryBehaviour : MonoBehaviour
         return false;
     }
 
-    private List<BaseItem> GetItems()
+    private List<ItemModel> GetItems()
     {
-        var itemsInside = new List<BaseItem>();
+        var itemsInside = new List<ItemModel>();
         var itemSlots = transform.GetComponentsInChildren<ItemSlotBehaviour>();
 
         foreach (var itemSlot in itemSlots)
         {
             var itemInside = itemSlot.GetItem();
+
             if (itemInside != null)
             {
                 itemsInside.Add(itemInside);
@@ -142,6 +149,8 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void Save()
     {
+        RefreshItemsData();
+
         if (saveSystemManager != null && inventoryDataModel != null)
         {
             inventoryDataModel.Save();

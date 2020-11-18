@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Models;
+using DTWorldz.Models.MobileStats;
 using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,11 +10,16 @@ using UnityEngine.UI;
 namespace DTWorldz.Behaviours.UI.Inventory
 {
     public class SlotItemBehaviour : MonoBehaviour
-    {    
+    {
         public GameObject ItemQuantityPanel;
         public GameObject ItemTexturePanel;
 
-        public BaseItem Item;
+        public StrengthModifier StrengthModifier;
+        public DexterityModifier DexterityModifier;
+
+        public BaseItem ItemTemplate;
+
+        public StatQuality StatQuality;
 
         // internal void Stack(Item item)
         // {
@@ -43,7 +50,11 @@ namespace DTWorldz.Behaviours.UI.Inventory
             var image = GetComponent<Image>();
             image.sprite = spriteRenderer.sprite;
 
-            this.Item = itemBehaviour.Item;
+            this.ItemTemplate = itemBehaviour.ItemTemplate;
+
+            StrengthModifier = itemBehaviour.StrengthModifier;
+            DexterityModifier = itemBehaviour.DexterityModifier;
+            StatQuality = itemBehaviour.StatQuality;
         }
     }
 }

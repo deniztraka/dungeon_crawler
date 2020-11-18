@@ -1,15 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.UI;
+using DTWorldz.Models.MobileStats;
 using DTWorldz.ScriptableObjects.Items;
+using DTWorldz.Utils;
 using UnityEngine;
 
 public class BaseItemBehaviour : MonoBehaviour
 {
-    public BaseItem Item;    
+    private ItemLabelCanvas labelCanvas;
+    public BaseItem ItemTemplate;
+    public StatQuality StatQuality;
+    public StrengthModifier StrengthModifier;
+    public DexterityModifier DexterityModifier;
     // Start is called before the first frame update
     void Start()
     {
-
+        labelCanvas = gameObject.GetComponentInChildren<ItemLabelCanvas>();
+        if(labelCanvas != null){
+            labelCanvas.SetLabelColor(StatQuality);            
+        }
     }
 
     // Update is called once per frame
@@ -22,5 +32,25 @@ public class BaseItemBehaviour : MonoBehaviour
     {
 
 
+    }
+
+    public virtual void SetModifiers(int minStatCount, int maxStatCount, StatQuality statQuality)
+    {
+        var statCount = Random.Range(minStatCount, maxStatCount);
+                
+        StatQuality = LootingUtils.GetRandomStatQuality(statQuality);
+
+        var randomStats = LootingUtils.GetRandomStats(statCount, StatQuality);
+        foreach (var stat in randomStats)
+        {
+            if (stat.GetType() == typeof(StrengthModifier))
+            {
+                StrengthModifier = (StrengthModifier)stat;
+            }
+            else if (stat.GetType() == typeof(DexterityModifier))
+            {
+                DexterityModifier = (DexterityModifier)stat;
+            }
+        }
     }
 }
