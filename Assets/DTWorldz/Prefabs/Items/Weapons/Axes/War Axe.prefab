@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemTemplate: {fileID: 11400000, guid: 68082d2b535f0be4ebe35cf5efe46fe7, type: 2}
-  StatQuality: 0
+  StatQuality: 1
   StrengthModifier:
     statValue: 0
   DexterityModifier:

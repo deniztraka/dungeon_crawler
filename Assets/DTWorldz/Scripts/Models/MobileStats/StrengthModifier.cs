@@ -16,23 +16,23 @@ namespace DTWorldz.Models.MobileStats
             switch (quality)
             {
                 case StatQuality.Poor:
-                    Value = UnityEngine.Random.Range(0, 4);
+                    Value = UnityEngine.Random.Range(0, 2);
                     break;
 
                 case StatQuality.Regular:
-                    Value = UnityEngine.Random.Range(0, 6);
+                    Value = UnityEngine.Random.Range(2, 4);
                     break;
 
                 case StatQuality.Exceptional:
-                    Value = UnityEngine.Random.Range(5, 9);
+                    Value = UnityEngine.Random.Range(4, 8);
                     break;
 
                 case StatQuality.Rare:
-                    Value = UnityEngine.Random.Range(8, 11);
+                    Value = UnityEngine.Random.Range(8, 12);
                     break;
 
                 case StatQuality.Legendary:
-                    Value = UnityEngine.Random.Range(10, 13);
+                    Value = UnityEngine.Random.Range(12, 16);
                     break;
             }
         }

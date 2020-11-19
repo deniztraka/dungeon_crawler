@@ -10,7 +10,10 @@ namespace DTWorldz.Utils
     {
         public static List<BaseStatModifier> GetRandomStats(int count, StatQuality statQuality)
         {
+            // stats that we have for now
             string[] stats = { "STR", "DEX" };
+
+            // shuffle array
             stats = stats.OrderBy(x => Random.value).ToArray<string>();
 
             if (count > stats.Length)
@@ -18,8 +21,10 @@ namespace DTWorldz.Utils
                 count = stats.Length;
             }
 
+            // chose first 'count' number of stats
             var chosenStats = stats.Take(count);
 
+            // prepare return list
             var resultedStats = new List<BaseStatModifier>();
             foreach (var chosenStat in chosenStats)
             {

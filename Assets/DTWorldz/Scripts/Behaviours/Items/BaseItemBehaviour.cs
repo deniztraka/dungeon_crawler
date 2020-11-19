@@ -39,11 +39,11 @@ public class BaseItemBehaviour : MonoBehaviour
 
     public virtual void SetModifiers(int minStatCount, int maxStatCount, StatQuality statQuality)
     {
-        var statCount = Random.Range(minStatCount, maxStatCount);
+        var randomStatCount = Random.Range(minStatCount, maxStatCount);
                 
         StatQuality = LootingUtils.GetRandomStatQuality(statQuality);
 
-        var randomStats = LootingUtils.GetRandomStats(statCount, StatQuality);
+        var randomStats = LootingUtils.GetRandomStats(randomStatCount, StatQuality);
         foreach (var stat in randomStats)
         {
             if (stat.GetType() == typeof(StrengthModifier))
