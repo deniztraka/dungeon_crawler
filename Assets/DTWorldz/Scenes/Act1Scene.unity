@@ -4443,6 +4443,16 @@ PrefabInstance:
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 1525022938}
+    - target: {fileID: 5328125669103109267, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328125669103109267, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: RunningSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4502,6 +4512,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[0].Pitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664529902210715090, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: Sounds.Array.data[0].Volume
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
@@ -67447,7 +67467,7 @@ PrefabInstance:
     - target: {fileID: 8816329239304445909, guid: 88f2fea34f2d4f140b7f8687c8074608,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12027.235
+      value: 30761.965
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f2fea34f2d4f140b7f8687c8074608, type: 3}
