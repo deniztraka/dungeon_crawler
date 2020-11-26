@@ -26,6 +26,7 @@ public class InventoryItemDetailPanel : MonoBehaviour
 
     public void ShowItem(ItemModel itemModel)
     {
+
         transform.localScale = Vector3.one;
         ItemIcon.sprite = itemModel.ItemTemplate.Icon;
         ItemName.text = itemModel.ItemTemplate.Name;
@@ -56,10 +57,23 @@ public class InventoryItemDetailPanel : MonoBehaviour
     private string GetPropsText(ItemModel itemModel)
     {
         var sb = new StringBuilder();
-        if (itemModel.MaxDamage != 0)
+        if (itemModel is WeaponItemModel)
         {
-            sb.AppendFormat("{0}-{1} Damage", itemModel.MinDamage, itemModel.MaxDamage);
-            sb.AppendLine();
+            var weaponItemModel = (WeaponItemModel)itemModel;
+            if (weaponItemModel.MaxDamage != 0)
+            {
+                sb.AppendFormat("{0}-{1} Damage", weaponItemModel.MinDamage, weaponItemModel.MaxDamage);
+                sb.AppendLine();
+            }
+        }
+        else
+        if (itemModel is EquipmentItemModel)
+        {
+
+        }
+        else
+        {
+
         }
         return sb.ToString();
     }

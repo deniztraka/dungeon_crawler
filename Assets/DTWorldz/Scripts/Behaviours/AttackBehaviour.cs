@@ -120,7 +120,7 @@ namespace DTWorldz.Behaviours
                     {
                         if (enemyHealthBehaviour.BodyType == BodyType.Flesh)
                         {
-                            StartCoroutine(CreateBloodStainsAfterSeconds(0.35f));
+                            StartCoroutine(CreateBloodStainsAfterSeconds(0.25f));
                         }
                     }
                 }
@@ -160,7 +160,7 @@ namespace DTWorldz.Behaviours
                     }
                 }
                 StartCoroutine(PlaySwing(0.2f));
-                StartCoroutine(LateAttack(0.5f));
+                StartCoroutine(LateAttack(0.3f));
                 attackTime = AttackingFrequency;
                 return true;
             }

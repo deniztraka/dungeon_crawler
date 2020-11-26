@@ -8,10 +8,8 @@ using DTWorldz.Models.MobileStats;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Items.Utils
 {
-    public class GoldItemBehaviour : BaseItemBehaviour, ILootItem
+    public class GoldItemBehaviour : BaseItemBehaviour
     {
-        [SerializeField]
-        private int count = 1;
         public Sprite SinglePieceSprite;
         public Sprite TwoPiecesSprite;
         public Sprite FourPiecesSprite;
@@ -21,24 +19,7 @@ namespace DTWorldz.Behaviours.Items.Utils
         private Animator animator;
         private AudioManager audioManager;
 
-        public int Count
-        {
-            get { return count; }
-        }
-
-        public bool isStackable = true;
-        public bool IsStackable
-        {
-            get
-            {
-                return isStackable;
-            }
-            set
-            {
-                isStackable = value;
-            }
-        }
-        public void SetCount(int count)
+        public override void SetCount(int count)
         {
             if (isStackable)
             {
@@ -65,7 +46,7 @@ namespace DTWorldz.Behaviours.Items.Utils
             }
         }
 
-        public void OnAfterDrop()
+        public override void OnAfterDrop()
         {
             if (audioManager != null)
             {

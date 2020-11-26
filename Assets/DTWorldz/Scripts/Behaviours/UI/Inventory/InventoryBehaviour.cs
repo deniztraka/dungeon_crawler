@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Items;
 using DTWorldz.Behaviours.UI.Inventory;
 using DTWorldz.DataModel;
 using DTWorldz.Models;
@@ -43,15 +44,14 @@ public class InventoryBehaviour : MonoBehaviour
     {
         saveSystemManager = GameObject.FindObjectOfType<SaveSystemManager>();
         if (saveSystemManager)
-        {
-            OnAfterDataLoad += new DataLoaderHandler(FillInventory);
+        {            
             Load();
             saveSystemManager.OnGameSave += new SaveSystemManager.SaveSystemHandler(Save);
         }
     }
 
-    internal void ShowItem(ItemModel  itemModel)
-    {
+    internal void ShowItem(ItemModel itemModel)
+    {        
         var inventoryItemDetailPanel = transform.GetComponentInChildren<InventoryItemDetailPanel>();
         if (inventoryItemDetailPanel != null)
         {
@@ -98,29 +98,19 @@ public class InventoryBehaviour : MonoBehaviour
         return null;
     }
 
-    private void FillInventory()
-    {
-        foreach (var itemModel in inventoryDataModel.ItemModels)
-        {
-            if (itemModel != null)
-            {
-                var itemBehaviour = itemModel.ItemTemplate.Prefab.GetComponent<BaseItemBehaviour>();
-                itemBehaviour.StrengthModifier = itemModel.StrengthModifier;
-                itemBehaviour.DexterityModifier = itemModel.DexterityModifier;
-                itemBehaviour.StatQuality = itemModel.StatQuality;
-                itemBehaviour.MinDamage = itemModel.MinDamage;
-                itemBehaviour.MaxDamage = itemModel.MaxDamage;
-                AddItem(itemBehaviour);
-            }
-        }
-    }
-
     public bool Load()
     {
         if (saveSystemManager != null && saveSystemManager.HasSavedGame())
         {
-            inventoryDataModel = new InventoryDataModel(saveSystemManager);
-            inventoryDataModel.Load();
+            // inventoryDataModel = new InventoryDataModel(saveSystemManager);
+            // inventoryDataModel.Load();
+
+            var itemSlots = transform.GetComponentsInChildren<ItemSlotBehaviour>();
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].Load();                
+
+            }
 
             if (OnAfterDataLoad != null)
             {
@@ -150,12 +140,14 @@ public class InventoryBehaviour : MonoBehaviour
     }
 
     public void Save()
-    {
-        RefreshItemsData();
-
-        if (saveSystemManager != null && inventoryDataModel != null)
+    {        
+        if (saveSystemManager != null)
         {
-            inventoryDataModel.Save();
+            var itemSlots = transform.GetComponentsInChildren<ItemSlotBehaviour>();
+            for (int i = 0; i < itemSlots.Length; i++)
+            {
+                itemSlots[i].Save();                
+            }
         }
     }
 }

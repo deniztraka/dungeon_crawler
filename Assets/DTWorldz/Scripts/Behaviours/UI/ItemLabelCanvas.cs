@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
+using DTWorldz.Behaviours.Items;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.Models.MobileStats;
 using UnityEngine;
@@ -33,7 +34,7 @@ namespace DTWorldz.Behaviours.UI
             var itemLabelTransform = transform.Find("ButtonLabel").Find("ItemLabelText");
             if (itemLabelTransform != null)
             {
-                
+
                 var labelText = itemLabelTransform.GetComponent<Text>();
                 switch (statQuality)
                 {
@@ -78,7 +79,7 @@ namespace DTWorldz.Behaviours.UI
             var isSucceed = player.PickupItem(itemBehaviour);
             if (isSucceed)
             {
-                Destroy(itemBehaviour.gameObject);
+                itemBehaviour.gameObject.SetActive(false);
             }
             PickupButtonsPanel.SetActive(false);
         }

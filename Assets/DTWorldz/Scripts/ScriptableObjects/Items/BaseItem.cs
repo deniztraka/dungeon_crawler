@@ -8,6 +8,14 @@ using UnityEngine.UI;
 
 namespace DTWorldz.ScriptableObjects.Items
 {
+    public enum ItemType
+    {
+        Equipment = 0,
+        Weapon = 1,
+        Shield = 2,
+        None = 3
+    }
+
     [Serializable]
     public abstract class BaseItem : ScriptableObject
     {
@@ -15,5 +23,7 @@ namespace DTWorldz.ScriptableObjects.Items
         public string Name;
         public string Description;
         public Sprite Icon;
+
+        public ItemType ItemType;
     }
 }

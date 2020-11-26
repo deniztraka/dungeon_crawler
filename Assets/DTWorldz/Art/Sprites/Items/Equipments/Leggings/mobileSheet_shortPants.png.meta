@@ -1,0 +1,7066 @@
+fileFormatVersion: 2
+guid: 60797394a0de0804482754f72d763e7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8743808849662712763
+    second: mobileSheet_shortPants_0
+  - first:
+      213: 361323082282316044
+    second: mobileSheet_shortPants_1
+  - first:
+      213: -5825869401858984043
+    second: mobileSheet_shortPants_2
+  - first:
+      213: 7457331916779567564
+    second: mobileSheet_shortPants_3
+  - first:
+      213: -6853779224405589620
+    second: mobileSheet_shortPants_4
+  - first:
+      213: 4908090118566286261
+    second: mobileSheet_shortPants_5
+  - first:
+      213: 3878216481441091380
+    second: mobileSheet_shortPants_6
+  - first:
+      213: 7496181523242161812
+    second: mobileSheet_shortPants_7
+  - first:
+      213: -549046390608923527
+    second: mobileSheet_shortPants_8
+  - first:
+      213: -5851866291858993109
+    second: mobileSheet_shortPants_9
+  - first:
+      213: -8968604078187168103
+    second: mobileSheet_shortPants_10
+  - first:
+      213: -3833432389833999220
+    second: mobileSheet_shortPants_11
+  - first:
+      213: 3292429004898862228
+    second: mobileSheet_shortPants_12
+  - first:
+      213: 2128819007652991541
+    second: mobileSheet_shortPants_13
+  - first:
+      213: 7941854204649111439
+    second: mobileSheet_shortPants_14
+  - first:
+      213: -2105937424460496677
+    second: mobileSheet_shortPants_15
+  - first:
+      213: -8388225980430063056
+    second: mobileSheet_shortPants_16
+  - first:
+      213: -7727968905363538192
+    second: mobileSheet_shortPants_17
+  - first:
+      213: 8153302165857217286
+    second: mobileSheet_shortPants_18
+  - first:
+      213: 1455424603837587376
+    second: mobileSheet_shortPants_19
+  - first:
+      213: -5767110697338327235
+    second: mobileSheet_shortPants_20
+  - first:
+      213: 1705774359642548702
+    second: mobileSheet_shortPants_21
+  - first:
+      213: -764467683013679545
+    second: mobileSheet_shortPants_22
+  - first:
+      213: 4509602883535783909
+    second: mobileSheet_shortPants_23
+  - first:
+      213: -6363880795579702576
+    second: mobileSheet_shortPants_24
+  - first:
+      213: 7281293015044997838
+    second: mobileSheet_shortPants_25
+  - first:
+      213: -8162872027605128559
+    second: mobileSheet_shortPants_26
+  - first:
+      213: 9054883962255128947
+    second: mobileSheet_shortPants_27
+  - first:
+      213: 433066627805161372
+    second: mobileSheet_shortPants_28
+  - first:
+      213: -6002727917098019914
+    second: mobileSheet_shortPants_29
+  - first:
+      213: -3243915729776591386
+    second: mobileSheet_shortPants_30
+  - first:
+      213: -4910946799834621683
+    second: mobileSheet_shortPants_31
+  - first:
+      213: -9165491277246637302
+    second: mobileSheet_shortPants_32
+  - first:
+      213: -8686023972099847588
+    second: mobileSheet_shortPants_33
+  - first:
+      213: -1028794586284758295
+    second: mobileSheet_shortPants_34
+  - first:
+      213: 2970070066632714855
+    second: mobileSheet_shortPants_35
+  - first:
+      213: 2615878688797140588
+    second: mobileSheet_shortPants_36
+  - first:
+      213: 3315261571327537755
+    second: mobileSheet_shortPants_37
+  - first:
+      213: 6541363325079444262
+    second: mobileSheet_shortPants_38
+  - first:
+      213: -8260416679657486610
+    second: mobileSheet_shortPants_39
+  - first:
+      213: -2721975779389750827
+    second: mobileSheet_shortPants_40
+  - first:
+      213: 435906935426133959
+    second: mobileSheet_shortPants_41
+  - first:
+      213: -1654841556048805286
+    second: mobileSheet_shortPants_42
+  - first:
+      213: 6275066748745281557
+    second: mobileSheet_shortPants_43
+  - first:
+      213: 5897435485661955262
+    second: mobileSheet_shortPants_44
+  - first:
+      213: -6228500923016010986
+    second: mobileSheet_shortPants_45
+  - first:
+      213: 8308114613861131030
+    second: mobileSheet_shortPants_46
+  - first:
+      213: -5640678318203549573
+    second: mobileSheet_shortPants_47
+  - first:
+      213: 4929851162656554330
+    second: mobileSheet_shortPants_48
+  - first:
+      213: 5283270070325920430
+    second: mobileSheet_shortPants_49
+  - first:
+      213: 2608374050548073730
+    second: mobileSheet_shortPants_50
+  - first:
+      213: 1016596559689335758
+    second: mobileSheet_shortPants_51
+  - first:
+      213: -8593723565485704053
+    second: mobileSheet_shortPants_52
+  - first:
+      213: -2741697065086741371
+    second: mobileSheet_shortPants_53
+  - first:
+      213: -2185654031566351206
+    second: mobileSheet_shortPants_54
+  - first:
+      213: -883278852068245560
+    second: mobileSheet_shortPants_55
+  - first:
+      213: 8239341602554891259
+    second: mobileSheet_shortPants_56
+  - first:
+      213: -1921687831011982872
+    second: mobileSheet_shortPants_57
+  - first:
+      213: 3942210417105183870
+    second: mobileSheet_shortPants_58
+  - first:
+      213: 2837639288967276852
+    second: mobileSheet_shortPants_59
+  - first:
+      213: 9060833364454284405
+    second: mobileSheet_shortPants_60
+  - first:
+      213: 2220586294653254683
+    second: mobileSheet_shortPants_61
+  - first:
+      213: 5257386009154624444
+    second: mobileSheet_shortPants_62
+  - first:
+      213: 7268386047254095379
+    second: mobileSheet_shortPants_63
+  - first:
+      213: 3890360817192686053
+    second: mobileSheet_shortPants_64
+  - first:
+      213: 4928188853044840549
+    second: mobileSheet_shortPants_65
+  - first:
+      213: 2984635954731795942
+    second: mobileSheet_shortPants_66
+  - first:
+      213: 8297209279313426000
+    second: mobileSheet_shortPants_67
+  - first:
+      213: 7069995359105675193
+    second: mobileSheet_shortPants_68
+  - first:
+      213: -7086449937185838034
+    second: mobileSheet_shortPants_69
+  - first:
+      213: -7510624262355654546
+    second: mobileSheet_shortPants_70
+  - first:
+      213: 3615346813524179108
+    second: mobileSheet_shortPants_71
+  - first:
+      213: -488073169727377266
+    second: mobileSheet_shortPants_72
+  - first:
+      213: 4453488761958978927
+    second: mobileSheet_shortPants_73
+  - first:
+      213: -6902744180844809556
+    second: mobileSheet_shortPants_74
+  - first:
+      213: 2220603813632247974
+    second: mobileSheet_shortPants_75
+  - first:
+      213: -9167946831500031613
+    second: mobileSheet_shortPants_76
+  - first:
+      213: -3005396296196936736
+    second: mobileSheet_shortPants_77
+  - first:
+      213: -4461695134224490613
+    second: mobileSheet_shortPants_78
+  - first:
+      213: -2066821658772575725
+    second: mobileSheet_shortPants_79
+  - first:
+      213: -3991576527489995018
+    second: mobileSheet_shortPants_80
+  - first:
+      213: 5246954919256101229
+    second: mobileSheet_shortPants_81
+  - first:
+      213: 6991511604014902710
+    second: mobileSheet_shortPants_82
+  - first:
+      213: -2408584170792316392
+    second: mobileSheet_shortPants_83
+  - first:
+      213: 5652364089178108145
+    second: mobileSheet_shortPants_84
+  - first:
+      213: 40855206604395890
+    second: mobileSheet_shortPants_85
+  - first:
+      213: 7241808734928455954
+    second: mobileSheet_shortPants_86
+  - first:
+      213: -4798543112988686076
+    second: mobileSheet_shortPants_87
+  - first:
+      213: -743730591468648314
+    second: mobileSheet_shortPants_88
+  - first:
+      213: -3224291613636330996
+    second: mobileSheet_shortPants_89
+  - first:
+      213: -4629595736490400202
+    second: mobileSheet_shortPants_90
+  - first:
+      213: -5486812201870019200
+    second: mobileSheet_shortPants_91
+  - first:
+      213: 8765344662477884779
+    second: mobileSheet_shortPants_92
+  - first:
+      213: 5176567294063532508
+    second: mobileSheet_shortPants_93
+  - first:
+      213: -4541325898145475502
+    second: mobileSheet_shortPants_94
+  - first:
+      213: -33585496423224764
+    second: mobileSheet_shortPants_95
+  - first:
+      213: 6567360962424881409
+    second: mobileSheet_shortPants_96
+  - first:
+      213: -1898532821703910150
+    second: mobileSheet_shortPants_97
+  - first:
+      213: -8149386721096621371
+    second: mobileSheet_shortPants_98
+  - first:
+      213: 112852873664365885
+    second: mobileSheet_shortPants_99
+  - first:
+      213: 7688503551398919348
+    second: mobileSheet_shortPants_100
+  - first:
+      213: -2769689370415441415
+    second: mobileSheet_shortPants_101
+  - first:
+      213: 242607705682103014
+    second: mobileSheet_shortPants_102
+  - first:
+      213: -7943204542545532791
+    second: mobileSheet_shortPants_103
+  - first:
+      213: -1744933802671901763
+    second: mobileSheet_shortPants_104
+  - first:
+      213: -4692573473317514113
+    second: mobileSheet_shortPants_105
+  - first:
+      213: -7057761623994906787
+    second: mobileSheet_shortPants_106
+  - first:
+      213: 6256450687543780376
+    second: mobileSheet_shortPants_107
+  - first:
+      213: 4462665328594393919
+    second: mobileSheet_shortPants_108
+  - first:
+      213: -3800200020266926133
+    second: mobileSheet_shortPants_109
+  - first:
+      213: -963845095715404467
+    second: mobileSheet_shortPants_110
+  - first:
+      213: -24605604188224867
+    second: mobileSheet_shortPants_111
+  - first:
+      213: -1446272909272920821
+    second: mobileSheet_shortPants_112
+  - first:
+      213: 1402008150043572811
+    second: mobileSheet_shortPants_113
+  - first:
+      213: -2272505053771064098
+    second: mobileSheet_shortPants_114
+  - first:
+      213: -390845178286302364
+    second: mobileSheet_shortPants_115
+  - first:
+      213: -2990910798742918751
+    second: mobileSheet_shortPants_116
+  - first:
+      213: -4432869146945342136
+    second: mobileSheet_shortPants_117
+  - first:
+      213: 1381750458916790594
+    second: mobileSheet_shortPants_118
+  - first:
+      213: 8960770170256410176
+    second: mobileSheet_shortPants_119
+  - first:
+      213: -4965836650350418187
+    second: mobileSheet_shortPants_120
+  - first:
+      213: -3787463422812232204
+    second: mobileSheet_shortPants_121
+  - first:
+      213: -997389326027644855
+    second: mobileSheet_shortPants_122
+  - first:
+      213: 1227233492554422590
+    second: mobileSheet_shortPants_123
+  - first:
+      213: 6716547761728519585
+    second: mobileSheet_shortPants_124
+  - first:
+      213: 7023772646252152123
+    second: mobileSheet_shortPants_125
+  - first:
+      213: -1436155648245000356
+    second: mobileSheet_shortPants_126
+  - first:
+      213: 869995997371745731
+    second: mobileSheet_shortPants_127
+  - first:
+      213: -7229369162609910852
+    second: mobileSheet_shortPants_128
+  - first:
+      213: -435160646066836747
+    second: mobileSheet_shortPants_129
+  - first:
+      213: -3580239719354979190
+    second: mobileSheet_shortPants_130
+  - first:
+      213: -4147717263447449103
+    second: mobileSheet_shortPants_131
+  - first:
+      213: -7440972188329164929
+    second: mobileSheet_shortPants_132
+  - first:
+      213: -5657221115788026242
+    second: mobileSheet_shortPants_133
+  - first:
+      213: 3146726197232797597
+    second: mobileSheet_shortPants_134
+  - first:
+      213: 3982893019211115615
+    second: mobileSheet_shortPants_135
+  - first:
+      213: 4473866948322954704
+    second: mobileSheet_shortPants_136
+  - first:
+      213: 563293788263666896
+    second: mobileSheet_shortPants_137
+  - first:
+      213: -1942145082254739033
+    second: mobileSheet_shortPants_138
+  - first:
+      213: 2261288953471223436
+    second: mobileSheet_shortPants_139
+  - first:
+      213: -5590680393483606013
+    second: mobileSheet_shortPants_140
+  - first:
+      213: 5767992961210937736
+    second: mobileSheet_shortPants_141
+  - first:
+      213: 1311645316547374643
+    second: mobileSheet_shortPants_142
+  - first:
+      213: -5902601042375532357
+    second: mobileSheet_shortPants_143
+  - first:
+      213: -8320905566156226777
+    second: mobileSheet_shortPants_144
+  - first:
+      213: 307251382488191371
+    second: mobileSheet_shortPants_145
+  - first:
+      213: 637438776224431167
+    second: mobileSheet_shortPants_146
+  - first:
+      213: -8304452788961283517
+    second: mobileSheet_shortPants_147
+  - first:
+      213: -3010835472403955519
+    second: mobileSheet_shortPants_148
+  - first:
+      213: 2157007235658465496
+    second: mobileSheet_shortPants_149
+  - first:
+      213: -3781234264965524921
+    second: mobileSheet_shortPants_150
+  - first:
+      213: -1531740025550152025
+    second: mobileSheet_shortPants_151
+  - first:
+      213: -2926108099111412345
+    second: mobileSheet_shortPants_152
+  - first:
+      213: 4847675783301251468
+    second: mobileSheet_shortPants_153
+  - first:
+      213: -2344617829085536785
+    second: mobileSheet_shortPants_154
+  - first:
+      213: -3438753433081651340
+    second: mobileSheet_shortPants_155
+  - first:
+      213: -1744119162172893522
+    second: mobileSheet_shortPants_156
+  - first:
+      213: -7720857106405485400
+    second: mobileSheet_shortPants_157
+  - first:
+      213: 3889745533327803740
+    second: mobileSheet_shortPants_158
+  - first:
+      213: 3873375907223681027
+    second: mobileSheet_shortPants_159
+  - first:
+      213: 7640524848740225284
+    second: mobileSheet_shortPants_160
+  - first:
+      213: 7341136858649041887
+    second: mobileSheet_shortPants_161
+  - first:
+      213: 8941029549232394547
+    second: mobileSheet_shortPants_162
+  - first:
+      213: -4070955099904706139
+    second: mobileSheet_shortPants_163
+  - first:
+      213: -2112578853383093309
+    second: mobileSheet_shortPants_164
+  - first:
+      213: -72656258137701241
+    second: mobileSheet_shortPants_165
+  - first:
+      213: -1937681039052017815
+    second: mobileSheet_shortPants_166
+  - first:
+      213: 4649682466042004819
+    second: mobileSheet_shortPants_167
+  - first:
+      213: -62197281481003027
+    second: mobileSheet_shortPants_168
+  - first:
+      213: 7714317912021674164
+    second: mobileSheet_shortPants_169
+  - first:
+      213: 7542639911252804365
+    second: mobileSheet_shortPants_170
+  - first:
+      213: -7467077860514212029
+    second: mobileSheet_shortPants_171
+  - first:
+      213: -3861684690659814332
+    second: mobileSheet_shortPants_172
+  - first:
+      213: -6410532377836455622
+    second: mobileSheet_shortPants_173
+  - first:
+      213: -3850824352084710501
+    second: mobileSheet_shortPants_174
+  - first:
+      213: 2274504352416843302
+    second: mobileSheet_shortPants_175
+  - first:
+      213: 1952042835595527413
+    second: mobileSheet_shortPants_176
+  - first:
+      213: -882135056188023031
+    second: mobileSheet_shortPants_177
+  - first:
+      213: 5960689591991480580
+    second: mobileSheet_shortPants_178
+  - first:
+      213: 2008178160539578947
+    second: mobileSheet_shortPants_179
+  - first:
+      213: 327320331928700297
+    second: mobileSheet_shortPants_180
+  - first:
+      213: 6979461576127742272
+    second: mobileSheet_shortPants_181
+  - first:
+      213: -6285788199034215204
+    second: mobileSheet_shortPants_182
+  - first:
+      213: -6171484921180235010
+    second: mobileSheet_shortPants_183
+  - first:
+      213: 779628292183580420
+    second: mobileSheet_shortPants_184
+  - first:
+      213: 3819878167154633305
+    second: mobileSheet_shortPants_185
+  - first:
+      213: 501245289894205665
+    second: mobileSheet_shortPants_186
+  - first:
+      213: 7192847138220768564
+    second: mobileSheet_shortPants_187
+  - first:
+      213: 2868250599522002301
+    second: mobileSheet_shortPants_188
+  - first:
+      213: -4859333762282035859
+    second: mobileSheet_shortPants_189
+  - first:
+      213: -3170018661476666368
+    second: mobileSheet_shortPants_190
+  - first:
+      213: -9064916275098279953
+    second: mobileSheet_shortPants_191
+  - first:
+      213: -4569986667572872495
+    second: mobileSheet_shortPants_192
+  - first:
+      213: -6882532538641827635
+    second: mobileSheet_shortPants_193
+  - first:
+      213: -2722572930033899942
+    second: mobileSheet_shortPants_194
+  - first:
+      213: -4447488713550838042
+    second: mobileSheet_shortPants_195
+  - first:
+      213: -5378001976860080602
+    second: mobileSheet_shortPants_196
+  - first:
+      213: 1311148572637615144
+    second: mobileSheet_shortPants_197
+  - first:
+      213: -7092325189149338116
+    second: mobileSheet_shortPants_198
+  - first:
+      213: -6219678481598097284
+    second: mobileSheet_shortPants_199
+  - first:
+      213: 277926002814307020
+    second: mobileSheet_shortPants_200
+  - first:
+      213: 5644348432045993681
+    second: mobileSheet_shortPants_201
+  - first:
+      213: 5521784166385467909
+    second: mobileSheet_shortPants_202
+  - first:
+      213: 3035654319811199546
+    second: mobileSheet_shortPants_203
+  - first:
+      213: -1037745292285767195
+    second: mobileSheet_shortPants_204
+  - first:
+      213: -2195153185797865537
+    second: mobileSheet_shortPants_205
+  - first:
+      213: 7844591646034663001
+    second: mobileSheet_shortPants_206
+  - first:
+      213: -2484413196956926199
+    second: mobileSheet_shortPants_207
+  - first:
+      213: 1308575414844093014
+    second: mobileSheet_shortPants_208
+  - first:
+      213: 8740772585093304929
+    second: mobileSheet_shortPants_209
+  - first:
+      213: 8350953157080947142
+    second: mobileSheet_shortPants_210
+  - first:
+      213: -5629521591842500928
+    second: mobileSheet_shortPants_211
+  - first:
+      213: 1622521755622068603
+    second: mobileSheet_shortPants_212
+  - first:
+      213: 8595628639261815877
+    second: mobileSheet_shortPants_213
+  - first:
+      213: 2199856140097264769
+    second: mobileSheet_shortPants_214
+  - first:
+      213: -7941203854656549602
+    second: mobileSheet_shortPants_215
+  - first:
+      213: -5591431748892678402
+    second: mobileSheet_shortPants_216
+  - first:
+      213: -4898908843471436488
+    second: mobileSheet_shortPants_217
+  - first:
+      213: -6991869480969573612
+    second: mobileSheet_shortPants_218
+  - first:
+      213: 6300347184742171545
+    second: mobileSheet_shortPants_219
+  - first:
+      213: 518041062141937106
+    second: mobileSheet_shortPants_220
+  - first:
+      213: 5181485128543716951
+    second: mobileSheet_shortPants_221
+  - first:
+      213: 5269472675319061174
+    second: mobileSheet_shortPants_222
+  - first:
+      213: -8560647301633576144
+    second: mobileSheet_shortPants_223
+  - first:
+      213: 7112292137446342969
+    second: mobileSheet_shortPants_224
+  - first:
+      213: 9052030162061362759
+    second: mobileSheet_shortPants_225
+  - first:
+      213: 7802380372382397318
+    second: mobileSheet_shortPants_226
+  - first:
+      213: 3641758635409044981
+    second: mobileSheet_shortPants_227
+  - first:
+      213: 1845565697151773193
+    second: mobileSheet_shortPants_228
+  - first:
+      213: -10177000632236511
+    second: mobileSheet_shortPants_229
+  - first:
+      213: -8948712425426355744
+    second: mobileSheet_shortPants_230
+  - first:
+      213: -4328867170018042256
+    second: mobileSheet_shortPants_231
+  - first:
+      213: -7995609520996387145
+    second: mobileSheet_shortPants_232
+  - first:
+      213: -2966803015039081827
+    second: mobileSheet_shortPants_233
+  - first:
+      213: 848609528624720927
+    second: mobileSheet_shortPants_234
+  - first:
+      213: 7646443138516846584
+    second: mobileSheet_shortPants_235
+  - first:
+      213: 4770391038093402587
+    second: mobileSheet_shortPants_236
+  - first:
+      213: -7472434117825944023
+    second: mobileSheet_shortPants_237
+  - first:
+      213: 2477999492897981783
+    second: mobileSheet_shortPants_238
+  - first:
+      213: -158528528383783129
+    second: mobileSheet_shortPants_239
+  - first:
+      213: -2007195731753777668
+    second: mobileSheet_shortPants_240
+  - first:
+      213: 4623217315946103602
+    second: mobileSheet_shortPants_241
+  - first:
+      213: 156385674464951170
+    second: mobileSheet_shortPants_242
+  - first:
+      213: 124804613717122871
+    second: mobileSheet_shortPants_243
+  - first:
+      213: 889220394019370671
+    second: mobileSheet_shortPants_244
+  - first:
+      213: 9153846263279052134
+    second: mobileSheet_shortPants_245
+  - first:
+      213: 5756366718463499722
+    second: mobileSheet_shortPants_246
+  - first:
+      213: -8086891859898193358
+    second: mobileSheet_shortPants_247
+  - first:
+      213: 7863587441916691500
+    second: mobileSheet_shortPants_248
+  - first:
+      213: 1495018490170705468
+    second: mobileSheet_shortPants_249
+  - first:
+      213: 8460915994510528109
+    second: mobileSheet_shortPants_250
+  - first:
+      213: 3964524482978760458
+    second: mobileSheet_shortPants_251
+  - first:
+      213: -7261125865329411080
+    second: mobileSheet_shortPants_252
+  - first:
+      213: -2832836005286745719
+    second: mobileSheet_shortPants_253
+  - first:
+      213: 5647032750279279838
+    second: mobileSheet_shortPants_254
+  - first:
+      213: -1213571704352234426
+    second: mobileSheet_shortPants_255
+  - first:
+      213: -8251275892836866729
+    second: mobileSheet_shortPants_256
+  - first:
+      213: 2479759646009235189
+    second: mobileSheet_shortPants_257
+  - first:
+      213: -7894887117988224473
+    second: mobileSheet_shortPants_258
+  - first:
+      213: 4812400032566418859
+    second: mobileSheet_shortPants_259
+  - first:
+      213: -785358701269985435
+    second: mobileSheet_shortPants_260
+  - first:
+      213: 5426438303013510246
+    second: mobileSheet_shortPants_261
+  - first:
+      213: 1501776170319936020
+    second: mobileSheet_shortPants_262
+  - first:
+      213: -590327502390313467
+    second: mobileSheet_shortPants_263
+  - first:
+      213: -6477410287084641325
+    second: mobileSheet_shortPants_264
+  - first:
+      213: 6876031771046575685
+    second: mobileSheet_shortPants_265
+  - first:
+      213: 6550522207844868958
+    second: mobileSheet_shortPants_266
+  - first:
+      213: 335905246180856704
+    second: mobileSheet_shortPants_267
+  - first:
+      213: 8905695458659215683
+    second: mobileSheet_shortPants_268
+  - first:
+      213: 6438548357050844789
+    second: mobileSheet_shortPants_269
+  - first:
+      213: 5263232123928603497
+    second: mobileSheet_shortPants_270
+  - first:
+      213: 7573003414004447608
+    second: mobileSheet_shortPants_271
+  - first:
+      213: -7542852801354740277
+    second: mobileSheet_shortPants_272
+  - first:
+      213: 8803800737531055690
+    second: mobileSheet_shortPants_273
+  - first:
+      213: -2233798121026963296
+    second: mobileSheet_shortPants_274
+  - first:
+      213: -976985067090712039
+    second: mobileSheet_shortPants_275
+  - first:
+      213: 3108861138858685379
+    second: mobileSheet_shortPants_276
+  - first:
+      213: 6616935838235578649
+    second: mobileSheet_shortPants_277
+  - first:
+      213: 7495634434685173915
+    second: mobileSheet_shortPants_278
+  - first:
+      213: 406681579044528762
+    second: mobileSheet_shortPants_279
+  - first:
+      213: -3016320653438001712
+    second: mobileSheet_shortPants_280
+  - first:
+      213: -4440000255576022322
+    second: mobileSheet_shortPants_281
+  - first:
+      213: 3417182916562562920
+    second: mobileSheet_shortPants_282
+  - first:
+      213: -5310862079273404774
+    second: mobileSheet_shortPants_283
+  - first:
+      213: 8472445713987974328
+    second: mobileSheet_shortPants_284
+  - first:
+      213: 4238379796869057610
+    second: mobileSheet_shortPants_285
+  - first:
+      213: -73542626931002715
+    second: mobileSheet_shortPants_286
+  - first:
+      213: 1106158163693351878
+    second: mobileSheet_shortPants_287
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb101472df385970800000000000000
+      internalID: 8743808849662712763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c013690dd6da30500800000000000000
+      internalID: 361323082282316044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597b06255aa562fa0800000000000000
+      internalID: -5825869401858984043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc934df1ed3cd7760800000000000000
+      internalID: 7457331916779567564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814a58bb1c72e0a0800000000000000
+      internalID: -6853779224405589620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b39fba65f90d1440800000000000000
+      internalID: 4908090118566286261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f8c5a975132d530800000000000000
+      internalID: 3878216481441091380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49612b00169c70860800000000000000
+      internalID: 7496181523242161812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3968
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9747b8a77356168f0800000000000000
+      internalID: -549046390608923527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2099a0bc9ef9cea0800000000000000
+      internalID: -5851866291858993109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eb88ccb1e198380800000000000000
+      internalID: -8968604078187168103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cb7754d89eccac0800000000000000
+      internalID: -3833432389833999220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49480356cbe01bd20800000000000000
+      internalID: 3292429004898862228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5329146cb951b8d10800000000000000
+      internalID: 2128819007652991541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f7d064252273e60800000000000000
+      internalID: 7941854204649111439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0c4d7f11536c2e0800000000000000
+      internalID: -2105937424460496677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a63ccd9e8079b80800000000000000
+      internalID: -8388225980430063056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_17
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3840
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0feba80a93db0c490800000000000000
+      internalID: -7727968905363538192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ba75e2f19562170800000000000000
+      internalID: 8153302165857217286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf5a1d47f4b23410800000000000000
+      internalID: 1455424603837587376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f2bc0506b17ffa0800000000000000
+      internalID: -5767110697338327235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9a6751eb02ca710800000000000000
+      internalID: 1705774359642548702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74624bf41b01465f0800000000000000
+      internalID: -764467683013679545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_23
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e74a3ffde3559e30800000000000000
+      internalID: 4509602883535783909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2aa8a3224fea7a0800000000000000
+      internalID: -6363880795579702576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_25
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec24a435b695c0560800000000000000
+      internalID: 7281293015044997838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3712
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19aaf9fb327a7be80800000000000000
+      internalID: -8162872027605128559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37939942df869ad70800000000000000
+      internalID: 9054883962255128947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c972762bdcf820600800000000000000
+      internalID: 433066627805161372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b35d0263c602bca0800000000000000
+      internalID: -6002727917098019914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed3d5da4db4bf2d0800000000000000
+      internalID: -3243915729776591386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_31
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d091405a7efc8dbb0800000000000000
+      internalID: -4910946799834621683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_32
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0bd5c38e32adc080800000000000000
+      internalID: -9165491277246637302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a0678c73b057780800000000000000
+      internalID: -8686023972099847588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eae6a946ccf8b1f0800000000000000
+      internalID: -1028794586284758295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_35
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3584
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ae9af4dfec73920800000000000000
+      internalID: 2970070066632714855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66a445dec77d4420800000000000000
+      internalID: 2615878688797140588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_37
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b523b7885dc220e20800000000000000
+      internalID: 3315261571327537755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bd02a594797ca50800000000000000
+      internalID: 6541363325079444262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_39
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6cd40abca1d5d80800000000000000
+      internalID: -8260416679657486610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1c1464379993ad0800000000000000
+      internalID: -2721975779389750827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf24395c07ac0600800000000000000
+      internalID: 435906935426133959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_42
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52082c5f52d809e0800000000000000
+      internalID: -1654841556048805286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_43
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510f3d416f3851750800000000000000
+      internalID: 6275066748745281557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_44
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3456
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb40aa80456e7d150800000000000000
+      internalID: 5897435485661955262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6132078196bef89a0800000000000000
+      internalID: -6228500923016010986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613ac68193a5c4370800000000000000
+      internalID: 8308114613861131030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_47
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78ca3784f848b1b0800000000000000
+      internalID: -5640678318203549573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_48
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5db0b153895a6440800000000000000
+      internalID: 4929851162656554330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_49
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2ca321322f15940800000000000000
+      internalID: 5283270070325920430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_50
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205c344116ec23420800000000000000
+      internalID: 2608374050548073730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_51
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3ca245f2dab1e00800000000000000
+      internalID: 1016596559689335758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c325dd2f5fcb880800000000000000
+      internalID: -8593723565485704053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_53
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3328
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58416c1ab0983f9d0800000000000000
+      internalID: -2741697065086741371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9456960d3ffaa1e0800000000000000
+      internalID: -2185654031566351206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf7bd85096fdb3f0800000000000000
+      internalID: -883278852068245560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_56
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbc16b9885085270800000000000000
+      internalID: 8239341602554891259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e10757691bc455e0800000000000000
+      internalID: -1921687831011982872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_58
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e742665dc7b85b630800000000000000
+      internalID: 3942210417105183870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_59
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439269b16e1516720800000000000000
+      internalID: 2837639288967276852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_60
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c1e4940fb8ebd70800000000000000
+      internalID: 9060833364454284405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_61
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c78e5487b11de10800000000000000
+      internalID: 2220586294653254683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_62
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3200
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb15c278bcf5f840800000000000000
+      internalID: 5257386009154624444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3166cf4b99e7ed460800000000000000
+      internalID: 7268386047254095379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e15edc1d865df530800000000000000
+      internalID: 3890360817192686053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_65
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56807c3b6a1746440800000000000000
+      internalID: 4928188853044840549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_66
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5c5a9669e8b6920800000000000000
+      internalID: 2984635954731795942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_67
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0563d8801eb952370800000000000000
+      internalID: 8297209279313426000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_68
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf6727125bad1260800000000000000
+      internalID: 7069995359105675193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_69
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ce277e35fd7ad90800000000000000
+      internalID: -7086449937185838034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_70
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e686cd0c607e4c790800000000000000
+      internalID: -7510624262355654546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_71
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8f2ff95ca4c2230800000000000000
+      internalID: 3615346813524179108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80300eb9040a39f0800000000000000
+      internalID: -488073169727377266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_73
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6552c3fe68fdcd30800000000000000
+      internalID: 4453488761958978927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2b9556db68430a0800000000000000
+      internalID: -6902744180844809556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_75
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a88d6a376b21de10800000000000000
+      internalID: 2220603813632247974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_76
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389c5cc3ee8e4c080800000000000000
+      internalID: -9167946831500031613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_77
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb28ebedffaa46d0800000000000000
+      internalID: -3005396296196936736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_78
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fd57c1aefd412c0800000000000000
+      internalID: -4461695134224490613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_79
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ae6ced6ac2153e0800000000000000
+      internalID: -2066821658772575725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_80
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2944
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6feeb29eb421b98c0800000000000000
+      internalID: -3991576527489995018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d619fb213bde0d840800000000000000
+      internalID: 5246954919256101229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_82
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd6450e2c6d60160800000000000000
+      internalID: 6991511604014902710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_83
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8129b48357df29ed0800000000000000
+      internalID: -2408584170792316392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_84
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0b2ac013b317e40800000000000000
+      internalID: 5652364089178108145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_85
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27551ec0895219000800000000000000
+      internalID: 40855206604395890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_86
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2194bb8fca2108460800000000000000
+      internalID: 7241808734928455954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_87
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40989e66676286db0800000000000000
+      internalID: -4798543112988686076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_88
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6888beea7fcbda5f0800000000000000
+      internalID: -743730591468648314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_89
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2816
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a7fe44cd30143d0800000000000000
+      internalID: -3224291613636330996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636a3d0d43f50cfb0800000000000000
+      internalID: -4629595736490400202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_91
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085324e6f5dead3b0800000000000000
+      internalID: -5486812201870019200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_92
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d4cdc9782c4a970800000000000000
+      internalID: 8765344662477884779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_93
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9df8ef68cd6d740800000000000000
+      internalID: 5176567294063532508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_94
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254d1c71828f9f0c0800000000000000
+      internalID: -4541325898145475502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_95
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44aa6104b2ea88ff0800000000000000
+      internalID: -33585496423224764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_96
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1014a1dfff3f32b50800000000000000
+      internalID: 6567360962424881409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_97
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc1bef157e07a5e0800000000000000
+      internalID: -1898532821703910150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_98
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2688
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c220c754ff87ee80800000000000000
+      internalID: -8149386721096621371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_99
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3585a6371fe09100800000000000000
+      internalID: 112852873664365885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_100
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc367b9e3d03ba60800000000000000
+      internalID: 7688503551398919348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_101
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9563a21361099d0800000000000000
+      internalID: -2769689370415441415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_102
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea44f44c6aed5300800000000000000
+      internalID: 242607705682103014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_103
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988ed4fad8114c190800000000000000
+      internalID: -7943204542545532791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_104
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db37b2793ffb8c7e0800000000000000
+      internalID: -1744933802671901763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_105
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f741d70d941a0eeb0800000000000000
+      internalID: -4692573473317514113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_106
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d574664523bcd0e90800000000000000
+      internalID: -7057761623994906787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_107
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814abc190c063d650800000000000000
+      internalID: 6256450687543780376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b125ed8729eed30800000000000000
+      internalID: 4462665328594393919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_109
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfbe84473af24bc0800000000000000
+      internalID: -3800200020266926133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_110
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45816bfdfbbf92f0800000000000000
+      internalID: -963845095715404467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_111
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9280e6555598aff0800000000000000
+      internalID: -24605604188224867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_112
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d4482a37ecdebe0800000000000000
+      internalID: -1446272909272920821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_113
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4abc8bfbfee47310800000000000000
+      internalID: 1402008150043572811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_114
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc12bf91b07670e0800000000000000
+      internalID: -2272505053771064098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_115
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b12129160739af0800000000000000
+      internalID: -390845178286302364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_116
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2432
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a96c0e99762e76d0800000000000000
+      internalID: -2990910798742918751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_117
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845b8884ff84b72c0800000000000000
+      internalID: -4432869146945342136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_118
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241e7f7b8b6fc2310800000000000000
+      internalID: 1381750458916790594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_119
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046cc006efc0b5c70800000000000000
+      internalID: 8960770170256410176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_120
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f66f3b60edc51bb0800000000000000
+      internalID: -4965836650350418187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_121
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5ed73751a307bc0800000000000000
+      internalID: -3787463422812232204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_122
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9402b5f31bf8822f0800000000000000
+      internalID: -997389326027644855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_123
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e391b2cfb52080110800000000000000
+      internalID: 1227233492554422590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_124
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adf5ce7a98f53d50800000000000000
+      internalID: 6716547761728519585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_125
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2304
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3507fa1204797160800000000000000
+      internalID: 7023772646252152123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c579f280c00c11ce0800000000000000
+      internalID: -1436155648245000356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_127
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5ca5b00c8d21c00800000000000000
+      internalID: 869995997371745731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_128
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb1978ac0f1cab90800000000000000
+      internalID: -7229369162609910852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_129
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fae4fea2bff5f9f0800000000000000
+      internalID: -435160646066836747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_130
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c2a15b1fe605ec0800000000000000
+      internalID: -3580239719354979190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_131
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1a57bdf195076c0800000000000000
+      internalID: -4147717263447449103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_132
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f341bf73b5cb890800000000000000
+      internalID: -7440972188329164929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_133
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e9d915e538d71b0800000000000000
+      internalID: -5657221115788026242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_134
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2176
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d970a77edca6bab20800000000000000
+      internalID: 3146726197232797597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_135
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c26744914164730800000000000000
+      internalID: 3982893019211115615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_136
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd8623394e561e30800000000000000
+      internalID: 4473866948322954704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_137
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4d3a947b831d700800000000000000
+      internalID: 563293788263666896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_138
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a93fed665d1c05e0800000000000000
+      internalID: -1942145082254739033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_139
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86ca268256b16f10800000000000000
+      internalID: 2261288953471223436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_140
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3082ba58dc9e962b0800000000000000
+      internalID: -5590680393483606013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_141
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8817eefb9070c0050800000000000000
+      internalID: 5767992961210937736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_142
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e6c1c4776e33210800000000000000
+      internalID: 1311645316547374643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_143
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb02b5210afb51ea0800000000000000
+      internalID: -5902601042375532357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fffaf3974368c80800000000000000
+      internalID: -8320905566156226777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_145
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81d4f52183934400800000000000000
+      internalID: 307251382488191371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_146
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cbaee8033a8d800800000000000000
+      internalID: 637438776224431167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_147
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342f5f3ff28a0cc80800000000000000
+      internalID: -8304452788961283517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_148
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c08736071d5736d0800000000000000
+      internalID: -3010835472403955519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_149
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0ce5b07aa3fed10800000000000000
+      internalID: 2157007235658465496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_150
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742d138487b568bc0800000000000000
+      internalID: -3781234264965524921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_151
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aed5d0ff8a2ebae0800000000000000
+      internalID: -1531740025550152025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_152
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d1212ef206467d0800000000000000
+      internalID: -2926108099111412345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_153
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814fe9d077664340800000000000000
+      internalID: 4847675783301251468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_154
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed1f4bb18e367fd0800000000000000
+      internalID: -2344617829085536785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_155
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f530fc8f71740d0800000000000000
+      internalID: -3438753433081651340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_156
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea69bbcdcd4abc7e0800000000000000
+      internalID: -1744119162172893522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_157
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4962b5e510ad490800000000000000
+      internalID: -7720857106405485400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_158
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c558aac24f62bf530800000000000000
+      internalID: 3889745533327803740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_159
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308bf979ddef0c530800000000000000
+      internalID: 3873375907223681027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_160
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401d4b26ed8980a60800000000000000
+      internalID: 7640524848740225284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_161
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb9d43f315f0e560800000000000000
+      internalID: 7341136858649041887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_162
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3319440e00be41c70800000000000000
+      internalID: 8941029549232394547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_163
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a97d9dc7ef0187c0800000000000000
+      internalID: -4070955099904706139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_164
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3491cc9bc9ea2e0800000000000000
+      internalID: -2112578853383093309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_165
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7844ef6a48fddfef0800000000000000
+      internalID: -72656258137701241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_166
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f6b4b7c59fb15e0800000000000000
+      internalID: -1937681039052017815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_167
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355cbca519df68040800000000000000
+      internalID: 4649682466042004819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_168
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def645be6e7032ff0800000000000000
+      internalID: -62197281481003027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_169
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b82c7ec443ce0b60800000000000000
+      internalID: 7714317912021674164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_170
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1664
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0348e26907dca860800000000000000
+      internalID: 7542639911252804365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_171
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347ddd58f3c9f5890800000000000000
+      internalID: -7467077860514212029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_172
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44458a2eb3a886ac0800000000000000
+      internalID: -3861684690659814332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_173
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39faed44c63907a0800000000000000
+      internalID: -6410532377836455622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_174
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b219187af1f8ac0800000000000000
+      internalID: -3850824352084710501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_175
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626c2ed58a9a09f10800000000000000
+      internalID: 2274504352416843302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_176
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4840add9c071b10800000000000000
+      internalID: 1952042835595527413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_177
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f5ef317d602c3f0800000000000000
+      internalID: -882135056188023031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_178
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40135035a9f98b250800000000000000
+      internalID: 5960689591991480580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_179
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342b8a0b56b7edb10800000000000000
+      internalID: 2008178160539578947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9858f509b10ea8400800000000000000
+      internalID: 327320331928700297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_181
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041059023570cd060800000000000000
+      internalID: 6979461576127742272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_182
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4293fbfe464c8a0800000000000000
+      internalID: -6285788199034215204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_183
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa5f50892b7a5aa0800000000000000
+      internalID: -6171484921180235010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_184
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f52741dcbc1da00800000000000000
+      internalID: 779628292183580420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_185
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95aa58654fee20530800000000000000
+      internalID: 3819878167154633305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_186
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e85b797fe7c4f600800000000000000
+      internalID: 501245289894205665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_187
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d7555ec5022d360800000000000000
+      internalID: 7192847138220768564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_188
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1408
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d756f4f39b21ec720800000000000000
+      internalID: 2868250599522002301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_189
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65ed1660bd209cb0800000000000000
+      internalID: -4859333762282035859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_190
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004f257a2d4d104d0800000000000000
+      internalID: -3170018661476666368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_191
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef1c100da2f23280800000000000000
+      internalID: -9064916275098279953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_192
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da3c03b6552490c0800000000000000
+      internalID: -4569986667572872495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_193
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8bf2f0f155c70a0800000000000000
+      internalID: -6882532538641827635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_194
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a562c3e485a773ad0800000000000000
+      internalID: -2722572930033899942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_195
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e64e3e24985742c0800000000000000
+      internalID: -4447488713550838042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_196
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62608e722bf7d55b0800000000000000
+      internalID: -5378001976860080602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_197
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82453d71ea2223210800000000000000
+      internalID: 1311148572637615144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_198
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5d23531dff29d90800000000000000
+      internalID: -7092325189149338116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_199
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78543fcf534fa9a0800000000000000
+      internalID: -6219678481598097284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_200
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca479f1a346bd300800000000000000
+      internalID: 277926002814307020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_201
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de62a07ef0c45e40800000000000000
+      internalID: 5644348432045993681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_202
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50248c3917151ac40800000000000000
+      internalID: 5521784166385467909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_203
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a320a31358fc02a20800000000000000
+      internalID: 3035654319811199546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_204
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e119f5a7203991f0800000000000000
+      internalID: -1037745292285767195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_205
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf73f4decf3981e0800000000000000
+      internalID: -2195153185797865537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_206
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1152
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95694e52a869ddc60800000000000000
+      internalID: 7844591646034663001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_207
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ff6104c57958dd0800000000000000
+      internalID: -2484413196956926199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_208
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652779b186ef82210800000000000000
+      internalID: 1308575414844093014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_209
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16295f40b567d4970800000000000000
+      internalID: 8740772585093304929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_210
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c99cbfa6ab84e370800000000000000
+      internalID: 8350953157080947142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_211
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce06de40fbefd1b0800000000000000
+      internalID: -5629521591842500928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_212
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b715234b0fa548610800000000000000
+      internalID: 1622521755622068603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_213
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544ff50b4bec94770800000000000000
+      internalID: 8595628639261815877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_214
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c957b0185778e10800000000000000
+      internalID: 2199856140097264769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_215
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1dcb322b2d2bc190800000000000000
+      internalID: -7941203854656549602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_216
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef62965f27e3762b0800000000000000
+      internalID: -5591431748892678402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_217
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8358dd5cc54930cb0800000000000000
+      internalID: -4898908843471436488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_218
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41be9e660c3e7fe90800000000000000
+      internalID: -6991869480969573612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_219
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993803442645f6750800000000000000
+      internalID: 6300347184742171545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_220
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d54900f993703700800000000000000
+      internalID: 518041062141937106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_221
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75641df854558e740800000000000000
+      internalID: 5181485128543716951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_222
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba1506ba7de02940800000000000000
+      internalID: 5269472675319061174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_223
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03379baa2a8723980800000000000000
+      internalID: -8560647301633576144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_224
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 896
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9310b473400f3b260800000000000000
+      internalID: 7112292137446342969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_225
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7460ac109754f9d70800000000000000
+      internalID: 9052030162061362759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_226
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68335522c9f974c60800000000000000
+      internalID: 7802380372382397318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_227
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5744d1f202a8230800000000000000
+      internalID: 3641758635409044981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_228
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90aa06c2934cc9910800000000000000
+      internalID: 1845565697151773193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_229
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126cf646218dbdff0800000000000000
+      internalID: -10177000632236511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_230
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9765d1679cfc380800000000000000
+      internalID: -8948712425426355744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_231
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e59338e36cce3c0800000000000000
+      internalID: -4328867170018042256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_232
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b67742d083e90190800000000000000
+      internalID: -7995609520996387145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_233
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92a90a606cc3d6d0800000000000000
+      internalID: -2966803015039081827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_234
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c20b2ceddd6cb00800000000000000
+      internalID: 848609528624720927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_235
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f7058a958f9d1a60800000000000000
+      internalID: 7646443138516846584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_236
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1a341ef55d33240800000000000000
+      internalID: 4770391038093402587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_237
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926a97fa2c49c4890800000000000000
+      internalID: -7472434117825944023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_238
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75548c7e86f936220800000000000000
+      internalID: 2477999492897981783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_239
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f4be2b42bcccdf0800000000000000
+      internalID: -158528528383783129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_240
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5c226dd120524e0800000000000000
+      internalID: -2007195731753777668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_241
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233076c67a7f82040800000000000000
+      internalID: 4623217315946103602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_242
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 640
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b717e31f79b2200800000000000000
+      internalID: 156385674464951170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_243
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f50fa82256bb100800000000000000
+      internalID: 124804613717122871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_244
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6be80bc35275c00800000000000000
+      internalID: 889220394019370671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_245
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665e8436daef80f70800000000000000
+      internalID: 9153846263279052134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_246
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdd5ea2809b2ef40800000000000000
+      internalID: 5756366718463499722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_247
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a25c913b695cf80800000000000000
+      internalID: -8086891859898193358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_248
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24caa78d13112d60800000000000000
+      internalID: 7863587441916691500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_249
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c360447556f5fb410800000000000000
+      internalID: 1495018490170705468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_250
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e8837e4463b6570800000000000000
+      internalID: 8460915994510528109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_251
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07c9472302d40730800000000000000
+      internalID: 3964524482978760458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_252
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbb3af1f7c4b3b90800000000000000
+      internalID: -7261125865329411080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_253
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98962f589aebfa8d0800000000000000
+      internalID: -2832836005286745719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_254
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4c46bfd5a4e5e40800000000000000
+      internalID: 5647032750279279838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_255
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644ae94f6f6882fe0800000000000000
+      internalID: -1213571704352234426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_256
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755e6b7ea449d7d80800000000000000
+      internalID: -8251275892836866729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_257
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f69abc7240e96220800000000000000
+      internalID: 2479759646009235189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_258
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722218ebef9bf6290800000000000000
+      internalID: -7894887117988224473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_259
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad133a155419c240800000000000000
+      internalID: 4812400032566418859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_260
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 384
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5675a851c68d915f0800000000000000
+      internalID: -785358701269985435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_261
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c91b6d2e49e4b40800000000000000
+      internalID: 5426438303013510246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_262
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41af01c587167d410800000000000000
+      internalID: 1501776170319936020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_263
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50eb1e6a34cbec7f0800000000000000
+      internalID: -590327502390313467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_264
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3ebd5a9ad9b16a0800000000000000
+      internalID: -6477410287084641325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_265
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ef78907729c6f50800000000000000
+      internalID: 6876031771046575685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_266
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53a6ebed3128ea50800000000000000
+      internalID: 6550522207844868958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_267
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083dcccaa0069a400800000000000000
+      internalID: 335905246180856704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_268
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3492133d5d2679b70800000000000000
+      internalID: 8905695458659215683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_269
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576c03b2e915a5950800000000000000
+      internalID: 6438548357050844789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_270
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b603d1bb1ca0940800000000000000
+      internalID: 5263232123928603497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_271
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8793e864b76b81960800000000000000
+      internalID: 7573003414004447608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_272
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdc0364757625790800000000000000
+      internalID: -7542852801354740277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_273
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e4cd150226d2a70800000000000000
+      internalID: 8803800737531055690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_274
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8b040b174fff0e0800000000000000
+      internalID: -2233798121026963296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_275
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a623df14d0172f0800000000000000
+      internalID: -976985067090712039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_276
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c330bdfbb4e42b20800000000000000
+      internalID: 3108861138858685379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_277
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911559b361414db50800000000000000
+      internalID: 6616935838235578649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_278
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9088950ec7d50860800000000000000
+      internalID: 7495634434685173915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_279
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72e4afcdb2d4a500800000000000000
+      internalID: 406681579044528762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_280
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd572bc850e326d0800000000000000
+      internalID: -3016320653438001712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_281
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec26fbbaa43f162c0800000000000000
+      internalID: -4440000255576022322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_282
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86fae32f1c54c6f20800000000000000
+      internalID: 3417182916562562920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_283
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96f0d9b3170c46b0800000000000000
+      internalID: -5310862079273404774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_284
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4b809ec7c249570800000000000000
+      internalID: 8472445713987974328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_285
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c829728ffb1da30800000000000000
+      internalID: 4238379796869057610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_286
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2bde5de59bafef0800000000000000
+      internalID: -73542626931002715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mobileSheet_shortPants_287
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 9
+      pivot: {x: 0.5, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3375c3dfcd95f00800000000000000
+      internalID: 1106158163693351878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: edfa07102ec430e419a13d00f0327e54
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

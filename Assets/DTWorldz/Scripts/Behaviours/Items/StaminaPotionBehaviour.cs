@@ -10,25 +10,9 @@ namespace DTWorldz.Behaviours.Items.Utils
 {
     public class StaminaPotionBehaviour : BaseItemBehaviour, ILootItem
     {
-        [SerializeField]
-        private int count = 1;
         private SpriteRenderer spriteRenderer;
         private Animator animator;
         private AudioManager audioManager;
-
-        public int Count
-        {
-            get { return count; }
-            set { count = value; }
-        }
-
-        private bool isStackable;
-        public bool IsStackable
-        {
-            get { return isStackable; }
-            set { isStackable = value; }
-        }
-
 
         // Start is called before the first frame update
         void Start()
@@ -43,7 +27,7 @@ namespace DTWorldz.Behaviours.Items.Utils
             }            
         }
 
-        public void OnAfterDrop()
+        public override void OnAfterDrop()
         {
             if (audioManager != null)
             {
@@ -70,7 +54,7 @@ namespace DTWorldz.Behaviours.Items.Utils
             }
         }
 
-        public void SetCount(int count)
+        public override void SetCount(int count)
         {
             this.count = count;
         }

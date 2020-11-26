@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Items;
 using DTWorldz.Models;
 using DTWorldz.Models.MobileStats;
 using DTWorldz.ScriptableObjects.Items;
@@ -14,15 +15,7 @@ namespace DTWorldz.Behaviours.UI.Inventory
         public GameObject ItemQuantityPanel;
         public GameObject ItemTexturePanel;
 
-        public StrengthModifier StrengthModifier;
-        public DexterityModifier DexterityModifier;
-
-        public BaseItem ItemTemplate;
-
-        public StatQuality StatQuality;
-
-        public int MinDamage;
-        public int MaxDamage;
+        public BaseItemBehaviour ItemBehaviour;
 
         // internal void Stack(Item item)
         // {
@@ -53,13 +46,14 @@ namespace DTWorldz.Behaviours.UI.Inventory
             var image = GetComponent<Image>();
             image.sprite = spriteRenderer.sprite;
 
-            this.ItemTemplate = itemBehaviour.ItemTemplate;
+            ItemBehaviour = itemBehaviour;            
+            // this.ItemTemplate = itemBehaviour.ItemTemplate;
 
-            StrengthModifier = itemBehaviour.StrengthModifier;
-            DexterityModifier = itemBehaviour.DexterityModifier;
-            StatQuality = itemBehaviour.StatQuality;
-            MinDamage = itemBehaviour.MinDamage;
-            MaxDamage = itemBehaviour.MaxDamage;
+            // StrengthModifier = itemBehaviour.StrengthModifier;
+            // DexterityModifier = itemBehaviour.DexterityModifier;
+            // StatQuality = itemBehaviour.StatQuality;
+            // MinDamage = itemBehaviour.MinDamage;
+            // MaxDamage = itemBehaviour.MaxDamage;
         }
     }
 }

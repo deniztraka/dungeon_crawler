@@ -29,7 +29,7 @@ namespace DTWorldz.Behaviours.Looting
             var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.y + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.z);
             var instantiatedLootItem = Instantiate(lootPackItem.ItemPrefab, randomPosition, Quaternion.identity);
             var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
-            lootItem.SetCount(count);
+            lootItem.SetCount(count);            
             lootItem.SetModifiers(lootPackItem.MinStatCount, lootPackItem.MaxStatCount, lootPackItem.StatQuality);
             lootItem.OnAfterDrop();
         }
