@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DTWorldz.ScriptableObjects.Items.Equipments.Weapons
 {
-    [CreateAssetMenu(fileName = "Axe", menuName = "Items/Axes/Axe", order = 0)]
+    [CreateAssetMenu(fileName = "Axe", menuName = "Items/Equipments/Wepons/Axes/Axe", order = 0)]
     public class Axe : BaseWeapon
     {
         public Axe()

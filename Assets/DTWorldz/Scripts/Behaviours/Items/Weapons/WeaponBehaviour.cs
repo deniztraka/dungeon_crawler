@@ -73,6 +73,9 @@ namespace DTWorldz.Behaviours.Items
             weaponItemModel.MinDamage = MinDamage;
             weaponItemModel.MaxDamage = MaxDamage;
 
+            weaponItemModel.MinDexReq = MinDexterity;
+            weaponItemModel.MinStrReq = MinStrength;
+
             return weaponItemModel;
         }
 
@@ -84,6 +87,9 @@ namespace DTWorldz.Behaviours.Items
 
             MinDamage = weaponItemModel.MinDamage;
             MaxDamage = weaponItemModel.MaxDamage;
+
+            MinDexterity = weaponItemModel.MinDexReq;
+            MinStrength = weaponItemModel.MinStrReq;
         }
     }
 }

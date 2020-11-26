@@ -17,8 +17,8 @@ MonoBehaviour:
   Description: a good tool to split body and it's head
   Icon: {fileID: -7368915215308609132, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   ItemType: 1
-  MinStrength: 10
-  MinDexterity: 10
+  MinStrength: 5
+  MinDexterity: 5
   BaseMinDamage: 5
   BaseMaxDamage: 8
   WeaponType: 0

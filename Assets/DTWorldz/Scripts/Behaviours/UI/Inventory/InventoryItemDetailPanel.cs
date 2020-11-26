@@ -64,12 +64,20 @@ public class InventoryItemDetailPanel : MonoBehaviour
             {
                 sb.AppendFormat("{0}-{1} Damage", weaponItemModel.MinDamage, weaponItemModel.MaxDamage);
                 sb.AppendLine();
+                sb.AppendFormat("Str Req: {0}", weaponItemModel.MinStrReq);
+                sb.AppendLine();
+                sb.AppendFormat("Dex Req: {0}", weaponItemModel.MinDexReq);
+                sb.AppendLine();
             }
         }
         else
         if (itemModel is EquipmentItemModel)
         {
-
+            var equipmentItemModel = (EquipmentItemModel)itemModel;
+            sb.AppendFormat("Str Req: {0}", equipmentItemModel.MinStrReq);
+            sb.AppendLine();
+            sb.AppendFormat("Dex Req: {0}", equipmentItemModel.MinDexReq);
+            sb.AppendLine();
         }
         else
         {

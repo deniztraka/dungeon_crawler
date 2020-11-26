@@ -43,7 +43,6 @@ namespace DTWorldz.Behaviours.UI.Inventory
                     var inventoryBehaviour = transform.GetComponentInParent<InventoryBehaviour>();
                     if (inventoryBehaviour != null)
                     {
-
                         inventoryBehaviour.ShowItem(itemModel);
                     }
                 }

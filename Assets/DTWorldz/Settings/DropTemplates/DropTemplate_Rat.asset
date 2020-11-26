@@ -23,6 +23,13 @@ MonoBehaviour:
       MinStatCount: 0
       MaxStatCount: 2
       StatQuality: 4
+    - ItemPrefab: {fileID: 6474673501721562787, guid: c1d46b5da7224c9409573b268b281cf6,
+        type: 3}
+      CountMin: 1
+      CountMax: 1
+      MinStatCount: 0
+      MaxStatCount: 2
+      StatQuality: 4
   - MaxCount: 1
     Chance: 0.5
     Items:
