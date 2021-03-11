@@ -76,7 +76,6 @@ namespace DTWorldz.ProceduralGeneration
                 }
             }
 
-
             // make it island
             if (isIsland && islandHeightMap != null)
             {
@@ -84,8 +83,6 @@ namespace DTWorldz.ProceduralGeneration
                 {
                     for (int y = 0; y < height; y++)
                     {
-
-
                          var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight-0.1f, islandHeightMap.GetPixel(x, y).grayscale);
                         //Debug.Log(hede);
                         grayScaleSample = Mathf.Pow(grayScaleSample, islandHeightMapIntensity);

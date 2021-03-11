@@ -11,5 +11,6 @@ namespace DTWorldz.ProceduralGeneration
         public float Height;
         public Color Color;
         public Tile Tile;
+        public Tilemap Tilemap;
     }
 }

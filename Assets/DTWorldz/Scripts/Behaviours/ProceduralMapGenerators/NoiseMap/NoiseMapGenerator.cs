@@ -28,6 +28,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public void GenerateMap()
         {
+            ClearTileMap();
             float[,] noiseMap = Noise.GenerateNoiseMap(Seed, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
@@ -41,14 +42,14 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             }
             else if (DrawingMode == DrawMode.TileMap)
             {
-                mapDisplay.DrawTileMap(GetTileMap(noiseMap), Width, Height);
+                mapDisplay.DrawTileMap(Regions, noiseMap,  Width, Height);
             }
         }
 
         public void ClearTileMap()
         {
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
-            mapDisplay.ClearTileMap();
+            mapDisplay.ClearTileMap(Regions);
         }
 
         private Color[] GetColorMap(float[,] noiseMap)
