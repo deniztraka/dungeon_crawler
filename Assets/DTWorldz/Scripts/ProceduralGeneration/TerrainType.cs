@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,5 +13,7 @@ namespace DTWorldz.ProceduralGeneration
         public Color Color;
         public Tile Tile;
         public Tilemap Tilemap;
+        public List<GameObject> TreeTypes;
+        public float TreeFrequency;
     }
 }

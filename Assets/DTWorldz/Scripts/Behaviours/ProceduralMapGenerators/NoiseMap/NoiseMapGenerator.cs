@@ -22,8 +22,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public Texture2D IslandHeightMapTexture;
         public float LandIntensisty = 4;
         public TerrainType[] Regions;
-
         public Vector2 OffSet = new Vector2(0, 0);
+
+        public Transform TreesParentObject;
         public bool autoUpdate;
 
         public void GenerateMap()
@@ -42,7 +43,57 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             }
             else if (DrawingMode == DrawMode.TileMap)
             {
-                mapDisplay.DrawTileMap(Regions, noiseMap,  Width, Height);
+                mapDisplay.DrawTileMap(Regions, noiseMap, Width, Height);
+            }
+
+            PlaceTrees();
+        }
+
+        public void PlaceTrees()
+        {
+            ClearTrees();
+
+            var prng = new System.Random(Seed);
+            if (TreesParentObject == null)
+            {
+                return;
+            }
+
+            foreach (var region in Regions)
+            {
+                if (region.TreeFrequency == 0f || region.TreeTypes.Count == 0)
+                {
+                    continue;
+                }
+                var gridLayout = region.Tilemap.transform.GetComponentInParent<GridLayout>();
+
+                for (int x = 0; x < Width; x++)
+                {
+                    for (int y = 0; y < Height; y++)
+                    {
+                        var chance = prng.NextDouble();
+                        if (chance < region.TreeFrequency)
+                        {
+                            var regionTile = region.Tilemap.GetTile(new Vector3Int(x, y, 0));
+                            if (regionTile != null)
+                            {
+                                var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
+                                cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+                                Instantiate(region.TreeTypes[prng.Next(0, region.TreeTypes.Count)], cellPosition, Quaternion.identity, TreesParentObject);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ClearTrees()
+        {
+            
+            for (int i = TreesParentObject.childCount - 1; i >= 0; i--)
+            {
+                Transform child = TreesParentObject.GetChild(i);
+                DestroyImmediate(child.gameObject);
             }
         }
 

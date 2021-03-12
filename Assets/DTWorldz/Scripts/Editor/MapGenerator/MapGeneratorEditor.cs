@@ -25,5 +25,15 @@ public class MapGeneratorEditor : Editor
         {
             mapGen.ClearTileMap();
         }
+
+        if (GUILayout.Button("PlaceTrees"))
+        {
+            mapGen.PlaceTrees();
+        }
+
+        if (GUILayout.Button("ClearTrees"))
+        {
+            mapGen.ClearTrees();
+        }
     }
 }
