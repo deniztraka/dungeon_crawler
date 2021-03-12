@@ -25,9 +25,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public Vector2 OffSet = new Vector2(0, 0);
 
         public Transform TreesParentObject;
+        public Transform BushesParentObject;
         public bool autoUpdate;
 
-        public void GenerateMap()
+        public System.Random GenerateMap()
         {
             ClearTileMap();
             float[,] noiseMap = Noise.GenerateNoiseMap(Seed, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
@@ -46,14 +47,64 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 mapDisplay.DrawTileMap(Regions, noiseMap, Width, Height);
             }
 
-            PlaceTrees();
+            var prng = new System.Random(Seed);
+            PlaceTrees(prng);
+            PlaceBushes(prng);
+            return prng;
         }
 
-        public void PlaceTrees()
+        public void PlaceBushes(System.Random prng){
+            ClearBushes();
+
+            
+            if (BushesParentObject == null)
+            {
+                return;
+            }
+
+            foreach (var region in Regions)
+            {
+                if (region.BushFrequency == 0f || region.BushTypes.Count == 0)
+                {
+                    continue;
+                }
+                var gridLayout = region.Tilemap.transform.GetComponentInParent<GridLayout>();
+
+                for (int x = 0; x < Width; x++)
+                {
+                    for (int y = 0; y < Height; y++)
+                    {
+                        var chance = prng.NextDouble();
+                        if (chance < region.BushFrequency)
+                        {
+                            var regionTile = region.Tilemap.GetTile(new Vector3Int(x, y, 0));
+                            if (regionTile != null)
+                            {
+                                var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
+                                cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+                                Instantiate(region.BushTypes[prng.Next(0, region.BushTypes.Count)], cellPosition, Quaternion.identity, BushesParentObject);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public void ClearBushes(){
+            if(BushesParentObject == null){
+                return;
+            }
+            
+            for (int i = BushesParentObject.childCount - 1; i >= 0; i--)
+            {
+                Transform child = BushesParentObject.GetChild(i);
+                DestroyImmediate(child.gameObject);
+            }
+        }
+
+        public void PlaceTrees(System.Random prng)
         {
             ClearTrees();
-
-            var prng = new System.Random(Seed);
+            
             if (TreesParentObject == null)
             {
                 return;
@@ -89,6 +140,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public void ClearTrees()
         {
+            if(TreesParentObject == null){
+                return;
+            }
             
             for (int i = TreesParentObject.childCount - 1; i >= 0; i--)
             {

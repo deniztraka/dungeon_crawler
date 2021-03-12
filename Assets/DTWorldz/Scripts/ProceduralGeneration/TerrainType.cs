@@ -15,5 +15,7 @@ namespace DTWorldz.ProceduralGeneration
         public Tilemap Tilemap;
         public List<GameObject> TreeTypes;
         public float TreeFrequency;
+        public List<GameObject> BushTypes;
+        public float BushFrequency;
     }
 }

@@ -11,14 +11,20 @@ public class MapGeneratorEditor : Editor
     {
         //base.OnInspectorGUI();
         var mapGen = (NoiseMapGenerator)target;
+        System.Random prng = null;
 
-        if(DrawDefaultInspector() && mapGen.autoUpdate){
-            mapGen.GenerateMap();
+        if (DrawDefaultInspector() && mapGen.autoUpdate)
+        {
+            prng = mapGen.GenerateMap();
         }
 
         if (GUILayout.Button("Generate"))
         {
-            mapGen.GenerateMap();
+            if (prng == null)
+            {
+                prng = new System.Random(mapGen.Seed);
+            }
+            prng = mapGen.GenerateMap();
         }
 
         if (GUILayout.Button("ClearTileMap"))
@@ -28,12 +34,30 @@ public class MapGeneratorEditor : Editor
 
         if (GUILayout.Button("PlaceTrees"))
         {
-            mapGen.PlaceTrees();
+            if (prng == null)
+            {
+                prng = new System.Random(mapGen.Seed);
+            }
+            mapGen.PlaceTrees(prng);
         }
 
         if (GUILayout.Button("ClearTrees"))
         {
             mapGen.ClearTrees();
+        }
+
+        if (GUILayout.Button("PlaceBushes"))
+        {
+            if (prng == null)
+            {
+                prng = new System.Random(mapGen.Seed);
+            }
+            mapGen.PlaceBushes(prng);
+        }
+
+        if (GUILayout.Button("ClearBushes"))
+        {
+            mapGen.ClearBushes();
         }
     }
 }
