@@ -18,7 +18,5 @@ MonoBehaviour:
   Tile: {fileID: 11400000, guid: afd38c60ab6d8cd4c9cc6ff633a7c13b, type: 2}
   TreeTypes: []
   TreeFrequency: 0
-  BushTypes:
-  - {fileID: 8093128999710325632, guid: 99481285fbd69ef48812ac5700a3d5c6, type: 3}
-  - {fileID: 8093128999710325632, guid: d95a6e26b6de3214ebb8f7d0527efd59, type: 3}
+  BushTypes: []
   BushFrequency: 0.35

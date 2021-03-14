@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.ProceduralGeneration;
+using DTWorldz.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -14,7 +15,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public void DrawTexture(Texture2D texture)
         {
             TextureRenderer.sharedMaterial.mainTexture = texture;
-            //TextureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
         }
 
         public void DrawTileMap(Tile[] tileMapAssets, int width, int height)
@@ -24,41 +24,39 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 for (int y = 0; y < height; y++)
                 {
                     TileMap.SetTile(new Vector3Int(x, y, 0), tileMapAssets[y * width + x]);
-                    //yield return new WaitForSeconds(0.1f);
                 }
             }
         }
 
-        public void  DrawTileMap(TerrainType[] regions, float[,] noiseMap, int width, int height)
+        public void  DrawTileMap(TileMapTerrain[] terrains, float[,] noiseMap, int width, int height)
         {
             bool[,] isSetMap = new bool[width, height];
             
-            Array.Sort(regions, (a, b) => a.Height.CompareTo(b.Height));
+            Array.Sort(terrains, (a, b) => a.Template.Height.CompareTo(b.Template.Height));
 
-            for (int i = 0; i < regions.Length; i++)
+            for (int i = 0; i < terrains.Length; i++)
             {
-                var region = regions[i];
+                var terrain = terrains[i];
                 for (int x = 0; x < width; x++)
                 {
                     for (int y = 0; y < height; y++)
                     {
                         float currentHeight = noiseMap[x, y];
-                        if (!isSetMap[x,y] && currentHeight <= region.Height)
+                        if (!isSetMap[x,y] && currentHeight <= terrain.Template.Height)
                         {
-                            region.Tilemap.SetTile(new Vector3Int(x, y, 0), region.Tile);
+                            terrain.Tilemap.SetTile(new Vector3Int(x, y, 0), terrain.Template.Tile);
                             isSetMap[x,y] = true;
-                            //yield return new WaitForSeconds(0);
                         }                        
                     }
                 }
             }
         }
-        public void ClearTileMap(TerrainType[] regions)
+        public void ClearTileMap(TileMapTerrain[] terrains)
         {
-            for (int i = 0; i < regions.Length; i++)
+            for (int i = 0; i < terrains.Length; i++)
             {
-                var region = regions[i];
-                region.Tilemap.ClearAllTiles();
+                var terrain = terrains[i];
+                terrain.Tilemap.ClearAllTiles();
             }
             
         }

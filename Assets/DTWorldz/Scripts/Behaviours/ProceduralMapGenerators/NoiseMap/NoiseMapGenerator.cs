@@ -22,8 +22,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public bool IsIsland = true;
         public Texture2D IslandHeightMapTexture;
         public float LandIntensisty = 4;
-        public TerrainType[] Regions;
-        public TerrainTypeTemplate[] Terrains;
+        //public TerrainType[] Regions;
+        public TileMapTerrain[] Terrains;
         public Vector2 OffSet = new Vector2(0, 0);
 
         public Transform TreesParentObject;
@@ -48,7 +48,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             }
             else if (DrawingMode == DrawMode.TileMap)
             {
-                mapDisplay.DrawTileMap(Regions, noiseMap, Width, Height);
+                mapDisplay.DrawTileMap(Terrains, noiseMap, Width, Height);
             }
 
             var prng = new System.Random(Seed);
@@ -65,33 +65,33 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public void PlaceBushes(System.Random prng){
             ClearBushes();
 
-            
             if (BushesParentObject == null)
             {
                 return;
             }
 
-            foreach (var region in Regions)
+            foreach (var terrain in Terrains)
             {
-                if (region.BushFrequency == 0f || region.BushTypes.Count == 0)
+                if (terrain.Template.BushFrequency == 0f || terrain.Template.BushTypes.Count == 0)
                 {
                     continue;
                 }
-                var gridLayout = region.Tilemap.transform.GetComponentInParent<GridLayout>();
+
+                var gridLayout = terrain.Tilemap.transform.GetComponentInParent<GridLayout>();
 
                 for (int x = 0; x < Width; x++)
                 {
                     for (int y = 0; y < Height; y++)
                     {
                         var chance = prng.NextDouble();
-                        if (chance < region.BushFrequency)
+                        if (chance < terrain.Template.BushFrequency)
                         {
-                            var regionTile = region.Tilemap.GetTile(new Vector3Int(x, y, 0));
+                            var regionTile = terrain.Tilemap.GetTile(new Vector3Int(x, y, 0));
                             if (regionTile != null)
                             {
                                 var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
                                 cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-                                Instantiate(region.BushTypes[prng.Next(0, region.BushTypes.Count)], cellPosition, Quaternion.identity, BushesParentObject);
+                                Instantiate(terrain.Template.BushTypes[prng.Next(0, terrain.Template.BushTypes.Count)], cellPosition, Quaternion.identity, BushesParentObject);
                             }
                         }
                     }
@@ -119,27 +119,27 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 return;
             }
 
-            foreach (var region in Regions)
+            foreach (var terrain in Terrains)
             {
-                if (region.TreeFrequency == 0f || region.TreeTypes.Count == 0)
+                if (terrain.Template.TreeFrequency == 0f || terrain.Template.TreeTypes.Count == 0)
                 {
                     continue;
                 }
-                var gridLayout = region.Tilemap.transform.GetComponentInParent<GridLayout>();
+                var gridLayout = terrain.Tilemap.transform.GetComponentInParent<GridLayout>();
 
                 for (int x = 0; x < Width; x++)
                 {
                     for (int y = 0; y < Height; y++)
                     {
                         var chance = prng.NextDouble();
-                        if (chance < region.TreeFrequency)
+                        if (chance < terrain.Template.TreeFrequency)
                         {
-                            var regionTile = region.Tilemap.GetTile(new Vector3Int(x, y, 0));
-                            if (regionTile != null)
+                            var terrainTile = terrain.Tilemap.GetTile(new Vector3Int(x, y, 0));
+                            if (terrainTile != null)
                             {
                                 var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
                                 cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-                                Instantiate(region.TreeTypes[prng.Next(0, region.TreeTypes.Count)], cellPosition, Quaternion.identity, TreesParentObject);
+                                Instantiate(terrain.Template.TreeTypes[prng.Next(0, terrain.Template.TreeTypes.Count)], cellPosition, Quaternion.identity, TreesParentObject);
                             }
                         }
                     }
@@ -163,7 +163,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public void ClearTileMap()
         {
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
-            mapDisplay.ClearTileMap(Regions);
+            mapDisplay.ClearTileMap(Terrains);
         }
 
         private Color[] GetColorMap(float[,] noiseMap)
@@ -174,11 +174,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 for (int y = 0; y < Height; y++)
                 {
                     float currentHeight = noiseMap[x, y];
-                    for (int r = 0; r < Regions.Length; r++)
+                    for (int r = 0; r < Terrains.Length; r++)
                     {
-                        if (currentHeight <= Regions[r].Height)
+                        if (currentHeight <= Terrains[r].Template.Height)
                         {
-                            colorMap[y * Width + x] = Regions[r].Color;
+                            colorMap[y * Width + x] = Terrains[r].Template.Color;
                             break;
                         }
                     }
@@ -196,11 +196,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 for (int y = 0; y < Height; y++)
                 {
                     float currentHeight = noiseMap[x, y];
-                    for (int r = 0; r < Regions.Length; r++)
+                    for (int r = 0; r < Terrains.Length; r++)
                     {
-                        if (currentHeight <= Regions[r].Height)
+                        if (currentHeight <= Terrains[r].Template.Height)
                         {
-                            tileMap[y * Width + x] = Regions[r].Tile;
+                            tileMap[y * Width + x] = Terrains[r].Template.Tile;
                             break;
                         }
                     }
