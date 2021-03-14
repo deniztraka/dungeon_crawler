@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.ProceduralGeneration;
+using DTWorldz.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -22,11 +23,14 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public Texture2D IslandHeightMapTexture;
         public float LandIntensisty = 4;
         public TerrainType[] Regions;
+        public TerrainTypeTemplate[] Terrains;
         public Vector2 OffSet = new Vector2(0, 0);
 
         public Transform TreesParentObject;
         public Transform BushesParentObject;
         public bool autoUpdate;
+        public bool placeTrees;
+        public bool placeBushes;
 
         public System.Random GenerateMap()
         {
@@ -48,8 +52,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             }
 
             var prng = new System.Random(Seed);
-            PlaceTrees(prng);
-            PlaceBushes(prng);
+            if(placeTrees){
+                PlaceTrees(prng);
+            }
+
+            if(placeBushes){
+                PlaceBushes(prng);
+            }
             return prng;
         }
 
