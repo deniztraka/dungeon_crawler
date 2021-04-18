@@ -16,7 +16,11 @@ MonoBehaviour:
   Height: 0.78
   Color: {r: 0.32052112, g: 0.4433962, b: 0.30744925, a: 0}
   Tile: {fileID: 11400000, guid: 168cd070a779cc84eb9f503e41a5c267, type: 2}
-  TreeTypes: []
-  TreeFrequency: 0
+  TreeTypes:
+  - {fileID: 1320322775218947892, guid: bc8a2dffed2f5844cae9064be30e7267, type: 3}
+  - {fileID: 4353749524904618365, guid: 614b5bdb5d4a5a74d856a4e70b540e25, type: 3}
+  - {fileID: 8524283547024677317, guid: f5769800108d0224f89ef8985599d99c, type: 3}
+  - {fileID: 3924593036553493729, guid: 616c5ef798bbb064684f36abae4b18a5, type: 3}
+  TreeFrequency: 0.075
   BushTypes: []
   BushFrequency: 0

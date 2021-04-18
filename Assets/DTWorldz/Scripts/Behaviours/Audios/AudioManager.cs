@@ -30,7 +30,8 @@ namespace DTWorldz.Behaviours.Audios
 
         public void Start()
         {
-            if(AutoPlayFirst && Sounds != null && Sounds.Length > 0){
+            if (AutoPlayFirst && Sounds != null && Sounds.Length > 0)
+            {
                 Play(Sounds[0].Name);
             }
         }
@@ -58,6 +59,8 @@ namespace DTWorldz.Behaviours.Audios
                     sound.Source.pitch = sound.Pitch;
                 }
                 sound.Source.Play();
+
+                //Debug.Log(name + ", " + sound.Clip.name);
                 lastSound = sound;
             }
         }

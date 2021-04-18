@@ -110,7 +110,7 @@ namespace DTWorldz.Behaviours
                     audioManager.Play("Hit");
                     enemyHealthBehaviour.TakeDamage(Damage, DamageType.Physical);
                     
-                    if (KnockbackForce > 0)
+                    if (KnockbackForce > 0 && enemyHealthBehaviour.BodyType == BodyType.Flesh)
                     {
                         var difference = enemyHealthBehaviour.transform.position - this.transform.position;
                         difference = difference.normalized * KnockbackForce;

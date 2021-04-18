@@ -6,11 +6,10 @@ namespace DTWorldz.ProceduralGeneration
 
     public static class Noise
     {
-        public static float[,] GenerateNoiseMap(int seed, int width, int height, float scale, int octaves, float persistance, float lacunarity, Vector2 offSet, bool isIsland, Texture2D islandHeightMap, float islandHeightMapIntensity)
+        public static float[,] GenerateNoiseMap(System.Random prng, int width, int height, float scale, int octaves, float persistance, float lacunarity, Vector2 offSet, bool isIsland, Texture2D islandHeightMap, float islandHeightMapIntensity)
         {
             var noiseMap = new float[width, height];
 
-            var prng = new System.Random(seed);
             var octaveOffsets = new Vector2[octaves];
             for (int o = 0; o < octaves; o++)
             {

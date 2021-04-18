@@ -35,7 +35,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public System.Random GenerateMap()
         {
             ClearTileMap();
-            float[,] noiseMap = Noise.GenerateNoiseMap(Seed, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
+
+            var prng = new System.Random(Seed);
+
+            float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
             if (DrawingMode == DrawMode.NoiseMap)
@@ -51,18 +54,20 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 mapDisplay.DrawTileMap(Terrains, noiseMap, Width, Height);
             }
 
-            var prng = new System.Random(Seed);
-            if(placeTrees){
+            if (placeTrees)
+            {
                 PlaceTrees(prng);
             }
 
-            if(placeBushes){
+            if (placeBushes)
+            {
                 PlaceBushes(prng);
             }
             return prng;
         }
 
-        public void PlaceBushes(System.Random prng){
+        public void PlaceBushes(System.Random prng)
+        {
             ClearBushes();
 
             if (BushesParentObject == null)
@@ -98,11 +103,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 }
             }
         }
-        public void ClearBushes(){
-            if(BushesParentObject == null){
+        public void ClearBushes()
+        {
+            if (BushesParentObject == null)
+            {
                 return;
             }
-            
+
             for (int i = BushesParentObject.childCount - 1; i >= 0; i--)
             {
                 Transform child = BushesParentObject.GetChild(i);
@@ -113,7 +120,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public void PlaceTrees(System.Random prng)
         {
             ClearTrees();
-            
+
             if (TreesParentObject == null)
             {
                 return;
@@ -139,7 +146,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                             {
                                 var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
                                 cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-                                Instantiate(terrain.Template.TreeTypes[prng.Next(0, terrain.Template.TreeTypes.Count)], cellPosition, Quaternion.identity, TreesParentObject);
+                                var tree = Instantiate(terrain.Template.TreeTypes[prng.Next(0, terrain.Template.TreeTypes.Count)], cellPosition, Quaternion.identity, TreesParentObject);
+                                UnityEngine.Random.InitState(prng.Next());
+                                tree.transform.localScale = new Vector3(UnityEngine.Random.Range(1f, 1.5f), UnityEngine.Random.Range(1f, 1.5f), 1f);
                             }
                         }
                     }
@@ -149,10 +158,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public void ClearTrees()
         {
-            if(TreesParentObject == null){
+            if (TreesParentObject == null)
+            {
                 return;
             }
-            
+
             for (int i = TreesParentObject.childCount - 1; i >= 0; i--)
             {
                 Transform child = TreesParentObject.GetChild(i);

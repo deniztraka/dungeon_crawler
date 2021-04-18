@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/DTWorldz/Scenes/GameScene.unity
+    guid: ef3b2e02773dcff42a44e6cec718e68e
+  - enabled: 1
     path: Assets/DTWorldz/Scenes/MainMenuScene.unity
     guid: 971c68d0fb2867e498cfe49c88af4a67
   - enabled: 1

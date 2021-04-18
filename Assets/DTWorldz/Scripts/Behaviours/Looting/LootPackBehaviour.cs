@@ -11,6 +11,7 @@ namespace DTWorldz.Behaviours.Looting
     public class LootPackBehaviour : MonoBehaviour
     {
         public float SpreadDistance = 0.5f;
+        public float DropAfterSeconds = 0.5f;
         public ItemDropTemplate DropTemplate;
         private HealthBehaviour healthBehaviour;
         // Start is called before the first frame update
@@ -29,7 +30,7 @@ namespace DTWorldz.Behaviours.Looting
             var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.y + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.z);
             var instantiatedLootItem = Instantiate(lootPackItem.ItemPrefab, randomPosition, Quaternion.identity);
             var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
-            lootItem.SetCount(count);            
+            lootItem.SetCount(count);
             lootItem.SetModifiers(lootPackItem.MinStatCount, lootPackItem.MaxStatCount, lootPackItem.StatQuality);
             lootItem.OnAfterDrop();
         }
@@ -55,7 +56,7 @@ namespace DTWorldz.Behaviours.Looting
                         var lootPackItem = lootEntry.Items[UnityEngine.Random.Range(0, lootEntry.Items.Count)];
                         var itemCount = UnityEngine.Random.Range(lootPackItem.CountMin, lootPackItem.CountMax);
                         var itemPrefab = lootPackItem.ItemPrefab;
-                        StartCoroutine(LateDrop(lootPackItem, transform.position, itemCount, 0.5f));
+                        StartCoroutine(LateDrop(lootPackItem, transform.position, itemCount, DropAfterSeconds));
                     }
                 }
 
