@@ -22,6 +22,12 @@ MonoBehaviour:
   - {fileID: 8524283547024677317, guid: f5769800108d0224f89ef8985599d99c, type: 3}
   - {fileID: 3924593036553493729, guid: 616c5ef798bbb064684f36abae4b18a5, type: 3}
   - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
   TreeFrequency: 0.075
   BushTypes:
   - {fileID: 8093128999710325632, guid: cb2dfa752d5e80d43bdd2aff2c428ab2, type: 3}
@@ -32,4 +38,6 @@ MonoBehaviour:
   - {fileID: 8093128999710325632, guid: 99481285fbd69ef48812ac5700a3d5c6, type: 3}
   - {fileID: 8093128999710325632, guid: d95a6e26b6de3214ebb8f7d0527efd59, type: 3}
   - {fileID: 8093128999710325632, guid: 99481285fbd69ef48812ac5700a3d5c6, type: 3}
-  BushFrequency: 0.5
+  BushFrequency: 0.25
+  Spawners: []
+  SpawnerFrequency: 0

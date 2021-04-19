@@ -36,6 +36,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         aliveObjects = new List<GameObject>();
         random = new Random(DateTime.Now.Millisecond);
         spawnTime = 0;
+        MaxAliveCount = random.Next(1,MaxAliveCount);
 
         //Spawn at start
         for (int i = 0; i < MaxAliveCount; i++)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6334232590123523519}
   - component: {fileID: 7674728969632660761}
   m_Layer: 0
-  m_Name: EasySpawner
+  m_Name: RatSpawner
   m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,10 +104,11 @@ MonoBehaviour:
   - {fileID: 7559222450374734856, guid: 59a432a969220374a8bbd651153b5f01, type: 3}
   CurrentLevel: {fileID: 0}
   SpawnFrequency: 5
-  MaxAliveCount: 2
+  MaxAliveCount: 5
   RangeX: 7
   RangeY: 6
   Color: {r: 0.4245283, g: 0, b: 0, a: 0.12941177}
   aliveObjects: []
   spawnTime: 0
   SpawnBoss: 0
+  IsContinues: 1

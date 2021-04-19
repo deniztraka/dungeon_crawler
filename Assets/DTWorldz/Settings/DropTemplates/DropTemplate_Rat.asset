@@ -14,23 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Entries:
   - MaxCount: 1
-    Chance: 1
-    Items:
-    - ItemPrefab: {fileID: 4018588179695792918, guid: 241b9ef4ba4d47947a69674b557b3849,
-        type: 3}
-      CountMin: 1
-      CountMax: 1
-      MinStatCount: 0
-      MaxStatCount: 2
-      StatQuality: 4
-    - ItemPrefab: {fileID: 6474673501721562787, guid: c1d46b5da7224c9409573b268b281cf6,
-        type: 3}
-      CountMin: 1
-      CountMax: 1
-      MinStatCount: 0
-      MaxStatCount: 2
-      StatQuality: 4
-  - MaxCount: 1
+    MinCount: 1
     Chance: 0.5
     Items:
     - ItemPrefab: {fileID: 9007150693246369999, guid: ad07656590d3fab4faf2aed56827ffe3,

@@ -18,5 +18,9 @@ namespace DTWorldz.ScriptableObjects
         public float TreeFrequency;
         public List<GameObject> BushTypes;
         public float BushFrequency;
+        public List<GameObject> Spawners;
+
+        public float SpawnerFrequency;
+        
     }
 }

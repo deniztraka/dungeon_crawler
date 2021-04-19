@@ -59,5 +59,19 @@ public class MapGeneratorEditor : Editor
         {
             mapGen.ClearBushes();
         }
+
+        if (GUILayout.Button("PlaceSpawners"))
+        {
+            if (prng == null)
+            {
+                prng = new System.Random(mapGen.Seed);
+            }
+            mapGen.PlaceSpawners(prng);
+        }
+
+        if (GUILayout.Button("ClearSpawners"))
+        {
+            mapGen.ClearSpawners();
+        }
     }
 }

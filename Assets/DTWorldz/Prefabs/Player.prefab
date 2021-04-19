@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -410591489
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -538331831730588137, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,7 +146,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 24577
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f6c96e9a91ac9c748bbf71e4da4512a7, type: 2}
   m_TargetDisplay: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
+  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -276,7 +277,7 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5581934951547636801, guid: dab7b505446216e4a80bea6f22040fdb,
+  m_Sprite: {fileID: 7686249812343073173, guid: 8f9aed9ae58928244b27403d6f742ab6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -356,8 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc69bfd1863e44459ff9475268c7cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
-  RunningSpeed: 2
+  Speed: 1.5
+  RunningSpeed: 3
   ClickAndGoEnabled: 0
   IsJoyStickEnabled: 1
   direction: 0
@@ -444,8 +445,8 @@ MonoBehaviour:
   Sounds:
   - Name: Walking
     Clip: {fileID: 8300000, guid: 38b8f99272aa0a246811b86ef48a5815, type: 3}
-    Volume: 0.5
-    Pitch: 0.5
+    Volume: 0.25
+    Pitch: 2
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
@@ -498,6 +499,7 @@ MonoBehaviour:
     MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
+  AutoPlayFirst: 0
 --- !u!81 &1608416613
 AudioListener:
   m_ObjectHideFlags: 0
@@ -629,11 +631,12 @@ MonoBehaviour:
     Loop: 0
   - Name: Hit
     Clip: {fileID: 8300000, guid: 71a6aaa2936126a4dbb209b5e37e3214, type: 3}
-    Volume: 0.5
+    Volume: 0.261
     Pitch: 0.5
     MaxDistance: 4
     Source: {fileID: 0}
     Loop: 0
+  AutoPlayFirst: 0
 --- !u!1 &5328125669936124228
 GameObject:
   m_ObjectHideFlags: 0

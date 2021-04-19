@@ -28,9 +28,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public Transform TreesParentObject;
         public Transform BushesParentObject;
+        public Transform SpawnersParentObject;
+        
         public bool autoUpdate;
         public bool placeTrees;
         public bool placeBushes;
+        public bool placeSpawners;
+        
 
         public System.Random GenerateMap()
         {
@@ -62,6 +66,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             if (placeBushes)
             {
                 PlaceBushes(prng);
+            }
+
+            if (placeSpawners)
+            {
+                PlaceSpawners(prng);
             }
             return prng;
         }
@@ -167,6 +176,59 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             for (int i = TreesParentObject.childCount - 1; i >= 0; i--)
             {
                 Transform child = TreesParentObject.GetChild(i);
+                DestroyImmediate(child.gameObject);
+            }
+        }
+
+        public void PlaceSpawners(System.Random prng)
+        {
+            ClearTrees();
+
+            if (SpawnersParentObject == null)
+            {
+                return;
+            }
+
+            foreach (var terrain in Terrains)
+            {
+                if (terrain.Template.SpawnerFrequency == 0f || terrain.Template.Spawners.Count == 0)
+                {
+                    continue;
+                }
+                var gridLayout = terrain.Tilemap.transform.GetComponentInParent<GridLayout>();
+
+                for (int x = 0; x < Width; x++)
+                {
+                    for (int y = 0; y < Height; y++)
+                    {
+                        var chance = prng.NextDouble();
+                        if (chance < terrain.Template.SpawnerFrequency)
+                        {
+                            var terrainTile = terrain.Tilemap.GetTile(new Vector3Int(x, y, 0));
+                            if (terrainTile != null)
+                            {
+                                var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
+                                cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
+                                var spawnerObject = Instantiate(terrain.Template.Spawners[prng.Next(0, terrain.Template.Spawners.Count)], cellPosition, Quaternion.identity, SpawnersParentObject);
+                                var objectSpawnerBehaviour = spawnerObject.GetComponent<ObjectSpawnerBehaviour>();
+                                objectSpawnerBehaviour.CurrentLevel = gridLayout.GetComponentInParent<LevelBehaviour>();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ClearSpawners()
+        {
+            if (SpawnersParentObject == null)
+            {
+                return;
+            }
+
+            for (int i = SpawnersParentObject.childCount - 1; i >= 0; i--)
+            {
+                Transform child = SpawnersParentObject.GetChild(i);
                 DestroyImmediate(child.gameObject);
             }
         }
