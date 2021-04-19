@@ -7,5 +7,6 @@ public enum BodyType
    Flesh = 0,
    Skeletal = 1,
    None = 2,
-   Wooden = 3
+   Wooden = 3,
+   Rock = 4
 }

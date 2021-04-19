@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: Mountain
   m_EditorClassIdentifier: 
   Name: Mountain
-  Height: 0.9
+  Height: 1
   Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
   Tile: {fileID: 11400000, guid: 0dbd027ab15fc3143ab032e2eddf0dde, type: 2}
   TreeTypes: []
   TreeFrequency: 0
-  BushTypes: []
-  BushFrequency: 0
+  BushTypes:
+  - {fileID: 2814931299135070807, guid: ae4bf05921f189947927802d13d067cc, type: 3}
+  - {fileID: 5698332640072407665, guid: a25049814f2c92b459a08d93ec3c4224, type: 3}
+  - {fileID: 794992480967490998, guid: 5d74e24568ba6fa40809dd10783f38f1, type: 3}
+  - {fileID: 6570110761136220158, guid: 847a09e50b8317d4eb2db6c90237f82f, type: 3}
+  BushFrequency: 0.5
+  Spawners: []
+  SpawnerFrequency: 0

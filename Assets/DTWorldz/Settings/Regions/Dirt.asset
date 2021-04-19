@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   Name: Dirt
-  Height: 0.82
+  Height: 0.85
   Color: {r: 0.41568628, g: 0.33212265, b: 0.007843131, a: 0}
   Tile: {fileID: 11400000, guid: 8473542968dc07041acc0e0d1c1a8b45, type: 2}
   TreeTypes: []
   TreeFrequency: 0
   BushTypes: []
   BushFrequency: 0
+  Spawners: []
+  SpawnerFrequency: 0

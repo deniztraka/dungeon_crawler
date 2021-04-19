@@ -31,8 +31,8 @@ namespace DTWorldz.Behaviours
             if (DeadParticles != null)
             {
                 var spawnedParticles = Instantiate(DeadParticles, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                Destroy(gameObject, 0.1f);
             }
+            Destroy(gameObject, 0.1f);
         }
 
         private void OnDamageTaken(float damageAmount, DamageType type)
