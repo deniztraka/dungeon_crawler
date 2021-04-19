@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2774648015803943343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9185740346613690038}
+  - component: {fileID: 9004814544858290398}
+  - component: {fileID: 2764427084108810443}
+  m_Layer: 0
+  m_Name: SimpleMapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9185740346613690038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774648015803943343}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -253, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9004814544858290398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774648015803943343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c36746ca831bc5468ee0c3a94faa8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DrawingMode: 2
+  Seed: 1
+  Width: 250
+  Height: 250
+  Scale: 50
+  Octaves: 9
+  Persistance: 0.5
+  Lacunarity: 2
+  IsIsland: 1
+  IslandHeightMapTexture: {fileID: 2800000, guid: 3dbc5dcecab74e34397984aff058ed4f,
+    type: 3}
+  LandIntensisty: 50
+  Terrains:
+  - Template: {fileID: 11400000, guid: 7eebda7768cea1d44aff0fedd60bee04, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: d8dd9f770d001aa48a71d6ba249bce61, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: 11d761d7ccb2b904e8b20c14712ca656, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: 2abdb4f49d8831f468b6983c05b4196a, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: f16ba2b4c5fe6334ab8cc9404360e700, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: 080402871bee84e4d9665d67613fda56, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: f51b2d69d3a232f4aaebda2ae87b142c, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: dfe5008b6e9eba54b8b423b6196a722c, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: a8e41a4482db15749b0a38a59edcfe91, type: 2}
+    Tilemap: {fileID: 0}
+  - Template: {fileID: 11400000, guid: af5e921784d39a648a748c53975b5bf2, type: 2}
+    Tilemap: {fileID: 0}
+  OffSet: {x: 0, y: 0}
+  TreesParentObject: {fileID: 0}
+  BushesParentObject: {fileID: 0}
+  SpawnersParentObject: {fileID: 0}
+  autoUpdate: 0
+  placeTrees: 0
+  placeBushes: 0
+  placeSpawners: 0
+--- !u!114 &2764427084108810443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774648015803943343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a089f9086fcbf4799e09ff0ef7a622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextureRenderer: {fileID: 0}
+  TileMap: {fileID: 0}
