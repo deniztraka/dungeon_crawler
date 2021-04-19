@@ -24,10 +24,6 @@ MonoBehaviour:
   BushTypes:
   - {fileID: 1912981013916755855, guid: fa5e33f78f2009148b44f312ad75bb4e, type: 3}
   - {fileID: 8093128999710325632, guid: e03e402905adcbe4596032579cd29e74, type: 3}
-  - {fileID: 8093128999710325632, guid: cb2dfa752d5e80d43bdd2aff2c428ab2, type: 3}
-  - {fileID: 8093128999710325632, guid: c2c2b6399f86485419b5019241ea9e94, type: 3}
   - {fileID: 8093128999710325632, guid: 54e043dd245102245b63a8fc5db39d38, type: 3}
   - {fileID: 8093128999710325632, guid: 3b34fddb03ba6e14a9c8cc63a9764855, type: 3}
-  - {fileID: 8093128999710325632, guid: 99481285fbd69ef48812ac5700a3d5c6, type: 3}
-  - {fileID: 8093128999710325632, guid: d95a6e26b6de3214ebb8f7d0527efd59, type: 3}
   BushFrequency: 0.25
