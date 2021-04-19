@@ -182,7 +182,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public void PlaceSpawners(System.Random prng)
         {
-            ClearTrees();
+            ClearSpawners();
 
             if (SpawnersParentObject == null)
             {
