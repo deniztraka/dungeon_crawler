@@ -44,7 +44,7 @@ namespace DTWorldz.Behaviours.Looting
         {
             foreach (var lootEntry in DropTemplate.Entries)
             {
-                var dropCount = UnityEngine.Random.Range(1, lootEntry.MaxCount);
+                var dropCount = UnityEngine.Random.Range(lootEntry.MinCount, lootEntry.MaxCount);
 
 
                 for (int i = 0; i < dropCount; i++)

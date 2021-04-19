@@ -9,6 +9,7 @@ namespace DTWorldz.Models
     public class LootPackEntry
     {
         public int MaxCount = 1;
+        public int MinCount = 1;
         public float Chance;
         public List<LootPackItem> Items;
     }

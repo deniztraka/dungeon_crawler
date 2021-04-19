@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: DropTemplate_Trees
   m_EditorClassIdentifier: 
   Entries:
-  - MaxCount: 3
+  - MaxCount: 4
+    MinCount: 2
     Chance: 1
     Items:
     - ItemPrefab: {fileID: 9007150693246369999, guid: 90fcd01a10a126c4a800a3338c1843e6,
