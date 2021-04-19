@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 4353749524904618365, guid: 614b5bdb5d4a5a74d856a4e70b540e25, type: 3}
   - {fileID: 8524283547024677317, guid: f5769800108d0224f89ef8985599d99c, type: 3}
   - {fileID: 3924593036553493729, guid: 616c5ef798bbb064684f36abae4b18a5, type: 3}
+  - {fileID: 1034454218650188534, guid: edf9b73146eb12f4586711a2b960aed7, type: 3}
   TreeFrequency: 0.075
   BushTypes: []
   BushFrequency: 0

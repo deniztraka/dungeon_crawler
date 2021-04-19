@@ -96,7 +96,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                             {
                                 var cellPosition = gridLayout.CellToWorld(new Vector3Int(x, y, 0));
                                 cellPosition = new Vector3(cellPosition.x + 0.5f, cellPosition.y + 0.5f, 0);
-                                Instantiate(terrain.Template.BushTypes[prng.Next(0, terrain.Template.BushTypes.Count)], cellPosition, Quaternion.identity, BushesParentObject);
+                                var bush = Instantiate(terrain.Template.BushTypes[prng.Next(0, terrain.Template.BushTypes.Count)], cellPosition, Quaternion.identity, BushesParentObject);
+                                bush.transform.localScale = new Vector3(UnityEngine.Random.Range(0.75f, 1.25f), UnityEngine.Random.Range(0.75f, 1.25f), 1f);
                             }
                         }
                     }
