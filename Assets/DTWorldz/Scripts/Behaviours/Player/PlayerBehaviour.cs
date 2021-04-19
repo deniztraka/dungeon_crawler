@@ -99,7 +99,7 @@ namespace DTWorldz.Behaviours.Player
             }
 
             var characterPanelCanvasBehaviour = GameObject.FindObjectOfType<CharacterPanelCanvasBehaviour>();
-            if (characterPanelCanvasBehaviour != null)
+            if (characterPanelCanvasBehaviour != null && playerDataModel != null)
             {
                 characterPanelCanvasBehaviour.UpdateGoldText(playerDataModel.GoldAmount);
             }

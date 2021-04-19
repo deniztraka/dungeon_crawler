@@ -82,9 +82,9 @@ MonoBehaviour:
   BushesParentObject: {fileID: 0}
   SpawnersParentObject: {fileID: 0}
   autoUpdate: 0
-  placeTrees: 0
-  placeBushes: 0
-  placeSpawners: 0
+  placeTrees: 1
+  placeBushes: 1
+  placeSpawners: 1
 --- !u!114 &2764427084108810443
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,6 @@ namespace DTWorldz.Behaviours.UI
             var canvas = GetComponent<Canvas>();
             canvas.enabled = false;
 
-
             var inventoryItemDetailPanel = transform.GetComponentInChildren<InventoryItemDetailPanel>();
             if (inventoryItemDetailPanel != null)
             {
