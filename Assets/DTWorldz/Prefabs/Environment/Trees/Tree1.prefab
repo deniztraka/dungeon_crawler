@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e35291bbc9eb7c47acf0593cf3fde2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageTakenParticleOffset: {x: 0, y: 3, z: 0}
   DamageTakenParticles: {fileID: 3954392597980995457, guid: 7b45f588f69ee6e49a9e69d98674ea20,
     type: 3}
   DeadParticles: {fileID: 4588578773420876158, guid: 0695550cabd6a564db92b27cfc50328c,

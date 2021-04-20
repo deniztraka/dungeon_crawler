@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - Name: Drop
-    Clip: {fileID: 8300000, guid: b0d6d743fe56f6041892d74f387628e8, type: 3}
+    Clip: {fileID: 8300000, guid: 9ead08f48b874f249bfbe7146c98eb80, type: 3}
     Volume: 0.25
     Pitch: 1
     MaxDistance: 2

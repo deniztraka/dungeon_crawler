@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2814931299135070799}
   - component: {fileID: 2814931299135070798}
-  - component: {fileID: 2814931299135070793}
   - component: {fileID: 2814931299135070792}
   - component: {fileID: 2814931299135070795}
   - component: {fileID: 2814931299135070794}
   - component: {fileID: 2814931299135070805}
   - component: {fileID: 2814931299135070804}
   - component: {fileID: 2814931299135070796}
+  - component: {fileID: 5186378317969682038}
   m_Layer: 8
   m_Name: Rocks
   m_TagString: Untagged
@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 59a002e3841272d468fb5ee8b6f92487, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8347378662125966524, guid: e6b2e52cd1959884eb364dd2b894926f,
+  m_Sprite: {fileID: -2443021682937396387, guid: e6b2e52cd1959884eb364dd2b894926f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,22 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2814931299135070793
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2814931299135070807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.008049011, y: 0.099999994}
-  serializedVersion: 2
-  m_Radius: 0.3224411
 --- !u!114 &2814931299135070792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +105,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 20
   BodyType: 4
-  OnDamageTakenTintColor: {r: 0, g: 0, b: 0, a: 0}
+  OnDamageTakenTintColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0.49019608}
   IncreaseAmountEverySecond: 1
   FloatingDamagesPrefab: {fileID: 0}
   DamagePointsYOffset: 0
@@ -197,5 +181,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c785bbf270b7b44bc1ced1e25cce4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageTakenParticles: {fileID: 0}
-  DeadParticles: {fileID: 0}
+  DamageTakenParticleOffset: {x: 0, y: 1, z: 0}
+  DamageTakenParticles: {fileID: 5106189670321343327, guid: 472c945df435b2d4e842f9c6337a7935,
+    type: 3}
+  DeadParticles: {fileID: 4588578773420876158, guid: 0695550cabd6a564db92b27cfc50328c,
+    type: 3}
+--- !u!70 &5186378317969682038
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2814931299135070807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.36}
+  m_Size: {x: 1.8, y: 1.35}
+  m_Direction: 1

@@ -10,18 +10,23 @@ PrefabInstance:
     - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Radius
-      value: 0.43527907
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.212838
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070798, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7434349211296078095, guid: e6b2e52cd1959884eb364dd2b894926f,
+      objectReference: {fileID: -4107438529147309521, guid: e6b2e52cd1959884eb364dd2b894926f,
         type: 3}
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
@@ -82,6 +87,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocks Variant2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.6534505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3500003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03663858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4bf05921f189947927802d13d067cc, type: 3}

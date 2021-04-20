@@ -23,6 +23,6 @@ MonoBehaviour:
   - {fileID: 5698332640072407665, guid: a25049814f2c92b459a08d93ec3c4224, type: 3}
   - {fileID: 794992480967490998, guid: 5d74e24568ba6fa40809dd10783f38f1, type: 3}
   - {fileID: 6570110761136220158, guid: 847a09e50b8317d4eb2db6c90237f82f, type: 3}
-  BushFrequency: 0.5
+  BushFrequency: 1
   Spawners: []
   SpawnerFrequency: 0

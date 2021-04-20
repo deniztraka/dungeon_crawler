@@ -10,6 +10,8 @@ namespace DTWorldz.Behaviours
         private AudioManager audioManager;
         private HealthBehaviour health;
         private int animatorHitStateHash;
+        [SerializeField]
+        private Vector3 DamageTakenParticleOffset = Vector3.zero;
 
         public ParticleSystem DamageTakenParticles;
         public ParticleSystem DeadParticles;
@@ -44,7 +46,7 @@ namespace DTWorldz.Behaviours
 
             if (DamageTakenParticles != null)
             {
-                var spawnedParticles = Instantiate(DamageTakenParticles, new Vector3(transform.position.x, transform.position.y + 3f, transform.position.z), Quaternion.identity);
+                var spawnedParticles = Instantiate(DamageTakenParticles, transform.position + DamageTakenParticleOffset, Quaternion.identity);
             }
 
             if (animator != null)

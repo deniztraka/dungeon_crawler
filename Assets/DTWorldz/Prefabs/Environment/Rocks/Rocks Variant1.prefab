@@ -7,11 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.39048386
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.02111435
+      objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070798, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3424922069112337067, guid: e6b2e52cd1959884eb364dd2b894926f,
+      objectReference: {fileID: -4372765027462083100, guid: e6b2e52cd1959884eb364dd2b894926f,
         type: 3}
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
@@ -71,7 +81,27 @@ PrefabInstance:
     - target: {fileID: 2814931299135070807, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Name
-      value: Rocks
+      value: Rocks Variant1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.7413882
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3500003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.029307982
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36000007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4bf05921f189947927802d13d067cc, type: 3}

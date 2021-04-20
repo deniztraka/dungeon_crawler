@@ -84,6 +84,7 @@ namespace DTWorldz.Behaviours.Mobiles
             currentHealth -= damage;
             if (materialTintColor != null)
             {
+                Debug.Log("asd");
                 materialTintColor.SetTintColor(OnDamageTakenTintColor);
             }
 
