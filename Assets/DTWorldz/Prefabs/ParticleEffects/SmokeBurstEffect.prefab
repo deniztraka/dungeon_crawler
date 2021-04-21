@@ -4892,7 +4892,7 @@ MonoBehaviour:
   Sounds:
   - Name: Explode
     Clip: {fileID: 8300000, guid: fb0e95ac09fc9604c93868e8e544cf4d, type: 3}
-    Volume: 1
+    Volume: 0.5
     Pitch: 1
     MaxDistance: 4
     Source: {fileID: 0}
