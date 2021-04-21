@@ -36,7 +36,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         aliveObjects = new List<GameObject>();
         random = new Random(DateTime.Now.Millisecond);
         spawnTime = 0;
-        MaxAliveCount = random.Next(1,MaxAliveCount);
+        MaxAliveCount = random.Next(1, MaxAliveCount);
 
         //Spawn at start
         for (int i = 0; i < MaxAliveCount; i++)
@@ -65,7 +65,40 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     }
     void Update()
     {
-        if(!IsContinues){
+        // if (Input.GetMouseButton(0))
+        // {
+        //     var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 1f);
+        //     if (collider != null)
+        //     {
+        //         var go = collider.gameObject; //This is the game object you collided with
+        //         if (go != gameObject && go.tag == "Walls")
+        //         {
+        //             Debug.Log(go.gameObject.name + " " + go.tag);
+        //         }
+        //     }
+        //     var wallFoundInPlace = false;
+        //     // if (colliders.C > 0) //Presuming the object you are testing also has a collider 0 otherwise
+        //     // {
+
+        //     // foreach (var collider in colliders)
+        //     // {
+        //     //     var go = collider.gameObject; //This is the game object you collided with
+        //     //     if (go == gameObject) continue; //Skip the object itself
+        //     //                                     //Do something
+        //     //     //Debug.Log(go.gameObject.name);
+        //     //     if (!wallFoundInPlace && go.tag == "Walls")
+        //     //     {
+        //     //         wallFoundInPlace = true;
+        //     //         //Debug.Log(go.gameObject.name);
+        //     //     }
+        //     // }
+        //     // }
+        // }
+
+
+
+        if (!IsContinues)
+        {
             return;
         }
 
@@ -97,7 +130,7 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
     public Vector3 GetRandomPointInside()
     {
         var randomPosition = Vector3.zero;
-        var isNotFoundYet = true;
+        var found = false;
         var maxTryCount = 10;
         var tryCount = 0;
         if (CurrentLevel == null)
@@ -105,19 +138,30 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
             return Vector3.zero;
         }
 
-        while (isNotFoundYet && tryCount <= maxTryCount)
+        while (!found && tryCount <= maxTryCount)
         {
             randomPosition = gameObject.transform.position + new Vector3(
                 ((float)random.NextDouble() - 0.5f) * RangeX,
                 ((float)random.NextDouble() - 0.5f) * RangeY,
                 0
              );
-            var cellPos = CurrentLevel.WallMap.WorldToCell(randomPosition);
-            var tile = CurrentLevel.WallMap.GetTile(cellPos);
-            if (tile == null)
+
+            var collider = Physics2D.OverlapCircle(randomPosition, 1f);
+            if (collider != null)
             {
-                isNotFoundYet = false;
+                Debug.Log(randomPosition);
+                var go = collider.gameObject; //This is the game object you collided with
+                if (go != gameObject && go.tag != "Walls")
+                {
+                    var cellPos = CurrentLevel.WallMap.WorldToCell(randomPosition);
+                    var tile = CurrentLevel.WallMap.GetTile(cellPos);
+                    if (tile == null)
+                    {
+                        found = true;
+                    }
+                }
             }
+
             tryCount++;
         }
         return tryCount <= maxTryCount ? randomPosition : Vector3.zero;

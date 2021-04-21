@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+
 namespace DTWorldz.Editor.Gizmo
 {
     public class SpawnerGizmo : MonoBehaviour
@@ -14,7 +15,7 @@ namespace DTWorldz.Editor.Gizmo
             var positionY = spawner.transform.position.y;
             var positionX = spawner.transform.position.x;
             var gizmoPosition = new Vector3(positionX, positionY, 0);
-            Handles.Label(gizmoPosition, "spawner");
+            Handles.Label(gizmoPosition, spawner.gameObject.name);
 
             var rangeColor = Color.red;
             rangeColor.a = 0.1f;

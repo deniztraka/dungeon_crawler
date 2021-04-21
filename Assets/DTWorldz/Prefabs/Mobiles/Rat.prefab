@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 3
+  maxHealth: 10
   BodyType: 0
   OnDamageTakenTintColor: {r: 0.6039216, g: 0.043137256, b: 0.043137256, a: 0.5882353}
   IncreaseAmountEverySecond: 0.1

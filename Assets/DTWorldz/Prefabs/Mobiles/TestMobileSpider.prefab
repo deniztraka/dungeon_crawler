@@ -18,9 +18,11 @@ GameObject:
   - component: {fileID: 1336611748609856067}
   - component: {fileID: 1915640247}
   - component: {fileID: 635137221102115535}
+  - component: {fileID: -1788493556141053655}
+  - component: {fileID: 2273753858094559148}
   m_Layer: 9
   m_Name: TestMobileSpider
-  m_TagString: Untagged
+  m_TagString: Mobile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,8 +92,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  MaxHealth: 10
+  maxHealth: 25
   BodyType: 0
+  OnDamageTakenTintColor: {r: 0.7735849, g: 0, b: 0, a: 0.7882353}
+  IncreaseAmountEverySecond: 0.1
+  FloatingDamagesPrefab: {fileID: 7281084229103414222, guid: e992246e106c63e4d8da12df2a0dd67e,
+    type: 3}
+  DamagePointsYOffset: 0.5
 --- !u!95 &7559222450374734853
 Animator:
   serializedVersion: 3
@@ -132,9 +139,9 @@ MonoBehaviour:
   wallMap: {fileID: 0}
   resultingSpeed: 1
   isRunning: 0
+  isAttacking: 0
   AwareDistance: 5
   CloseDistance: 3
-  AttackDistance: 1
 --- !u!114 &7559222450374734859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +158,10 @@ MonoBehaviour:
   IdleChance: 0.25
   WanderChance: 0.75
   MinDecisionDelay: 1
-  MaxDecisionDelay: 5
+  MaxDecisionDelay: 3
   FollowRefreshFrequency: 1
+  IsPeaceful: 0
+  isAngry: 0
 --- !u!114 &1336611748609856067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +231,7 @@ MonoBehaviour:
     MaxDistance: 2
     Source: {fileID: 0}
     Loop: 0
+  AutoPlayFirst: 0
 --- !u!114 &635137221102115535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +244,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpreadDistance: 0.5
+  DropAfterSeconds: 0.5
   DropTemplate: {fileID: 11400000, guid: 2746f2d288764b44aa129aed8c72b48f, type: 2}
+--- !u!114 &-1788493556141053655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559222450374734856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6893fa1527270f948afbfeaee5536ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2273753858094559148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559222450374734856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8567be423044e4043bab33f384674109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7559222451528981159
 GameObject:
   m_ObjectHideFlags: 0
