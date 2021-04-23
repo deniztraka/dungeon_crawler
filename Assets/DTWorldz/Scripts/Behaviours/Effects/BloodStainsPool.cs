@@ -11,6 +11,7 @@ namespace DTWorlds.Behaviours.Effects
         public List<GameObject> BloodStainsList;
         public float Chance = 0.5f;
         private Queue<GameObject> bloodStainsPool;
+        private bool isExecuted = false;
 
         public int ReadyCount = 50;
 
@@ -28,10 +29,44 @@ namespace DTWorlds.Behaviours.Effects
 
         void Start()
         {
-            PrepareBloodPool();
+            StartCoroutine(PrepareBloodPoolCouroutine());
+            //PrepareBloodPoolSyncronous();
         }
 
-        private void PrepareBloodPool()
+        // IEnumerator StartInit()
+        // {
+        //     while (true)
+        //     {
+        //         yield return new WaitForSeconds(0.5f);
+        //         StartCoroutine(CheckActivation());
+        //     }
+        // }
+
+        public void Update()
+        {
+            // if (!isExecuted)
+            // {
+            //     StartCoroutine("PrepareBloodPoolCouroutine");
+            //     isExecuted = true;
+            // }
+        }
+
+        private IEnumerator PrepareBloodPoolCouroutine()
+        {
+
+            bloodStainsPool = new Queue<GameObject>();
+            for (int i = 0; i < ReadyCount; i++)
+            {
+                var randomBloodStainIndex = Random.Range(0, BloodStainsList.Count);
+                var bloodStainObject = GameObject.Instantiate(BloodStainsList[randomBloodStainIndex]);
+                bloodStainObject.SetActive(false);
+                bloodStainsPool.Enqueue(bloodStainObject);
+                yield return new WaitForSeconds(0.5f);
+            }
+
+        }
+
+        private void PrepareBloodPoolSyncronous()
         {
             bloodStainsPool = new Queue<GameObject>();
             for (int i = 0; i < ReadyCount; i++)

@@ -26,6 +26,17 @@ namespace DTWorldz.Behaviours.Utils
             addList = new List<ActivatorItem>();
 
             AddToList();
+
+            StartCoroutine(DoCheck());
+        }
+
+        IEnumerator DoCheck()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(0.5f);
+                StartCoroutine(CheckActivation());
+            }
         }
 
         void AddToList()
@@ -42,8 +53,6 @@ namespace DTWorldz.Behaviours.Utils
 
                 addList.Clear();
             }
-
-            StartCoroutine("CheckActivation");
         }
 
         IEnumerator CheckActivation()
@@ -61,40 +70,15 @@ namespace DTWorldz.Behaviours.Utils
                     else if (Vector2.Distance(player.transform.position, item.item.transform.position) > distanceFromPlayer)
                     {
                         item.item.SetActive(false);
-                    } else {
+                    }
+                    else
+                    {
                         item.item.SetActive(true);
                     }
-
-
-                    // if (Vector2.Distance(player.transform.position, item.item.transform.position) > distanceFromPlayer)
-                    // {
-                    //     if (item.item == null)
-                    //     {
-                    //         removeList.Add(item);
-                    //     }
-                    //     else
-                    //     {
-                    //         item.item.SetActive(false);
-                    //     }
-                    // }
-                    // else
-                    // {
-                    //     if (item.item == null)
-                    //     {
-                    //         removeList.Add(item);
-                    //     }
-                    //     else
-                    //     {
-                    //         item.item.SetActive(true);
-                    //     }
-                    // }
-
-                    // yield return new WaitForSeconds(0.01f);
                 }
             }
 
-            yield return new WaitForSeconds(0.01f);
-
+            yield return new WaitForSeconds(0.1f);
             if (removeList.Count > 0)
             {
                 foreach (ActivatorItem item in removeList)
@@ -103,7 +87,7 @@ namespace DTWorldz.Behaviours.Utils
                 }
             }
 
-            //yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.1f);
 
             AddToList();
         }

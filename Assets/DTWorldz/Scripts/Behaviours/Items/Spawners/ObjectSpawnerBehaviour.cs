@@ -38,74 +38,51 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
         spawnTime = 0;
         MaxAliveCount = random.Next(1, MaxAliveCount);
 
-        //Spawn at start
-        for (int i = 0; i < MaxAliveCount; i++)
-        {
-            var spawnedObject = Spawn(SpawnPrefabs[random.Next(0, SpawnPrefabs.Count)]);
-            if (spawnedObject != null)
-            {
-                aliveObjects.Add(spawnedObject);
-            }
-        }
+        // //Spawn at start
+        // for (int i = 0; i < MaxAliveCount; i++)
+        // {
+        //     var spawnedObject = Spawn(SpawnPrefabs[random.Next(0, SpawnPrefabs.Count)]);
+        //     if (spawnedObject != null)
+        //     {
+        //         aliveObjects.Add(spawnedObject);
+        //     }
+        // }
 
-        //spawn boss
-        if (SpawnBoss && BossPrefabs != null && BossPrefabs.Count > 0)
-        {
-            var spawnedObject = Spawn(BossPrefabs[random.Next(0, BossPrefabs.Count)]);
-            if (spawnedObject != null)
-            {
-                aliveObjects.Add(spawnedObject);
-            }
-        }
+        // //spawn boss
+        // if (SpawnBoss && BossPrefabs != null && BossPrefabs.Count > 0)
+        // {
+        //     var spawnedObject = Spawn(BossPrefabs[random.Next(0, BossPrefabs.Count)]);
+        //     if (spawnedObject != null)
+        //     {
+        //         aliveObjects.Add(spawnedObject);
+        //     }
+        // }
+
+        StartCoroutine(DoCheck());
     }
 
     public List<GameObject> GetAliveObjects()
     {
         return aliveObjects;
     }
+
     void Update()
     {
-        // if (Input.GetMouseButton(0))
-        // {
-        //     var collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 1f);
-        //     if (collider != null)
-        //     {
-        //         var go = collider.gameObject; //This is the game object you collided with
-        //         if (go != gameObject && go.tag == "Walls")
-        //         {
-        //             Debug.Log(go.gameObject.name + " " + go.tag);
-        //         }
-        //     }
-        //     var wallFoundInPlace = false;
-        //     // if (colliders.C > 0) //Presuming the object you are testing also has a collider 0 otherwise
-        //     // {
+        if (spawnTime >= 0)
+        {
+            spawnTime -= Time.deltaTime;
+        }
+    }
 
-        //     // foreach (var collider in colliders)
-        //     // {
-        //     //     var go = collider.gameObject; //This is the game object you collided with
-        //     //     if (go == gameObject) continue; //Skip the object itself
-        //     //                                     //Do something
-        //     //     //Debug.Log(go.gameObject.name);
-        //     //     if (!wallFoundInPlace && go.tag == "Walls")
-        //     //     {
-        //     //         wallFoundInPlace = true;
-        //     //         //Debug.Log(go.gameObject.name);
-        //     //     }
-        //     // }
-        //     // }
-        // }
-
-
-
+    void SpawnCheck()
+    {
         if (!IsContinues)
         {
             return;
         }
-
         if (SpawnPrefabs != null && SpawnPrefabs.Count > 0 && spawnTime <= 0)
         {
             CleanAliveList();
-
             if (MaxAliveCount > aliveObjects.Count)
             {
                 var spawnedObject = Spawn(SpawnPrefabs[random.Next(0, SpawnPrefabs.Count)]);
@@ -121,9 +98,15 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
             }
             spawnTime = SpawnFrequency;
         }
-        else
+    }
+
+    IEnumerator DoCheck()
+    {
+        while (true)
         {
-            spawnTime -= Time.deltaTime;
+
+            yield return new WaitForSeconds(1f);
+            SpawnCheck();
         }
     }
 
@@ -149,7 +132,6 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
             var collider = Physics2D.OverlapCircle(randomPosition, 1f);
             if (collider != null)
             {
-                Debug.Log(randomPosition);
                 var go = collider.gameObject; //This is the game object you collided with
                 if (go != gameObject && go.tag != "Walls")
                 {
@@ -159,6 +141,15 @@ public class ObjectSpawnerBehaviour : MonoBehaviour
                     {
                         found = true;
                     }
+                }
+            }
+            else
+            {
+                var cellPos = CurrentLevel.WallMap.WorldToCell(randomPosition);
+                var tile = CurrentLevel.WallMap.GetTile(cellPos);
+                if (tile == null)
+                {
+                    found = true;
                 }
             }
 
