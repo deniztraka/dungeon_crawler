@@ -8,7 +8,7 @@ namespace DTWorldz.Items.Behaviours
     public class InventoryBehaviour : MonoBehaviour
     {
         public ItemContainerSO ItemContainer;
-        public int MaxItemCount = 28;
+        public int MaxItemCount = 30;
 
         AudioManager audioManager;
 
