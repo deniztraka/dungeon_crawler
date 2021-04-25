@@ -23,6 +23,7 @@ namespace DTWorldz.Behaviours.Player
         AudioManager audioManager;
         HealthBehaviour health;
         StamBehaviour stamina;
+        public float InteractionDistance = 1f;
         public ActionButtonBehaviour ActionButtonBehaviour;
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
