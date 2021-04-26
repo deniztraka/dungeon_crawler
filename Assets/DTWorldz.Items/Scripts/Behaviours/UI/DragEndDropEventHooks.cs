@@ -6,6 +6,8 @@ namespace DTWorldz.Items.Behaviours.UI
 {
     public class DragEndDropEventHooks : MonoBehaviour
     {
+        
+        public InventoryBehaviour RelatedInventory;
         private ItemSlotBehaviour itemSlotDragStart;
         private ItemSlotBehaviour itemSlotDragEnd;
         void DragEndMessage(ItemSlotBehaviour itemSlotBehaviour)
@@ -21,7 +23,6 @@ namespace DTWorldz.Items.Behaviours.UI
             }
 
             itemSlotDragEnd = itemSlotBehaviour;
-            //Debug.Log("dragend:" + itemSlotBehaviour.gameObject.name);
 
             var startQuantity = itemSlotDragStart.GetQuantity();
             var draggedItem = itemSlotDragStart.GetItem();
@@ -45,11 +46,25 @@ namespace DTWorldz.Items.Behaviours.UI
                 }
                 else
                 {
-                    // todo: same items, distribute quantites
+                    //same items, distribute quantites
+
+                    // total quantity is not above max quantity
+                    if(quantityOnTarget + startQuantity <= itemOnTarget.MaxStackQuantity){
+                        itemSlotDragEnd.SetQuantity(quantityOnTarget + startQuantity);
+                        itemSlotDragStart.RemoveItem();
+                    } else {
+                        // total quantity is above max quantity
+                        var maxQuantityPossible = itemOnTarget.MaxStackQuantity;
+                        var finalQuantityOnStart = quantityOnTarget + startQuantity - maxQuantityPossible;
+                        itemSlotDragStart.SetQuantity(finalQuantityOnStart);
+                        itemSlotDragEnd.SetQuantity(quantityOnTarget + startQuantity - finalQuantityOnStart);
+                    }
                 }
             }
 
-
+            if(RelatedInventory!=null){
+                RelatedInventory.RefreshItemContainer();
+            }
 
             itemSlotDragStart = null;
             itemSlotDragEnd = null;
@@ -63,7 +78,6 @@ namespace DTWorldz.Items.Behaviours.UI
             {
                 return;
             }
-            //Debug.Log("dragstart:" + itemSlotBehaviour.gameObject.name);
         }
     }
 }

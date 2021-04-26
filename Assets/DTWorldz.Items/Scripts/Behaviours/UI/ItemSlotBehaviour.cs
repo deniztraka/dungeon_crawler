@@ -63,8 +63,12 @@ namespace DTWorldz.Items.Behaviours.UI
             itemSO = itemContainerSlot.ItemSO;
             Icon.sprite = itemSO.Icon;
             Icon.enabled = true;
+            SetQuantity(itemContainerSlot.Quantity);
+        }
 
-            quantity = itemContainerSlot.Quantity;
+        internal void SetQuantity(int value)
+        {
+            quantity = value;
             if (quantity > 1)
             {
                 QuantityText.text = quantity.ToString();

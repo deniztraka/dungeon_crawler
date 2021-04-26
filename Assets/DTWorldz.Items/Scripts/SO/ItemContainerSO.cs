@@ -12,23 +12,36 @@ namespace DTWorldz.Items.SO
 
         public delegate void ItemContainerEventHandler();
         public event ItemContainerEventHandler OnInventoryUpdated;
-        internal void AddItem(BaseItemSO itemSO)
+
+        internal void AddItem(BaseItemSO itemSO, int quantity)
         {
-            var itemIndex = ItemSlots.FindIndex(item => item.ItemSO.Id == itemSO.Id);
-            if (itemIndex > -1 && ItemSlots[itemIndex].ItemSO.Stackable)
-            {
-                ItemSlots[itemIndex].Quantity += 1;
-            }
-            else
-            {
-                var itemSlotToAdd = new ItemContainerSlot(itemSO, 1);
-                ItemSlots.Add(itemSlotToAdd);
-            }
+            ItemSlots.Add(new ItemContainerSlot(itemSO, quantity));
 
             if (OnInventoryUpdated != null)
             {
                 OnInventoryUpdated.Invoke();
             }
+        }
+
+        internal void StackItem(ItemContainerSlot itemContainerSlot, int quantity)
+        {
+            var itcToUpdate = ItemSlots.Find(itc => itc == itemContainerSlot);
+            itcToUpdate.Quantity += quantity;
+            if (OnInventoryUpdated != null)
+            {
+                OnInventoryUpdated.Invoke();
+            }
+        }
+
+        internal ItemContainerSlot FindItemToAllowStackedOn(BaseItemSO itemSO, int quantity)
+        {
+            return ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id && itc.Quantity + quantity <= itemSO.MaxStackQuantity);
+        }
+
+        internal void RefreshList(List<ItemContainerSlot> itemContainerSlotList)
+        {
+            ItemSlots.Clear();
+            ItemSlots.AddRange(itemContainerSlotList);
         }
 
         void OnValidate()
