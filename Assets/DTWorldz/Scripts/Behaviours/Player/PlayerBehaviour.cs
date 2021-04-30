@@ -23,6 +23,7 @@ namespace DTWorldz.Behaviours.Player
         AudioManager audioManager;
         HealthBehaviour health;
         StamBehaviour stamina;
+        public float InteractionDistance = 1f;
         public ActionButtonBehaviour ActionButtonBehaviour;
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
@@ -59,11 +60,11 @@ namespace DTWorldz.Behaviours.Player
             }
         }
 
-        internal bool PickupItem(BaseItemBehaviour itemBehaviour)
-        {
-            audioManager.Play("Loot");
-            return InventoryBehaviour.Instance.AddItem(itemBehaviour);
-        }
+        // internal bool PickupItem(BaseItemBehaviour itemBehaviour)
+        // {
+        //     audioManager.Play("Loot");
+        //     return InventoryBehaviour.Instance.AddItem(itemBehaviour);
+        // }
 
         private void UpdateUI()
         {
@@ -105,45 +106,45 @@ namespace DTWorldz.Behaviours.Player
             }
         }
 
-        internal void DrinkHealthPotion()
+        internal void DrinkHealthPotion(float val)
         {
             if (playerDataModel != null)
             {
                 playerDataModel.HealthPotionAmount--;
             }
             audioManager.Play("Drink");
-            health.CurrentHealth += 20;
+            health.CurrentHealth += val;
         }
 
-        internal void DrinkStaminaPotion()
+        internal void DrinkStaminaPotion(float val)
         {
             if (playerDataModel != null)
             {
                 playerDataModel.StamPotionAmount--;
             }
             audioManager.Play("Drink");
-            stamina.CurrentHealth += 30;
+            stamina.CurrentHealth += val;
         }
 
-        internal void CollectHealthPotion()
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.HealthPotionAmount++;
-            }
-            audioManager.Play("Loot");
-            HealthPotionButtonBehaviour.AddPotion();
-        }
+        // internal void CollectHealthPotion()
+        // {
+        //     if (playerDataModel != null)
+        //     {
+        //         playerDataModel.HealthPotionAmount++;
+        //     }
+        //     audioManager.Play("Loot");
+        //     HealthPotionButtonBehaviour.AddPotion();
+        // }
 
-        internal void CollectStaminaPotion()
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.StamPotionAmount++;
-            }
-            audioManager.Play("Loot");
-            StaminaPotionButtonBehaviour.AddPotion();
-        }
+        // internal void CollectStaminaPotion()
+        // {
+        //     if (playerDataModel != null)
+        //     {
+        //         playerDataModel.StamPotionAmount++;
+        //     }
+        //     audioManager.Play("Loot");
+        //     StaminaPotionButtonBehaviour.AddPotion();
+        // }
 
         private void PopUpFloatingGold(float goldCount)
         {

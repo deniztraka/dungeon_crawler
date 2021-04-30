@@ -13,18 +13,6 @@ namespace DTWorldz.Behaviours.UI
         public Text HealthText;
         public Text EnergyText;
 
-        public void ClosePanel()
-        {
-            var canvas = GetComponent<Canvas>();
-            canvas.enabled = false;
-
-            var inventoryItemDetailPanel = transform.GetComponentInChildren<InventoryItemDetailPanel>();
-            if (inventoryItemDetailPanel != null)
-            {
-                inventoryItemDetailPanel.ClosePanel();
-            }
-        }
-
         public void UpdateGoldText(int goldValue)
         {
             if (GoldText != null)

@@ -30,25 +30,6 @@ namespace DTWorlds.Behaviours.Effects
         void Start()
         {
             StartCoroutine(PrepareBloodPoolCouroutine());
-            //PrepareBloodPoolSyncronous();
-        }
-
-        // IEnumerator StartInit()
-        // {
-        //     while (true)
-        //     {
-        //         yield return new WaitForSeconds(0.5f);
-        //         StartCoroutine(CheckActivation());
-        //     }
-        // }
-
-        public void Update()
-        {
-            // if (!isExecuted)
-            // {
-            //     StartCoroutine("PrepareBloodPoolCouroutine");
-            //     isExecuted = true;
-            // }
         }
 
         private IEnumerator PrepareBloodPoolCouroutine()

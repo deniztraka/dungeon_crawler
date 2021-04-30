@@ -11,6 +11,7 @@ TagManager:
   - Dungeon
   - Spawner
   - Mobile
+  - BackpackUI
   layers:
   - Default
   - TransparentFX
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1853152651
+    locked: 0
+  - name: DraggingObject
+    uniqueID: 3719676301
     locked: 0

@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 5664529902210715090}
   - component: {fileID: 1608416613}
   - component: {fileID: 1266155879341465609}
+  - component: {fileID: 429480147}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -302,9 +303,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.35}
+  m_Offset: {x: 0.023851782, y: 0.3022949}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.37155685
 --- !u!50 &5328125669103109271
 Rigidbody2D:
   serializedVersion: 4
@@ -411,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce5aa52aba0adf4ca4c84eae0dffbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionDistance: 3
   ActionButtonBehaviour: {fileID: 0}
   HealthPotionButtonBehaviour: {fileID: 0}
   StaminaPotionButtonBehaviour: {fileID: 0}
@@ -520,6 +522,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6893fa1527270f948afbfeaee5536ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &429480147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a68c1a9dd9987499e2903a7665481f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemContainer: {fileID: 11400000, guid: 0371ba0e4976aec47ae854852ca7d9fa, type: 2}
+  MaxItemCount: 30
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,11 +590,11 @@ MonoBehaviour:
     m_Bits: 768
   AttackingColliderSizeUp: {x: 1.25, y: 1.25}
   AttackingColliderOffsetUp: {x: 0, y: 1}
-  AttackingColliderSizeLeft: {x: 1, y: 1.25}
+  AttackingColliderSizeLeft: {x: 1, y: 1}
   AttackingColliderOffsetLeft: {x: -0.5, y: 0.5}
   AttackingColliderSizeDown: {x: 1.25, y: 0.75}
   AttackingColliderOffsetDown: {x: 0, y: -0.25}
-  AttackingColliderSizeRight: {x: 1, y: 1.25}
+  AttackingColliderSizeRight: {x: 1, y: 1}
   AttackingColliderOffsetRight: {x: 0.5, y: 0.5}
   AttackingFrequency: 0.5
   attackTime: 0
@@ -631,7 +647,7 @@ MonoBehaviour:
     Loop: 0
   - Name: Hit
     Clip: {fileID: 8300000, guid: 71a6aaa2936126a4dbb209b5e37e3214, type: 3}
-    Volume: 0.261
+    Volume: 0.1
     Pitch: 0.5
     MaxDistance: 4
     Source: {fileID: 0}
