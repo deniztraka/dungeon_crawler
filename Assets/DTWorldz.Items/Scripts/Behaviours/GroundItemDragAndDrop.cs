@@ -22,7 +22,7 @@ namespace DTWorldz.Items.Behaviours
         void Start()
         {
             item = GetComponent<ItemBehaviour>(); ;
-            draggedItemSprite = GetComponent<SpriteRenderer>();
+            draggedItemSprite = GetComponentInChildren<SpriteRenderer>();
             backpackCanvasBehaviour = FindObjectOfType<BackpackCanvasBehaviour>();
         }
         public void OnBeginDrag(PointerEventData eventData)

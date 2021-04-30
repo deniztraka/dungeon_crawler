@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace DTWorldz.Items.Behaviours
 {
@@ -13,13 +9,15 @@ namespace DTWorldz.Items.Behaviours
         public int Quantity;
         [SerializeField]
         private Sprite unsetSprite;
+        [SerializeField]
         private SpriteRenderer spriteRenderer;
+        private Animator animator;
         private Vector3 tempPosition;
         private bool dragging;
 
         void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
             dragging = false;
         }
 
@@ -38,7 +36,7 @@ namespace DTWorldz.Items.Behaviours
         {
             if (spriteRenderer == null)
             {
-                spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             }
 
             if (ItemSO != null)

@@ -28,7 +28,7 @@ namespace DTWorldz.Behaviours.Looting
         {
             yield return new WaitForSeconds(delay);
             var randomPosition = new Vector3(position.x + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.y + UnityEngine.Random.Range(-SpreadDistance, SpreadDistance), position.z);
-            var instantiatedLootItem = Instantiate(lootPackItem.ItemPrefab, randomPosition, Quaternion.identity);
+            Instantiate(lootPackItem.ItemPrefab, randomPosition, Quaternion.identity);
             //var lootItem = instantiatedLootItem.GetComponent(typeof(ILootItem)) as ILootItem;
             //lootItem.SetCount(count);
             //lootItem.SetModifiers(lootPackItem.MinStatCount, lootPackItem.MaxStatCount, lootPackItem.StatQuality);
