@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace DTEngines.Behaviours
+namespace DTWorldz.Engines
 {
     public abstract class TimeOfDayUIBehaviour : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DTEngines.Behaviours
+namespace DTWorldz.Engines
 {
     public class DaysPastTextBehaviour : TimeOfDayUIBehaviour
     {

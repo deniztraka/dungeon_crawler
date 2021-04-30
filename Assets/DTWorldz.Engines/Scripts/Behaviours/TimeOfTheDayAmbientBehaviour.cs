@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace DTEngines.Behaviours
+namespace DTWorldz.Engines
 {
     public class TimeOfTheDayAmbientBehaviour : TimeOfDayUIBehaviour
     {
