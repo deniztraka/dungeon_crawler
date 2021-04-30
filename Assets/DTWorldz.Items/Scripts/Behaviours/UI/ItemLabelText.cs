@@ -24,6 +24,13 @@ namespace DTWorldz.Items.Behaviours.UI
                 return;
             }
 
+            var canvas = GetComponent<Canvas>();
+            if(canvas == null){
+                return;
+            }
+
+            canvas.worldCamera = Camera.main;
+
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
             text.text = itemBehaviour.ItemSO.Name;

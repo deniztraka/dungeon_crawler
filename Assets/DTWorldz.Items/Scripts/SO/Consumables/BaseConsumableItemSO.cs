@@ -9,7 +9,6 @@ namespace DTWorldz.Items.SO
         public float RegenAmount;
         internal virtual void Use()
         {
-            Debug.Log(Name + " is consumed.");
             if (EffectPrefab != null)
             {
                 var playerGameObject = GameObject.FindGameObjectWithTag("Player");
