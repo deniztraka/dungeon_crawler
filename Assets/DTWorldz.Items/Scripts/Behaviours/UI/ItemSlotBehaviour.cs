@@ -14,7 +14,7 @@ namespace DTWorldz.Items.Behaviours.UI
         public Image Icon;
         public Text QuantityText;
         [SerializeField]
-        private BaseItemSO itemSO;
+        internal BaseItemSO ItemSO;
         private int quantity;
 
         private ItemSlotBehaviour dragStartedSlot;
@@ -23,7 +23,7 @@ namespace DTWorldz.Items.Behaviours.UI
         {
             get
             {
-                return itemSO != null;
+                return ItemSO != null;
             }
         }
 
@@ -41,10 +41,10 @@ namespace DTWorldz.Items.Behaviours.UI
 
         internal BaseItemSO GetItem()
         {
-            return itemSO;
+            return ItemSO;
         }
 
-        private void OnItemDragStart(ItemSlotBehaviour itemSlotBehaviour)
+        public virtual void OnItemDragStart(ItemSlotBehaviour itemSlotBehaviour)
         {
             dragStartedSlot = itemSlotBehaviour;
             //Debug.Log(gameObject.name + " " + itemSlotBehaviour.itemSO.name + " start");
@@ -60,8 +60,8 @@ namespace DTWorldz.Items.Behaviours.UI
 
         internal void SetItem(ItemContainerSlot itemContainerSlot)
         {
-            itemSO = itemContainerSlot.ItemSO;
-            Icon.sprite = itemSO.Icon;
+            ItemSO = itemContainerSlot.ItemSO;
+            Icon.sprite = ItemSO.Icon;
             Icon.enabled = true;
             SetQuantity(itemContainerSlot.Quantity);
         }
@@ -83,11 +83,11 @@ namespace DTWorldz.Items.Behaviours.UI
         {
             Icon.sprite = null;
             Icon.enabled = false;
-            itemSO = null;
+            ItemSO = null;
             QuantityText.text = String.Empty;
         }
 
-        public void OnDrop(PointerEventData eventData)
+        public virtual void OnDrop(PointerEventData eventData)
         {
             //Debug.Log("end slot :" + this.gameObject.name + ": " + (dragStartedSlot != null ? "same" : "different"));
             SendMessageUpwards("DragEndMessage", this);

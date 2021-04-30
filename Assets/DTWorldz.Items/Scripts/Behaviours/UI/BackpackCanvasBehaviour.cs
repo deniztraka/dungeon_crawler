@@ -12,7 +12,7 @@ namespace DTWorldz.Items.Behaviours.UI
         private Sprite openSprite;
         private Sprite closedSprite;
         private Image Image;
-        
+
         void Start()
         {
             Image = GetComponent<Image>();
@@ -21,14 +21,7 @@ namespace DTWorldz.Items.Behaviours.UI
         private bool isOpen = false;
         internal void SetStatus(bool isOpen)
         {
-            
-            // if (this.isOpen != isOpen)
-            // {
-            //     Debug.Log(isOpen);
-                
-            //     this.isOpen = isOpen;
-                Image.sprite = isOpen ? openSprite : closedSprite;
-            //}
+            Image.sprite = isOpen ? openSprite : closedSprite;
         }
     }
 }

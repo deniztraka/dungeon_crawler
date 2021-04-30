@@ -18,3 +18,4 @@ MonoBehaviour:
   Icon: {fileID: -1040992118310419130, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   ItemType: 3
   Stackable: 0
+  MaxStackQuantity: 1

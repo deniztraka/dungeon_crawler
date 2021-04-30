@@ -6,12 +6,13 @@ namespace DTWorldz.Items.Behaviours.UI
 {
     public class DragEndDropEventHooks : MonoBehaviour
     {
-        
+
         public InventoryBehaviour RelatedInventory;
         private ItemSlotBehaviour itemSlotDragStart;
         private ItemSlotBehaviour itemSlotDragEnd;
         void DragEndMessage(ItemSlotBehaviour itemSlotBehaviour)
         {
+            //Debug.Log("DragEndMessage");
             if (itemSlotDragStart == null)
             {
                 return;
@@ -49,10 +50,13 @@ namespace DTWorldz.Items.Behaviours.UI
                     //same items, distribute quantites
 
                     // total quantity is not above max quantity
-                    if(quantityOnTarget + startQuantity <= itemOnTarget.MaxStackQuantity){
+                    if (quantityOnTarget + startQuantity <= itemOnTarget.MaxStackQuantity)
+                    {
                         itemSlotDragEnd.SetQuantity(quantityOnTarget + startQuantity);
                         itemSlotDragStart.RemoveItem();
-                    } else {
+                    }
+                    else
+                    {
                         // total quantity is above max quantity
                         var maxQuantityPossible = itemOnTarget.MaxStackQuantity;
                         var finalQuantityOnStart = quantityOnTarget + startQuantity - maxQuantityPossible;
@@ -62,12 +66,24 @@ namespace DTWorldz.Items.Behaviours.UI
                 }
             }
 
-            if(RelatedInventory!=null){
+            if (RelatedInventory != null)
+            {
                 RelatedInventory.RefreshItemContainer();
+                RelatedInventory.RefreshHotBar();
             }
 
             itemSlotDragStart = null;
             itemSlotDragEnd = null;
+        }
+
+        void HotBarDragStartMessage(ItemSlotBehaviour itemSlotBehaviour)
+        {
+            // itemSlotDragStart = itemSlotBehaviour;
+
+            // if (itemSlotDragStart == null)
+            // {
+            //     return;
+            // }
         }
 
         void DragStartMessage(ItemSlotBehaviour itemSlotBehaviour)
@@ -79,5 +95,28 @@ namespace DTWorldz.Items.Behaviours.UI
                 return;
             }
         }
+
+        void DragEndDropItem()
+        {
+            if (RelatedInventory && itemSlotDragStart)
+            {
+                RelatedInventory.RefreshHotBar();
+                RelatedInventory.DropItem(itemSlotDragStart);
+            }
+        }
+
+        void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
+        {
+            if (hotBarSlotBehaviour != null && RelatedInventory != null && itemSlotDragStart != null)
+            {
+                hotBarSlotBehaviour.SetItem(RelatedInventory, itemSlotDragStart.GetItem());
+            }
+
+            if (RelatedInventory != null)
+            {
+                RelatedInventory.RefreshHotBar();
+            }
+        }
+
     }
 }

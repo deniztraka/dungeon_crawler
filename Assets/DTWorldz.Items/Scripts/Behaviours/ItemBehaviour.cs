@@ -23,6 +23,12 @@ namespace DTWorldz.Items.Behaviours
             dragging = false;
         }
 
+        public void SetItem(BaseItemSO itemSO, int quantity){
+            ItemSO = itemSO;
+            Quantity = quantity;
+            SetSprite();
+        }
+
         void OnValidate()
         {
             SetSprite();

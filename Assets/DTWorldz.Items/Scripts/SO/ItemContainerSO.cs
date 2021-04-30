@@ -33,6 +33,17 @@ namespace DTWorldz.Items.SO
             }
         }
 
+        internal int GetTotalQuantity(BaseItemSO itemSO)
+        {
+            var totalQuantity = 0;
+            var sameItems = ItemSlots.FindAll(itc => itc.ItemSO.Id == itemSO.Id);
+            foreach (var item in sameItems)
+            {
+                totalQuantity += item.Quantity;
+            }
+            return totalQuantity;
+        }
+
         internal ItemContainerSlot FindItemToAllowStackedOn(BaseItemSO itemSO, int quantity)
         {
             return ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id && itc.Quantity + quantity <= itemSO.MaxStackQuantity);
