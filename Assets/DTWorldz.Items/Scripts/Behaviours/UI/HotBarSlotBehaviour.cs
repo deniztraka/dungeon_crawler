@@ -15,6 +15,8 @@ namespace DTWorldz.Items.Behaviours.UI
         private Button UseButton;
         private InventoryBehaviour inventoryBehaviour;
 
+        new internal BaseConsumableItemSO ItemSO;
+
         void Start(){
             UseButton = GetComponent<Button>();
         }
@@ -24,9 +26,9 @@ namespace DTWorldz.Items.Behaviours.UI
             SendMessageUpwards("DragEndDropHotBar", this);
         }
 
-        internal void SetItem(InventoryBehaviour relatedInventory, BaseItemSO baseItemSO)
+        internal void SetItem(InventoryBehaviour relatedInventory, BaseConsumableItemSO itemSO)
         {
-            if (relatedInventory == null || baseItemSO == null)
+            if (relatedInventory == null || itemSO == null)
             {
                 if (Icon != null)
                 {
@@ -42,9 +44,9 @@ namespace DTWorldz.Items.Behaviours.UI
             }
 
             inventoryBehaviour = relatedInventory;
-            this.ItemSO = baseItemSO;
+            this.ItemSO = itemSO;
 
-            var totalQuantity = inventoryBehaviour.ItemContainer.GetTotalQuantity(baseItemSO);
+            var totalQuantity = inventoryBehaviour.ItemContainer.GetTotalQuantity(itemSO);
             if (totalQuantity == 0)
             {
                 if (Icon != null)
@@ -63,7 +65,7 @@ namespace DTWorldz.Items.Behaviours.UI
             {
                 if (Icon != null)
                 {
-                    Icon.sprite = baseItemSO.Icon;
+                    Icon.sprite = itemSO.Icon;
                     Icon.color = new Color(255, 255, 255, 1);
                 }
                 if (QuantityText != null)

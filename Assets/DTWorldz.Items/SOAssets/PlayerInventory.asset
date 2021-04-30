@@ -13,17 +13,9 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   ItemSlots:
-  - ItemSO: {fileID: 11400000, guid: b473cc9bf71d60c40a5c1659dbe9cd67, type: 2}
+  - ItemSO: {fileID: 11400000, guid: 2b7d4b0563add6d489e0b42cecfc06b7, type: 2}
     Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: b473cc9bf71d60c40a5c1659dbe9cd67, type: 2}
+  - ItemSO: {fileID: 11400000, guid: 2b7d4b0563add6d489e0b42cecfc06b7, type: 2}
     Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: c481df200ec3a014392435ef55f3f33a, type: 2}
-    Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: c481df200ec3a014392435ef55f3f33a, type: 2}
-    Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: f24c591a2e06fc446bc55e6ad3123cc4, type: 2}
-    Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: b473cc9bf71d60c40a5c1659dbe9cd67, type: 2}
-    Quantity: 1
-  - ItemSO: {fileID: 11400000, guid: b473cc9bf71d60c40a5c1659dbe9cd67, type: 2}
+  - ItemSO: {fileID: 11400000, guid: 6dab368efe5ff3445a2e408e9f427ea0, type: 2}
     Quantity: 1

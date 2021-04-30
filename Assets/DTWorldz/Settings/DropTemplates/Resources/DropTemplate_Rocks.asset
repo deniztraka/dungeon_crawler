@@ -17,7 +17,7 @@ MonoBehaviour:
     MinCount: 2
     Chance: 1
     Items:
-    - ItemPrefab: {fileID: 6423458679134311554, guid: f6245f8ba4dba594c893a85d243d6b30,
+    - ItemPrefab: {fileID: 5201006734434581963, guid: ad29f49fd5f81874d82a060e1194851f,
         type: 3}
       CountMin: 1
       CountMax: 2

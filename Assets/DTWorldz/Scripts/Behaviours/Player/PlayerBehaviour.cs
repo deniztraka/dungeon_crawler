@@ -60,11 +60,11 @@ namespace DTWorldz.Behaviours.Player
             }
         }
 
-        internal bool PickupItem(BaseItemBehaviour itemBehaviour)
-        {
-            audioManager.Play("Loot");
-            return InventoryBehaviour.Instance.AddItem(itemBehaviour);
-        }
+        // internal bool PickupItem(BaseItemBehaviour itemBehaviour)
+        // {
+        //     audioManager.Play("Loot");
+        //     return InventoryBehaviour.Instance.AddItem(itemBehaviour);
+        // }
 
         private void UpdateUI()
         {
@@ -126,25 +126,25 @@ namespace DTWorldz.Behaviours.Player
             stamina.CurrentHealth += 30;
         }
 
-        internal void CollectHealthPotion()
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.HealthPotionAmount++;
-            }
-            audioManager.Play("Loot");
-            HealthPotionButtonBehaviour.AddPotion();
-        }
+        // internal void CollectHealthPotion()
+        // {
+        //     if (playerDataModel != null)
+        //     {
+        //         playerDataModel.HealthPotionAmount++;
+        //     }
+        //     audioManager.Play("Loot");
+        //     HealthPotionButtonBehaviour.AddPotion();
+        // }
 
-        internal void CollectStaminaPotion()
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.StamPotionAmount++;
-            }
-            audioManager.Play("Loot");
-            StaminaPotionButtonBehaviour.AddPotion();
-        }
+        // internal void CollectStaminaPotion()
+        // {
+        //     if (playerDataModel != null)
+        //     {
+        //         playerDataModel.StamPotionAmount++;
+        //     }
+        //     audioManager.Play("Loot");
+        //     StaminaPotionButtonBehaviour.AddPotion();
+        // }
 
         private void PopUpFloatingGold(float goldCount)
         {

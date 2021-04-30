@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Items.Models;
+using DTWorldz.Items.SO;
 using UnityEngine;
 namespace DTWorldz.Items.Behaviours.UI
 {
@@ -107,7 +108,7 @@ namespace DTWorldz.Items.Behaviours.UI
 
         void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
         {
-            var itemToSet = itemSlotDragStart.GetItem();
+            var itemToSet = itemSlotDragStart.GetItem() as BaseConsumableItemSO;
             if (itemToSet != null && itemToSet.ItemType == ItemType.Consumable && hotBarSlotBehaviour != null && RelatedInventory != null && itemSlotDragStart != null)
             {
                 hotBarSlotBehaviour.SetItem(RelatedInventory, itemToSet);

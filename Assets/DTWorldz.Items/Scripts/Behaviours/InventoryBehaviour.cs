@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
-using DTWorldz.Behaviours.UI.Inventory;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
 using UnityEngine;

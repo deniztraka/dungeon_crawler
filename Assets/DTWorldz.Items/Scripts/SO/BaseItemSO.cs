@@ -15,10 +15,5 @@ namespace DTWorldz.Items.SO
         public bool Stackable;
 
         public int MaxStackQuantity = 20;
-
-        internal virtual void Use()
-        {
-            Debug.Log(Name + " is used.");
-        }
     }
 }

@@ -9,7 +9,8 @@ namespace DTWorldz.Items.Models
         None = 0,
         Consumable = 1,
         Equipment = 2,
-        Weapon = 3
+        Weapon = 3,
+        Resource = 4
     }
     
     [Serializable]

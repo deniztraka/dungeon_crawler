@@ -97,6 +97,7 @@ namespace DTWorldz.Items.Behaviours.UI
             catch (System.Exception e)
             {
                 Debug.Log(e.Message);
+                Debug.Log(e.StackTrace);
             }
         }
 
