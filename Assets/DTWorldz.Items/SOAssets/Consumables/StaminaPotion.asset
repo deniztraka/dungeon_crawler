@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5506067caa2334b8dbd72237d51952, type: 3}
   m_Name: StaminaPotion
   m_EditorClassIdentifier: 
-  Id: 0
-  Name: StaminaPotion
+  Id: 2
+  Name: Stamina Potion
   Description: 'Refills your stamina '
   Icon: {fileID: 5602664251207304693, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   ItemType: 1
   Stackable: 1
   MaxStackQuantity: 1
+  EffectPrefab: {fileID: 3575411776609514184, guid: c14ec1c7023684e4fa323b08ebcccafd,
+    type: 3}
   RegenAmount: 20

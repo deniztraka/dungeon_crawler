@@ -47,7 +47,7 @@ namespace DTWorldz.Behaviours.UI
                     Destroy(effectObj, 2f);
 
                 }
-                player.DrinkHealthPotion();
+                //player.DrinkHealthPotion();
                 count--;
                 UpdateText();
             }

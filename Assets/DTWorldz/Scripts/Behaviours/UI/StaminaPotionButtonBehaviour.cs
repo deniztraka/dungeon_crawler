@@ -52,7 +52,7 @@ namespace DTWorldz.Behaviours.UI
                     Destroy(effectObj, 2f);
 
                 }
-                player.DrinkStaminaPotion();
+                //player.DrinkStaminaPotion();
 
                 count--;
                 UpdateText();

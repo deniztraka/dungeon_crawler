@@ -19,4 +19,6 @@ MonoBehaviour:
   ItemType: 1
   Stackable: 1
   MaxStackQuantity: 1
+  EffectPrefab: {fileID: 4020107257691126723, guid: 811bbf10fe019e14890855acb007009b,
+    type: 3}
   RegenAmount: 20

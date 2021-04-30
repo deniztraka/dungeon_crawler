@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Player;
 using UnityEngine;
 
 namespace DTWorldz.Items.SO
@@ -9,7 +10,10 @@ namespace DTWorldz.Items.SO
     {
         internal override void Use()
         {
-            Debug.Log(Name + " is consumed.");
+            base.Use();
+            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            var player = playerGameObject.GetComponent<PlayerBehaviour>();
+            player.DrinkStaminaPotion(this.RegenAmount);
         }
     }
 }
