@@ -108,6 +108,11 @@ namespace DTWorldz.Items.Behaviours
 
         }
 
+        internal void RemoveItem(BaseItemSO itemSO)
+        {
+            ItemContainer.RemoveItem(itemSO);
+        }
+
         internal void DropItem(UI.ItemSlotBehaviour itemSlotDragStart)
         {
             if (ItemPrefab != null)

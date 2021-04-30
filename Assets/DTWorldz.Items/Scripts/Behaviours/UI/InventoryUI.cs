@@ -9,6 +9,10 @@ namespace DTWorldz.Items.Behaviours.UI
 {
     public class InventoryUI : MonoBehaviour
     {
+        public delegate void InventoryUIHandler();
+        public event InventoryUIHandler OnInventoryOpened;
+        public event InventoryUIHandler OnInventoryClosed;
+        public event InventoryUIHandler OnInventoryRefreshed;
         public GameObject SlotPrefab;
         private ItemContainerSO itemContainer;
         // Start is called before the first frame update
@@ -32,12 +36,20 @@ namespace DTWorldz.Items.Behaviours.UI
         {
             var canvas = GetComponent<Canvas>();
             canvas.enabled = false;
+            if (OnInventoryClosed != null)
+            {
+                OnInventoryClosed.Invoke();
+            }
         }
 
         public void Open()
         {
             var canvas = GetComponent<Canvas>();
             canvas.enabled = true;
+            if (OnInventoryOpened != null)
+            {
+                OnInventoryOpened.Invoke();
+            }
         }
 
         public void RefreshUI()
@@ -76,6 +88,10 @@ namespace DTWorldz.Items.Behaviours.UI
                         var itemSlotBehaviour = child.GetComponent<ItemSlotBehaviour>();
                         itemSlotBehaviour.RemoveItem();
                     }
+                }
+
+                if(OnInventoryRefreshed != null){
+                    OnInventoryRefreshed.Invoke();
                 }
             }
             catch (System.Exception e)

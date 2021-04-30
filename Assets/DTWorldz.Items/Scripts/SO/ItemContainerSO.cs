@@ -62,5 +62,23 @@ namespace DTWorldz.Items.SO
                 OnInventoryUpdated.Invoke();
             }
         }
+
+        internal void RemoveItem(BaseItemSO itemSO)
+        {
+            var itemSlot = ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id);
+            if (itemSlot != null && itemSlot.Quantity == 1)
+            {
+                ItemSlots.Remove(itemSlot);
+            }
+            else if (itemSlot != null && itemSlot.Quantity > 1) 
+            {
+                itemSlot.Quantity--;
+            }
+
+            if (OnInventoryUpdated != null)
+            {
+                OnInventoryUpdated.Invoke();
+            }
+        }
     }
 }
