@@ -65,6 +65,14 @@ namespace DTWorldz.Behaviours.Audios
             }
         }
 
+        internal void SetVolume(float v)
+        {
+            if (lastSound != null && lastSound.Source != null && lastSound.Source.isPlaying)
+            {
+                lastSound.Source.volume = v;
+            }
+        }
+
         public void SetCurrentPitch(float pitch)
         {
             if (lastSound != null && lastSound.Source != null && lastSound.Source.isPlaying)

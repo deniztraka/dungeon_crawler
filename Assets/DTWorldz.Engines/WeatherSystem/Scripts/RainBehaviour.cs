@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Audios;
 using UnityEngine;
 namespace DTWorldz.Engines.WeatherSystem
 {
     public class RainBehaviour : MonoBehaviour
     {
+        private const float maxIntensity = 250f;
         [SerializeField]
         float changePeriod = 0;
         [SerializeField]
@@ -24,6 +26,7 @@ namespace DTWorldz.Engines.WeatherSystem
         }
 
         private float t = 0;
+        private AudioManager audioManager;
 
         private ParticleSystem rainParticles;
         private ParticleSystem.EmissionModule emissionModule;
@@ -31,21 +34,22 @@ namespace DTWorldz.Engines.WeatherSystem
         {
             rainParticles = GetComponent<ParticleSystem>();
             emissionModule = rainParticles.emission;
+            audioManager = GetComponent<AudioManager>();
         }
 
         void Update()
         {
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (IsRaining)
-                {
-                    StopRaining();
-                }
-                else
-                {
-                    StartRaining();
-                }
-            }
+            // if (Input.GetMouseButtonUp(0))
+            // {
+            //     if (IsRaining)
+            //     {
+            //         StopRaining();
+            //     }
+            //     else
+            //     {
+            //         StartRaining();
+            //     }
+            // }
 
             if (currentIntensity == targetIntensity)
             {
@@ -56,14 +60,19 @@ namespace DTWorldz.Engines.WeatherSystem
             currentIntensity = Mathf.Lerp(startIntensity, targetIntensity, t);
 
             emissionModule.rateOverTime = currentIntensity;
+
+            if (audioManager != null)
+            {
+                audioManager.SetVolume(currentIntensity / maxIntensity * .25f);
+            }
         }
 
         public void StartRaining()
         {
-            var randomIntensity = Random.Range(1, 100);
+            var randomIntensity = Random.Range(0, maxIntensity);
             Random.InitState((int)Time.time);
             var randomPeriod = Random.Range(0, 10);
-            UpdateIntensity(Random.Range(0, 100), randomPeriod);
+            UpdateIntensity(randomIntensity, randomPeriod);
         }
 
         private void UpdateIntensity(float intensity, float period)
@@ -76,8 +85,11 @@ namespace DTWorldz.Engines.WeatherSystem
 
         public void StopRaining()
         {
-            var randomPeriod = Random.Range(0, 10);
-            UpdateIntensity(0, randomPeriod);
+            if (IsRaining)
+            {
+                var randomPeriod = Random.Range(0, 10);
+                UpdateIntensity(0, randomPeriod);
+            }
         }
     }
 }
