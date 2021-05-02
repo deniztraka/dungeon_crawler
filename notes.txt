@@ -1,0 +1,33 @@
+	/ resources
+		- log (from trees)
+		- stone	(from rocks)
+		- brushwood (from grasses and trees)
+		- resin	(from pine trees)
+		- flint	(near sand and water)
+
+	/ consumables
+		- raw meat (from rat, deer, boar)
+		- mushroom (on dark forest)
+		- health potion	(only from dungeon chests)
+		- stamina potion (only from dungeon chests)
+		- berries (on forest)
+		- banana (on grass)
+
+	/ mobiles
+		- rat (on dirt)
+		- deer (on forest)
+		- boar ( on dark forest)
+		- crabs (on sands)
+
+	/ tools
+		- pickaxe
+		- shovel
+
+	/ weapons
+		- club
+		- axe
+		- knife
+		- spear
+		- sword
+
+	
