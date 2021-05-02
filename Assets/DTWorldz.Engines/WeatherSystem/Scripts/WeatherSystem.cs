@@ -8,18 +8,18 @@ namespace DTWorldz.Engines.WeatherSystem
     public class WeatherSystem : MonoBehaviour
     {
         private Dictionary<int, float> MaxRainPossibilities = new Dictionary<int, float>(){
-            {1,.5f},
-            {2,.2f},
-            {3,.3f},
-            {4,.4f},
-            {5,.3f},
+            {1,.2f},
+            {2,.3f},
+            {3,.5f},
+            {4,.7f},
+            {5,.4f},
             {6,.1f},
             {7,.0f},
             {8,.0f},
-            {9,.2f},
-            {10,.3f},
-            {11,.1f},
-            {12,.1f},
+            {9,.3f},
+            {10,.5f},
+            {11,.2f},
+            {12,.2f},
         };
 
         [SerializeField]
