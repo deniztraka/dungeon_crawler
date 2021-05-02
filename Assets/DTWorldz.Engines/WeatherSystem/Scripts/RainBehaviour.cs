@@ -39,18 +39,6 @@ namespace DTWorldz.Engines.WeatherSystem
 
         void Update()
         {
-            // if (Input.GetMouseButtonUp(0))
-            // {
-            //     if (IsRaining)
-            //     {
-            //         StopRaining();
-            //     }
-            //     else
-            //     {
-            //         StartRaining();
-            //     }
-            // }
-
             if (currentIntensity == targetIntensity)
             {
                 return;

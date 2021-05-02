@@ -7,19 +7,21 @@ namespace DTWorldz.Engines.WeatherSystem
 {
     public class WeatherSystem : MonoBehaviour
     {
+        [SerializeField]
+        private int toStopRaining;
         private Dictionary<int, float> MaxRainPossibilities = new Dictionary<int, float>(){
-            {1,.2f},
-            {2,.3f},
-            {3,.5f},
-            {4,.7f},
-            {5,.4f},
-            {6,.1f},
-            {7,.0f},
-            {8,.0f},
-            {9,.3f},
-            {10,.5f},
-            {11,.2f},
-            {12,.2f},
+            {1,.075f},    // January
+            {2,.1f},    // February
+            {3,.3f},    // March
+            {4,.5f},    // April
+            {5,0f},    // May
+            {6,0f},    // June
+            {7,0f},    // July
+            {8,0f},    // August
+            {9,.1f},    // September
+            {10,.3f},   // October
+            {11,.1f},   // November
+            {12,.075f},   // December
         };
 
         [SerializeField]
@@ -40,12 +42,28 @@ namespace DTWorldz.Engines.WeatherSystem
 
         private void HourChanged()
         {
-            
-            if (RainBehaviour != null && maxRainPossibility > 0)
+            toStopRaining--;
+            if (toStopRaining < 0)
+            {
+                toStopRaining = 0;
+            }
+            else
+            {
+                RainBehaviour.StartRaining();
+                return;
+            }
+
+            if (RainBehaviour != null && maxRainPossibility > 0 && toStopRaining == 0)
             {
                 var rainingChance = UnityEngine.Random.value;
+                Debug.Log(rainingChance);
+                UnityEngine.Random.InitState((int)Time.time);
                 if (rainingChance < maxRainPossibility)
                 {
+                    if (toStopRaining == 0)
+                    {
+                        toStopRaining = UnityEngine.Random.Range(1, 6);
+                    }
                     RainBehaviour.StartRaining();
                 }
                 else
