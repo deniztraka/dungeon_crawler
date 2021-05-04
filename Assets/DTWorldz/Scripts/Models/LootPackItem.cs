@@ -10,10 +10,6 @@ namespace DTWorldz.Models
     {
         public GameObject ItemPrefab;
         public int CountMin;
-        public int CountMax;
-
-        public int MinStatCount;
-        public int MaxStatCount;
-        public StatQuality StatQuality;        
+        public int CountMax;     
     }
 }

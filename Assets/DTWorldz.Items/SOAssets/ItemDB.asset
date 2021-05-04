@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e830bb902ffbdb04e8c81199b234e7bf, type: 3}
   m_Name: ItemDB
   m_EditorClassIdentifier: 
-  ids: 00000000010000000200000003000000
+  ids: 000000000100000002000000030000000400000005000000060000000700000008000000
   items:
   - {fileID: 11400000, guid: 2b7d4b0563add6d489e0b42cecfc06b7, type: 2}
   - {fileID: 11400000, guid: 6dab368efe5ff3445a2e408e9f427ea0, type: 2}
   - {fileID: 11400000, guid: c00eab3bb95155844b8f843893092b79, type: 2}
   - {fileID: 11400000, guid: be34e76e71dfed7469ba4eeb741e5a6c, type: 2}
+  - {fileID: 11400000, guid: 76355d0cad7e53c40b25e33a86f846fa, type: 2}
+  - {fileID: 11400000, guid: 2ea5babd0fa692e48814cc3ad802098b, type: 2}
+  - {fileID: 11400000, guid: 06050ab1818faf343af9d06a5465df5e, type: 2}
+  - {fileID: 11400000, guid: 729344098b32d494f8139c1290402e7f, type: 2}
+  - {fileID: 11400000, guid: f26131cefb8b09d478f0dd54ba42bd2b, type: 2}

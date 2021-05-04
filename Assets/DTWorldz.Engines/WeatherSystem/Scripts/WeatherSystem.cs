@@ -56,7 +56,7 @@ namespace DTWorldz.Engines.WeatherSystem
             if (RainBehaviour != null && maxRainPossibility > 0 && toStopRaining == 0)
             {
                 var rainingChance = UnityEngine.Random.value;
-                Debug.Log(rainingChance);
+//                Debug.Log(rainingChance);
                 UnityEngine.Random.InitState((int)Time.time);
                 if (rainingChance < maxRainPossibility)
                 {

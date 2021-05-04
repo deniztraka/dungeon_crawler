@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2674771645074141426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093128999710325632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d839c8b23817044287eb77c1348a833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpreadDistance: 0.5
+  DropAfterSeconds: 0.1
+  DropTemplate: {fileID: 11400000, guid: ac7f2f8d41b557b4faf8f511a6c9681b, type: 2}
+--- !u!114 &3361828641520295870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093128999710325632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d62cacd06707149841bf3e62e3c589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AfterSeconds: 0.2
+--- !u!114 &7888228771029606265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093128999710325632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b48ffc694b7a74cbc0f39e6e02d039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 1
+  BodyType: 2
+  OnDamageTakenTintColor: {r: 0, g: 0, b: 0, a: 0}
+  IncreaseAmountEverySecond: 0
+  FloatingDamagesPrefab: {fileID: 0}
+  DamagePointsYOffset: 0
+--- !u!114 &9063542299545689337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093128999710325632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6893fa1527270f948afbfeaee5536ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7700266866840067087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13,6 +72,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5588888737662910949, guid: 5c8120231863d644a9222e24c54ad165,
         type: 3}
+    - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30,6 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -41,16 +110,6 @@ PrefabInstance:
     - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
-        type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1912981013916755850, guid: fa5e33f78f2009148b44f312ad75bb4e,
@@ -71,7 +130,18 @@ PrefabInstance:
     - target: {fileID: 1912981013916755855, guid: fa5e33f78f2009148b44f312ad75bb4e,
         type: 3}
       propertyPath: m_Name
-      value: flowers_6
+      value: grass_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912981013916755855, guid: fa5e33f78f2009148b44f312ad75bb4e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa5e33f78f2009148b44f312ad75bb4e, type: 3}
+--- !u!1 &8093128999710325632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912981013916755855, guid: fa5e33f78f2009148b44f312ad75bb4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7700266866840067087}
+  m_PrefabAsset: {fileID: 0}

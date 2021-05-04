@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1198842334924744165, guid: f6f27737ea1246b4d8db004635995f1a,
+        type: 3}
+      propertyPath: maxHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4246693472189453973, guid: f6f27737ea1246b4d8db004635995f1a,
         type: 3}
       propertyPath: m_Name
-      value: DryTree1
+      value: DryTree_Tree1
       objectReference: {fileID: 0}
     - target: {fileID: 4246693472189453975, guid: f6f27737ea1246b4d8db004635995f1a,
         type: 3}

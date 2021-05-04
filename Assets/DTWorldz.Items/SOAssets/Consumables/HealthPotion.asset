@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cec242595449884688f28aed5537e39, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 3
   Name: Health Potion
   Description: 'Refills your health '
   Icon: {fileID: 2564777308342627126, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   ItemType: 1
-  Stackable: 1
+  Stackable: 0
   MaxStackQuantity: 1
   EffectPrefab: {fileID: 4020107257691126723, guid: 811bbf10fe019e14890855acb007009b,
     type: 3}

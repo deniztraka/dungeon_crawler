@@ -73,5 +73,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryTree3_Tree1
       objectReference: {fileID: 0}
+    - target: {fileID: 4604681339615004686, guid: 341da6586d0ef144895f37a5a195ebe6,
+        type: 3}
+      propertyPath: maxHealth
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 341da6586d0ef144895f37a5a195ebe6, type: 3}
