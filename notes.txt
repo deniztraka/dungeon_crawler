@@ -4,6 +4,7 @@
 		+ brushwood (from grasses and trees)
 		- resin	(from pine trees)
 		+ flint	(near sand and water)
+		- leather (from deer and bear)
 
 	/ consumables
 		+ raw meat (from rat, deer, boar)
@@ -15,8 +16,8 @@
 
 	/ mobiles
 		+ rat (on dirt)
-		- deer (on forest)
-		- boar ( on dark forest)
+		+ deer (on forest)
+		+ bear ( on dark forest)
 		- crabs (on sands)
 
 	/ tools

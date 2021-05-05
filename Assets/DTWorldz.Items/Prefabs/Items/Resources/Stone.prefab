@@ -228,6 +228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5201006734434581886}
     m_Modifications:
+    - target: {fileID: 6152555562435197538, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_Text
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 6152555562859119933, guid: 4ac20f7847e4d42458ae2d31217218d7,
         type: 3}
       propertyPath: m_Pivot.x

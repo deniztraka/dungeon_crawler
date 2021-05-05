@@ -42,4 +42,9 @@ MonoBehaviour:
   BushFrequency: 0.25
   Spawners:
   - {fileID: 7674728969632660766, guid: d59f50192e8b69a40be084f8833c7105, type: 3}
+  - {fileID: 7674728969632660766, guid: d59f50192e8b69a40be084f8833c7105, type: 3}
+  - {fileID: 7674728969632660766, guid: d59f50192e8b69a40be084f8833c7105, type: 3}
+  - {fileID: 7674728969632660766, guid: d59f50192e8b69a40be084f8833c7105, type: 3}
+  - {fileID: 7674728969632660766, guid: d59f50192e8b69a40be084f8833c7105, type: 3}
+  - {fileID: 7674728969632660766, guid: 8e2da1b5eb9f23a46ad636dedf0144f6, type: 3}
   SpawnerFrequency: 0.001
