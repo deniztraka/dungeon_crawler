@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: DropTemplate_PineTree
   m_EditorClassIdentifier: 
   Entries:
-  - MaxCount: 4
+  - MaxCount: 5
     MinCount: 2
     Chance: 1
     Items:
+    - ItemPrefab: {fileID: 9209882335573884990, guid: 82ba59e03aa8e4d47acb92ec989e6aa5,
+        type: 3}
+      CountMin: 1
+      CountMax: 2
+    - ItemPrefab: {fileID: 9209882335573884990, guid: 82ba59e03aa8e4d47acb92ec989e6aa5,
+        type: 3}
+      CountMin: 1
+      CountMax: 2
     - ItemPrefab: {fileID: 9209882335573884990, guid: 82ba59e03aa8e4d47acb92ec989e6aa5,
         type: 3}
       CountMin: 1
@@ -25,3 +33,11 @@ MonoBehaviour:
         type: 3}
       CountMin: 1
       CountMax: 3
+    - ItemPrefab: {fileID: 5201006734434581963, guid: cb406f3030b39454aa0af812d712da1e,
+        type: 3}
+      CountMin: 1
+      CountMax: 3
+    - ItemPrefab: {fileID: 5201006734434581963, guid: 773e6e9a9180e824588681a1e8fcb8ef,
+        type: 3}
+      CountMin: 1
+      CountMax: 2

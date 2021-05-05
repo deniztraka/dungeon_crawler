@@ -108,6 +108,11 @@ namespace DTWorldz.Items.Behaviours.UI
 
         void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
         {
+            if (itemSlotDragStart == null)
+            {
+                return;
+            }
+
             var itemToSet = itemSlotDragStart.GetItem() as BaseConsumableItemSO;
             if (itemToSet != null && itemToSet.ItemType == ItemType.Consumable && hotBarSlotBehaviour != null && RelatedInventory != null && itemSlotDragStart != null)
             {

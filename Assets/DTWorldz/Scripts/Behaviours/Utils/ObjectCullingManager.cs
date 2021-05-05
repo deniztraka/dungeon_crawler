@@ -34,7 +34,7 @@ namespace DTWorldz.Behaviours.Utils
         {
             while (true)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1f);
                 StartCoroutine(CheckActivation());
             }
         }
