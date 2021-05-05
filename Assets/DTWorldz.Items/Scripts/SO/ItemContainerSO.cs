@@ -37,7 +37,6 @@ namespace DTWorldz.Items.SO
         {
             var totalQuantity = 0;
             var sameItems = ItemSlots.FindAll(itc => itc.ItemSO.Id == itemSO.Id);
-            Debug.Log(itemSO.Id);
             foreach (var item in sameItems)
             {
                 totalQuantity += item.Quantity;

@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4773408866602804419}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.ItemLabelCanvas, Assembly-CSharp
         m_MethodName: OnPickupClicked
         m_Mode: 1
@@ -523,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -552,7 +554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4773408866602804419}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.ItemLabelCanvas, Assembly-CSharp
         m_MethodName: OnCancelClicked
         m_Mode: 1
@@ -734,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -763,7 +766,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4773408866602804419}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DTWorldz.Behaviours.UI.ItemLabelCanvas, Assembly-CSharp
         m_MethodName: OnLabelClicked
         m_Mode: 1
@@ -788,7 +791,7 @@ GameObject:
   - component: {fileID: 4773408866602804417}
   - component: {fileID: 4773408866602804430}
   - component: {fileID: 4773408866602804418}
-  - component: {fileID: 4773408866602804419}
+  - component: {fileID: 8475939247331616461}
   m_Layer: 5
   m_Name: ItemLabelCanvas
   m_TagString: Untagged
@@ -861,6 +864,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 30
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4773408866602804430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,7 +898,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 40
---- !u!114 &4773408866602804419
+--- !u!114 &8475939247331616461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -903,12 +907,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4773408866602804428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503046fdf2f351b4abbfee3b8c338d18, type: 3}
+  m_Script: {fileID: 11500000, guid: d3e9c0c04ccf26f4598f3786b8c13ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoorQualityColor: {r: 0.62352943, g: 0.62352943, b: 0.62352943, a: 1}
-  RegularQualityColor: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
-  ExceptionalQualityColor: {r: 0.25943398, g: 0.29138124, b: 1, a: 1}
-  RareQualityColor: {r: 0.8584906, g: 0.67313474, b: 0, a: 1}
-  LegendaryQualityColor: {r: 1, g: 0.44950724, b: 0, a: 1}
-  PickupButtonsPanel: {fileID: 4773408865706759874}

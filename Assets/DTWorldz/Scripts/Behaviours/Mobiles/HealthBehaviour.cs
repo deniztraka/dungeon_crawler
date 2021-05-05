@@ -32,16 +32,20 @@ namespace DTWorldz.Behaviours.Mobiles
         }
 
 
+
         public float IncreaseAmountEverySecond = 1;
 
         public delegate void DamageTaken(float damageAmount, DamageType type);
         public event DamageTaken OnDamageTaken;
         public event HealthChanged OnHealthChanged;
+        public event HealthChanged OnBeforeHealthChanged;
         public event HealthChanged OnDeath;
         public GameObject FloatingDamagesPrefab;
         public float DamagePointsYOffset;
         private AudioManager audioManager;
         private MaterialTintColor materialTintColor;
+
+        private Harvestable harvestable;
 
         void Start()
         {
@@ -54,6 +58,8 @@ namespace DTWorldz.Behaviours.Mobiles
             }
 
             InvokeRepeating("IncreaseOverTime", 1f, 1f);
+
+            harvestable = GetComponentInChildren<Harvestable>();
         }
 
         void IncreaseOverTime()
@@ -81,6 +87,16 @@ namespace DTWorldz.Behaviours.Mobiles
                 return;
             }
 
+            if (OnBeforeHealthChanged != null)
+            {
+                OnBeforeHealthChanged(currentHealth, MaxHealth);
+            }
+
+            if(harvestable != null && harvestable.HasHarvest()){
+                harvestable.Harvest();
+                return;
+            }
+
             currentHealth -= damage;
             if (materialTintColor != null)
             {
@@ -95,11 +111,6 @@ namespace DTWorldz.Behaviours.Mobiles
             if (audioManager != null && UnityEngine.Random.value > 0.5f)
             {
                 audioManager.Play("Hit");
-            }
-
-            if (OnDamageTaken != null)
-            {
-                OnDamageTaken(damage, type);
             }
 
             if (OnHealthChanged != null)

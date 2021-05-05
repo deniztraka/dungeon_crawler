@@ -10,8 +10,6 @@ namespace DTWorldz.Items.SO
         internal override void Use()
         {
             base.Use();
-
-            Debug.Log(Name + "is used");
         }
     }
 }
