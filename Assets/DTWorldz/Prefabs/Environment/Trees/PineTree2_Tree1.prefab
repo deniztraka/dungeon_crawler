@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469756546041373485, guid: 614b5bdb5d4a5a74d856a4e70b540e25,
+        type: 3}
+      propertyPath: DropTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fc25911ed5d9ae4bab04ce5275ce279,
+        type: 2}
     - target: {fileID: 1596470915385137677, guid: 614b5bdb5d4a5a74d856a4e70b540e25,
         type: 3}
       propertyPath: maxHealth

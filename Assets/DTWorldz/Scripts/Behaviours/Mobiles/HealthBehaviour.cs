@@ -113,6 +113,11 @@ namespace DTWorldz.Behaviours.Mobiles
                 audioManager.Play("Hit");
             }
 
+            if (OnDamageTaken != null)
+            {
+                OnDamageTaken(currentHealth, DamageType.Physical);
+            }
+
             if (OnHealthChanged != null)
             {
                 OnHealthChanged(currentHealth, MaxHealth);

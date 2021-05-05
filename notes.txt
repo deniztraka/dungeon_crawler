@@ -2,7 +2,7 @@
 		+ log (from trees)
 		+ stone	(from rocks)
 		+ brushwood (from grasses and trees)
-		- resin	(from pine trees)
+		+ resin	(from pine trees)
 		+ flint	(near sand and water)
 		- leather (from deer and bear)
 
@@ -11,20 +11,16 @@
 		+ mushroom (on dark forest and a red one for green forest)
 		+ health potion	(only from dungeon chests)
 		+ stamina potion (only from dungeon chests)
-		- berries (on forest)
-		- banana (on grass)
+		+ berries (on forest)
 
 	/ mobiles
 		+ rat (on dirt)
 		+ deer (on forest)
 		+ bear ( on dark forest)
-		- crabs (on sands)
-
-	/ tools
-		- pickaxe
-		- shovel
 
 	/ weapons
+		- shovel
+		- pickaxe
 		- club
 		- axe
 		- knife
