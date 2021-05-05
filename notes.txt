@@ -4,7 +4,7 @@
 		+ brushwood (from grasses and trees)
 		+ resin	(from pine trees)
 		+ flint	(near sand and water)
-		- leather (from deer and bear)
+		+ leather (from deer and bear)
 
 	/ consumables
 		+ raw meat (from rat, deer, boar)
