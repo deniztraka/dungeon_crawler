@@ -19,7 +19,7 @@ namespace DTWorldz.Behaviours.Utils
 
         // --------------------------------------------------
 
-        void Start()
+        void Awake()
         {
             player = GameObject.FindWithTag("Player");
             activatorItems = new List<ActivatorItem>();

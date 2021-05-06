@@ -15,15 +15,16 @@ namespace DTWorldz.Behaviours.Utils
 
         void Start()
         {
+            Init();
+        }
+
+        public void Init(){
             itemActivatorObject = GameObject.Find("ObjectCullingManager");
             if (itemActivatorObject != null)
             {
                 activationScript = itemActivatorObject.GetComponent<ObjectCullingManager>();
                 StartCoroutine("AddToList");
             }
-
-
-
         }
 
         IEnumerator AddToList()

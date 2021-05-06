@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Utils;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
 using UnityEngine;
@@ -7,6 +9,24 @@ using UnityEngine.Tilemaps;
 
 namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 {
+
+    public class CellSet
+    {
+        public Vector3Int Pos;
+        public Vector3 WorldPos;
+        public bool BushesSet;
+        public bool TreesSet;
+        public bool SpawnersSet;
+        public CellSet(Vector3Int pos, Vector3 worldPos)
+        {
+            this.Pos = pos;
+            this.WorldPos = worldPos;
+            this.BushesSet = false;
+            this.TreesSet = false;
+            this.SpawnersSet = false;
+        }
+
+    }
     public class NoiseMapGenerator : MonoBehaviour
     {
         public enum DrawMode { NoiseMap, ColorMap, TileMap }
@@ -29,12 +49,143 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public Transform TreesParentObject;
         public Transform BushesParentObject;
         public Transform SpawnersParentObject;
-        
+
         public bool autoUpdate;
         public bool placeTrees;
         public bool placeBushes;
         public bool placeSpawners;
-        
+
+        public Dictionary<string, CellSet> TerrrainTiles;
+
+        void Start()
+        {
+            TerrrainTiles = new Dictionary<string, CellSet>();
+
+            FillTerrainTiles();
+
+            var prng = new System.Random(Seed);
+            var player = GameObject.FindGameObjectWithTag("Player");
+            StartCoroutine(ProcessCellsAroundPlayer(player, prng, 10));
+        }
+
+        private List<CellSet> GetCellSetsAround(GameObject playerObject, TileMapTerrain terrain, int distance)
+        {
+            var terrrainTilesAround = new List<CellSet>();
+            var cellPos = terrain.Tilemap.WorldToCell(playerObject.transform.position);
+            for (int x = cellPos.x - distance; x < cellPos.x + distance; x++)
+            {
+                for (int y = cellPos.y - distance; y < cellPos.y + distance; y++)
+                {
+                    var tilePosAround = new Vector3Int(x, y, 0);
+                    if (terrain.Tilemap.HasTile(tilePosAround))
+                    {
+                        Vector3 worldPos = terrain.Tilemap.CellToWorld(tilePosAround);
+                        var key = String.Format("{0}_{1}-{2}", terrain.Template.Name, tilePosAround.x, tilePosAround.y);
+                        CellSet cellSet = null;
+                        var found = TerrrainTiles.TryGetValue(key, out cellSet);
+                        if (found)
+                        {
+                            terrrainTilesAround.Add(cellSet);
+                        }
+                    }
+                }
+            }
+
+            return terrrainTilesAround;
+        }
+
+        private IEnumerator ProcessCellsAroundPlayer(GameObject playerObject, System.Random prng, int distance)
+        {
+            LevelBehaviour levelBehaviour = null;
+            while (true)
+            {
+                Dictionary<TileMapTerrain, List<CellSet>> TerrrainTiles = new Dictionary<TileMapTerrain, List<CellSet>>();
+                foreach (var terrain in Terrains)
+                {
+                    if (levelBehaviour == null)
+                    {
+                        levelBehaviour = terrain.Tilemap.transform.GetComponentInParent<LevelBehaviour>();
+                    }
+                    var aroundCellSets = GetCellSetsAround(playerObject, terrain, distance);
+
+                    if (terrain.Template.BushFrequency != 0)
+                    {
+                        foreach (var cellSet in aroundCellSets)
+                        {
+                            var hasBushes = false;
+                            if (!cellSet.BushesSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            {
+                                var chance = prng.NextDouble();
+                                if (chance < terrain.Template.BushFrequency)
+                                {
+                                    var objPos = new Vector3(cellSet.WorldPos.x + 0.5f, cellSet.WorldPos.y + 0.5f, 0);
+                                    var bush = Instantiate(terrain.Template.BushTypes[UnityEngine.Random.Range(0, terrain.Template.BushTypes.Count)], objPos, Quaternion.identity, BushesParentObject);
+                                    bush.transform.localScale = new Vector3(UnityEngine.Random.Range(0.9f, 1.1f), UnityEngine.Random.Range(0.75f, 1.25f), 1f);
+                                    var disabler = bush.GetComponent<DisableIfFarAway>();
+                                    disabler.Init();
+                                    hasBushes = true;
+                                }
+
+                                cellSet.BushesSet = true;
+                            }
+
+                            if (!hasBushes && !cellSet.TreesSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            {
+                                var chance = prng.NextDouble();
+                                if (chance < terrain.Template.TreeFrequency)
+                                {
+                                    var objPosition = new Vector3(cellSet.WorldPos.x + 0.5f, cellSet.WorldPos.y + 0.5f, 0);
+                                    var tree = Instantiate(terrain.Template.TreeTypes[prng.Next(0, terrain.Template.TreeTypes.Count)], objPosition, Quaternion.identity, TreesParentObject);
+                                    UnityEngine.Random.InitState(prng.Next());
+                                    tree.transform.localScale = new Vector3(UnityEngine.Random.Range(1f, 1.5f), UnityEngine.Random.Range(1f, 1.5f), 1f);
+                                    var disabler = tree.GetComponent<DisableIfFarAway>();
+                                    disabler.Init();
+                                }
+
+                                cellSet.TreesSet = true;
+                            }
+
+                            if (!cellSet.SpawnersSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            {
+                                var chance = prng.NextDouble();
+                                if (chance < terrain.Template.SpawnerFrequency)
+                                {
+                                    var objPos = new Vector3(cellSet.WorldPos.x + 0.5f, cellSet.WorldPos.y + 0.5f, 0);
+                                    var spawnerObject = Instantiate(terrain.Template.Spawners[prng.Next(0, terrain.Template.Spawners.Count)], objPos, Quaternion.identity, SpawnersParentObject);
+                                    var objectSpawnerBehaviour = spawnerObject.GetComponent<ObjectSpawnerBehaviour>();
+                                    objectSpawnerBehaviour.CurrentLevel = levelBehaviour;
+                                }
+
+                                cellSet.SpawnersSet = true;
+                            }
+                        }
+                    }
+                }
+
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
+
+        public void FillTerrainTiles()
+        {
+            foreach (var terrain in Terrains)
+            {
+                // terrain.ilemap.GetTilesBlock(area);
+                foreach (var pos in terrain.Tilemap.cellBounds.allPositionsWithin)
+                {
+                    Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
+                    //Vector3 place = terrain.Tilemap.CellToWorld(localPlace);
+                    if (terrain.Tilemap.HasTile(localPlace))
+                    {
+                        Vector3 worldPos = terrain.Tilemap.CellToWorld(localPlace);
+
+                        TerrrainTiles.Add(String.Format("{0}_{1}-{2}", terrain.Template.Name, localPlace.x, localPlace.y), new CellSet(localPlace, worldPos));
+                    }
+                }
+            }
+        }
+
 
         public System.Random GenerateMap()
         {

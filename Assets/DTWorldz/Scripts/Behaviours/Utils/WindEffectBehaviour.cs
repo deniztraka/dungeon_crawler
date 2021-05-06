@@ -33,7 +33,7 @@ namespace DTWorldz.Behaviours.Utils
 
             if (collider.tag == "Player" || collider.tag == "Mobile")
             {
-                if (currentSpeed < 2.5f)
+                if (currentSpeed < 2.5f && material)
                 {
                     material.SetFloat("_WindSpeed", 2.5f);
                     StartCoroutine("OnAfter");
