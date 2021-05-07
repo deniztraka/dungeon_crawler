@@ -55,7 +55,14 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public bool placeBushes;
         public bool placeSpawners;
 
+        System.Random prng;
+
         public Dictionary<string, CellSet> TerrrainTiles;
+
+        void Awake()
+        {
+            prng = new System.Random(Seed);
+        }
 
         void Start()
         {
@@ -63,9 +70,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
             FillTerrainTiles();
 
-            var prng = new System.Random(Seed);
             var player = GameObject.FindGameObjectWithTag("Player");
-            StartCoroutine(ProcessCellsAroundPlayer(player, prng, 10));
+            StartCoroutine(ProcessCellsAroundPlayer(player, 10));
         }
 
         private List<CellSet> GetCellSetsAround(GameObject playerObject, TileMapTerrain terrain, int distance)
@@ -94,7 +100,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             return terrrainTilesAround;
         }
 
-        private IEnumerator ProcessCellsAroundPlayer(GameObject playerObject, System.Random prng, int distance)
+        private IEnumerator ProcessCellsAroundPlayer(GameObject playerObject, int distance)
         {
             LevelBehaviour levelBehaviour = null;
             while (true)
