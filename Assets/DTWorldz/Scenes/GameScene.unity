@@ -1602,7 +1602,7 @@ PrefabInstance:
     - target: {fileID: 767139369072629949, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: IncreaseAmountEverySecond
-      value: -1
+      value: -0.1388889
       objectReference: {fileID: 0}
     - target: {fileID: 3583550365272171738, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
@@ -6216,7 +6216,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.109375, y: 1}
+    m_SensorSize: {x: 2.1103604, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
