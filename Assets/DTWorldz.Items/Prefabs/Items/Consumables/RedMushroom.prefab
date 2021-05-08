@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26451bc283b5d2a439ca59c770f4da87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSO: {fileID: 11400000, guid: 06050ab1818faf343af9d06a5465df5e, type: 2}
+  ItemSO: {fileID: 11400000, guid: ed5ca213ce8e0804da3633a51143a77a, type: 2}
   Quantity: 1
   unsetSprite: {fileID: 6418657867545673408, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}

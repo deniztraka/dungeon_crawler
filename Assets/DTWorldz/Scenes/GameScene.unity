@@ -1590,21 +1590,19 @@ PrefabInstance:
       propertyPath: HotBarContainer
       value: 
       objectReference: {fileID: 2121202174}
-    - target: {fileID: 958619356, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 958619358, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
       propertyPath: TimeOfTheDay
       value: 
       objectReference: {fileID: 1111331022}
-    - target: {fileID: 1027112636, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 767139369072629949, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: currentVal
+      value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 2031914887, guid: 4eb1c25ee80cdd240a88fe4e5ed079af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 767139369072629949, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
+        type: 3}
+      propertyPath: IncreaseAmountEverySecond
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3583550365272171738, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
@@ -1621,11 +1619,6 @@ PrefabInstance:
       propertyPath: StaminaPotionButtonBehaviour
       value: 
       objectReference: {fileID: 996801266}
-    - target: {fileID: 4974044863056613751, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109266, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_Name
@@ -6013,7 +6006,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1567601403}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6223,7 +6216,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.1108248, y: 1}
+    m_SensorSize: {x: 2.109375, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22102,6 +22095,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1149906469554966344, guid: da0db61fa1f0dae4abefd32f94e21ed4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149906469554966344, guid: da0db61fa1f0dae4abefd32f94e21ed4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1404983791903355311, guid: da0db61fa1f0dae4abefd32f94e21ed4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -22110,11 +22113,6 @@ PrefabInstance:
     - target: {fileID: 1404983791903355311, guid: da0db61fa1f0dae4abefd32f94e21ed4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1851061998623015209, guid: da0db61fa1f0dae4abefd32f94e21ed4,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1851061999821008725, guid: da0db61fa1f0dae4abefd32f94e21ed4,
@@ -22232,11 +22230,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterBarCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3998220789694524301, guid: da0db61fa1f0dae4abefd32f94e21ed4,
+    - target: {fileID: 3220277035256018097, guid: da0db61fa1f0dae4abefd32f94e21ed4,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: HealthObject
+      value: 
+      objectReference: {fileID: 429480146}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0db61fa1f0dae4abefd32f94e21ed4, type: 3}
 --- !u!222 &2871093934763377195

@@ -5136,6 +5136,7 @@ GameObject:
   - component: {fileID: 1608416613}
   - component: {fileID: 1266155879341465609}
   - component: {fileID: 429480147}
+  - component: {fileID: 767139369072629949}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -5467,6 +5468,20 @@ MonoBehaviour:
   HotBarContainer: {fileID: 0}
   ItemContainer: {fileID: 11400000, guid: 0371ba0e4976aec47ae854852ca7d9fa, type: 2}
   MaxItemCount: 30
+--- !u!114 &767139369072629949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328125669103109266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe44da2f2ee1134eb5a65850984e58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentVal: 0
+  IncreaseAmountEverySecond: 1
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
@@ -8454,6 +8469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Torch_Top
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974044864229606424, guid: 16d8ced6bcb512c419fe8d92680070ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5954529114147362162, guid: 16d8ced6bcb512c419fe8d92680070ca,
         type: 3}

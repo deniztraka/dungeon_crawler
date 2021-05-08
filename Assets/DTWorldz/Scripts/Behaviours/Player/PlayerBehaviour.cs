@@ -6,6 +6,7 @@ using DTWorldz.Behaviours.Items;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.UI;
 using DTWorldz.DataModel;
+using DTWorldz.Items.SO;
 using DTWorldz.Models.MobileStats;
 using DTWorldz.SaveSystem;
 using UnityEngine;
@@ -18,11 +19,15 @@ namespace DTWorldz.Behaviours.Player
         private int stamPotionAmount;
 
         private SaveSystemManager saveSystemManager;
+
+
+
         private PlayerDataModel playerDataModel;
 
         AudioManager audioManager;
         HealthBehaviour health;
         StamBehaviour stamina;
+        HungerBehaviour hunger;
         public float InteractionDistance = 1f;
         public ActionButtonBehaviour ActionButtonBehaviour;
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
@@ -43,6 +48,7 @@ namespace DTWorldz.Behaviours.Player
             }
             health = GetComponent<HealthBehaviour>();
             stamina = GetComponent<StamBehaviour>();
+            hunger = GetComponent<HungerBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
 
             RegisterToSaveSystem();
@@ -124,6 +130,12 @@ namespace DTWorldz.Behaviours.Player
             }
             audioManager.Play("Drink");
             stamina.CurrentHealth += val;
+        }
+
+        internal void Eat(FoodItemSO foodItemSO)
+        {
+            audioManager.Play("Drink");
+            hunger.Eat(foodItemSO);
         }
 
         // internal void CollectHealthPotion()
