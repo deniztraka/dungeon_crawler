@@ -17,6 +17,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public bool BushesSet;
         public bool TreesSet;
         public bool SpawnersSet;
+        public bool IsProcessed;
         public CellSet(Vector3Int pos, Vector3 worldPos)
         {
             this.Pos = pos;
@@ -24,6 +25,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             this.BushesSet = false;
             this.TreesSet = false;
             this.SpawnersSet = false;
+            this.IsProcessed = false;
         }
 
     }
@@ -113,13 +115,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                         levelBehaviour = terrain.Tilemap.transform.GetComponentInParent<LevelBehaviour>();
                     }
                     var aroundCellSets = GetCellSetsAround(playerObject, terrain, distance);
-
-                    if (terrain.Template.BushFrequency != 0)
+                    foreach (var cellSet in aroundCellSets)
                     {
-                        foreach (var cellSet in aroundCellSets)
+                        if (!cellSet.IsProcessed && terrain.Tilemap.HasTile(cellSet.Pos))
                         {
-                            var hasBushes = false;
-                            if (!cellSet.BushesSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            if (!cellSet.BushesSet)
                             {
                                 var chance = prng.NextDouble();
                                 if (chance < terrain.Template.BushFrequency)
@@ -129,13 +129,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                                     bush.transform.localScale = new Vector3(UnityEngine.Random.Range(0.9f, 1.1f), UnityEngine.Random.Range(0.75f, 1.25f), 1f);
                                     var disabler = bush.GetComponent<DisableIfFarAway>();
                                     disabler.Init();
-                                    hasBushes = true;
+                                    cellSet.BushesSet = true;
                                 }
-
-                                cellSet.BushesSet = true;
                             }
 
-                            if (!hasBushes && !cellSet.TreesSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            if (!cellSet.BushesSet && !cellSet.TreesSet)
                             {
                                 var chance = prng.NextDouble();
                                 if (chance < terrain.Template.TreeFrequency)
@@ -146,12 +144,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                                     tree.transform.localScale = new Vector3(UnityEngine.Random.Range(1f, 1.5f), UnityEngine.Random.Range(1f, 1.5f), 1f);
                                     var disabler = tree.GetComponent<DisableIfFarAway>();
                                     disabler.Init();
+                                    cellSet.TreesSet = true;
                                 }
-
-                                cellSet.TreesSet = true;
                             }
 
-                            if (!cellSet.SpawnersSet && terrain.Tilemap.HasTile(cellSet.Pos))
+                            if (!cellSet.SpawnersSet)
                             {
                                 var chance = prng.NextDouble();
                                 if (chance < terrain.Template.SpawnerFrequency)
@@ -160,11 +157,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                                     var spawnerObject = Instantiate(terrain.Template.Spawners[prng.Next(0, terrain.Template.Spawners.Count)], objPos, Quaternion.identity, SpawnersParentObject);
                                     var objectSpawnerBehaviour = spawnerObject.GetComponent<ObjectSpawnerBehaviour>();
                                     objectSpawnerBehaviour.CurrentLevel = levelBehaviour;
+                                    cellSet.SpawnersSet = true;
                                 }
-
-                                cellSet.SpawnersSet = true;
                             }
-                        }
+                            cellSet.IsProcessed = true;
+                        } 
                     }
                 }
 
