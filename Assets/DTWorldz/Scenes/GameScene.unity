@@ -6012,8 +6012,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567601404}
   m_HandleRect: {fileID: 1567601403}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6708,7 +6708,7 @@ PrefabInstance:
     - target: {fileID: 2987135806950302155, guid: b2eb1a3af567a94498c09cda87e74950,
         type: 3}
       propertyPath: RealGameSecondsPast
-      value: 120
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5397831244848038456, guid: b2eb1a3af567a94498c09cda87e74950,
         type: 3}

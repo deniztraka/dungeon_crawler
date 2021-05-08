@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
@@ -11,43 +12,55 @@ namespace DTWorldz.Engines.DayNightCycle
         [SerializeField]
         private Light2D ambientLight;
         private Color targetColor;
+        private Color startColor;
 
         private float ratio;
-        private float tweenLength;
+        private float duration;
+        private float t;
 
         void Start()
         {
             ambientLight = GetComponent<Light2D>();
-            targetColor = ambientLight.color;
-            ratio = TimeOfTheDay.DayLengthInSeconds / 86400f;
-
+            
             if (TimeOfTheDay != null)
             {
                 targetColor = AmbientHourColorsList[TimeOfTheDay.GetGameTime().Hours];
+                ambientLight.color = targetColor;
+                startColor = ambientLight.color;
+                duration = TimeOfTheDay.DayLengthInSeconds / 24;
+                TimeOfTheDay.OnAfterHourChanged += new TimeOfTheDay.TimeOfTheDayHandler(HourChanged);
             }
         }
-        public override void UpdateMe()
+
+        private void HourChanged()
         {
-            tweenLength = 0f;
-            if (TimeOfTheDay != null)
+
+            if (TimeOfTheDay != null && ambientLight != null)
             {
+                t = 0f;
                 var currentGameTime = TimeOfTheDay.GetGameTime();
                 targetColor = AmbientHourColorsList[currentGameTime.Hours];
+                startColor = ambientLight.color;
             }
         }
-        
+
+        public override void UpdateMe()
+        {
+
+        }
+
 
         void Update()
         {
-            //ambientSpriteRenderer.color = Color.Lerp(ambientSpriteRenderer.color, targetColor, /*tweenLength / */Time.deltaTime);
             if (ambientLight == null)
             {
                 return;
             }
-            ambientLight.color = Color.Lerp(ambientLight.color, targetColor, /*tweenLength / */Time.deltaTime);
-            
-            
-            
+            ambientLight.color = Color.Lerp(startColor, targetColor, t);
+            if (t < 1)
+            {
+                t += Time.deltaTime / duration;
+            }
         }
     }
 }
