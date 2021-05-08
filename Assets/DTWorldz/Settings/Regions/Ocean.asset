@@ -15,8 +15,10 @@ MonoBehaviour:
   Name: Ocean
   Height: 0.15
   Color: {r: 0, g: 0.08230966, b: 0.6509434, a: 0}
-  Tile: {fileID: 11400000, guid: d2f8be79a7c408845acf3db19d978524, type: 2}
+  Tile: {fileID: 11400000, guid: d72d58b0815502b4b812ff278e0e6fa6, type: 2}
   TreeTypes: []
   TreeFrequency: 0
   BushTypes: []
   BushFrequency: 0
+  Spawners: []
+  SpawnerFrequency: 0

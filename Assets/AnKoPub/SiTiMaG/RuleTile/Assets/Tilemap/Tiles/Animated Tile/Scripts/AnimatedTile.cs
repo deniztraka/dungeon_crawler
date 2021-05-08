@@ -12,7 +12,7 @@ namespace UnityEngine.Tilemaps
 {
     [Serializable]
     [CreateAssetMenu(fileName = "New Animated Tile", menuName = "Tiles/Animated Tile")]
-    public class AnimatedTile : TileBase
+    public class AnimatedTile : Tile
     {
         public Sprite[] m_AnimatedSprites;
         public float m_MinSpeed = 1f;

@@ -68,6 +68,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         void Start()
         {
+            GenerateMap();
             TerrrainTiles = new Dictionary<string, CellSet>();
 
             FillTerrainTiles();
