@@ -1594,16 +1594,6 @@ PrefabInstance:
       propertyPath: TimeOfTheDay
       value: 
       objectReference: {fileID: 1111331022}
-    - target: {fileID: 767139369072629949, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
-        type: 3}
-      propertyPath: currentVal
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 767139369072629949, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
-        type: 3}
-      propertyPath: IncreaseAmountEverySecond
-      value: -0.1388889
-      objectReference: {fileID: 0}
     - target: {fileID: 3583550365272171738, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: ActionButtonBehaviour
@@ -6216,7 +6206,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.1103604, y: 1}
+    m_SensorSize: {x: 2.1136363, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23704,7 +23694,7 @@ PrefabInstance:
     - target: {fileID: 6170857078918897988, guid: e3e3bc355bcca5a488a69c09179053d4,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 10
+      value: 6.1417
       objectReference: {fileID: 0}
     - target: {fileID: 6170857078918897988, guid: e3e3bc355bcca5a488a69c09179053d4,
         type: 3}
@@ -23749,12 +23739,12 @@ PrefabInstance:
     - target: {fileID: 6170857078918897988, guid: e3e3bc355bcca5a488a69c09179053d4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.28
+      value: 5.35
       objectReference: {fileID: 0}
     - target: {fileID: 6170857078918897988, guid: e3e3bc355bcca5a488a69c09179053d4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.19
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6170857078918897988, guid: e3e3bc355bcca5a488a69c09179053d4,
         type: 3}

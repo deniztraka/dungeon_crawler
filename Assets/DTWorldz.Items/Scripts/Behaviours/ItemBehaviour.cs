@@ -1,3 +1,4 @@
+using System.Collections;
 using DTWorldz.Items.SO;
 using UnityEngine;
 
@@ -11,17 +12,47 @@ namespace DTWorldz.Items.Behaviours
         private Sprite unsetSprite;
         [SerializeField]
         private SpriteRenderer spriteRenderer;
-        private Animator animator;
         private Vector3 tempPosition;
         private bool dragging;
 
+        [SerializeField]
+        private Material outlineMaterial;
+        private Material tempMaterial;
+        private Transform playerTransform;
+        private Canvas labelTextCanvas;
+
         void Start()
         {
-            animator = GetComponent<Animator>();
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            labelTextCanvas = GetComponentInChildren<Canvas>();
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                tempMaterial = spriteRenderer.material;
+            }
             dragging = false;
+
+            StartCoroutine(CheckDistanceFromPlayer());
         }
 
-        public void SetItem(BaseItemSO itemSO, int quantity){
+        private IEnumerator CheckDistanceFromPlayer()
+        {
+            while (true)
+            {
+
+                yield return new WaitForSeconds(0.5f);
+
+                if (playerTransform != null && outlineMaterial != null && spriteRenderer != null && tempMaterial != null && labelTextCanvas != null)
+                {
+                    var closeEnough = Vector2.Distance(playerTransform.position, transform.position) < 3;
+                    spriteRenderer.material = closeEnough ? outlineMaterial : tempMaterial;
+                    labelTextCanvas.gameObject.SetActive(closeEnough);
+                }
+            }
+        }
+
+        public void SetItem(BaseItemSO itemSO, int quantity)
+        {
             ItemSO = itemSO;
             Quantity = quantity;
             SetSprite();

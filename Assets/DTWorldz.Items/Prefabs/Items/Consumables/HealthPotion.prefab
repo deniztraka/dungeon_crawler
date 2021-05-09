@@ -139,6 +139,7 @@ MonoBehaviour:
   unsetSprite: {fileID: 6418657867545673408, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}
   spriteRenderer: {fileID: 2924279256772020660}
+  outlineMaterial: {fileID: 2100000, guid: 5f0b543829715124f8434aafc6b90ce3, type: 2}
 --- !u!58 &2628702937628978575
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5480,8 +5480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe44da2f2ee1134eb5a65850984e58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentVal: 0
-  IncreaseAmountEverySecond: 1
+  currentVal: 100
+  IncreaseAmountEverySecond: -0.1388889
 --- !u!1 &5328125669390350690
 GameObject:
   m_ObjectHideFlags: 0
