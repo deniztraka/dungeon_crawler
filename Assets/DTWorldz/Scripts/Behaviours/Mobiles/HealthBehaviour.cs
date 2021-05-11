@@ -22,7 +22,14 @@ namespace DTWorldz.Behaviours.Mobiles
         public float CurrentHealth
         {
             get { return currentHealth; }
-            set { currentHealth = value; }
+            set
+            {
+                if (OnHealthChanged != null && currentHealth != value)
+                {
+                    OnHealthChanged(value, MaxHealth);
+                }
+                currentHealth = value;
+            }
         }
 
         public float MaxHealth
@@ -42,6 +49,7 @@ namespace DTWorldz.Behaviours.Mobiles
         public event HealthChanged OnDeath;
         public GameObject FloatingDamagesPrefab;
         public float DamagePointsYOffset;
+        public bool MaxOnStart = true;
         private AudioManager audioManager;
         private MaterialTintColor materialTintColor;
 
@@ -50,11 +58,15 @@ namespace DTWorldz.Behaviours.Mobiles
         void Start()
         {
             materialTintColor = GetComponent<MaterialTintColor>();
-            currentHealth = MaxHealth;
+            if (MaxOnStart)
+            {
+                currentHealth = MaxHealth;
+            }
+
             audioManager = GetComponent<AudioManager>();
             if (OnHealthChanged != null)
             {
-                OnHealthChanged(MaxHealth, MaxHealth);
+                OnHealthChanged(currentHealth, MaxHealth);
             }
 
             InvokeRepeating("IncreaseOverTime", 1f, 1f);
@@ -78,8 +90,6 @@ namespace DTWorldz.Behaviours.Mobiles
             }
         }
 
-
-
         public void TakeDamage(float damage, DamageType type)
         {
             if (currentHealth == -1)
@@ -92,7 +102,8 @@ namespace DTWorldz.Behaviours.Mobiles
                 OnBeforeHealthChanged(currentHealth, MaxHealth);
             }
 
-            if(harvestable != null && harvestable.HasHarvest()){
+            if (harvestable != null && harvestable.HasHarvest())
+            {
                 harvestable.Harvest();
                 return;
             }

@@ -13,8 +13,13 @@ namespace DTWorldz.Behaviours.Items.Deco
         private float maxFrequency = 2f;
 
         public Light2D light2D;
-        public float MaxIntensity = 1.5f;
-        public float MinIntensity = 0.5f;
+        public float MaxIntensity = 1.25f;
+        public float MinIntensity = 0.75f;
+
+        [SerializeField]
+        private float currentMaxIntensity;
+        [SerializeField]
+        private float currentMinIntensity;
 
         // Start is called before the first frame update
         void Start()
@@ -22,15 +27,26 @@ namespace DTWorldz.Behaviours.Items.Deco
             light2D = GetComponent<Light2D>();
         }
 
-        // Update is called once per frame
         void LateUpdate()
         {
             if (timePassed > Random.Range(minFrequency, maxFrequency))
             {
                 timePassed = 0;
-                light2D.intensity = Random.Range(MinIntensity, MaxIntensity);
+                light2D.intensity = Random.Range(currentMinIntensity, currentMaxIntensity);
             }
             timePassed += Time.deltaTime;
+        }
+
+        internal void SetIntensity(float currentHealth, float maxHealth)
+        {
+            var rate = currentHealth / maxHealth;
+            if (currentHealth <= 0)
+            {
+                rate = 0;
+            }
+
+            currentMinIntensity = MinIntensity * rate;
+            currentMaxIntensity = MaxIntensity * rate;
         }
     }
 }

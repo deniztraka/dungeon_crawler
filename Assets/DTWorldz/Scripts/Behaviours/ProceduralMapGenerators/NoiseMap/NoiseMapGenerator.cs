@@ -57,6 +57,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public bool placeBushes;
         public bool placeSpawners;
 
+        public bool GenerateOnStart;
+
         System.Random prng;
 
         public Dictionary<string, CellSet> TerrrainTiles;
@@ -68,7 +70,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         void Start()
         {
-            GenerateMap();
+            if (GenerateOnStart)
+            {
+                GenerateMap();
+            }
+            
             TerrrainTiles = new Dictionary<string, CellSet>();
 
             FillTerrainTiles();
@@ -162,7 +168,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                                 }
                             }
                             cellSet.IsProcessed = true;
-                        } 
+                        }
                     }
                 }
 
