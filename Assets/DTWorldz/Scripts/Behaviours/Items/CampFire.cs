@@ -33,15 +33,15 @@ namespace DTWorldz.Behaviours
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                AddFuel(10);
-            }
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     AddFuel(10);
+            // }
 
-            if (Input.GetMouseButtonDown(1))
-            {
-                Extinguish();
-            }
+            // if (Input.GetMouseButtonDown(1))
+            // {
+            //     Extinguish();
+            // }
         }
 
         private void AddFuel(float count)
@@ -116,7 +116,6 @@ namespace DTWorldz.Behaviours
             yield return new WaitForSeconds(1f);
             if (audioManager != null)
             {
-                Debug.Log(v);
                 audioManager.SetVolume(v);
             }
         }

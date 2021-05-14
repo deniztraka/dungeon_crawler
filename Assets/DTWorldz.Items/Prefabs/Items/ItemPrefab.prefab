@@ -139,6 +139,7 @@ MonoBehaviour:
   unsetSprite: {fileID: 6418657867545673408, guid: c2af4bb3854969d4cb2f76aacb65cd71,
     type: 3}
   spriteRenderer: {fileID: 2059007458850307551}
+  outlineMaterial: {fileID: 2100000, guid: 5f0b543829715124f8434aafc6b90ce3, type: 2}
 --- !u!58 &7582287067513297130
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -229,6 +230,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7582287067513297128}
     m_Modifications:
+    - target: {fileID: 6152555562435197538, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152555562435197538, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152555562435197538, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152555562435197539, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6152555562859119933, guid: 4ac20f7847e4d42458ae2d31217218d7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -338,6 +359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ItemLabelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152555562859119934, guid: 4ac20f7847e4d42458ae2d31217218d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac20f7847e4d42458ae2d31217218d7, type: 3}

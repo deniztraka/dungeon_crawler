@@ -5996,7 +5996,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1567601403}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6206,7 +6206,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.1121283, y: 1}
+    m_SensorSize: {x: 2.1122243, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22355,6 +22355,11 @@ PrefabInstance:
         type: 3}
       propertyPath: placeSpawners
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
+        type: 3}
+      propertyPath: GenerateOnStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}

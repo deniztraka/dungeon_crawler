@@ -25,6 +25,7 @@ namespace DTWorldz.Items.Behaviours
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             labelTextCanvas = GetComponentInChildren<Canvas>();
+            labelTextCanvas.gameObject.SetActive(false);
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             if (spriteRenderer != null)
             {
@@ -33,6 +34,18 @@ namespace DTWorldz.Items.Behaviours
             dragging = false;
 
             StartCoroutine(CheckDistanceFromPlayer());
+        }
+
+        void OnMouseDown()
+        {
+            StartCoroutine(ShowLabel());
+        }
+
+        private IEnumerator ShowLabel()
+        {
+            labelTextCanvas.gameObject.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            labelTextCanvas.gameObject.SetActive(false);
         }
 
         private IEnumerator CheckDistanceFromPlayer()
@@ -46,7 +59,7 @@ namespace DTWorldz.Items.Behaviours
                 {
                     var closeEnough = Vector2.Distance(playerTransform.position, transform.position) < 3;
                     spriteRenderer.material = closeEnough ? outlineMaterial : tempMaterial;
-                    labelTextCanvas.gameObject.SetActive(closeEnough);
+                    //labelTextCanvas.gameObject.SetActive(closeEnough);
                 }
             }
         }
