@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9915ceff39f5ac04897b04ea94321aad, type: 3}
   m_Name: Log
   m_EditorClassIdentifier: 
-  Id: 2
+  Id: 0
   Name: Log
   Description: Used to construct things
   Icon: {fileID: 21300000, guid: 3f4dd5ab743fb7a46b86445ce6b872fb, type: 3}
   ItemType: 4
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 5

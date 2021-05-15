@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9915ceff39f5ac04897b04ea94321aad, type: 3}
   m_Name: Resin
   m_EditorClassIdentifier: 
-  Id: 2
+  Id: 8
   Name: Resin
   Description: Used to hold fire long time
   Icon: {fileID: 21300000, guid: 3b9ff9dcae55c4848a06ce93b4fa5059, type: 3}
   ItemType: 4
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 20

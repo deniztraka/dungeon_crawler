@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9915ceff39f5ac04897b04ea94321aad, type: 3}
   m_Name: Leather
   m_EditorClassIdentifier: 
-  Id: 2
+  Id: 9
   Name: Leather
   Description: Required for various craftables
   Icon: {fileID: 21300000, guid: 1f95835830435c2488438bc43826172c, type: 3}
   ItemType: 4
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 5

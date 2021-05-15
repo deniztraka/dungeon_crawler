@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.UI;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace DTWorldz.Items.Behaviours.UI
     {
 
         public InventoryBehaviour RelatedInventory;
+        public StackingMenu StackingMenu;
         private ItemSlotBehaviour itemSlotDragStart;
         private ItemSlotBehaviour itemSlotDragEnd;
         void DragEndMessage(ItemSlotBehaviour itemSlotBehaviour)
@@ -32,8 +34,17 @@ namespace DTWorldz.Items.Behaviours.UI
             // regular drop to empty slot
             if (!itemSlotDragEnd.HasItem)
             {
-                itemSlotDragEnd.SetItem(new ItemContainerSlot(draggedItem, startQuantity));
-                itemSlotDragStart.RemoveItem();
+                // if starting quantity more than one, show stack/unstack menu
+                if (StackingMenu != null && startQuantity > 1)
+                {
+                    StackingMenu.OpenStackingMenu(itemSlotDragStart, itemSlotDragEnd);
+
+                }
+                else // just move to annother slot 1 quantity item
+                {
+                    itemSlotDragEnd.SetItem(new ItemContainerSlot(draggedItem, startQuantity));
+                    itemSlotDragStart.RemoveItem();
+                }
             }
             else
             {

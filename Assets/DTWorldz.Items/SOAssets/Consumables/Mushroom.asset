@@ -17,8 +17,8 @@ MonoBehaviour:
   Description: Refills your hunger
   Icon: {fileID: 21300000, guid: fe9ed6b821ad24f4d9d6deef08a73bcf, type: 3}
   ItemType: 1
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 20
   EffectPrefab: {fileID: 0}
   RegenAmount: 10
   IsCooked: 0

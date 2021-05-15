@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13710b0416ab6434d8a25ab5896c1521, type: 3}
   m_Name: RawMeat
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 6
   Name: Raw Meat
   Description: Preferred way of consuming this is to cook first
   Icon: {fileID: 21300000, guid: d27fa9c8ab125704e9e9962408ba3b5a, type: 3}
   ItemType: 1
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 5
   EffectPrefab: {fileID: 0}
   RegenAmount: 2
   IsCooked: 0

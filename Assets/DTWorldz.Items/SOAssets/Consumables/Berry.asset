@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13710b0416ab6434d8a25ab5896c1521, type: 3}
   m_Name: Berry
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 7
   Name: Berry
   Description: Replenishes a bit of hunger
   Icon: {fileID: 21300000, guid: 8346c6372d1459a419fceab810b78c51, type: 3}
   ItemType: 1
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 20
   EffectPrefab: {fileID: 0}
   RegenAmount: 2
   IsCooked: 0

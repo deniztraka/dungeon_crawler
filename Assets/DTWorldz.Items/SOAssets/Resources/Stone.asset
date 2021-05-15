@@ -17,5 +17,5 @@ MonoBehaviour:
   Description: Used to construct things
   Icon: {fileID: 21300000, guid: 3940b8f0e9fc5404dbeeeddeb0e304fc, type: 3}
   ItemType: 4
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 5

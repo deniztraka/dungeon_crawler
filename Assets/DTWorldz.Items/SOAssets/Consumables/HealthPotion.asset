@@ -17,8 +17,8 @@ MonoBehaviour:
   Description: 'Refills your health '
   Icon: {fileID: 2564777308342627126, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
   ItemType: 1
-  Stackable: 0
-  MaxStackQuantity: 1
+  Stackable: 1
+  MaxStackQuantity: 5
   EffectPrefab: {fileID: 4020107257691126723, guid: 811bbf10fe019e14890855acb007009b,
     type: 3}
   RegenAmount: 20
