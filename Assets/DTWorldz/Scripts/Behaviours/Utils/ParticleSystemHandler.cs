@@ -10,7 +10,7 @@ namespace DTWorldz.Behaviours.Utils
         public float MaxEmissionRate = 50;
         private ParticleSystem particles;
         private ParticleSystem.EmissionModule emissionModule;
-        void Start()
+        void Awake()
         {
             particles = GetComponent<ParticleSystem>();
             emissionModule = particles.emission;

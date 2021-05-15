@@ -22,7 +22,7 @@ namespace DTWorldz.Behaviours
         public bool IsBurning;
         private float healthBefore;
 
-        void Start()
+        void Awake()
         {
             flickeringLight = GetComponent<FlickeringLightBehaviour>();
             fireParticles = GetComponentInChildren<ParticleSystemHandler>();
@@ -81,8 +81,15 @@ namespace DTWorldz.Behaviours
 
             StartCoroutine(SetVolume(currentHealth / maxHealth));
 
-            flickeringLight.SetIntensity(currentHealth, maxHealth);
-            fireParticles.SetEmission(currentHealth, maxHealth);
+            if (flickeringLight != null)
+            {
+                flickeringLight.SetIntensity(currentHealth, maxHealth);
+            }
+            if (fireParticles != null)
+            {
+                fireParticles.SetEmission(currentHealth, maxHealth);
+            }
+
             IsBurning = currentHealth > 0;
             healthBefore = currentHealth;
         }
