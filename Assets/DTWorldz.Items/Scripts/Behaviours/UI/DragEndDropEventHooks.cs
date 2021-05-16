@@ -15,7 +15,7 @@ namespace DTWorldz.Items.Behaviours.UI
         private ItemSlotBehaviour itemSlotDragEnd;
         void DragEndMessage(ItemSlotBehaviour itemSlotBehaviour)
         {
-            //Debug.Log("DragEndMessage");
+            Debug.Log("Normal DragEndMessage");
             if (itemSlotDragStart == null)
             {
                 return;
@@ -119,6 +119,8 @@ namespace DTWorldz.Items.Behaviours.UI
 
         void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
         {
+            Debug.Log("Hotbar DragEndMessage");
+
             if (itemSlotDragStart == null)
             {
                 return;

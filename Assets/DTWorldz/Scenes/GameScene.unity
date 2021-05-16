@@ -6015,7 +6015,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567601404}
   m_HandleRect: {fileID: 1567601403}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6226,7 +6226,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.1111112, y: 1}
+    m_SensorSize: {x: 2.1100385, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22093,6 +22093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StackingMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 127094990564811871, guid: 91447210d1626d7429d79bf34af05f17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 127094990645998315, guid: 91447210d1626d7429d79bf34af05f17,
         type: 3}
