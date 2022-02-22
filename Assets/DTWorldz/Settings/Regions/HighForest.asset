@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HighForest
   m_EditorClassIdentifier: 
   Name: HighForest
-  Height: 0.78
+  Height: 0.725
   Color: {r: 0.32052112, g: 0.4433962, b: 0.30744925, a: 0}
   Tile: {fileID: 11400000, guid: 168cd070a779cc84eb9f503e41a5c267, type: 2}
   TreeTypes:

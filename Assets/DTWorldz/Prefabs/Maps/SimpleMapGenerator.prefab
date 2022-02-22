@@ -46,16 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawingMode: 2
   Seed: 1
-  Width: 250
-  Height: 250
-  Scale: 50
-  Octaves: 9
-  Persistance: 0.5
+  Width: 500
+  Height: 500
+  Scale: 100
+  Octaves: 10
+  Persistance: 0.55
   Lacunarity: 2
   IsIsland: 1
-  IslandHeightMapTexture: {fileID: 2800000, guid: 3dbc5dcecab74e34397984aff058ed4f,
+  IslandHeightMapTexture: {fileID: 2800000, guid: 5ff8a47d3e2a85747815302d21665b43,
     type: 3}
-  LandIntensisty: 50
+  LandIntensisty: 10
   Terrains:
   - Template: {fileID: 11400000, guid: 7eebda7768cea1d44aff0fedd60bee04, type: 2}
     Tilemap: {fileID: 0}
@@ -82,9 +82,10 @@ MonoBehaviour:
   BushesParentObject: {fileID: 0}
   SpawnersParentObject: {fileID: 0}
   autoUpdate: 0
-  placeTrees: 1
-  placeBushes: 1
-  placeSpawners: 1
+  placeTrees: 0
+  placeBushes: 0
+  placeSpawners: 0
+  GenerateOnStart: 1
 --- !u!114 &2764427084108810443
 MonoBehaviour:
   m_ObjectHideFlags: 0

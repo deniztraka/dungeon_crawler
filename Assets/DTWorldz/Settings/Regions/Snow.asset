@@ -20,3 +20,5 @@ MonoBehaviour:
   TreeFrequency: 0
   BushTypes: []
   BushFrequency: 0
+  Spawners: []
+  SpawnerFrequency: 0
