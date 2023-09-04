@@ -99,6 +99,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -109,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -130,6 +131,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -746,6 +749,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      trap_floorFlames_17: -3290602394541962888
+      trap_floorFlames_2: 1866968179409091297
+      trap_floorFlames_19: -6702515425551352486
+      trap_floorFlames_7: 1004403559647719590
+      trap_floorFlames_24: 7215411902843132041
+      trap_floorFlames_0: 6775097207581815460
+      trap_floorFlames_11: 8970236989548119331
+      trap_floorFlames_22: -7885450208394010341
+      trap_floorFlames_18: 4645782217084747470
+      trap_floorFlames_9: -144606374002424472
+      trap_floorFlames_13: -4507226987005501047
+      trap_floorFlames_16: 5978108133011045339
+      trap_floorFlames_3: 8031945405137517567
+      trap_floorFlames_6: -7833611848955264965
+      trap_floorFlames_21: 6101702889096881370
+      trap_floorFlames_23: -9044577269153366928
+      trap_floorFlames_5: 1217041677071922473
+      trap_floorFlames_14: 5306403417228843367
+      trap_floorFlames_20: 8473427316359121597
+      trap_floorFlames_1: -7492585446141206388
+      trap_floorFlames_12: -2753494002488094471
+      trap_floorFlames_10: -8551023551429159290
+      trap_floorFlames_4: -7640437111875786089
+      trap_floorFlames_8: 1933423011868860120
+      trap_floorFlames_15: 7111000320741671305
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -108,6 +108,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -118,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -139,6 +140,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -818,6 +821,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      forest floor decorations_0: 1685093218395102591
+      forest floor decorations_11: 6979088883241786137
+      forest floor decorations_5: -6817340851578191914
+      forest floor decorations_16: 8418006799810241193
+      forest floor decorations_20: 2340790322486623707
+      forest floor decorations_19: -6167731709906773239
+      forest floor decorations_24: 1701543397379378128
+      forest floor decorations_18: -8145891124187869924
+      forest floor decorations_7: -6502099970742719920
+      forest floor decorations_1: 1641857351111752566
+      forest floor decorations_4: 6305766341662615422
+      forest floor decorations_14: 1612211779933878305
+      forest floor decorations_9: 8489563680598183039
+      forest floor decorations_12: -4419922005881559004
+      forest floor decorations_25: -6661772040460332611
+      forest floor decorations_8: -9015824332058429166
+      forest floor decorations_15: 7333213676499815526
+      forest floor decorations_27: 1956259636382014804
+      forest floor decorations_6: -6935182970084879059
+      forest floor decorations_3: 5257596220185271722
+      forest floor decorations_23: 8037596354301717298
+      forest floor decorations_21: 8734744865436497718
+      forest floor decorations_2: 602285631915744975
+      forest floor decorations_22: 5405097905528728171
+      forest floor decorations_13: -2530951126472634650
+      forest floor decorations_10: -5722608045997211453
+      forest floor decorations_17: 2039762105805417491
+      forest floor decorations_26: 6336489232736477480
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

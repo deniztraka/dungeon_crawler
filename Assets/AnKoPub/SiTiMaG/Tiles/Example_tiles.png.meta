@@ -219,7 +219,7 @@ TextureImporter:
       213: 21300142
     second: Example_tiles_71
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -239,6 +239,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -247,9 +249,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -270,9 +272,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1823,6 +1829,79 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Example_tiles_27: 21300054
+      Example_tiles_42: 21300084
+      Example_tiles_70: 21300140
+      Example_tiles_19: 21300038
+      Example_tiles_67: 21300134
+      Example_tiles_68: 21300136
+      Example_tiles_48: 21300096
+      Example_tiles_66: 21300132
+      Example_tiles_30: 21300060
+      Example_tiles_23: 21300046
+      Example_tiles_38: 21300076
+      Example_tiles_0: 21300000
+      Example_tiles_64: 21300128
+      Example_tiles_15: 21300030
+      Example_tiles_22: 21300044
+      Example_tiles_33: 21300066
+      Example_tiles_63: 21300126
+      Example_tiles_62: 21300124
+      Example_tiles_1: 21300002
+      Example_tiles_47: 21300094
+      Example_tiles_40: 21300080
+      Example_tiles_11: 21300022
+      Example_tiles_28: 21300056
+      Example_tiles_36: 21300072
+      Example_tiles_43: 21300086
+      Example_tiles_18: 21300036
+      Example_tiles_17: 21300034
+      Example_tiles_4: 21300008
+      Example_tiles_25: 21300050
+      Example_tiles_52: 21300104
+      Example_tiles_54: 21300108
+      Example_tiles_53: 21300106
+      Example_tiles_71: 21300142
+      Example_tiles_59: 21300118
+      Example_tiles_6: 21300012
+      Example_tiles_20: 21300040
+      Example_tiles_10: 21300020
+      Example_tiles_39: 21300078
+      Example_tiles_12: 21300024
+      Example_tiles_31: 21300062
+      Example_tiles_57: 21300114
+      Example_tiles_69: 21300138
+      Example_tiles_58: 21300116
+      Example_tiles_7: 21300014
+      Example_tiles_65: 21300130
+      Example_tiles_26: 21300052
+      Example_tiles_3: 21300006
+      Example_tiles_29: 21300058
+      Example_tiles_37: 21300074
+      Example_tiles_8: 21300016
+      Example_tiles_46: 21300092
+      Example_tiles_21: 21300042
+      Example_tiles_55: 21300110
+      Example_tiles_2: 21300004
+      Example_tiles_24: 21300048
+      Example_tiles_32: 21300064
+      Example_tiles_16: 21300032
+      Example_tiles_35: 21300070
+      Example_tiles_44: 21300088
+      Example_tiles_13: 21300026
+      Example_tiles_51: 21300102
+      Example_tiles_14: 21300028
+      Example_tiles_34: 21300068
+      Example_tiles_60: 21300120
+      Example_tiles_49: 21300098
+      Example_tiles_56: 21300112
+      Example_tiles_61: 21300122
+      Example_tiles_41: 21300082
+      Example_tiles_9: 21300018
+      Example_tiles_50: 21300100
+      Example_tiles_45: 21300090
+      Example_tiles_5: 21300010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

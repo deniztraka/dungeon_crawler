@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Experimental.Rendering.Universal;
+
 using UnityEngine;
 
 namespace DTWorldz.Behaviours.Items.Deco
 {
-    [RequireComponent(typeof(Light2D))]
+    [RequireComponent(typeof(UnityEngine.Rendering.Universal.Light2D))]
     public class FlickeringLightBehaviour : MonoBehaviour
     {
         private float timePassed = 0;
         private float minFrequency = .1f;
         private float maxFrequency = 2f;
 
-        public Light2D light2D;
+        public UnityEngine.Rendering.Universal.Light2D light2D;
         public float MaxIntensity = 1.25f;
         public float MinIntensity = 0.75f;
 
@@ -24,7 +24,7 @@ namespace DTWorldz.Behaviours.Items.Deco
         // Start is called before the first frame update
         void Start()
         {
-            light2D = GetComponent<Light2D>();
+            light2D = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
         }
 
         void LateUpdate()

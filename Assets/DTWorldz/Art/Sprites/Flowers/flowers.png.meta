@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -64,7 +65,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -388,6 +389,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      flowers_5: -1872591478575451559
+      flowers_4: -7271880148870568012
+      flowers_0: -194818066077126744
+      flowers_9: 3028422702807503905
+      flowers_7: 2119802022730792222
+      flowers_1: 7702638131693110658
+      flowers_8: 5087154339777923634
+      flowers_2: 1688127093310603583
+      flowers_3: 7958929529641746168
+      flowers_6: -5588888737662910949
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

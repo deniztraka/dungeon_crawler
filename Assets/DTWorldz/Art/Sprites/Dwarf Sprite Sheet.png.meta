@@ -212,6 +212,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -222,7 +224,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 0
@@ -243,9 +245,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -1656,6 +1661,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Dwarf Sprite Sheet_32: 452506530640022024
+      Dwarf Sprite Sheet_31: 3510321757404695454
+      Dwarf Sprite Sheet_8: -1023423754675153540
+      Dwarf Sprite Sheet_56: -1108650581470294604
+      Dwarf Sprite Sheet_1: -3726645951279728998
+      Dwarf Sprite Sheet_6: 505270100440101978
+      Dwarf Sprite Sheet_42: 4890209931236122827
+      Dwarf Sprite Sheet_57: 5660441447495611828
+      Dwarf Sprite Sheet_13: -6758326220675569820
+      Dwarf Sprite Sheet_36: -6524738276642975459
+      Dwarf Sprite Sheet_40: -2060416442012777173
+      Dwarf Sprite Sheet_4: 8912911674480664224
+      Dwarf Sprite Sheet_14: 2769708402545689817
+      Dwarf Sprite Sheet_19: -1456265857848000256
+      Dwarf Sprite Sheet_16: -370947206888267138
+      Dwarf Sprite Sheet_58: -1135236705191081018
+      Dwarf Sprite Sheet_59: -2667605748769433728
+      Dwarf Sprite Sheet_15: -2539202774422080325
+      Dwarf Sprite Sheet_49: -2580733758419701933
+      Dwarf Sprite Sheet_7: 2126202355409814432
+      Dwarf Sprite Sheet_48: -1010520073733128609
+      Dwarf Sprite Sheet_53: 3742335255681071035
+      Dwarf Sprite Sheet_46: 2320977831433441617
+      Dwarf Sprite Sheet_62: -8875802508532478354
+      Dwarf Sprite Sheet_29: -8544653125190484742
+      Dwarf Sprite Sheet_60: 975780130100146131
+      Dwarf Sprite Sheet_44: 3094314797542007227
+      Dwarf Sprite Sheet_52: 2504447458898315725
+      Dwarf Sprite Sheet_21: 3651403315987695847
+      Dwarf Sprite Sheet_3: -2634283751889783361
+      Dwarf Sprite Sheet_43: 7146086041927838070
+      Dwarf Sprite Sheet_37: 3374744685133447649
+      Dwarf Sprite Sheet_17: -4422778496368539746
+      Dwarf Sprite Sheet_25: -2849805868270018728
+      Dwarf Sprite Sheet_24: -1830012930772382542
+      Dwarf Sprite Sheet_18: -5832952506328051971
+      Dwarf Sprite Sheet_27: 3789847110997492817
+      Dwarf Sprite Sheet_9: -5161961076365422841
+      Dwarf Sprite Sheet_45: -2379438305363249011
+      Dwarf Sprite Sheet_11: 7113229182857452474
+      Dwarf Sprite Sheet_20: -4568613849678342952
+      Dwarf Sprite Sheet_26: -8872040530544975300
+      Dwarf Sprite Sheet_47: -1934405836019033576
+      Dwarf Sprite Sheet_61: 6917264888923744243
+      Dwarf Sprite Sheet_50: 7224587371578033601
+      Dwarf Sprite Sheet_30: 7371172387441731375
+      Dwarf Sprite Sheet_10: 3962984716661458650
+      Dwarf Sprite Sheet_41: 6506387686842564028
+      Dwarf Sprite Sheet_5: -131828604234631201
+      Dwarf Sprite Sheet_12: 6932757109042993820
+      Dwarf Sprite Sheet_0: -2974016391851949323
+      Dwarf Sprite Sheet_2: -3525694716133109451
+      Dwarf Sprite Sheet_22: 6896322897537292833
+      Dwarf Sprite Sheet_39: -489641111889714734
+      Dwarf Sprite Sheet_55: -7349301909034420068
+      Dwarf Sprite Sheet_23: -8038589721123675725
+      Dwarf Sprite Sheet_33: -7549636840578138704
+      Dwarf Sprite Sheet_54: 1913422593123859499
+      Dwarf Sprite Sheet_51: -6624720847676041407
+      Dwarf Sprite Sheet_34: 8045262809479021666
+      Dwarf Sprite Sheet_38: -5896779251346890775
+      Dwarf Sprite Sheet_35: 5165976312815812977
+      Dwarf Sprite Sheet_28: 4700356684142812691
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

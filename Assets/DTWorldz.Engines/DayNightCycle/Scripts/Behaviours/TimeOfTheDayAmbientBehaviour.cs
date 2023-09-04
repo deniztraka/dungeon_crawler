@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace DTWorldz.Engines.DayNightCycle
 {
@@ -10,7 +10,7 @@ namespace DTWorldz.Engines.DayNightCycle
     {
         public Color[] AmbientHourColorsList;
         [SerializeField]
-        private Light2D ambientLight;
+        private UnityEngine.Rendering.Universal.Light2D ambientLight;
         private Color targetColor;
         private Color startColor;
 
@@ -20,7 +20,7 @@ namespace DTWorldz.Engines.DayNightCycle
 
         void Start()
         {
-            ambientLight = GetComponent<Light2D>();
+            ambientLight = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
             
             if (TimeOfTheDay != null)
             {

@@ -504,6 +504,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -514,7 +515,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: 0
     aniso: 2
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -3988,6 +3989,167 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      floorTiles_81: 8512266536555863707
+      floorTiles_59: -3802972843143240583
+      floor_forest_rock0: -8198239042817870652
+      floorTiles_132: 3972922571358265556
+      floorTiles_86: -8069302912024745563
+      floorTiles_62: -5394717704014642793
+      floorTiles_64: 607749562949422345
+      floorTiles_107: 3889773241161582583
+      floorTiles_136: -7751965459905414262
+      floor_forest_flowers_white_1: -7270207782657578100
+      floorTiles_30: 8415731101607915944
+      floorTiles_126: -474444490457508201
+      floorTiles_122: -2565296847655284348
+      floorTiles_116: 9180319924993416009
+      floorTiles_46: 1131737711732825933
+      floorTiles_79: 7404769705954147295
+      floorTiles_149: 4465874747266745363
+      floorTiles_37: 1128752453735807036
+      floor_forest_mushroom_brown_2: 6139544387566998286
+      floorTiles_26: 3660615102439749787
+      floor_forest_mushroom_brown_1: 3423699105272621677
+      floorTiles_121: -3608197814534515918
+      floor_forest_rock2: 4997401061816018679
+      floorTiles_47: -4577130840498486491
+      floorTiles_48: -8669342303186400032
+      floorTiles_70: 6262318099385305172
+      floorTiles_63: 7316990472039031569
+      floorTiles_33: 4298551880975304723
+      floorTiles_50: 7552736588062558982
+      floorTiles_56: -2565235025635024568
+      floorTiles_76: 1970717431077530101
+      floorTiles_82: -2245601036659016455
+      floorTiles_87: 2251162915431611130
+      floorTiles_152: 990366100023818289
+      floorTiles_29: 6135537642699765485
+      floorTiles_31: -3864858237578335696
+      floorTiles_17: 2387661270778299655
+      floorTiles_158: -38126772350550953
+      floorTiles_112: -3722466973625385027
+      floorTiles_7: -6631909920601613697
+      floorTiles_153: 4097335661923758836
+      floorTiles_84: -8481277473042879720
+      floorTiles_41: 6844983663810333807
+      floorTiles_142: -6677064003009721370
+      floorTiles_114: 3255485458872404098
+      floorTiles_131: 1654173923011674436
+      floorTiles_2: -4166097776838399288
+      floorTiles_157: 3015678926535549193
+      floorTiles_96: -1065031689342425298
+      floorTiles_99: 6725235470519344166
+      floor_forest_flowers_purple_0: 566514677674342147
+      floorTiles_49: 1173402066886977464
+      floorTiles_60: 1015340068935060454
+      floorTiles_16: -8261217924809448369
+      floorTiles_78: -4850190756251293037
+      floorTiles_92: -4853208084208783584
+      floorTiles_68: 1633895980267957037
+      floorTiles_100: -8440868947991690780
+      floor_forest_mushroom_red_2: 1710836278142885771
+      floorTiles_74: -4526766158328307006
+      floorTiles_13: 8404310585962196772
+      floorTiles_14: 5676107024317448808
+      floorTiles_147: -1030318956532426202
+      floor_forest_empty: 1726061256476602623
+      floorTiles_44: 335484690298795800
+      floorTiles_71: -4578457175440677442
+      floorTiles_19: -7810942816139169756
+      floorTiles_6: -7260310062464109513
+      floorTiles_12: 8614907140284664561
+      floorTiles_18: -739788094613962449
+      floorTiles_103: 58894157385439286
+      floorTiles_93: 2959830234084006883
+      floorTiles_43: -1369049996848575344
+      floorTiles_148: 6343736126198939699
+      floorTiles_21: -6070804053319596487
+      floorTiles_23: 3747960501484458217
+      floorTiles_51: -6826905891038006293
+      floorTiles_4: 6905831066398402554
+      floorTiles_24: -3762139677729831545
+      floorTiles_32: 7621763207265040957
+      floorTiles_110: 6544836675185565349
+      floorTiles_90: -5799915128725399258
+      floorTiles_28: -1976569573378965297
+      floorTiles_113: -4572830741094205848
+      floorTiles_130: 3849661898854948511
+      floorTiles_58: 626899103109297745
+      floorTiles_108: 7423755711748039125
+      floorTiles_8: -8081505355173112674
+      floorTiles_123: 2001655549423079658
+      floorTiles_67: 1837463085965657808
+      floor_forest_rock1: -6582648425864964765
+      floorTiles_77: -1742128990554533941
+      floorTiles_129: -4314374996062932317
+      floor_forest_flowers_purple_1: 6449311602123378350
+      floorTiles_11: 2457666184918796692
+      floorTiles_94: -2106943412118730864
+      floorTiles_104: 434354103542656493
+      floorTiles_156: 4564772051726893814
+      floorTiles_134: 78132279930567544
+      floorTiles_36: -481994649359486434
+      floorTiles_120: -3502536841351938061
+      floorTiles_42: -6448123299813779921
+      floorTiles_53: 6169850719828184167
+      floorTiles_146: -7470265271330030686
+      floorTiles_150: 1667635520463283068
+      floorTiles_144: 2636801236669038992
+      floorTiles_10: -864172247753202784
+      floorTiles_83: -5336029304512364236
+      floorTiles_34: 9189129015094561786
+      floorTiles_20: -8232644426065118160
+      floorTiles_27: 628190384221133120
+      floorTiles_128: 407655978561596556
+      floorTiles_39: -7261111957479823702
+      floorTiles_22: -8164187630597048829
+      floorTiles_133: 852599172391980127
+      floorTiles_140: -6327688953911446662
+      floorTiles_143: -5034110787716116335
+      floorTiles_138: -5490658242600038396
+      floorTiles_73: -6246580365113815667
+      floor_forest_mushroom_brown_0: 7934531274800251095
+      floorTiles_89: -5773723630661490283
+      floorTiles_151: -426106222551066700
+      floorTiles_102: -4147573448797029824
+      floorTiles_80: 7882891556605208337
+      floorTiles_154: -8684617421124838059
+      floorTiles_91: -5675107198435654462
+      floorTiles_109: 7729906377614651312
+      floorTiles_127: 1730960099347273520
+      floorTiles_106: 926472847664497553
+      floor_forest_flowers_white_0: -2099444210209125691
+      floorTiles_137: -7228000505120993878
+      floorTiles_101: -6261521680874896879
+      floorTiles_124: 7804198336564838234
+      floorTiles_61: 1760703958600237615
+      floorTiles_72: 7576135425644797268
+      floorTiles_97: 8729048394263839189
+      floorTiles_88: 9130928027529383495
+      floorTiles_119: 8180287386154752519
+      floorTiles_118: 3041434751878792049
+      floorTiles_117: 5606736406335297485
+      floorTiles_139: 8745379117076775374
+      floorTiles_57: -4919174932742630275
+      floorTiles_159: -5305187764127816144
+      floorTiles_69: 1913390044488464096
+      floor_forest_mushroom_red_0: 5197717640504471286
+      floorTiles_111: -5607798751126939710
+      floorTiles_40: -4762997659169151671
+      floorTiles_0: -657184601136422320
+      floorTiles_66: 4239139859183198421
+      floorTiles_9: 5688402823894778135
+      floor_forest_flowers_white_2: 4475048969169947814
+      floorTiles_52: 7605509127985786092
+      floorTiles_1: 2040372132977131867
+      floorTiles_98: -715650500396623335
+      floorTiles_141: 3801406415110218379
+      floor_forest_flowers_purple_2: -4884295656924243617
+      floor_forest_mushroom_red_1: -3658164106659537248
+      floorTiles_54: -125310212524379099
+      floorTiles_38: 1456863355344898750
+      floorTiles_3: -7025652427051960046
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
