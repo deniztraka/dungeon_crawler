@@ -4896,7 +4896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -23.300049, y: 140.5}
+  m_AnchoredPosition: {x: -23.3, y: 140.5}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996801263
@@ -6829,7 +6829,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.20784315, g: 0.25490198, b: 0.4156863, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -22783,6 +22783,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5404622207309713572, guid: 6373ca53439d5bd4fb217567f4d62545,
+        type: 3}
+      propertyPath: IsBurning
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5404622207309713593, guid: 6373ca53439d5bd4fb217567f4d62545,
         type: 3}
       propertyPath: m_Name
@@ -22801,11 +22806,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2764427084108810443, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: TextureRenderer
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2774648015803943343, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: m_Name
@@ -22814,51 +22814,6 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: Seed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: Width
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: Height
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: autoUpdate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: placeTrees
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: DrawingMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: placeBushes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: placeSpawners
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: LandIntensisty
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: GenerateOnStart
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
@@ -22876,11 +22831,6 @@ PrefabInstance:
       propertyPath: SpawnersParentObject
       value: 
       objectReference: {fileID: 1210151511}
-    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
-        type: 3}
-      propertyPath: IslandHeightMapTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 5ff8a47d3e2a85747815302d21665b43, type: 3}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: Terrains.Array.data[0].Tilemap
@@ -23114,7 +23064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8592.626}
+  m_AnchoredPosition: {x: 0, y: 778.8691}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &4216695525146324140

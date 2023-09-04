@@ -201,7 +201,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         {
             ClearTileMap();
 
-            var prng = new System.Random(Seed);
+            var prng = new System.Random(Seed == -1 ? UnityEngine.Random.Range(0,10000):Seed);
 
             float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
