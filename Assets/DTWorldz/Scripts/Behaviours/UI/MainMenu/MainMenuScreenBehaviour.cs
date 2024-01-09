@@ -73,14 +73,14 @@ namespace DTWorldz.Behaviours.UI
         public void SelectCharacter()
         {
             audioManager.Play("ButtonClick");
-            StartCoroutine(ExecuteAfterTime(LadAct1Scene, 0.6f));
+            StartCoroutine(ExecuteAfterTime(LoadGameScene, 0.6f));
         }
 
 
-        private void LadAct1Scene()
+        private void LoadGameScene()
         {
             var asyncSceneLoader = GameObject.FindObjectOfType<AsyncSceneLoader>();
-            asyncSceneLoader.LoadScene("Act1Scene", false, false);
+            asyncSceneLoader.LoadScene("GameScene", false, false);
         }
 
         public void CreateCharacter()

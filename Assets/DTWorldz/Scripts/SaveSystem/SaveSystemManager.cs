@@ -20,7 +20,7 @@ namespace DTWorldz.SaveSystem
 
         internal void ClearSaveData()
         {
-            var persistentPath = Application.persistentDataPath;            
+            var persistentPath = Application.persistentDataPath;
             string filePath = Path.Combine(persistentPath, SavePath);
             if (Directory.Exists(filePath))
             {

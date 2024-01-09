@@ -25,12 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2774648015803943343}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -253, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9004814544858290398
 MonoBehaviour:
@@ -45,15 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrawingMode: 2
-  Seed: 1
-  Width: 500
-  Height: 500
+  Seed: 3
+  Width: 250
+  Height: 250
   Scale: 100
   Octaves: 10
   Persistance: 0.55
   Lacunarity: 2
   IsIsland: 1
-  IslandHeightMapTexture: {fileID: 2800000, guid: 5ff8a47d3e2a85747815302d21665b43,
+  IslandHeightMapTexture: {fileID: 2800000, guid: 3dbc5dcecab74e34397984aff058ed4f,
     type: 3}
   LandIntensisty: 10
   Terrains:
@@ -82,10 +83,10 @@ MonoBehaviour:
   BushesParentObject: {fileID: 0}
   SpawnersParentObject: {fileID: 0}
   autoUpdate: 0
-  placeTrees: 0
-  placeBushes: 0
-  placeSpawners: 0
-  GenerateOnStart: 1
+  placeTrees: 1
+  placeBushes: 1
+  placeSpawners: 1
+  GenerateOnStart: 0
 --- !u!114 &2764427084108810443
 MonoBehaviour:
   m_ObjectHideFlags: 0

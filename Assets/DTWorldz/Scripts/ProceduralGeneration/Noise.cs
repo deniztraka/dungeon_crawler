@@ -8,6 +8,7 @@ namespace DTWorldz.ProceduralGeneration
     {
         public static float[,] GenerateNoiseMap(System.Random prng, int width, int height, float scale, int octaves, float persistance, float lacunarity, Vector2 offSet, bool isIsland, Texture2D islandHeightMap, float islandHeightMapIntensity)
         {
+
             var noiseMap = new float[width, height];
 
             var octaveOffsets = new Vector2[octaves];
@@ -18,10 +19,13 @@ namespace DTWorldz.ProceduralGeneration
                 octaveOffsets[o] = new Vector2(offSetX, offSetY);
             }
 
+
             if (scale <= 0)
             {
                 scale = 0.0001f;
             }
+
+
 
             float maxNoiseHeight = float.MinValue;
             float minNoiseHeight = float.MaxValue;
@@ -31,14 +35,17 @@ namespace DTWorldz.ProceduralGeneration
 
             for (int x = 0; x < width; x++)
             {
+
                 for (int y = 0; y < height; y++)
                 {
+
                     float amplitude = 1;
                     float frequency = 1;
                     float noiseHeight = 0;
 
                     for (int o = 0; o < octaves; o++)
                     {
+
                         float sampleX = (x - halfWidth) / scale * frequency + octaveOffsets[o].x;
                         float sampleY = (y - halfHeight) / scale * frequency + octaveOffsets[o].y;
 
@@ -63,6 +70,7 @@ namespace DTWorldz.ProceduralGeneration
                     }
 
                     noiseMap[x, y] = noiseHeight;
+
                 }
             }
 
@@ -82,13 +90,13 @@ namespace DTWorldz.ProceduralGeneration
                 {
                     for (int y = 0; y < height; y++)
                     {
-                         var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight-0.1f, islandHeightMap.GetPixel(x, y).grayscale);
+                        var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight - 0.1f, islandHeightMap.GetPixel(x, y).grayscale);
                         //Debug.Log(hede);
                         grayScaleSample = Mathf.Pow(grayScaleSample, islandHeightMapIntensity);
 
                         //noiseMap[x, y] = (1 + noiseMap[x, y] - grayScaleSample) / 2;
                         noiseMap[x, y] = noiseMap[x, y] - grayScaleSample;
-                        
+
                     }
                 }
             }

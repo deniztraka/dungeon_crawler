@@ -205,6 +205,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
             float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
+            Debug.Log("Noise Map Generated");
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
             if (DrawingMode == DrawMode.NoiseMap)
             {
