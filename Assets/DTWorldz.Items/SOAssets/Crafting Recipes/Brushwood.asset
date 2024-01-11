@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c8283d34aa21a740b5fd3ec194ce75d, type: 3}
-  m_Name: CampFire
+  m_Name: Brushwood
   m_EditorClassIdentifier: 
   id: 0
   Name: 'Brushwood '
