@@ -99,7 +99,7 @@ Material:
     - _CurrentWorldTexturePos: {r: -48, g: 3792, b: 0, a: 0}
     - _FoamColour: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
     - _FoamTexelSize: {r: 0.005, g: 0.005, b: 0, a: 0}
-    - _MainColour: {r: 0.24251983, g: 0.51712793, b: 0.64499986, a: 0.9411765}
+    - _MainColour: {r: 0.2425198, g: 0.5171279, b: 0.64499986, a: 0.78431374}
     - _SpecularColour: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_BuildTextureStacks: []
 --- !u!114 &1576172767386937083

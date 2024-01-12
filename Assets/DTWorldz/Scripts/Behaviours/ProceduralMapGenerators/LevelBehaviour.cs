@@ -19,7 +19,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
         public Tilemap WallDecorationsMap;
         public Transform EnvironmentParent;
         public LayerMask CleaningLayer;
-        public TileBase TestTile;
 
         private int levelNumber;
         private BinaryTree tree;

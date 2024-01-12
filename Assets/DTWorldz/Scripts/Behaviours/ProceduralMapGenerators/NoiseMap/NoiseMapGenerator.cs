@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DTWorldz.Behaviours.Utils;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
@@ -211,7 +212,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
             float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
-            Debug.Log("Noise Map Generated");
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
             if (DrawingMode == DrawMode.NoiseMap)
             {
@@ -225,8 +225,6 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             {
                 mapDisplay.DrawTileMap(Terrains, noiseMap, Width, Height);
             }
-
-
 
             if (placeTrees)
             {
@@ -243,9 +241,25 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 PlaceSpawners(prng);
             }
 
+            GenerateWaterShadow();
+
             ExtendSandTiles();
 
             return prng;
+        }
+
+        private void GenerateWaterShadow()
+        {
+            Tilemap waterTilemap = Terrains.First(t => t.Template.Name == "Water").Tilemap;
+            var waterShadowTerrain = Terrains.First(t => t.Template.Name == "WaterShadow");
+            TileBase waterShadowTile = waterShadowTerrain.Template.Tile;
+
+            foreach (var position in waterTilemap.cellBounds.allPositionsWithin)
+            {
+                if(waterTilemap.HasTile(position)){
+                    waterShadowTerrain.Tilemap.SetTile(position, waterShadowTile);
+                }
+            }
         }
 
         public void ExtendSandTiles(int extensionCount = 3)
