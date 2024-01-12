@@ -63,6 +63,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
         public Dictionary<string, CellSet> TerrrainTiles;
 
+        public bool ProcessCellsAroundPlayerOnStart;
+
         void Awake()
         {
             prng = new System.Random(Seed);
@@ -73,15 +75,18 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             if (GenerateOnStart)
             {
                 GenerateMap();
-                
+
             }
-            
+
             TerrrainTiles = new Dictionary<string, CellSet>();
 
             FillTerrainTiles();
 
             var player = GameObject.FindGameObjectWithTag("Player");
-            StartCoroutine(ProcessCellsAroundPlayer(player, 10));
+            if (player != null && ProcessCellsAroundPlayerOnStart)
+            {
+                StartCoroutine(ProcessCellsAroundPlayer(player, 10));
+            }
         }
 
         private List<CellSet> GetCellSetsAround(GameObject playerObject, TileMapTerrain terrain, int distance)
@@ -202,7 +207,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         {
             ClearTileMap();
 
-            var prng = new System.Random(Seed == -1 ? UnityEngine.Random.Range(0,10000):Seed);
+            var prng = new System.Random(Seed == -1 ? UnityEngine.Random.Range(0, 10000) : Seed);
 
             float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
 
@@ -221,6 +226,8 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 mapDisplay.DrawTileMap(Terrains, noiseMap, Width, Height);
             }
 
+
+
             if (placeTrees)
             {
                 PlaceTrees(prng);
@@ -235,8 +242,70 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             {
                 PlaceSpawners(prng);
             }
+
+            ExtendSandTiles();
+
             return prng;
         }
+
+        public void ExtendSandTiles(int extensionCount = 3)
+        {
+            if (Terrains == null)
+            {
+                return;
+            }
+
+            Tilemap sandTilemap = null;
+            TileBase sandTile = null;
+            foreach (var terrain in Terrains)
+            {
+                if (terrain.Template.Name == "Sand")
+                {
+                    sandTilemap = terrain.Tilemap;
+                    sandTile = terrain.Template.Tile;
+                    break;
+                }
+            }
+
+            if (sandTilemap == null || sandTile == null)
+            {
+                Debug.LogError("Sand tilemap or tile not found.");
+                return;
+            }
+
+            for (int i = 0; i < extensionCount; i++)
+            {
+                List<Vector3Int> tilesToSet = new List<Vector3Int>();
+
+                foreach (var position in sandTilemap.cellBounds.allPositionsWithin)
+                {
+                    if (sandTilemap.HasTile(position))
+                    {
+                        for (int x = -1; x <= 1; x++)
+                        {
+                            for (int y = -1; y <= 1; y++)
+                            {
+                                if (x == 0 && y == 0) continue; // Skip the center tile
+
+                                Vector3Int adjacentPosition = new Vector3Int(position.x + x, position.y + y, position.z);
+                                if (!sandTilemap.HasTile(adjacentPosition))
+                                {
+                                    tilesToSet.Add(adjacentPosition);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                foreach (var pos in tilesToSet)
+                {
+                    sandTilemap.SetTile(pos, sandTile);
+                }
+            }
+        }
+
+
+
 
         public void PlaceBushes(System.Random prng)
         {
@@ -436,7 +505,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                     {
                         if (currentHeight <= Terrains[r].Template.Height)
                         {
-                            tileMap[y * Width + x] = Terrains[r].Template.Tile;
+                            tileMap[y * Width + x] = (Tile)Terrains[r].Template.Tile;
                             break;
                         }
                     }

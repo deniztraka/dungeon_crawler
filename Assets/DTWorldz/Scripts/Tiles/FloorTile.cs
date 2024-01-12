@@ -8,7 +8,7 @@ namespace DTWorldz.Tiles
 {
     [Serializable]
     [CreateAssetMenu(fileName = "FloorTile", menuName = "Tiles/FloorTile")]
-    public class FloorTile : RandomTile
+    public class FloorTile : RuleTile
     {
        
 

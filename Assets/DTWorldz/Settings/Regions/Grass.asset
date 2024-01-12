@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Grass
   Height: 0.5
   Color: {r: 0.095341444, g: 1, b: 0, a: 0}
-  Tile: {fileID: 11400000, guid: afd38c60ab6d8cd4c9cc6ff633a7c13b, type: 2}
+  Tile: {fileID: 11400000, guid: c3800da55b3bd6444bf1a55cbd7cc0eb, type: 2}
   TreeTypes:
   - {fileID: 4601540035507593351, guid: 609c818e1fdb01d42869d80b051138fe, type: 3}
   TreeFrequency: 0.025

@@ -13,7 +13,7 @@ namespace DTWorldz.ScriptableObjects
         public string Name;
         public float Height;
         public Color Color;
-        public Tile Tile;
+        public TileBase Tile;
         public List<GameObject> TreeTypes;
         public float TreeFrequency;
         public List<GameObject> BushTypes;
