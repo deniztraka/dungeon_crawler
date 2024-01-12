@@ -50,7 +50,7 @@ MonoBehaviour:
   Width: 256
   Height: 256
   Scale: 100
-  Octaves: 10
+  Octaves: 6
   Persistance: 0.55
   Lacunarity: 2
   IsIsland: 1
@@ -76,11 +76,12 @@ MonoBehaviour:
   TreesParentObject: {fileID: 0}
   BushesParentObject: {fileID: 0}
   SpawnersParentObject: {fileID: 0}
-  autoUpdate: 0
+  autoUpdate: 1
   placeTrees: 0
   placeBushes: 0
   placeSpawners: 0
   GenerateOnStart: 0
+  ProcessCellsAroundPlayerOnStart: 1
 --- !u!114 &2764427084108810443
 MonoBehaviour:
   m_ObjectHideFlags: 0
