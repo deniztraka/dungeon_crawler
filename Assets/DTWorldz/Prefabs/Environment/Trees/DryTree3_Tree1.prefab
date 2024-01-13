@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1561465660963191676, guid: 341da6586d0ef144895f37a5a195ebe6,
@@ -73,10 +74,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: DryTree3_Tree1
       objectReference: {fileID: 0}
+    - target: {fileID: 4455652467378247071, guid: 341da6586d0ef144895f37a5a195ebe6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6d2aaaef1866a1409b13a953e264047,
+        type: 3}
     - target: {fileID: 4604681339615004686, guid: 341da6586d0ef144895f37a5a195ebe6,
         type: 3}
       propertyPath: maxHealth
       value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 341da6586d0ef144895f37a5a195ebe6, type: 3}

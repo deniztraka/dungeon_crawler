@@ -5,8 +5,14 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489631599911760461, guid: f6f27737ea1246b4d8db004635995f1a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1198842334924744165, guid: f6f27737ea1246b4d8db004635995f1a,
         type: 3}
       propertyPath: maxHealth
@@ -88,4 +94,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 6418515689748442738, guid: f6f27737ea1246b4d8db004635995f1a, type: 3}
+    - {fileID: 4246693473669029651, guid: f6f27737ea1246b4d8db004635995f1a, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f27737ea1246b4d8db004635995f1a, type: 3}
