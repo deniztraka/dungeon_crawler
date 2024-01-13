@@ -62,6 +62,10 @@ namespace DTWorldz.Behaviours
 
         public void HealthChanged(float currentHealth, float maxHealth)
         {
+            if(!isActiveAndEnabled){
+                return;
+            }
+
             if (healthBefore > 0 && currentHealth <= 0)
             {
                 if (audioManager != null)
@@ -79,6 +83,8 @@ namespace DTWorldz.Behaviours
                 }
             }
 
+            
+                
             StartCoroutine(SetVolume(currentHealth / maxHealth));
 
             if (flickeringLight != null)
