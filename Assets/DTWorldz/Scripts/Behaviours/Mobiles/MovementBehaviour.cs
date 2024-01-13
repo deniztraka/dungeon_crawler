@@ -65,6 +65,7 @@ namespace DTWorldz.Behaviours.Mobiles
             FollowingTarget = null;
             if (attackBehaviour != null)
             {
+                
                 attackBehaviour.OnBeforeAttack += new AttackBehaviour.AttackingHandler(BeforeAttack);
                 attackBehaviour.OnAfterAttack += new AttackBehaviour.AttackingHandler(AfterAttack);
             }
@@ -78,6 +79,7 @@ namespace DTWorldz.Behaviours.Mobiles
 
         private bool BeforeAttack()
         {
+            Debug.Log("BeforeAttack");
             isAttacking = true;
             return true;
         }

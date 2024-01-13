@@ -21,6 +21,9 @@ namespace DTWorldz.Engines.DayNightCycle
 
         private void ProcessShadows()
         {
+            if(this == null || gameObject == null || gameObject.activeSelf == false || !isActiveAndEnabled){
+                return;
+            }
             // Get the current game time
             var currentGameTime = timeOfTheDay.GetGameTime();
 
@@ -85,6 +88,7 @@ namespace DTWorldz.Engines.DayNightCycle
 
         private void OnDestroy()
         {
+            Debug.Log("ShadowsBehaviour.OnDestroy");
             // Unsubscribe to prevent memory leaks
             timeOfTheDay.OnAfterHourChanged -= new TimeOfTheDay.TimeOfTheDayHandler(ProcessShadows);
         }

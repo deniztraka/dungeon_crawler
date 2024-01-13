@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Behaviours.Mobiles;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ namespace DTWorldz.Behaviours.UI
         public Image FillImage;
         public Image ActionImage;
 
+        private Sprite tempImage;
+
         // Start is called before the first frame update
         public virtual void Start()
         {
@@ -27,12 +30,18 @@ namespace DTWorldz.Behaviours.UI
             }
             if (FillImage == null)
             {
-                FillImage = gameObject.GetComponentInChildren<Image>();
+                FillImage = transform.Find("FillImage").GetComponent<Image>();
             }
             if (Animator == null)
             {
                 Animator = gameObject.GetComponent<Animator>();
             }
+
+            if(ActionImage == null){
+                ActionImage = transform.Find("ActionImage").GetComponent<Image>();
+            }
+
+            tempImage = ActionImage.sprite;
 
             Button.onClick.AddListener(Action);
         }
@@ -61,7 +70,9 @@ namespace DTWorldz.Behaviours.UI
             if (ActionEvent != null)
             {
                 FillImage.fillAmount = 0;
-                Animator.Play("OnClick");
+                if(Animator != null){
+                    Animator.Play("OnClick");
+                }
                 IsCooldown = true;
                 Button.enabled = false;
                 ActionEvent.Invoke();
@@ -79,14 +90,28 @@ namespace DTWorldz.Behaviours.UI
         public void SetAction(UnityAction action, float cooldown)
         {
             ActionEvent.RemoveAllListeners();
+
+            if(action == null){
+                cooldownTime = 0;
+                ActionImage.sprite = tempImage;
+                return;
+            }
             ActionEvent.AddListener(action);
             cooldownTime = cooldown + 0.1f;
         }
 
         public void SetAction(UnityAction action, float cooldown, Sprite actionImage)
         {
+            if (action == null)
+            {
+                ActionImage.sprite = tempImage;
+            } else {
+                ActionImage.sprite = actionImage;
+            }
+
             SetAction(action, cooldown);
-            ActionImage.sprite = actionImage;
+            
+            
 
         }
 

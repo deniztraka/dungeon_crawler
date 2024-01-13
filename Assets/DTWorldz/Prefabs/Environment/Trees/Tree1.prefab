@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8616918105131019256}
   - component: {fileID: 1338010850435315828}
   - component: {fileID: 3241740840175333969}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,8 @@ GameObject:
   - component: {fileID: 1318083785}
   - component: {fileID: 1318083781}
   - component: {fileID: 4679804548264770957}
-  m_Layer: 8
+  - component: {fileID: 3786069316394958557}
+  m_Layer: 7
   m_Name: Tree1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,6 +346,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8567be423044e4043bab33f384674109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3786069316394958557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246693472189453973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83be750f4a8a064ba9b0d8a46fe7829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 1
+  Image: {fileID: -4964516229456897262, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
 --- !u!1 &4246693473669029651
 GameObject:
   m_ObjectHideFlags: 0

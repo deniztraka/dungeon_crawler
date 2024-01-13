@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2893314569137701956}
   - component: {fileID: 2893314569137701959}
   - component: {fileID: 2893314569137701957}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: FireParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2882905168482403027}
   - component: {fileID: 5064911282908082118}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4944,7 +4944,8 @@ GameObject:
   - component: {fileID: 5404622207309713574}
   - component: {fileID: 5404622207309713573}
   - component: {fileID: 5404622207309713572}
-  m_Layer: 10
+  - component: {fileID: 4568505830065665008}
+  m_Layer: 7
   m_Name: CampFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5151,3 +5152,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireParticles: {fileID: 2893314569137701957}
   IsBurning: 0
+--- !u!114 &4568505830065665008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5404622207309713593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83be750f4a8a064ba9b0d8a46fe7829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 1
+  Image: {fileID: 21300000, guid: 7e3782b333b449d4480331c5c9bd40d0, type: 3}

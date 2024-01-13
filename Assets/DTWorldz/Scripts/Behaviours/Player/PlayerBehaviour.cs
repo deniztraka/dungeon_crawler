@@ -5,6 +5,7 @@ using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Items;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.UI;
+using DTWorldz.Behaviours.Utils;
 using DTWorldz.DataModel;
 using DTWorldz.Items.SO;
 using DTWorldz.Models.MobileStats;
@@ -30,9 +31,11 @@ namespace DTWorldz.Behaviours.Player
         HungerBehaviour hunger;
         public float InteractionDistance = 1f;
         public ActionButtonBehaviour ActionButtonBehaviour;
+        public ActionButtonBehaviour UseActionButtonBehavior;
         public HealthPotionButtonBehaviour HealthPotionButtonBehaviour;
         public StaminaPotionButtonBehaviour StaminaPotionButtonBehaviour;
         public GameObject GoldLootPrefab;
+        private PlayerMovementBehaviour movementBehaviour;
 
         public delegate void DataLoaderHandler();
         public event DataLoaderHandler OnAfterDataLoad;
@@ -40,18 +43,35 @@ namespace DTWorldz.Behaviours.Player
         // Start is called before the first frame update
         void Start()
         {
-            var movementBehaviour = GetComponent<PlayerMovementBehaviour>();
+            movementBehaviour = GetComponent<PlayerMovementBehaviour>();
             var attackBehaviour = GetComponentInChildren<AttackBehaviour>();
             if (ActionButtonBehaviour)
             {
                 ActionButtonBehaviour.SetAction(movementBehaviour.Attack, attackBehaviour.AttackingFrequency);
             }
+
+            GetComponentInChildren<TargetFinder>().OnTargetChanged += new TargetFinder.TargetFinderEventHandler(OnInteractTargetChanged);
+
             health = GetComponent<HealthBehaviour>();
             stamina = GetComponent<StamBehaviour>();
             hunger = GetComponent<HungerBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
 
             RegisterToSaveSystem();
+        }
+
+        private void OnInteractTargetChanged(Interactable interactable)
+        {
+            if(UseActionButtonBehavior == null){
+                return;
+            }
+
+            if(interactable == null){
+                UseActionButtonBehavior.SetAction(null, 0);
+                return;
+            }
+
+            UseActionButtonBehavior.SetAction(interactable.Interact, interactable.Cooldown, interactable.Image);
         }
 
         private void RegisterToSaveSystem()

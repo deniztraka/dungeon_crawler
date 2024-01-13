@@ -57,7 +57,7 @@ namespace DTWorldz.Items.Behaviours
 
                 if (playerTransform != null && outlineMaterial != null && spriteRenderer != null && tempMaterial != null && labelTextCanvas != null)
                 {
-                    var closeEnough = Vector2.Distance(playerTransform.position, transform.position) < 3;
+                    var closeEnough = Vector2.Distance(playerTransform.position, transform.position) < 2;
                     spriteRenderer.material = closeEnough ? outlineMaterial : tempMaterial;
                     //labelTextCanvas.gameObject.SetActive(closeEnough);
                 }

@@ -7,6 +7,7 @@ using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using EZCameraShake;
+using DTWorldz.Behaviours.Mobiles;
 
 namespace DTWorldz.Behaviours
 {
@@ -45,6 +46,11 @@ namespace DTWorldz.Behaviours
             audioManager = gameObject.GetComponent<AudioManager>();
             attackBehaviour = transform.GetComponentInChildren<AttackBehaviour>();
             direction = Direction.Right;
+        }
+
+        public Direction GetDirection()
+        {
+            return direction;
         }
 
         // Update is called once per frame
@@ -94,10 +100,11 @@ namespace DTWorldz.Behaviours
         public void Attack()
         {
             attackingTrigger = attackBehaviour.Attack();
-            // if (attackingTrigger)
-            // {
-            //     CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
-            // }
+        }
+
+        public void Attack(HealthBehaviour targetHealth = null)
+        {
+           attackingTrigger = attackBehaviour.Attack(targetHealth);
         }
 
         private float GetAngle()

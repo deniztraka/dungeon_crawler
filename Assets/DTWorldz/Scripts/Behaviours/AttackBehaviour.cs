@@ -5,6 +5,7 @@ using DTWorldz.Models;
 using EZCameraShake;
 using UnityEngine;
 using DTWorlds.Behaviours.Effects;
+using System.Linq;
 
 namespace DTWorldz.Behaviours
 {
@@ -45,6 +46,7 @@ namespace DTWorldz.Behaviours
         private float attackTime = 0;
 
         public float ActionPoint = 5;
+        private HealthBehaviour targetHealth;
 
 
         // Start is called before the first frame update
@@ -100,27 +102,40 @@ namespace DTWorldz.Behaviours
             {
                 CameraShaker.Instance.ShakeOnce(1f, 0.5f, 0.1f, 0.1f);
             }
-            var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
-            if (colliders != null && colliders.Length > 0)
+
+            if (targetHealth != null)
             {
-                var firstCollider = colliders[0];
-                var enemyHealthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
-                if (enemyHealthBehaviour != null)
+                targetHealth.TakeDamage(Damage, DamageType.Physical);
+                audioManager.Play("Hit");
+            }
+
+            if (targetHealth == null)
+            {
+                var colliders = Physics2D.OverlapBoxAll(coll.transform.position + new Vector3(coll.offset.x, coll.offset.y, 0), coll.size, 0f, layer);
+                if (colliders != null && colliders.Length > 0)
                 {
-                    audioManager.Play("Hit");
-                    enemyHealthBehaviour.TakeDamage(Damage, DamageType.Physical);
-                    
-                    if (KnockbackForce > 0 && enemyHealthBehaviour.BodyType == BodyType.Flesh)
+                    // get closest collider
+                    colliders = colliders.OrderBy(x => Vector2.Distance(this.transform.position, x.transform.position)).ToArray();
+
+                    var firstCollider = colliders[0];
+                    var enemyHealthBehaviour = firstCollider.gameObject.GetComponent<HealthBehaviour>();
+                    if (enemyHealthBehaviour != null)
                     {
-                        var difference = enemyHealthBehaviour.transform.position - this.transform.position;
-                        difference = difference.normalized * KnockbackForce;
-                        enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);
-                    }
-                    if (IsPlayer)
-                    {
-                        if (enemyHealthBehaviour.BodyType == BodyType.Flesh)
+                        audioManager.Play("Hit");
+                        enemyHealthBehaviour.TakeDamage(Damage, DamageType.Physical);
+
+                        if (KnockbackForce > 0 && enemyHealthBehaviour.BodyType == BodyType.Flesh)
                         {
-                            StartCoroutine(CreateBloodStainsAfterSeconds(0.25f));
+                            var difference = enemyHealthBehaviour.transform.position - this.transform.position;
+                            difference = difference.normalized * KnockbackForce;
+                            enemyHealthBehaviour.transform.position = new Vector2(enemyHealthBehaviour.transform.position.x + difference.x, enemyHealthBehaviour.transform.position.y + difference.y);
+                        }
+                        if (IsPlayer)
+                        {
+                            if (enemyHealthBehaviour.BodyType == BodyType.Flesh)
+                            {
+                                StartCoroutine(CreateBloodStainsAfterSeconds(0.25f));
+                            }
                         }
                     }
                 }
@@ -147,13 +162,15 @@ namespace DTWorldz.Behaviours
             }
         }
 
-        public bool Attack()
+        public bool Attack(HealthBehaviour healthBehaviour = null)
         {
+            targetHealth = healthBehaviour;
             if (attackTime <= 0)
             {
                 if (OnBeforeAttack != null)
                 {
                     var result = OnBeforeAttack();
+                    Debug.Log("OnBeforeAttack result: " + result);
                     if (!result)
                     {
                         return false;

@@ -26,8 +26,8 @@ Library: /Users/deniztraka/Dev/Personal/Repos/dungeon_crawler/Temp/BurstOutput/t
 --assembly-defines=UnityLight2D;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;
---assembly-defines=Unity.2D.Tilemap.Extras;
 --assembly-defines=Unity.2D.Animation.Runtime;
+--assembly-defines=Unity.2D.Tilemap.Extras;
 --assembly-defines=Unity.InternalAPIEngineBridge.001;
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
@@ -35,8 +35,8 @@ Library: /Users/deniztraka/Dev/Personal/Repos/dungeon_crawler/Temp/BurstOutput/t
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Cinemachine;
---assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
+--assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=System.Runtime;
 --assembly-defines=netstandard;
 --assembly-defines=Mono.Security;
@@ -94,8 +94,8 @@ Library: /Users/deniztraka/Dev/Personal/Repos/dungeon_crawler/Temp/BurstOutput/t
 --assembly-defines=UnityLight2D;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
 --assembly-defines=Unity.Burst;
---assembly-defines=Unity.2D.Tilemap.Extras;
 --assembly-defines=Unity.2D.Animation.Runtime;
+--assembly-defines=Unity.2D.Tilemap.Extras;
 --assembly-defines=Unity.InternalAPIEngineBridge.001;
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
@@ -103,8 +103,8 @@ Library: /Users/deniztraka/Dev/Personal/Repos/dungeon_crawler/Temp/BurstOutput/t
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipelines.Universal.Shaders;
 --assembly-defines=Cinemachine;
---assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
+--assembly-defines=Unity.Burst.Unsafe;
 --assembly-defines=System.Runtime;
 --assembly-defines=netstandard;
 --assembly-defines=Mono.Security;

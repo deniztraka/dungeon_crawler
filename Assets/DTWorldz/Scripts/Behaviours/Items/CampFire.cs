@@ -21,6 +21,7 @@ namespace DTWorldz.Behaviours
         private ParticleSystemHandler fireParticles;
         public bool IsBurning;
         private float healthBefore;
+        private Interactable interactable;
 
         void Awake()
         {
@@ -29,16 +30,17 @@ namespace DTWorldz.Behaviours
             health = GetComponent<HealthBehaviour>();
             audioManager = GetComponent<AudioManager>();
             health.OnHealthChanged += new Interfaces.HealthChanged(HealthChanged);
+            interactable = GetComponent<Interactable>();
+            interactable.OnInteraction += new Interactable.InteractHandler(OnInteraction);
         }
 
-        void Update()
+        private void OnInteraction()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (health.CurrentHealth <= 0)
             {
                 AddFuel(10);
             }
-
-            if (Input.GetMouseButtonDown(1))
+            else
             {
                 Extinguish();
             }
@@ -62,7 +64,8 @@ namespace DTWorldz.Behaviours
 
         public void HealthChanged(float currentHealth, float maxHealth)
         {
-            if(!isActiveAndEnabled){
+            if (!isActiveAndEnabled)
+            {
                 return;
             }
 
@@ -83,8 +86,8 @@ namespace DTWorldz.Behaviours
                 }
             }
 
-            
-                
+
+
             StartCoroutine(SetVolume(currentHealth / maxHealth));
 
             if (flickeringLight != null)
