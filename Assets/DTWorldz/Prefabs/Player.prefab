@@ -5612,11 +5612,11 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 768
-  AttackingColliderSizeUp: {x: 1.25, y: 1.25}
+  AttackingColliderSizeUp: {x: 1.25, y: 1}
   AttackingColliderOffsetUp: {x: 0, y: 1}
   AttackingColliderSizeLeft: {x: 1, y: 1}
   AttackingColliderOffsetLeft: {x: -0.5, y: 0.5}
-  AttackingColliderSizeDown: {x: 1.25, y: 0.75}
+  AttackingColliderSizeDown: {x: 1.25, y: 1}
   AttackingColliderOffsetDown: {x: 0, y: -0.25}
   AttackingColliderSizeRight: {x: 1, y: 1}
   AttackingColliderOffsetRight: {x: 0.5, y: 0.5}
@@ -5819,7 +5819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5328125670306011840
 Transform:
   m_ObjectHideFlags: 0
