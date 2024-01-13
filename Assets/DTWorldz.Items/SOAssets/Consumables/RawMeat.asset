@@ -20,5 +20,5 @@ MonoBehaviour:
   Stackable: 1
   MaxStackQuantity: 5
   EffectPrefab: {fileID: 0}
-  RegenAmount: 2
+  RegenAmount: 20
   IsCooked: 0

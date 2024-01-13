@@ -15,12 +15,12 @@ MonoBehaviour:
   Name: Forest
   Height: 0.65
   Color: {r: 0.04793625, g: 0.41509432, b: 0.009789959, a: 0}
-  Tile: {fileID: 11400000, guid: c3800da55b3bd6444bf1a55cbd7cc0eb, type: 2}
+  Tile: {fileID: 11400000, guid: afd38c60ab6d8cd4c9cc6ff633a7c13b, type: 2}
   TreeTypes:
   - {fileID: 4246693472189453973, guid: f6f27737ea1246b4d8db004635995f1a, type: 3}
   - {fileID: 3330285602422777275, guid: 0f869d0d3ba48f54caac2340f64592be, type: 3}
   - {fileID: 994730712794689552, guid: f047c8704ae5a7343b92d18a2beb7b4a, type: 3}
-  TreeFrequency: 0.1
+  TreeFrequency: 0.075
   BushTypes:
   - {fileID: 1912981013916755855, guid: fa5e33f78f2009148b44f312ad75bb4e, type: 3}
   - {fileID: 8093128999710325632, guid: e03e402905adcbe4596032579cd29e74, type: 3}

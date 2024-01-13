@@ -47,10 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawingMode: 2
   Seed: 3
-  Width: 250
-  Height: 250
+  Width: 256
+  Height: 256
   Scale: 100
-  Octaves: 10
+  Octaves: 6
   Persistance: 0.55
   Lacunarity: 2
   IsIsland: 1
@@ -58,10 +58,6 @@ MonoBehaviour:
     type: 3}
   LandIntensisty: 10
   Terrains:
-  - Template: {fileID: 11400000, guid: 7eebda7768cea1d44aff0fedd60bee04, type: 2}
-    Tilemap: {fileID: 0}
-  - Template: {fileID: 11400000, guid: d8dd9f770d001aa48a71d6ba249bce61, type: 2}
-    Tilemap: {fileID: 0}
   - Template: {fileID: 11400000, guid: 11d761d7ccb2b904e8b20c14712ca656, type: 2}
     Tilemap: {fileID: 0}
   - Template: {fileID: 11400000, guid: 2abdb4f49d8831f468b6983c05b4196a, type: 2}
@@ -76,17 +72,16 @@ MonoBehaviour:
     Tilemap: {fileID: 0}
   - Template: {fileID: 11400000, guid: a8e41a4482db15749b0a38a59edcfe91, type: 2}
     Tilemap: {fileID: 0}
-  - Template: {fileID: 11400000, guid: af5e921784d39a648a748c53975b5bf2, type: 2}
-    Tilemap: {fileID: 0}
   OffSet: {x: 0, y: 0}
   TreesParentObject: {fileID: 0}
   BushesParentObject: {fileID: 0}
   SpawnersParentObject: {fileID: 0}
-  autoUpdate: 0
-  placeTrees: 1
-  placeBushes: 1
-  placeSpawners: 1
+  autoUpdate: 1
+  placeTrees: 0
+  placeBushes: 0
+  placeSpawners: 0
   GenerateOnStart: 0
+  ProcessCellsAroundPlayerOnStart: 1
 --- !u!114 &2764427084108810443
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,6 +37,10 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             for (int i = 0; i < terrains.Length; i++)
             {
                 var terrain = terrains[i];
+                if (terrain.Template.name == "WaterShadow")
+                {
+                    continue;
+                }
                 for (int x = 0; x < width; x++)
                 {
                     for (int y = 0; y < height; y++)
