@@ -9,15 +9,6 @@ namespace DTWorldz.Behaviours.Utils
         public Sprite Image;
         public delegate void InteractHandler();
         public event InteractHandler OnInteraction;
-        void Start()
-        {
-
-        }
-
-        void OnMouseDown()
-        {
-            Interact();
-        }
 
         public virtual void Interact()
         {

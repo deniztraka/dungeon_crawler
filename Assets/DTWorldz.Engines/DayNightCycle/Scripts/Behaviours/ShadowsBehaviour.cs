@@ -88,7 +88,6 @@ namespace DTWorldz.Engines.DayNightCycle
 
         private void OnDestroy()
         {
-            Debug.Log("ShadowsBehaviour.OnDestroy");
             // Unsubscribe to prevent memory leaks
             timeOfTheDay.OnAfterHourChanged -= new TimeOfTheDay.TimeOfTheDayHandler(ProcessShadows);
         }

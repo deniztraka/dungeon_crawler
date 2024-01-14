@@ -94,6 +94,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks Variant1
       objectReference: {fileID: 0}
+    - target: {fileID: 3852953306845667191, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4372765027462083100, guid: e6b2e52cd1959884eb364dd2b894926f,
+        type: 3}
     - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Size.x

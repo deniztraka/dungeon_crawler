@@ -1,6 +1,7 @@
 using System;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Behaviours.Utils;
 using UnityEngine;
 namespace DTWorldz.Behaviours
 {
@@ -10,6 +11,7 @@ namespace DTWorldz.Behaviours
         private AudioManager audioManager;
         private HealthBehaviour health;
         private int animatorHitStateHash;
+        private Interactable interactable;
         [SerializeField]
         private Vector3 DamageTakenParticleOffset = Vector3.zero;
         public ParticleSystem DamageTakenParticles;
@@ -25,6 +27,20 @@ namespace DTWorldz.Behaviours
             health.OnDamageTaken += new HealthBehaviour.DamageTaken(OnDamageTaken);
             health.OnDeath += new Interfaces.HealthChanged(OnDeath);
             animatorHitStateHash = Animator.StringToHash("Hit");
+
+            interactable = GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                interactable.OnInteraction += new Interactable.InteractHandler(OnInteraction);
+            }
+        }
+
+        private void OnInteraction()
+        {
+            var playerMovementBehaviour = GameObject.FindWithTag("Player").GetComponent<PlayerMovementBehaviour>();
+            if(playerMovementBehaviour != null){
+                playerMovementBehaviour.Attack(health);
+            }
         }
 
         private void OnDeath(float currentHealth, float maxHealth)

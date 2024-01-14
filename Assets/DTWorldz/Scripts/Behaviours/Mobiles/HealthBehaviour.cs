@@ -53,8 +53,6 @@ namespace DTWorldz.Behaviours.Mobiles
         private AudioManager audioManager;
         private MaterialTintColor materialTintColor;
 
-        private Harvestable harvestable;
-
         void Start()
         {
             materialTintColor = GetComponent<MaterialTintColor>();
@@ -70,8 +68,6 @@ namespace DTWorldz.Behaviours.Mobiles
             }
 
             InvokeRepeating("IncreaseOverTime", 1f, 1f);
-
-            harvestable = GetComponentInChildren<Harvestable>();
         }
 
         void IncreaseOverTime()
@@ -100,12 +96,6 @@ namespace DTWorldz.Behaviours.Mobiles
             if (OnBeforeHealthChanged != null)
             {
                 OnBeforeHealthChanged(currentHealth, MaxHealth);
-            }
-
-            if (harvestable != null && harvestable.HasHarvest())
-            {
-                harvestable.Harvest();
-                return;
             }
 
             currentHealth -= damage;
