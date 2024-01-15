@@ -14,6 +14,7 @@ namespace DTWorldz.Items.Behaviours.UI
         public event InventoryUIHandler OnInventoryClosed;
         public event InventoryUIHandler OnInventoryRefreshed;
         public GameObject SlotPrefab;
+        public GridLayoutGroup SlotsContainer;
         private ItemContainerSO itemContainer;
         // Start is called before the first frame update
         void Start()
@@ -63,12 +64,15 @@ namespace DTWorldz.Items.Behaviours.UI
                     return;
                 }
 
-                var slotsContainer = transform.GetComponentInChildren<GridLayoutGroup>();
+                if (SlotsContainer == null)
+                {
+                    return;
+                }
                 if (itemContainer != null)
                 {
-                    for (int i = 0; i < slotsContainer.transform.childCount; i++)
+                    for (int i = 0; i < SlotsContainer.transform.childCount; i++)
                     {
-                        var child = slotsContainer.transform.GetChild(i);
+                        var child = SlotsContainer.transform.GetChild(i);
                         var itemSlotBehaviour = child.GetComponent<ItemSlotBehaviour>();
                         if (i < itemContainer.ItemSlots.Count)
                         {
@@ -82,9 +86,9 @@ namespace DTWorldz.Items.Behaviours.UI
                 }
                 else
                 {
-                    for (int i = 0; i < slotsContainer.transform.childCount; i++)
+                    for (int i = 0; i < SlotsContainer.transform.childCount; i++)
                     {
-                        var child = slotsContainer.transform.GetChild(i);
+                        var child = SlotsContainer.transform.GetChild(i);
                         var itemSlotBehaviour = child.GetComponent<ItemSlotBehaviour>();
                         itemSlotBehaviour.RemoveItem();
                     }
