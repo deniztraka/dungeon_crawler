@@ -43,8 +43,9 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public float Persistance = 0.5f;
         public float Lacunarity = 2;
         public bool IsIsland = true;
-        public Texture2D IslandHeightMapTexture;
         public float LandIntensisty = 4;
+        [Range(0, 1)]
+        public float IslandGradientMiddleIntensity = 0.5f;
         //public TerrainType[] Regions;
         public TileMapTerrain[] Terrains;
         public Vector2 OffSet = new Vector2(0, 0);
@@ -210,7 +211,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
             var prng = new System.Random(Seed == -1 ? UnityEngine.Random.Range(0, 10000) : Seed);
 
-            float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, IslandHeightMapTexture, LandIntensisty);
+            float[,] noiseMap = Noise.GenerateNoiseMap(prng, Width, Height, Scale, Octaves, Persistance, Lacunarity, OffSet, IsIsland, LandIntensisty, IslandGradientMiddleIntensity);
 
             var mapDisplay = MapDisplay.FindObjectOfType<MapDisplay>();
             if (DrawingMode == DrawMode.NoiseMap)
@@ -241,9 +242,11 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 PlaceSpawners(prng);
             }
 
-            GenerateWaterShadow();
+            
 
             ExtendSandTiles();
+
+            GenerateWaterShadow();
 
             return prng;
         }
@@ -251,12 +254,13 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         private void GenerateWaterShadow()
         {
             Tilemap waterTilemap = Terrains.First(t => t.Template.Name == "Water").Tilemap;
+            Tilemap sandTilemap = Terrains.First(t => t.Template.Name == "Sand").Tilemap;
             var waterShadowTerrain = Terrains.First(t => t.Template.Name == "WaterShadow");
             TileBase waterShadowTile = waterShadowTerrain.Template.Tile;
 
             foreach (var position in waterTilemap.cellBounds.allPositionsWithin)
             {
-                if(waterTilemap.HasTile(position)){
+                if(waterTilemap.HasTile(position) && sandTilemap.HasTile(position)){
                     waterShadowTerrain.Tilemap.SetTile(position, waterShadowTile);
                 }
             }
@@ -304,7 +308,16 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                                 Vector3Int adjacentPosition = new Vector3Int(position.x + x, position.y + y, position.z);
                                 if (!sandTilemap.HasTile(adjacentPosition))
                                 {
+                                    // if tile is in the bounds of the tilemap
+                                    if (sandTilemap.cellBounds.Contains(adjacentPosition))
+                                    {
+                                        // if tile is not already in the list to be set
+                                        if (!tilesToSet.Contains(adjacentPosition))
+                                        {
+
                                     tilesToSet.Add(adjacentPosition);
+                                        }
+                                    }
                                 }
                             }
                         }

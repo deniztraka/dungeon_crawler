@@ -28,12 +28,15 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             }
         }
 
-        public void  DrawTileMap(TileMapTerrain[] terrains, float[,] noiseMap, int width, int height)
+        public void DrawTileMap(TileMapTerrain[] terrains, float[,] noiseMap, int width, int height)
         {
-            bool[,] isSetMap = new bool[width, height];
-            
+            //bool[,] isSetMap = new bool[width, height];
+
             Array.Sort(terrains, (a, b) => a.Template.Height.CompareTo(b.Template.Height));
 
+            bool[] isSetMap = new bool[width * height];
+
+            // Assuming terrains are sorted by height
             for (int i = 0; i < terrains.Length; i++)
             {
                 var terrain = terrains[i];
@@ -41,19 +44,37 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 {
                     continue;
                 }
+
+                bool allAboveCurrentTerrain = true;
+
                 for (int x = 0; x < width; x++)
                 {
                     for (int y = 0; y < height; y++)
                     {
-                        float currentHeight = noiseMap[x, y];
-                        if (!isSetMap[x,y] && currentHeight <= terrain.Template.Height)
+                        int index = y * width + x;
+                        if (!isSetMap[index])
                         {
-                            terrain.Tilemap.SetTile(new Vector3Int(x, y, 0), terrain.Template.Tile);
-                            isSetMap[x,y] = true;
-                        }                        
+                            float currentHeight = noiseMap[x, y];
+                            if (currentHeight <= terrain.Template.Height)
+                            {
+                                terrain.Tilemap.SetTile(new Vector3Int(x, y, 0), terrain.Template.Tile);
+                                isSetMap[index] = true;
+                            }
+                            else
+                            {
+                                allAboveCurrentTerrain = false;
+                            }
+                        }
                     }
                 }
+
+                if (allAboveCurrentTerrain)
+                {
+                    break;
+                }
             }
+
+
         }
         public void ClearTileMap(TileMapTerrain[] terrains)
         {
@@ -62,7 +83,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
                 var terrain = terrains[i];
                 terrain.Tilemap.ClearAllTiles();
             }
-            
+
         }
     }
 }

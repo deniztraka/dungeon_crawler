@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace DTWorldz.ProceduralGeneration
@@ -6,7 +7,7 @@ namespace DTWorldz.ProceduralGeneration
 
     public static class Noise
     {
-        public static float[,] GenerateNoiseMap(System.Random prng, int width, int height, float scale, int octaves, float persistance, float lacunarity, Vector2 offSet, bool isIsland, Texture2D islandHeightMap, float islandHeightMapIntensity)
+        public static float[,] GenerateNoiseMap(System.Random prng, int width, int height, float scale, int octaves, float persistance, float lacunarity, Vector2 offSet, bool isIsland, float landIntensisty, float islandGradientMiddleIntensity)
         {
 
             var noiseMap = new float[width, height];
@@ -84,20 +85,59 @@ namespace DTWorldz.ProceduralGeneration
             }
 
             // make it island
-            if (isIsland && islandHeightMap != null)
+            // if (isIsland && islandHeightMap != null)
+            // {
+            //     for (int x = 0; x < width; x++)
+            //     {
+            //         for (int y = 0; y < height; y++)
+            //         {
+            //             var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight - 0.1f, islandHeightMap.GetPixel(x, y).grayscale);
+            //             //Debug.Log(hede);
+            //             grayScaleSample = Mathf.Pow(grayScaleSample, islandHeightMapIntensity);
+
+            //             //noiseMap[x, y] = (1 + noiseMap[x, y] - grayScaleSample) / 2;
+            //             noiseMap[x, y] = noiseMap[x, y] - grayScaleSample;
+
+            //         }
+            //     }
+            // }
+
+            // Assuming noiseMap is already populated with noise values
+            if(isIsland)
             {
-                for (int x = 0; x < width; x++)
+                noiseMap = ApplyRadialGradient(noiseMap, landIntensisty, islandGradientMiddleIntensity, width, height);
+            }
+
+            return noiseMap;
+        }
+
+        private static float[,] ApplyRadialGradient(float[,] noiseMap,float landIntensisty, float islandGradientMiddleIntensity, int width, int height)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
                 {
-                    for (int y = 0; y < height; y++)
-                    {
-                        var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight - 0.1f, islandHeightMap.GetPixel(x, y).grayscale);
-                        //Debug.Log(hede);
-                        grayScaleSample = Mathf.Pow(grayScaleSample, islandHeightMapIntensity);
+                    // Calculate the distance from the center of the map
+                    float distanceX = x - width / 2f;
+                    float distanceY = y - height / 2f;
+                    float distance = Mathf.Sqrt(distanceX * distanceX + distanceY * distanceY);
 
-                        //noiseMap[x, y] = (1 + noiseMap[x, y] - grayScaleSample) / 2;
-                        noiseMap[x, y] = noiseMap[x, y] - grayScaleSample;
+                    // Normalize the distance so it ranges from 0 (center) to 1 (edge)
+                    float maxDistance = Mathf.Sqrt((width / 2f) * (width / 2f) + (height / 2f) * (height / 2f));
+                    float gradient = Mathf.InverseLerp(0, maxDistance, distance);
 
-                    }
+                    // Invert the gradient to make the center high and the edges low
+                    gradient = 1 - gradient;
+
+                    // Skew the gradient to make the center more intense
+                    // Raise the gradient to a power less than 1 to make the middle more intense
+                    gradient = Mathf.Pow(gradient, islandGradientMiddleIntensity);
+
+                    // Optionally, adjust the gradient curve
+                    gradient = Mathf.Pow(gradient, 1/landIntensisty);
+
+                    // Combine the noise map and the radial gradient
+                    noiseMap[x, y] = noiseMap[x, y] * gradient;
                 }
             }
 
