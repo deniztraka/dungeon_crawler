@@ -84,24 +84,6 @@ namespace DTWorldz.ProceduralGeneration
                 }
             }
 
-            // make it island
-            // if (isIsland && islandHeightMap != null)
-            // {
-            //     for (int x = 0; x < width; x++)
-            //     {
-            //         for (int y = 0; y < height; y++)
-            //         {
-            //             var grayScaleSample = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight - 0.1f, islandHeightMap.GetPixel(x, y).grayscale);
-            //             //Debug.Log(hede);
-            //             grayScaleSample = Mathf.Pow(grayScaleSample, islandHeightMapIntensity);
-
-            //             //noiseMap[x, y] = (1 + noiseMap[x, y] - grayScaleSample) / 2;
-            //             noiseMap[x, y] = noiseMap[x, y] - grayScaleSample;
-
-            //         }
-            //     }
-            // }
-
             // Assuming noiseMap is already populated with noise values
             if(isIsland)
             {

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a141c3240fc0cf540b2d3de532b5566a, type: 3}
-  m_Name: Grass
+  m_Name: 3_Grass
   m_EditorClassIdentifier: 
   Name: Grass
-  Height: 0.5
+  Height: 0.35
   Color: {r: 0.095341444, g: 1, b: 0, a: 0}
   Tile: {fileID: 11400000, guid: c3800da55b3bd6444bf1a55cbd7cc0eb, type: 2}
   TreeTypes:

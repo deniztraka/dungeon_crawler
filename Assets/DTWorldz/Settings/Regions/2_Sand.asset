@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a141c3240fc0cf540b2d3de532b5566a, type: 3}
-  m_Name: Water
+  m_Name: 2_Sand
   m_EditorClassIdentifier: 
-  Name: Water
-  Height: 0.4
-  Color: {r: 0, g: 0.71495414, b: 1, a: 0}
-  Tile: {fileID: 11400000, guid: 51e594d6970a8432d9ff1d589cc93a0c, type: 2}
+  Name: Sand
+  Height: 0.32
+  Color: {r: 1, g: 0.9060749, b: 0, a: 0}
+  Tile: {fileID: 11400000, guid: 2c3c4bec0da96c14eb5441b6e543764f, type: 2}
   TreeTypes: []
   TreeFrequency: 0
-  BushTypes: []
-  BushFrequency: 0
+  BushTypes:
+  - {fileID: 8909476919938510764, guid: be3c023756ae56b419899cb8fe1f5b7b, type: 3}
+  BushFrequency: 0.075
   Spawners: []
   SpawnerFrequency: 0

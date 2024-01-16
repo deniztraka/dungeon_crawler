@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a141c3240fc0cf540b2d3de532b5566a, type: 3}
-  m_Name: HighForest
+  m_Name: 5_HighForest
   m_EditorClassIdentifier: 
   Name: HighForest
-  Height: 0.725
+  Height: 0.5
   Color: {r: 0.32052112, g: 0.4433962, b: 0.30744925, a: 0}
   Tile: {fileID: 11400000, guid: 168cd070a779cc84eb9f503e41a5c267, type: 2}
   TreeTypes:
@@ -47,6 +47,14 @@ MonoBehaviour:
   - {fileID: 8093128999710325632, guid: d95a6e26b6de3214ebb8f7d0527efd59, type: 3}
   - {fileID: 8093128999710325632, guid: cb2dfa752d5e80d43bdd2aff2c428ab2, type: 3}
   - {fileID: 8093128999710325632, guid: c2c2b6399f86485419b5019241ea9e94, type: 3}
+  - {fileID: 5698332640072407665, guid: 9d262435f1dcd45e5a97675d723cbd8b, type: 3}
+  - {fileID: 5698332640072407665, guid: 7fde5558019744aea860168a35827133, type: 3}
+  - {fileID: 5698332640072407665, guid: 612d51c36f7a846438edcd1d43f3154c, type: 3}
+  - {fileID: 8093128999710325632, guid: c2c2b6399f86485419b5019241ea9e94, type: 3}
+  - {fileID: 8093128999710325632, guid: d95a6e26b6de3214ebb8f7d0527efd59, type: 3}
+  - {fileID: 8093128999710325632, guid: 99481285fbd69ef48812ac5700a3d5c6, type: 3}
+  - {fileID: 8093128999710325632, guid: cb2dfa752d5e80d43bdd2aff2c428ab2, type: 3}
+  - {fileID: 5698332640072407665, guid: 612d51c36f7a846438edcd1d43f3154c, type: 3}
   BushFrequency: 0.25
   Spawners:
   - {fileID: 7674728969632660766, guid: 342c3c6db13664d4888da40a2e587573, type: 3}

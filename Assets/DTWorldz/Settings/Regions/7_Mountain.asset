@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a141c3240fc0cf540b2d3de532b5566a, type: 3}
-  m_Name: Mountain
+  m_Name: 7_Mountain
   m_EditorClassIdentifier: 
   Name: Mountain
   Height: 1
@@ -19,10 +19,10 @@ MonoBehaviour:
   TreeTypes: []
   TreeFrequency: 0
   BushTypes:
-  - {fileID: 2814931299135070807, guid: ae4bf05921f189947927802d13d067cc, type: 3}
-  - {fileID: 5698332640072407665, guid: a25049814f2c92b459a08d93ec3c4224, type: 3}
+  - {fileID: 5698332640072407665, guid: fc733666af22546b3a3ca01891444936, type: 3}
   - {fileID: 794992480967490998, guid: 5d74e24568ba6fa40809dd10783f38f1, type: 3}
-  - {fileID: 6570110761136220158, guid: 847a09e50b8317d4eb2db6c90237f82f, type: 3}
+  - {fileID: 5698332640072407665, guid: b5afe8b8a644b4d549a4ef361131fef3, type: 3}
+  - {fileID: 5698332640072407665, guid: f035d986b33c44a04835f50d13bbe6f6, type: 3}
   BushFrequency: 1
   Spawners: []
   SpawnerFrequency: 0

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a141c3240fc0cf540b2d3de532b5566a, type: 3}
-  m_Name: WaterShadow
+  m_Name: 1_Water
   m_EditorClassIdentifier: 
-  Name: WaterShadow
-  Height: 0
-  Color: {r: 1, g: 1, b: 1, a: 0.7019608}
-  Tile: {fileID: 11400000, guid: 148b01989c67c48bba21e7fabe42aefb, type: 2}
+  Name: Water
+  Height: 0.3
+  Color: {r: 0, g: 0.71495414, b: 1, a: 0}
+  Tile: {fileID: 11400000, guid: 51e594d6970a8432d9ff1d589cc93a0c, type: 2}
   TreeTypes: []
   TreeFrequency: 0
   BushTypes: []

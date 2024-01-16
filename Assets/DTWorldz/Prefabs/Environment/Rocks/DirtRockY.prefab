@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3177505493220286433
+--- !u!1001 &7495166542726084646
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,33 +11,28 @@ PrefabInstance:
     - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.39048386
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2814931299135070793, guid: ae4bf05921f189947927802d13d067cc,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.31
+      value: -0.02111435
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070798, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.8125
+      value: 1.78125
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070798, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.65625
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070798, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4107438529147309521, guid: e6b2e52cd1959884eb364dd2b894926f,
+      objectReference: {fileID: -1434263565319209094, guid: e6b2e52cd1959884eb364dd2b894926f,
         type: 3}
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
@@ -47,12 +42,12 @@ PrefabInstance:
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -112.5457
+      value: -111.52653
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 101.34977
+      value: 101.397766
       objectReference: {fileID: 0}
     - target: {fileID: 2814931299135070799, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
@@ -94,36 +89,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2814931299135070805, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: DropTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 03ebefc0204ce4c3fa94fd43ed880e28,
+        type: 2}
     - target: {fileID: 2814931299135070807, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Name
-      value: Rocks Variant2
+      value: DirtRockY
       objectReference: {fileID: 0}
     - target: {fileID: 3852953306845667191, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4107438529147309521, guid: e6b2e52cd1959884eb364dd2b894926f,
+      objectReference: {fileID: -1434263565319209094, guid: e6b2e52cd1959884eb364dd2b894926f,
         type: 3}
+    - target: {fileID: 3852953306845667191, guid: ae4bf05921f189947927802d13d067cc,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
     - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.6534505
+      value: 1.4320995
       objectReference: {fileID: 0}
     - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.3500003
+      value: 0.9877049
       objectReference: {fileID: 0}
     - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.03663858
+      value: -0.033727866
       objectReference: {fileID: 0}
     - target: {fileID: 5186378317969682038, guid: ae4bf05921f189947927802d13d067cc,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.36000007
+      value: 0.1788508
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

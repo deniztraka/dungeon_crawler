@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5186378317969682038}
   - component: {fileID: 4257864964299071236}
   m_Layer: 7
-  m_Name: Rocks
+  m_Name: ForestRocks
   m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2443021682937396387, guid: e6b2e52cd1959884eb364dd2b894926f,
+  m_Sprite: {fileID: 8347378662125966524, guid: e6b2e52cd1959884eb364dd2b894926f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -314,9 +314,9 @@ SpriteRenderer:
   m_SortingLayerID: 130162159
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2443021682937396387, guid: e6b2e52cd1959884eb364dd2b894926f,
+  m_Sprite: {fileID: 8347378662125966524, guid: e6b2e52cd1959884eb364dd2b894926f,
     type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
