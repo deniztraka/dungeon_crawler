@@ -66,6 +66,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
         public Dictionary<string, CellSet> TerrrainTiles;
 
         public bool ProcessCellsAroundPlayerOnStart;
+        public int ProcessCellsAroundPlayerDistance = 10;
 
         void Awake()
         {
@@ -87,7 +88,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
             var player = GameObject.FindGameObjectWithTag("Player");
             if (player != null && ProcessCellsAroundPlayerOnStart)
             {
-                StartCoroutine(ProcessCellsAroundPlayer(player, 10));
+                StartCoroutine(ProcessCellsAroundPlayer(player, ProcessCellsAroundPlayerDistance));
             }
         }
 

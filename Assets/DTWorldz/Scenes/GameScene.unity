@@ -1848,12 +1848,12 @@ PrefabInstance:
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -286
+      value: -481.6
       objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 207.4
+      value: 11.6
       objectReference: {fileID: 0}
     - target: {fileID: 5328125669103109270, guid: 4eb1c25ee80cdd240a88fe4e5ed079af,
         type: 3}
@@ -6647,7 +6647,7 @@ Transform:
   m_GameObject: {fileID: 1147684571}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -286, y: 208.09999, z: -10}
+  m_LocalPosition: {x: -481.6, y: 12.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7156,7 +7156,7 @@ Transform:
   m_GameObject: {fileID: 1239707743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -286, y: 208.09999, z: -10}
+  m_LocalPosition: {x: -481.6, y: 12.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20364,7 +20364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e8dc232f7a9804c8275856583a7a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceFromPlayer: 10
+  distanceFromPlayer: 15
 --- !u!4 &1668241966
 Transform:
   m_ObjectHideFlags: 0
@@ -22857,7 +22857,7 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: Seed
-      value: 12345
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
@@ -22867,12 +22867,12 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: Width
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: Height
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
@@ -22902,7 +22902,7 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: placeTrees
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
@@ -22912,12 +22912,12 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: placeBushes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: placeSpawners
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
@@ -22997,7 +22997,7 @@ PrefabInstance:
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: ProcessCellsAroundPlayerOnStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
@@ -23047,6 +23047,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a8e41a4482db15749b0a38a59edcfe91,
         type: 2}
+    - target: {fileID: 9004814544858290398, guid: 8f275b7d1daeab6479ebcad980076502,
+        type: 3}
+      propertyPath: ProcessCellsAroundPlayerDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9185740346613690038, guid: 8f275b7d1daeab6479ebcad980076502,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23227,7 +23232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 90000.52}
+  m_AnchoredPosition: {x: 0, y: 93329.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &4216695525146324140
