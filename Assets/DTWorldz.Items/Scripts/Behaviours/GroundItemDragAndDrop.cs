@@ -44,14 +44,18 @@ namespace DTWorldz.Items.Behaviours
         }
 
         private bool IsOverBackpack()
-        {
+        {   
+            //Debug.Log(Input.mousePosition);
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var updatedPos = new Vector3(mousePos.x, mousePos.y, 0f) + new Vector3(DraggingOffset.x, DraggingOffset.y, 0f);
             tempDraggingObject.transform.position = updatedPos;
 
             var isOver = false;
 
-            var colliders = Physics2D.OverlapCircleAll(updatedPos, 1f);
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // write debug info on the screen point of raycast
+            var screenPoint = Camera.main.WorldToScreenPoint(ray.origin);
+            var colliders = Physics2D.OverlapCircleAll(screenPoint, 1f);
             if (colliders != null && colliders.Length > 0)
             {
                 foreach (var collider in colliders)
@@ -59,9 +63,12 @@ namespace DTWorldz.Items.Behaviours
                     if (collider.gameObject.tag == "BackpackUI")
                     {
                         isOver = true;
+                        break;
                     }
                 }
             }
+
+             
 
             return isOver;
         }
