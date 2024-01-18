@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec37c5d9317f55147acc351c3f504a11, type: 3}
-  m_Name: RecipeDB
+  m_Name: PlayerRecipeDB
   m_EditorClassIdentifier: 
-  ids: 
-  recipes: []
+  ids: 00000000
+  recipes:
+  - {fileID: 11400000, guid: 4110895057dd9264cb3c6760558dfa60, type: 2}

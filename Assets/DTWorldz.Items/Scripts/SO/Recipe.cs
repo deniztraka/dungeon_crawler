@@ -18,9 +18,6 @@ namespace DTWorldz.Items.SO
         public string Name;
         public string Description;
 
-
-
-
         [SerializeField]
         private List<RecipeRequirement> requirements;
         public List<RecipeRequirement> Requirements

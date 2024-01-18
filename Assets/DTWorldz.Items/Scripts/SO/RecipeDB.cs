@@ -13,13 +13,11 @@ namespace DTWorldz.Items.SO
         [SerializeField]
         private List<Recipe> recipes;
 
-        public Dictionary<int, Recipe> RecipeDictionary = new Dictionary<int, Recipe>();
+        private Dictionary<int, Recipe> recipeDictionary = new Dictionary<int, Recipe>();
 
-        internal Recipe GetItemById(int id)
+        public List<Recipe> GetAll()
         {
-            Recipe outItem = null;
-            RecipeDictionary.TryGetValue(id, out outItem);
-            return outItem;
+            return recipes;
         }
 
         public void OnBeforeSerialize()
@@ -27,7 +25,7 @@ namespace DTWorldz.Items.SO
             ids = new List<int>();
             recipes = new List<Recipe>();
 
-            foreach (var kvp in RecipeDictionary)
+            foreach (var kvp in recipeDictionary)
             {
                 ids.Add(kvp.Key);
                 recipes.Add(kvp.Value);
@@ -36,7 +34,7 @@ namespace DTWorldz.Items.SO
 
         public void OnAfterDeserialize()
         {
-            RecipeDictionary = new Dictionary<int, Recipe>();
+            recipeDictionary = new Dictionary<int, Recipe>();
             ids = new List<int>();
             for (int i = 0; i < recipes.Count; i++)
             {
@@ -46,7 +44,7 @@ namespace DTWorldz.Items.SO
                     recipes[i].Id = i;
                 }
 
-                RecipeDictionary.Add(ids[i], recipes[i]);
+                recipeDictionary.Add(ids[i], recipes[i]);
             }
         }
     }
