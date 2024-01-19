@@ -34,16 +34,27 @@ namespace DTWorldz.Behaviours
             interactable.OnInteraction += new Interactable.InteractHandler(OnInteraction);
         }
 
+        public void Start()
+        {
+            
+                Ignite(health.MaxHealth);
+            
+        }
+
         private void OnInteraction()
         {
-            if (health.CurrentHealth <= 0)
-            {
-                AddFuel(10);
-            }
-            else
-            {
-                Extinguish();
-            }
+            // open campfire crafting menu
+
+            // if (health.CurrentHealth <= 0)
+            // {
+            //     AddFuel(10);
+            // }
+            // else
+            // {
+            //     Extinguish();
+            // }
+
+            
         }
 
         private void AddFuel(float count)

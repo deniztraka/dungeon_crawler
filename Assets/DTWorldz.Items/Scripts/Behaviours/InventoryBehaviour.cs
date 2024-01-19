@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
@@ -147,6 +148,11 @@ namespace DTWorldz.Items.Behaviours
             var instantiatedObj = Instantiate(ItemPrefab, randomPosition, Quaternion.identity);
             var instantiatedItemBehaviour = instantiatedObj.GetComponent<ItemBehaviour>();
             instantiatedItemBehaviour.SetItem(itemSO, quantity);
+        }
+
+        internal void HasItem(BaseItemSO itemSO, int quantity, Action<bool> value)
+        {
+            value.Invoke(ItemContainer.HasItem(itemSO, quantity));
         }
     }
 }

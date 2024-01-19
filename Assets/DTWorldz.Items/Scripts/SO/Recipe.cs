@@ -17,6 +17,7 @@ namespace DTWorldz.Items.SO
         }
         public string Name;
         public string Description;
+        public float CraftingTime;
 
         [SerializeField]
         private List<RecipeRequirement> requirements;

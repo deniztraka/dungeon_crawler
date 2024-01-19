@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using DTWorldz.Items.SO;
 using DTWorldz.Utils;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 namespace DTWorldz.Items.Behaviours.UI
@@ -15,19 +13,30 @@ namespace DTWorldz.Items.Behaviours.UI
         public RecipeDB RecipeDB;
 
         public GameObject RecipePrefab;
+        public GameObject RecipeRequirementPrefab;
         private UnityEngine.UI.Image outputImage;
         private Text outputTitle;
         private Text outputDescription;
         private Button createButton;
+        private Transform requirementsContent;
+        private InventoryBehaviour inventoryBehaviour;
+
+        private GameObject loadingPanel;
+        private Slider craftingProgressBar;
 
         void Start()
         {
+            var playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                inventoryBehaviour = playerObject.GetComponent<InventoryBehaviour>();
+            }
             InitUI();
             InitRecipes();
-            
+            ClearExistingRequirements();
         }
 
-        
+
 
         private void InitUI()
         {
@@ -36,7 +45,11 @@ namespace DTWorldz.Items.Behaviours.UI
             outputTitle = transform.FindDeepChild("OutputTitle").GetComponent<Text>();
             outputDescription = transform.FindDeepChild("OutputDescription").GetComponent<Text>();
             createButton = transform.FindDeepChild("CreateButton").GetComponent<Button>();
+            requirementsContent = transform.FindDeepChild("RequirementsContent");
+            loadingPanel = transform.FindDeepChild("CraftingProgressBar").gameObject;
+            craftingProgressBar = transform.FindDeepChild("CraftingSlider").GetComponent<Slider>();
             DisableCreationUI();
+            loadingPanel.SetActive(false);
         }
 
         private void DisableCreationUI()
@@ -46,8 +59,6 @@ namespace DTWorldz.Items.Behaviours.UI
             outputTitle.text = String.Empty;
             outputDescription.text = String.Empty;
             createButton.interactable = false;
-
-            //TODO: ENABLE EXPLANATION TEXT FOR CRAFTING
         }
 
         private void InitRecipes()
@@ -58,15 +69,35 @@ namespace DTWorldz.Items.Behaviours.UI
                 Destroy(child.gameObject);
             }
 
+            var recipeCounter = 0;
             // add all recipes from RecipeDB
             foreach (var recipe in RecipeDB.GetAll())
             {
                 var recipeObject = Instantiate(RecipePrefab, SlotsContainer);
                 var recipeSlotBehaviour = recipeObject.GetComponent<CraftingSlotBehaviour>();
                 recipeSlotBehaviour.SetRecipe(recipe);
-                //TODO: check if requirements met to create this item
+                // check if requirements met
+                recipeSlotBehaviour.SetRequirementsMet(CheckRecipeRequirements(recipe));
                 recipeSlotBehaviour.OnRecipeSelected += RecipeSelected;
+                recipeCounter++;
             }
+        }
+
+        bool CheckRecipeRequirements(Recipe recipe)
+        {
+            var requirementsMet = true;
+            foreach (var requirement in recipe.Requirements)
+            {
+                inventoryBehaviour.HasItem(requirement.ItemSO, requirement.Quantity, (hasItem) =>
+                {
+                    if (!hasItem)
+                    {
+                        requirementsMet = false;
+                    }
+                });
+            }
+
+            return requirementsMet;
         }
 
         private void RecipeSelected(Recipe recipe)
@@ -87,27 +118,95 @@ namespace DTWorldz.Items.Behaviours.UI
             createButton.onClick.RemoveAllListeners();
             createButton.onClick.AddListener(() => Craft(recipe));
 
-            //TODO: set whats needed to craft
-            //TODO: set red color to a requirement label if it's not met
+            ClearExistingRequirements();
+
+            // add all requirements
+            foreach (var requirement in recipe.Requirements)
+            {
+                var requirementObject = Instantiate(RecipeRequirementPrefab, requirementsContent);
+                var requirementSlotBehaviour = requirementObject.GetComponent<CraftingRequirementSlotBehaviour>();
+                requirementSlotBehaviour.SetRequirement(requirement);
+                // get player's inventory and check if the item is there and if the amount is enough
+                inventoryBehaviour.HasItem(requirement.ItemSO, requirement.Quantity, (hasItem) =>
+                {
+                    requirementSlotBehaviour.SetIsMissing(!hasItem);
+                    if (!hasItem)
+                    {
+                        createButton.interactable = false;
+                    }
+                });
+            }
+
+            var rectTransform = requirementsContent.gameObject.GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, recipe.Requirements.Count * 25);
+        }
+
+        void ClearExistingRequirements()
+        {
+            // remove all existing requirements
+            foreach (Transform child in requirementsContent)
+            {
+                Destroy(child.gameObject);
+            }
         }
 
         private void Craft(Recipe recipe)
         {
-            Debug.Log("Crafting: " + recipe.Output.Name);
-            createButton.onClick.RemoveAllListeners();
 
-            //TODO: create the item on players inventory
-            DisableCreationUI();
+            StartCoroutine(UpdateProgressBar(recipe));
+
+        }
+
+        IEnumerator UpdateProgressBar(Recipe recipe)
+        {
+            // Example: simulate a process that takes 5 seconds
+            float elapsed = 0f;
+            loadingPanel.SetActive(true);
+
+            while (elapsed < recipe.CraftingTime)
+            {
+                elapsed += Time.deltaTime;
+                craftingProgressBar.value = elapsed / recipe.CraftingTime;
+                yield return null; // Wait for the next frame
+            }
+
+            craftingProgressBar.value = 1f; // Ensure it's filled at the end
+
+            // remove items from inventory
+            foreach (var requirement in recipe.Requirements)
+            {
+                for (int i = 0; i < requirement.Quantity; i++)
+                {
+                    inventoryBehaviour.RemoveItem(requirement.ItemSO);
+                }
+            }
+
+            //inventoryBehaviour.ItemContainer.AddItem(recipe.Output, 1);
+
+            loadingPanel.SetActive(false);
+            Reset();
+            SetOutputUI(recipe);
         }
 
         public void Open()
         {
             canvas.enabled = true;
+            DisableCreationUI();
+            ClearExistingRequirements();
+            InitRecipes();
+        }
+
+        private void Reset()
+        {
+            DisableCreationUI();
+            ClearExistingRequirements();
+            InitRecipes();
         }
 
         public void Close()
         {
             canvas.enabled = false;
+
         }
     }
 }
