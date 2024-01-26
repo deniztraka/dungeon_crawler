@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec37c5d9317f55147acc351c3f504a11, type: 3}
   m_Name: PlayerRecipeDB
   m_EditorClassIdentifier: 
-  ids: 00000000
+  ids: 0000000001000000
   recipes:
   - {fileID: 11400000, guid: 4110895057dd9264cb3c6760558dfa60, type: 2}
+  - {fileID: 11400000, guid: 9d3f26ebda8cf46adb9f01720d10c541, type: 2}

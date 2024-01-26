@@ -170,7 +170,7 @@ namespace DTWorldz.Behaviours
                 if (OnBeforeAttack != null)
                 {
                     var result = OnBeforeAttack();
-                    Debug.Log("OnBeforeAttack result: " + result);
+                    //Debug.Log("OnBeforeAttack result: " + result);
                     if (!result)
                     {
                         return false;

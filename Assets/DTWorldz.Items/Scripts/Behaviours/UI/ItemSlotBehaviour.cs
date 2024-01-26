@@ -65,6 +65,13 @@ namespace DTWorldz.Items.Behaviours.UI
                 {
                     constructableItemSO.Construct();
                 }
+            } else if (ItemSO is WeaponItemSO)
+            {
+                var weaponItemSO = ItemSO as WeaponItemSO;
+                if (weaponItemSO != null)
+                {
+                    weaponItemSO.Equip();
+                }
             }
         }
 
