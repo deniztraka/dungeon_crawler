@@ -18,6 +18,7 @@ namespace DTWorldz.Items.Behaviours.UI
         private int quantity;
 
         private ItemSlotBehaviour dragStartedSlot;
+        private InventoryBehaviour playerInventory;
 
         public bool HasItem
         {
@@ -37,6 +38,34 @@ namespace DTWorldz.Items.Behaviours.UI
             var dragAndDropBehaviour = GetComponentInChildren<ItemSlotDragAndDrop>();
             dragAndDropBehaviour.OnItemDragStartEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragStart);
             dragAndDropBehaviour.OnItemDragEndEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragEnd);
+
+            var playerObj = GameObject.FindWithTag("Player");
+            playerInventory = playerObj.GetComponent<InventoryBehaviour>();
+        }
+
+        public void ItemSlotClicked()
+        {
+            if (ItemSO == null)
+            {
+                return;
+            }
+            if (ItemSO is BaseConsumableItemSO)
+            {
+                var consumableItemSO = ItemSO as BaseConsumableItemSO;
+                if (consumableItemSO != null)
+                {
+                    consumableItemSO.Use();
+                    playerInventory.RemoveItem(ItemSO);
+                }
+            }
+            else if (ItemSO is BaseConstructableItemSO)
+            {
+                var constructableItemSO = ItemSO as BaseConstructableItemSO;
+                if (constructableItemSO != null)
+                {
+                    constructableItemSO.Construct();
+                }
+            }
         }
 
         internal BaseItemSO GetItem()

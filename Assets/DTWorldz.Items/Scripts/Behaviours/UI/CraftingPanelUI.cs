@@ -181,7 +181,7 @@ namespace DTWorldz.Items.Behaviours.UI
                 }
             }
 
-            //inventoryBehaviour.ItemContainer.AddItem(recipe.Output, 1);
+            inventoryBehaviour.ItemContainer.AddItem(recipe.Output, 1);
 
             loadingPanel.SetActive(false);
             Reset();

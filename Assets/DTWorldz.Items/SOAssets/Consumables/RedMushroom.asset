@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13710b0416ab6434d8a25ab5896c1521, type: 3}
   m_Name: RedMushroom
   m_EditorClassIdentifier: 
-  Id: 11
+  Id: 8
   Name: Raw Meat
   Description: Refills your hunger
   Icon: {fileID: 21300000, guid: c598c4924033753489841205cdf47d0e, type: 3}
   ItemType: 1
   Stackable: 1
+  Prefab: {fileID: 8441661931396278614, guid: 173921a6e6292c34698448ae3a8572be, type: 3}
   MaxStackQuantity: 20
   EffectPrefab: {fileID: 0}
   RegenAmount: 10

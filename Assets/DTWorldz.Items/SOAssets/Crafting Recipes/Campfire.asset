@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c8283d34aa21a740b5fd3ec194ce75d, type: 3}
-  m_Name: TestRequiresBrushwood
+  m_Name: Campfire
   m_EditorClassIdentifier: 
-  id: 1
-  Name: TestRequiresBrushwood
+  id: 0
+  Name: CampFire Recipe
   Description: 
   CraftingTime: 1
   requirements:
-  - ItemSO: {fileID: 11400000, guid: 76355d0cad7e53c40b25e33a86f846fa, type: 2}
+  - ItemSO: {fileID: 11400000, guid: 2b7d4b0563add6d489e0b42cecfc06b7, type: 2}
     Quantity: 1
-  output: {fileID: 11400000, guid: 76355d0cad7e53c40b25e33a86f846fa, type: 2}
+  output: {fileID: 11400000, guid: 087cedec3b4974fe482417e45bb5086b, type: 2}
