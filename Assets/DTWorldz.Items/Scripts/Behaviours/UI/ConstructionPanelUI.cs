@@ -4,6 +4,7 @@ using DTWorldz.Behaviours.Player;
 using DTWorldz.Behaviours.UI;
 using DTWorldz.Items.SO;
 using DTWorldz.Models;
+using DTWorldz.Scripts.Managers;
 using DTWorldz.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,19 +19,15 @@ namespace DTWorldz.Items.Behaviours.UI
         private PlayerBehaviour playerBehaviour;
         private BaseConstructableItemSO constructableItemSO;
 
-        private GameObject player;
         private SpriteRenderer constructionObject;
 
         public LayerMask BlockingLayer;
 
         void Start()
         {
-            var playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null)
-            {
-                inventoryBehaviour = playerObject.GetComponent<InventoryBehaviour>();
-                playerBehaviour = playerObject.GetComponent<PlayerBehaviour>();
-            }
+            playerBehaviour = GameManager.Instance.PlayerBehaviour;
+            inventoryBehaviour = playerBehaviour.GetComponent<InventoryBehaviour>();
+
             InitUI();
         }
 
@@ -41,9 +38,8 @@ namespace DTWorldz.Items.Behaviours.UI
             canvas = GetComponent<Canvas>();
             createButton = transform.FindDeepChild("ConstructionActionButton").GetComponent<ActionButtonBehaviour>();
             createButton.Button.onClick.AddListener(Place);
-            player = GameObject.FindGameObjectWithTag("Player");
-            constructionObject = player.transform.FindDeepChild("ConstructionObject").GetComponent<SpriteRenderer>();
-            
+            constructionObject = playerBehaviour.transform.FindDeepChild("ConstructionObject").GetComponent<SpriteRenderer>();
+
         }
 
         private void Place()
@@ -82,16 +78,16 @@ namespace DTWorldz.Items.Behaviours.UI
                 switch (playerBehaviour.Direction)
                 {
                     case Direction.Up:
-                        objectPosition = player.transform.position + new Vector3(0, 2, 0);
+                        objectPosition = playerBehaviour.transform.position + new Vector3(0, 2, 0);
                         break;
                     case Direction.Down:
-                        objectPosition = player.transform.position + new Vector3(0, -1, 0);
+                        objectPosition = playerBehaviour.transform.position + new Vector3(0, -1, 0);
                         break;
                     case Direction.Left:
-                        objectPosition = player.transform.position + new Vector3(-1, 0, 0);
+                        objectPosition = playerBehaviour.transform.position + new Vector3(-1, 0, 0);
                         break;
                     case Direction.Right:
-                        objectPosition = player.transform.position + new Vector3(1, 0, 0);
+                        objectPosition = playerBehaviour.transform.position + new Vector3(1, 0, 0);
                         break;
                     default:
                         break;
@@ -101,7 +97,7 @@ namespace DTWorldz.Items.Behaviours.UI
 
 
 
-                var colliders = Physics2D.OverlapBoxAll(constructionObject.transform.position, new Vector2(1,1), 0f, BlockingLayer);
+                var colliders = Physics2D.OverlapBoxAll(constructionObject.transform.position, new Vector2(1, 1), 0f, BlockingLayer);
                 if (colliders != null && colliders.Length > 0)
                 {
                     createButton.Button.interactable = false;
@@ -115,6 +111,6 @@ namespace DTWorldz.Items.Behaviours.UI
             }
         }
 
-        
+
     }
 }

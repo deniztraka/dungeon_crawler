@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Items.Behaviours
 {
@@ -117,8 +118,8 @@ namespace DTWorldz.Items.Behaviours
         {
             if (ItemPrefab != null)
             {
-                var playerObj = GameObject.FindWithTag("Player");
-                StartCoroutine(LateDrop(ItemPrefab, playerObj.transform.position, 0.25f, itemSlotDragStart.GetItem(), itemSlotDragStart.GetQuantity()));
+                var player = GameManager.Instance.PlayerBehaviour;
+                StartCoroutine(LateDrop(ItemPrefab, player.transform.position, 0.25f, itemSlotDragStart.GetItem(), itemSlotDragStart.GetQuantity()));
                 itemSlotDragStart.RemoveItem();
                 RefreshItemContainer();
                 RefreshHotBar();

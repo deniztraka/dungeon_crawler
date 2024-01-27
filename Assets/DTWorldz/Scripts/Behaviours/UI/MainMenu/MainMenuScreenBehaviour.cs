@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.SaveSystem;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -115,8 +116,7 @@ namespace DTWorldz.Behaviours.UI
 
         public void ExitGame()
         {
-            var gameManager = GameObject.FindObjectOfType<GameManager>();
-            gameManager.Quit();
+            GameManager.Instance.Quit();
         }
     }
 }

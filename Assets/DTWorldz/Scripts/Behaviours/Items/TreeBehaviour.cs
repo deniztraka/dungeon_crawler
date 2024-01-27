@@ -2,6 +2,7 @@ using System;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.Utils;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Behaviours
 {
@@ -39,7 +40,7 @@ namespace DTWorldz.Behaviours
 
         private void OnInteraction()
         {
-            var playerMovementBehaviour = GameObject.FindWithTag("Player").GetComponent<PlayerMovementBehaviour>();
+            var playerMovementBehaviour = GameManager.Instance.PlayerBehaviour.GetComponent<PlayerMovementBehaviour>();
             if(playerMovementBehaviour != null){
                 playerMovementBehaviour.Attack(health);
             }

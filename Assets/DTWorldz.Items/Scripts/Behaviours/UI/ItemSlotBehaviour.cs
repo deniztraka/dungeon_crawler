@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -39,8 +40,7 @@ namespace DTWorldz.Items.Behaviours.UI
             dragAndDropBehaviour.OnItemDragStartEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragStart);
             dragAndDropBehaviour.OnItemDragEndEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragEnd);
 
-            var playerObj = GameObject.FindWithTag("Player");
-            playerInventory = playerObj.GetComponent<InventoryBehaviour>();
+            playerInventory = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
         }
 
         public void ItemSlotClicked()

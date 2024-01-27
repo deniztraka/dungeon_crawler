@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Utils
 {
@@ -21,7 +22,7 @@ namespace DTWorldz.Behaviours.Utils
 
         void Awake()
         {
-            player = GameObject.FindWithTag("Player");
+            player = GameManager.Instance.PlayerBehaviour.gameObject;
             activatorItems = new List<ActivatorItem>();
             addList = new List<ActivatorItem>();
 

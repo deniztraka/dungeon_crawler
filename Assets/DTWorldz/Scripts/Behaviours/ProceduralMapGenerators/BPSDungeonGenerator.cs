@@ -5,6 +5,7 @@ using DTWorldz.Behaviours.Items.Utils;
 using DTWorldz.Models;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
+using DTWorldz.Scripts.Managers;
 using Toolbox;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -42,7 +43,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators
                 levels = new List<LevelBehaviour>();
             }
 
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameManager.Instance.PlayerBehaviour.gameObject;
             var seed = DungeonTemplate.Seed != -1 ? DungeonTemplate.Seed : (Seed != -1 ? Seed : DateTime.Now.Millisecond);
 
             random = new System.Random(seed);

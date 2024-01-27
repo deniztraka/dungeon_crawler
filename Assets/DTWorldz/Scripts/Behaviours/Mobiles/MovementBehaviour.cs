@@ -175,11 +175,6 @@ namespace DTWorldz.Behaviours.Mobiles
             {
                 attackBehaviour.SetDirection(direction);
             }
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     SetFollowingTarget(GameObject.FindGameObjectWithTag("Player"));
-            // }     
-            //movement = Vector2.zero;       
         }
 
         private void CheckMovementPaths()
