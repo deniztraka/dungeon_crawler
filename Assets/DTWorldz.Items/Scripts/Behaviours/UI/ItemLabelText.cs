@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,13 +26,14 @@ namespace DTWorldz.Items.Behaviours.UI
             }
 
             var canvas = GetComponent<Canvas>();
-            if(canvas == null){
+            if (canvas == null)
+            {
                 return;
             }
 
             canvas.worldCamera = Camera.main;
 
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameManager.Instance.PlayerBehaviour.transform;
 
             text.text = itemBehaviour.ItemSO.Name;
         }

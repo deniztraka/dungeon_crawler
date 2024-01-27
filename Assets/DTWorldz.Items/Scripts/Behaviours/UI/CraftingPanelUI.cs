@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DTWorldz.Items.SO;
+using DTWorldz.Scripts.Managers;
 using DTWorldz.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,11 +27,9 @@ namespace DTWorldz.Items.Behaviours.UI
 
         void Start()
         {
-            var playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null)
-            {
-                inventoryBehaviour = playerObject.GetComponent<InventoryBehaviour>();
-            }
+
+            inventoryBehaviour = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
+
             InitUI();
             InitRecipes();
             ClearExistingRequirements();

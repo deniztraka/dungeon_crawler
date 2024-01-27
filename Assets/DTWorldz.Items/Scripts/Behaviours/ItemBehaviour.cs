@@ -1,5 +1,6 @@
 using System.Collections;
 using DTWorldz.Items.SO;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 
 namespace DTWorldz.Items.Behaviours
@@ -23,7 +24,7 @@ namespace DTWorldz.Items.Behaviours
 
         void Start()
         {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameManager.Instance.PlayerBehaviour.transform;
             labelTextCanvas = GetComponentInChildren<Canvas>();
             if (labelTextCanvas != null)
             {

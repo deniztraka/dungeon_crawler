@@ -20,39 +20,6 @@ namespace DTWorldz.Items.Behaviours.UI
         public delegate void RecipeSelected(Recipe recipe);
         public event RecipeSelected OnRecipeSelected;
 
-        void Start()
-        {
-            //TODO: check if requirements met to create this item
-            // better to do it in CraftingPanelUI since we can cache Player's inventory there
-
-            // if (Recipe != null)
-            // {
-            //     var playerObject = GameObject.FindGameObjectWithTag("Player");
-            //     if (playerObject != null)
-            //     {
-            //         var inventoryBehaviour = playerObject.GetComponent<InventoryBehaviour>();
-            //         if (inventoryBehaviour != null && inventoryBehaviour.ItemContainer != null)
-            //         {
-            //             var itemContainer = inventoryBehaviour.ItemContainer;
-            //             var requirementsMet = true;
-            //             foreach (var requirement in Recipe.Requirements)
-            //             {
-            //                 var item = itemContainer.GetItem(requirement.Item);
-            //                 if (item == null || item.Amount < requirement.Amount)
-            //                 {
-            //                     requirementsMet = false;
-            //                     break;
-            //                 }
-            //             }
-            //             if (requirementsMet)
-            //             {
-            //                 createButton.interactable = true;
-            //             }
-            //         }
-            //     }
-            // }
-        }
-
         public void ButtonClicked()
         {
             if (OnRecipeSelected != null)

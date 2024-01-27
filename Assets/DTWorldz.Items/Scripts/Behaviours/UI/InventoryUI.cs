@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,16 +20,14 @@ namespace DTWorldz.Items.Behaviours.UI
         // Start is called before the first frame update
         void Start()
         {
-            var playerObject = GameObject.FindGameObjectWithTag("Player");
-            if (playerObject != null)
+
+            var inventoryBehaviour = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
+            if (inventoryBehaviour != null && inventoryBehaviour.ItemContainer != null)
             {
-                var inventoryBehaviour = playerObject.GetComponent<InventoryBehaviour>();
-                if (inventoryBehaviour != null && inventoryBehaviour.ItemContainer != null)
-                {
-                    itemContainer = inventoryBehaviour.ItemContainer;
-                    itemContainer.OnInventoryUpdated += new ItemContainerSO.ItemContainerEventHandler(RefreshUI);
-                }
+                itemContainer = inventoryBehaviour.ItemContainer;
+                itemContainer.OnInventoryUpdated += new ItemContainerSO.ItemContainerEventHandler(RefreshUI);
             }
+
 
             RefreshUI();
         }
@@ -94,7 +93,8 @@ namespace DTWorldz.Items.Behaviours.UI
                     }
                 }
 
-                if(OnInventoryRefreshed != null){
+                if (OnInventoryRefreshed != null)
+                {
                     OnInventoryRefreshed.Invoke();
                 }
             }

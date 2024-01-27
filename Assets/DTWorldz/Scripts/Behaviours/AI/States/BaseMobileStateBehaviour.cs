@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Animations;
 using Random = System.Random;
@@ -63,7 +64,7 @@ namespace DTWorldz.Behaviours.AI.States
         {
             //todo:use an enemy matrix to get closest enemy type
             //currently only enemy is player
-            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            var playerGameObject = GameManager.Instance.PlayerBehaviour.gameObject;
             var playerHealth = playerGameObject.GetComponent<HealthBehaviour>();
             if (playerHealth.CurrentHealth < 0)
             {

@@ -5,6 +5,7 @@ using System.Linq;
 using DTWorldz.Behaviours.Utils;
 using DTWorldz.ProceduralGeneration;
 using DTWorldz.ScriptableObjects;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -85,7 +86,7 @@ namespace DTWorldz.Behaviours.ProceduralMapGenerators.NoiseMap
 
             FillTerrainTiles();
 
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = GameManager.Instance.PlayerBehaviour.gameObject;
             if (player != null && ProcessCellsAroundPlayerOnStart)
             {
                 StartCoroutine(ProcessCellsAroundPlayer(player, ProcessCellsAroundPlayerDistance));

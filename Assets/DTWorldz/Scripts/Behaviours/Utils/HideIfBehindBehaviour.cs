@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Utils
 {
@@ -12,7 +13,7 @@ namespace DTWorldz.Behaviours.Utils
         // Start is called before the first frame update
         void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameManager.Instance.PlayerBehaviour.gameObject;
             if (RendererToHide)
             {
                 initialColor = RendererToHide.color;

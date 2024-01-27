@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.Audios;
 using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.Player;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,8 +27,7 @@ namespace DTWorldz.Behaviours.UI
             }
 
             SetAction(DrinkStamina, 2f);
-            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
-            player = playerGameObject.GetComponent<PlayerBehaviour>();
+            player = GameManager.Instance.PlayerBehaviour;
             UpdateText();
             SetFillAmount(count > 0 ? 1f : 0f);
         }

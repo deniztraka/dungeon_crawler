@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Player;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Items.SO
 {
@@ -11,9 +12,8 @@ namespace DTWorldz.Items.SO
         internal override void Use()
         {
             base.Use();
-            var playerGameObject = GameObject.FindGameObjectWithTag("Player");
-            var player = playerGameObject.GetComponent<PlayerBehaviour>();
-            player.Eat(this);
+
+            GameManager.Instance.PlayerBehaviour.Eat(this);
         }
     }
 }

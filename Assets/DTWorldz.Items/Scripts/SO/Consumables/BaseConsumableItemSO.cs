@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Items.SO
 {
@@ -11,8 +12,8 @@ namespace DTWorldz.Items.SO
         {
             if (EffectPrefab != null)
             {
-                var playerGameObject = GameObject.FindGameObjectWithTag("Player");
-                var effectObj = Instantiate(EffectPrefab, playerGameObject.transform.position, Quaternion.identity, playerGameObject.transform);
+                var player = GameManager.Instance.PlayerBehaviour;
+                var effectObj = Instantiate(EffectPrefab, player.transform.position, Quaternion.identity, player.transform);
                 Destroy(effectObj, 2f);
             }
         }

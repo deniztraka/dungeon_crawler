@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DTWorldz.Behaviours.Player;
 using DTWorldz.Items.Behaviours.UI;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -27,9 +28,8 @@ namespace DTWorldz.Items.Behaviours
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            var playerObj = GameObject.FindWithTag("Player");
-            var playerBehaviour = playerObj.GetComponent<PlayerBehaviour>();
-            if (playerBehaviour.InteractionDistance <= Vector2.Distance(transform.position, playerObj.transform.position))
+            var playerBehaviour = GameManager.Instance.PlayerBehaviour;
+            if (playerBehaviour.InteractionDistance <= Vector2.Distance(transform.position, playerBehaviour.transform.position))
             {
                 return;
             }
@@ -95,7 +95,7 @@ namespace DTWorldz.Items.Behaviours
 
             if (IsOverBackpack())
             {
-                var playerObj = GameObject.FindWithTag("Player");
+                var playerObj = GameManager.Instance.PlayerBehaviour.gameObject;
                 var playerInventory = playerObj.GetComponent<InventoryBehaviour>();
                 playerInventory.AddItem(item);
             }
