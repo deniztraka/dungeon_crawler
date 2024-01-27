@@ -83,7 +83,7 @@ namespace DTWorldz.Items.Behaviours.UI
         public virtual void OnItemDragStart(ItemSlotBehaviour itemSlotBehaviour)
         {
             dragStartedSlot = itemSlotBehaviour;
-            //Debug.Log(gameObject.name + " " + itemSlotBehaviour.itemSO.name + " start");
+            Debug.Log(gameObject.name + " " + itemSlotBehaviour.ItemSO.name + " start");
 
             SendMessageUpwards("DragStartMessage", this);
         }
@@ -99,7 +99,7 @@ namespace DTWorldz.Items.Behaviours.UI
             ItemSO = itemContainerSlot.ItemSO;
             Icon.sprite = ItemSO.Icon;
             Icon.enabled = true;
-            SetQuantity(itemContainerSlot.Quantity);
+            SetQuantity(itemContainerSlot.Quantity == 0 ? 1 : itemContainerSlot.Quantity);
         }
 
         internal void SetQuantity(int value)
@@ -120,7 +120,9 @@ namespace DTWorldz.Items.Behaviours.UI
             Icon.sprite = null;
             Icon.enabled = false;
             ItemSO = null;
-            QuantityText.text = String.Empty;
+            if(QuantityText != null){
+                QuantityText.text = String.Empty;
+            }
         }
 
         public virtual void OnDrop(PointerEventData eventData)

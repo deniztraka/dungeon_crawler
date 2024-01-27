@@ -38,7 +38,8 @@ namespace DTWorldz.Items.Behaviours.UI
             
             if (OnItemDragStartEvent != null)
             {
-                OnItemDragStartEvent.Invoke(GetComponentInParent<ItemSlotBehaviour>());
+                var itemSlotBehaviour = GetComponentInParent<ItemSlotBehaviour>();
+                OnItemDragStartEvent.Invoke(itemSlotBehaviour);
             }
         }
 

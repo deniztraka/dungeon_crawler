@@ -117,6 +117,17 @@ namespace DTWorldz.Items.Behaviours.UI
             }
         }
 
+        void DropToEquipmentSlot(EquipmentSlotBehavior equipmentSlotBehavior)
+        {
+            var item = itemSlotDragStart.GetItem();
+
+            if(item is WeaponItemSO && equipmentSlotBehavior.EquipmentType == EquipmentType.RightHand){
+                equipmentSlotBehavior.SetItem(RelatedInventory, item as WeaponItemSO);
+                //RelatedInventory.RemoveItem(item);
+                itemSlotDragStart.RemoveItem();
+            }
+        }
+
         void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
         {
             Debug.Log("Hotbar DragEndMessage");
