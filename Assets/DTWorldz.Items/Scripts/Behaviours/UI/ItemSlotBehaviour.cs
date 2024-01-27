@@ -18,6 +18,7 @@ namespace DTWorldz.Items.Behaviours.UI
         private int quantity;
 
         private ItemSlotBehaviour dragStartedSlot;
+        private InventoryBehaviour playerInventory;
 
         public bool HasItem
         {
@@ -37,6 +38,41 @@ namespace DTWorldz.Items.Behaviours.UI
             var dragAndDropBehaviour = GetComponentInChildren<ItemSlotDragAndDrop>();
             dragAndDropBehaviour.OnItemDragStartEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragStart);
             dragAndDropBehaviour.OnItemDragEndEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragEnd);
+
+            var playerObj = GameObject.FindWithTag("Player");
+            playerInventory = playerObj.GetComponent<InventoryBehaviour>();
+        }
+
+        public void ItemSlotClicked()
+        {
+            if (ItemSO == null)
+            {
+                return;
+            }
+            if (ItemSO is BaseConsumableItemSO)
+            {
+                var consumableItemSO = ItemSO as BaseConsumableItemSO;
+                if (consumableItemSO != null)
+                {
+                    consumableItemSO.Use();
+                    playerInventory.RemoveItem(ItemSO);
+                }
+            }
+            else if (ItemSO is BaseConstructableItemSO)
+            {
+                var constructableItemSO = ItemSO as BaseConstructableItemSO;
+                if (constructableItemSO != null)
+                {
+                    constructableItemSO.Construct();
+                }
+            } else if (ItemSO is WeaponItemSO)
+            {
+                var weaponItemSO = ItemSO as WeaponItemSO;
+                if (weaponItemSO != null)
+                {
+                    weaponItemSO.Equip();
+                }
+            }
         }
 
         internal BaseItemSO GetItem()
@@ -47,7 +83,7 @@ namespace DTWorldz.Items.Behaviours.UI
         public virtual void OnItemDragStart(ItemSlotBehaviour itemSlotBehaviour)
         {
             dragStartedSlot = itemSlotBehaviour;
-            //Debug.Log(gameObject.name + " " + itemSlotBehaviour.itemSO.name + " start");
+            Debug.Log(gameObject.name + " " + itemSlotBehaviour.ItemSO.name + " start");
 
             SendMessageUpwards("DragStartMessage", this);
         }
@@ -63,7 +99,7 @@ namespace DTWorldz.Items.Behaviours.UI
             ItemSO = itemContainerSlot.ItemSO;
             Icon.sprite = ItemSO.Icon;
             Icon.enabled = true;
-            SetQuantity(itemContainerSlot.Quantity);
+            SetQuantity(itemContainerSlot.Quantity == 0 ? 1 : itemContainerSlot.Quantity);
         }
 
         internal void SetQuantity(int value)
@@ -84,7 +120,9 @@ namespace DTWorldz.Items.Behaviours.UI
             Icon.sprite = null;
             Icon.enabled = false;
             ItemSO = null;
-            QuantityText.text = String.Empty;
+            if(QuantityText != null){
+                QuantityText.text = String.Empty;
+            }
         }
 
         public virtual void OnDrop(PointerEventData eventData)

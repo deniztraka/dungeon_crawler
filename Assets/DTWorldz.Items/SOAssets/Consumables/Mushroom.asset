@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13710b0416ab6434d8a25ab5896c1521, type: 3}
   m_Name: Mushroom
   m_EditorClassIdentifier: 
-  Id: 10
+  Id: 7
   Name: Mushroom
   Description: Refills your hunger
   Icon: {fileID: 21300000, guid: fe9ed6b821ad24f4d9d6deef08a73bcf, type: 3}
   ItemType: 1
   Stackable: 1
+  Prefab: {fileID: 8441661931396278614, guid: af81a3bb8f5c949438d0cc4fa8468ba9, type: 3}
   MaxStackQuantity: 20
   EffectPrefab: {fileID: 0}
   RegenAmount: 10

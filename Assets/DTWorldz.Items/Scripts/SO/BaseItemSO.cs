@@ -14,6 +14,8 @@ namespace DTWorldz.Items.SO
         public ItemType ItemType;
         public bool Stackable;
 
+        public GameObject Prefab;
+
         public int MaxStackQuantity = 20;
     }
 }

@@ -79,7 +79,7 @@ namespace DTWorldz.Behaviours.Mobiles
 
         private bool BeforeAttack()
         {
-            Debug.Log("BeforeAttack");
+            //Debug.Log("BeforeAttack");
             isAttacking = true;
             return true;
         }

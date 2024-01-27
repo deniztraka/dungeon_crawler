@@ -80,5 +80,15 @@ namespace DTWorldz.Items.SO
                 OnInventoryUpdated.Invoke();
             }
         }
+
+        internal bool HasItem(BaseItemSO itemSO, int quantity)
+        {
+            var itemSlot = ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id);
+            if (itemSlot != null && itemSlot.Quantity >= quantity)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

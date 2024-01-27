@@ -18,4 +18,5 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 3f4dd5ab743fb7a46b86445ce6b872fb, type: 3}
   ItemType: 4
   Stackable: 1
+  Prefab: {fileID: 9209882335573884990, guid: 82ba59e03aa8e4d47acb92ec989e6aa5, type: 3}
   MaxStackQuantity: 5

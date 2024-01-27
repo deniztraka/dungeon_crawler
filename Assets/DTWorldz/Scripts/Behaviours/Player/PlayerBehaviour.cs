@@ -8,6 +8,7 @@ using DTWorldz.Behaviours.UI;
 using DTWorldz.Behaviours.Utils;
 using DTWorldz.DataModel;
 using DTWorldz.Items.SO;
+using DTWorldz.Models;
 using DTWorldz.Models.MobileStats;
 using DTWorldz.SaveSystem;
 using UnityEngine;
@@ -37,6 +38,8 @@ namespace DTWorldz.Behaviours.Player
         public GameObject GoldLootPrefab;
         private PlayerMovementBehaviour movementBehaviour;
 
+        public Direction Direction { get { return movementBehaviour.GetDirection(); }}
+
         public delegate void DataLoaderHandler();
         public event DataLoaderHandler OnAfterDataLoad;
 
@@ -59,6 +62,8 @@ namespace DTWorldz.Behaviours.Player
 
             RegisterToSaveSystem();
         }
+
+
 
         private void OnInteractTargetChanged(Interactable interactable)
         {
