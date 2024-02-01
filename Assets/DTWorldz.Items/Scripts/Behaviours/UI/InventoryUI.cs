@@ -20,6 +20,11 @@ namespace DTWorldz.Items.Behaviours.UI
         // Start is called before the first frame update
         void Start()
         {
+            // return if destroyed
+            if (gameObject == null)
+            {
+                return;
+            }
 
             var inventoryBehaviour = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
             if (inventoryBehaviour != null && inventoryBehaviour.ItemContainer != null)
@@ -56,9 +61,7 @@ namespace DTWorldz.Items.Behaviours.UI
         {
             try
             {
-
-
-                if (gameObject == null)
+                if (this == null)
                 {
                     return;
                 }
@@ -67,6 +70,7 @@ namespace DTWorldz.Items.Behaviours.UI
                 {
                     return;
                 }
+
                 if (itemContainer != null)
                 {
                     for (int i = 0; i < SlotsContainer.transform.childCount; i++)
@@ -75,7 +79,7 @@ namespace DTWorldz.Items.Behaviours.UI
                         var itemSlotBehaviour = child.GetComponent<ItemSlotBehaviour>();
                         if (i < itemContainer.ItemSlots.Count)
                         {
-                            itemSlotBehaviour.SetItem(itemContainer.ItemSlots[i]);
+                            itemSlotBehaviour.SetItem(itemContainer.ItemSlots[i].ItemSO, itemContainer.ItemSlots[i].Quantity);
                         }
                         else
                         {

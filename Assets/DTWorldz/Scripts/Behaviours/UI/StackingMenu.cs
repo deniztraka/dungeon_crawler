@@ -61,15 +61,19 @@ namespace DTWorldz.Behaviours.UI
 
         public void Accept()
         {
-            var item = this.fromSlot.GetItem();
-            this.toSlot.SetItem(new ItemContainerSlot(item, (int)slider.value));
-            if ((int)slider.value == this.fromSlot.GetQuantity())
+            var item = fromSlot.GetItem();
+            toSlot.SetItem(item, (int)slider.value);
+
+
+
+            if ((int)slider.value == fromSlot.GetQuantity())
             {
-                this.fromSlot.RemoveItem();
+                Debug.Log("Remove item " + fromSlot.GetItem().name);
+                fromSlot.RemoveItem();
             }
             else
             {
-                this.fromSlot.SetQuantity(((int)(slider.maxValue - slider.value)));
+                fromSlot.SetQuantity((int)(slider.maxValue - slider.value));
             }
 
             Close();

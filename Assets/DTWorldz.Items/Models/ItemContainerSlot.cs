@@ -11,10 +11,5 @@ namespace DTWorldz.Items.Models
         public BaseItemSO ItemSO;
         public int Quantity;
 
-        public ItemContainerSlot(BaseItemSO itemSO, int quantity)
-        {
-            ItemSO = itemSO;
-            Quantity = quantity;
-        }
     }
 }

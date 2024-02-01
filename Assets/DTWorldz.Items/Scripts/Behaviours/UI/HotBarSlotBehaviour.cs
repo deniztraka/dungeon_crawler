@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,7 +16,9 @@ namespace DTWorldz.Items.Behaviours.UI
         private Button UseButton;
         private InventoryBehaviour inventoryBehaviour;
 
-        void Start(){
+        public override void Start()
+        {
+            base.Start();
             UseButton = GetComponent<Button>();
         }
 
@@ -24,52 +27,95 @@ namespace DTWorldz.Items.Behaviours.UI
             SendMessageUpwards("DragEndDropHotBar", this);
         }
 
+        public void ClearSlot()
+        {
+            var icon = GetIcon();
+            var quantityText = GetQuantityText();
+
+            if (icon != null)
+            {
+                icon.sprite = null;
+                icon.color = new Color(255, 255, 255, 0);
+            }
+
+            if (quantityText != null)
+            {
+                quantityText.text = String.Empty;
+            }
+
+            ItemContainerSlot = null;
+            return;
+        }
+
         internal void SetItem(InventoryBehaviour relatedInventory, BaseItemSO itemSO)
         {
             if (relatedInventory == null || itemSO == null)
             {
-                if (Icon != null)
-                {
-                    Icon.sprite = null;
-                    Icon.color = new Color(255, 255, 255, 0);
-                }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = String.Empty;
-                }
-                this.ItemSO = null;
+                ClearSlot();
+                return;
+            }
+
+            var totalQuantity = relatedInventory.ItemContainer.GetTotalQuantity(itemSO);
+            if (totalQuantity == 0)
+            {
+                ClearSlot();
+                return;
+            }
+
+            ItemContainerSlot = inventoryBehaviour.ItemContainer.GetItemContainerSlot(itemSO);
+            if (ItemContainerSlot == null)
+            {
+                ClearSlot();
                 return;
             }
 
             inventoryBehaviour = relatedInventory;
-            this.ItemSO = itemSO;
 
-            var totalQuantity = inventoryBehaviour.ItemContainer.GetTotalQuantity(itemSO);
-            if (totalQuantity == 0)
+            var icon = GetIcon();
+            var quantityText = GetQuantityText();
+
+            if (icon != null)
             {
-                if (Icon != null)
-                {
-                    Icon.sprite = null;
-                    Icon.color = new Color(255, 255, 255, 0);
-                }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = String.Empty;
-                }
-                this.ItemSO = null;
+                icon.sprite = itemSO.Icon;
+                icon.color = new Color(255, 255, 255, 1);
+            }
+
+            if (quantityText != null)
+            {
+                quantityText.text = totalQuantity > 1 ? totalQuantity.ToString() : String.Empty;
+            }
+        }
+
+        internal void SetItem(InventoryBehaviour relatedInventory, ItemContainerSlot itemContainerSlotToMap)
+        {
+            if (relatedInventory == null || itemContainerSlotToMap == null || itemContainerSlotToMap.ItemSO == null)
+            {
+                ClearSlot();
                 return;
             }
-            else
+
+            var totalQuantity = relatedInventory.ItemContainer.GetTotalQuantity(itemContainerSlotToMap.ItemSO);
+            if (totalQuantity == 0)
             {
-                if (Icon != null)
-                {
-                    Icon.sprite = itemSO.Icon;
-                    Icon.color = new Color(255, 255, 255, 1);
-                }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = totalQuantity > 1 ? totalQuantity.ToString() : String.Empty;
-                }
+                ClearSlot();
+                return;
+            }
+
+            ItemContainerSlot = itemContainerSlotToMap;
+            inventoryBehaviour = relatedInventory;
+
+            var icon = GetIcon();
+            var quantityText = GetQuantityText();
+
+            if (icon != null)
+            {
+                icon.sprite = ItemContainerSlot.ItemSO.Icon;
+                icon.color = new Color(255, 255, 255, 1);
+            }
+
+            if (quantityText != null)
+            {
+                quantityText.text = totalQuantity > 1 ? totalQuantity.ToString() : String.Empty;
             }
         }
 
@@ -85,34 +131,28 @@ namespace DTWorldz.Items.Behaviours.UI
 
         internal void Refresh(InventoryBehaviour inventoryBehaviour)
         {
-            if (ItemSO != null && inventoryBehaviour != null)
+            if (ItemContainerSlot != null && ItemContainerSlot.ItemSO != null && inventoryBehaviour != null)
             {
-                SetItem(inventoryBehaviour, ItemSO);
+                SetItem(inventoryBehaviour, ItemContainerSlot);
             }
         }
 
         internal void Refresh()
         {
-            if (ItemSO != null && inventoryBehaviour != null)
+            if (ItemContainerSlot != null && inventoryBehaviour != null)
             {
-                SetItem(inventoryBehaviour, ItemSO);
+                SetItem(inventoryBehaviour, ItemContainerSlot);
             }
-        }
-
-        public void ClearItem()
-        {
-            SetItem(null, null);
         }
 
         public void UseItem()
         {
-            if (ItemSO != null && inventoryBehaviour != null)
+            if (ItemContainerSlot != null && ItemContainerSlot.ItemSO != null && inventoryBehaviour != null)
             {
-                //ItemSO.Use();
-
-                var consumable = (BaseConsumableItemSO)ItemSO;
+                var consumable = (BaseConsumableItemSO)ItemContainerSlot.ItemSO;
                 consumable.Use();
-                inventoryBehaviour.RemoveItem(ItemSO);
+                inventoryBehaviour.RemoveItem(ItemContainerSlot.ItemSO);
+                SetItem(inventoryBehaviour, consumable);
             }
         }
     }

@@ -22,27 +22,6 @@ namespace DTWorldz.Items.Behaviours
             audioManager = gameObject.GetComponent<AudioManager>();
         }
 
-        public void RefreshItemContainer()
-        {
-            if (SlotsContainer != null)
-            {
-                var itemContainerSlotList = new List<ItemContainerSlot>();
-                for (int i = 0; i < SlotsContainer.childCount; i++)
-                {
-                    var slot = SlotsContainer.GetChild(i);
-                    var uiSlotBehaviour = slot.GetComponent<DTWorldz.Items.Behaviours.UI.ItemSlotBehaviour>();
-                    var item = uiSlotBehaviour.GetItem();
-                    if (item != null)
-                    {
-                        itemContainerSlotList.Add(new ItemContainerSlot(uiSlotBehaviour.GetItem(), uiSlotBehaviour.GetQuantity()));
-                    }
-
-                }
-
-                ItemContainer.RefreshList(itemContainerSlotList);
-            }
-        }
-
         private void Add(ItemBehaviour item)
         {
             ItemContainer.AddItem(item.ItemSO, item.Quantity);
@@ -56,7 +35,7 @@ namespace DTWorldz.Items.Behaviours
 
         private void StackItem(ItemContainerSlot itemContainerSlot, ItemBehaviour item)
         {
-            ItemContainer.StackItem(itemContainerSlot, item.Quantity);
+            ItemContainer.StackItem(itemContainerSlot, item);
 
             Destroy(item.gameObject);
 
@@ -74,7 +53,7 @@ namespace DTWorldz.Items.Behaviours
                 return;
             }
 
-            var hasEmptySlot = ItemContainer.ItemSlots.Count < MaxItemCount;
+            var hasEmptySlot = ItemContainer.HasEmptySlot();
 
             if (!item.ItemSO.Stackable && hasEmptySlot)
             {
@@ -116,14 +95,10 @@ namespace DTWorldz.Items.Behaviours
 
         internal void DropItem(UI.ItemSlotBehaviour itemSlotDragStart)
         {
-            if (ItemPrefab != null)
-            {
                 var player = GameManager.Instance.PlayerBehaviour;
-                StartCoroutine(LateDrop(ItemPrefab, player.transform.position, 0.25f, itemSlotDragStart.GetItem(), itemSlotDragStart.GetQuantity()));
+                StartCoroutine(LateDrop(itemSlotDragStart.GetItem().Prefab, player.transform.position, 0.25f, itemSlotDragStart.GetItem(), itemSlotDragStart.GetQuantity()));
                 itemSlotDragStart.RemoveItem();
-                RefreshItemContainer();
                 RefreshHotBar();
-            }
         }
 
         internal void RefreshHotBar()
@@ -154,6 +129,25 @@ namespace DTWorldz.Items.Behaviours
         internal void HasItem(BaseItemSO itemSO, int quantity, Action<bool> value)
         {
             value.Invoke(ItemContainer.HasItem(itemSO, quantity));
+        }
+
+        public void RefreshUI(){
+            if (SlotsContainer != null)
+            {
+                for (int i = 0; i < SlotsContainer.childCount; i++)
+                {
+                    var child = SlotsContainer.GetChild(i);
+                    var itemSlotBehaviour = child.GetComponent<DTWorldz.Items.Behaviours.UI.ItemSlotBehaviour>();
+                    if (i < ItemContainer.ItemSlots.Count)
+                    {
+                        itemSlotBehaviour.SetItem(ItemContainer.ItemSlots[i].ItemSO, ItemContainer.ItemSlots[i].Quantity);
+                    }
+                    else
+                    {
+                        itemSlotBehaviour.RemoveItem();
+                    }
+                }
+            }
         }
     }
 }

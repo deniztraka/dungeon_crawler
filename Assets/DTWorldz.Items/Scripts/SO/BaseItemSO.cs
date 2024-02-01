@@ -7,7 +7,7 @@ namespace DTWorldz.Items.SO
 {
     public abstract class BaseItemSO : ScriptableObject
     {
-        public int Id;
+        public string Id;
         public string Name;
         public string Description;
         public Sprite Icon;
