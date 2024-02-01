@@ -150,51 +150,11 @@ namespace DTWorldz.Behaviours.Player
             }
         }
 
-        internal void DrinkHealthPotion(float val)
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.HealthPotionAmount--;
-            }
-            audioManager.Play("Drink");
-            health.CurrentHealth += val;
-        }
-
-        internal void DrinkStaminaPotion(float val)
-        {
-            if (playerDataModel != null)
-            {
-                playerDataModel.StamPotionAmount--;
-            }
-            audioManager.Play("Drink");
-            stamina.CurrentHealth += val;
-        }
-
         internal void Eat(FoodItemSO foodItemSO)
         {
             audioManager.Play("Drink");
             hunger.Eat(foodItemSO);
         }
-
-        // internal void CollectHealthPotion()
-        // {
-        //     if (playerDataModel != null)
-        //     {
-        //         playerDataModel.HealthPotionAmount++;
-        //     }
-        //     audioManager.Play("Loot");
-        //     HealthPotionButtonBehaviour.AddPotion();
-        // }
-
-        // internal void CollectStaminaPotion()
-        // {
-        //     if (playerDataModel != null)
-        //     {
-        //         playerDataModel.StamPotionAmount++;
-        //     }
-        //     audioManager.Play("Loot");
-        //     StaminaPotionButtonBehaviour.AddPotion();
-        // }
 
         private void PopUpFloatingGold(float goldCount)
         {
@@ -216,22 +176,6 @@ namespace DTWorldz.Behaviours.Player
                 health.MaxHealth = playerDataModel.Strength.CurrentValue * 5;
                 stamina.MaxHealth = playerDataModel.Dexterity.CurrentValue * 3;
 
-
-                if (StaminaPotionButtonBehaviour != null)
-                {
-                    for (int i = 0; i < playerDataModel.StamPotionAmount; i++)
-                    {
-                        StaminaPotionButtonBehaviour.AddPotion();
-                    }
-                }
-
-                if (HealthPotionButtonBehaviour != null)
-                {
-                    for (int i = 0; i < playerDataModel.HealthPotionAmount; i++)
-                    {
-                        HealthPotionButtonBehaviour.AddPotion();
-                    }
-                }
                 if (OnAfterDataLoad != null)
                 {
 

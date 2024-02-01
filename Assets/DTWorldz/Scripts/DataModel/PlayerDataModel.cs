@@ -13,8 +13,6 @@ namespace DTWorldz.DataModel
     public class PlayerDataModel : BaseDataModel
     {
         public int GoldAmount;
-        public int HealthPotionAmount;
-        public int StamPotionAmount;
         public string Name;
 
         public Strength Strength;
@@ -32,8 +30,6 @@ namespace DTWorldz.DataModel
             if (tempModel != null)
             {
                 this.GoldAmount = tempModel.GoldAmount;
-                this.HealthPotionAmount = tempModel.HealthPotionAmount;
-                this.StamPotionAmount = tempModel.StamPotionAmount;
                 this.Name = tempModel.Name;
                 this.Dexterity = tempModel.Dexterity;
                 this.Strength = tempModel.Strength;

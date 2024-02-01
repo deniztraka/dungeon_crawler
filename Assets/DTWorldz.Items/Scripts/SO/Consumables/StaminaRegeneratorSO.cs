@@ -12,7 +12,7 @@ namespace DTWorldz.Items.SO
         internal override void Use()
         {
             base.Use();
-            GameManager.Instance.PlayerBehaviour.DrinkStaminaPotion(this.RegenAmount);
+            //GameManager.Instance.PlayerBehaviour.DrinkStaminaPotion(this.RegenAmount);
         }
     }
 }
