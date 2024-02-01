@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
 using DTWorldz.Scripts.Managers;
@@ -12,62 +13,92 @@ namespace DTWorldz.Items.Behaviours.UI
 {
     public class ItemSlotBehaviour : MonoBehaviour, IDropHandler
     {
-        public Image Icon;
-        public Text QuantityText;
-        [SerializeField]
-        internal BaseItemSO ItemSO;
+
+        private Image icon;
+        private Text quantityText;
         private int quantity;
 
         private ItemSlotBehaviour dragStartedSlot;
         private InventoryBehaviour playerInventory;
 
+        private ItemContainerSlot itemContainerSlot;
+
+        public ItemContainerSlot ItemContainerSlot
+        {
+            get
+            {
+                return itemContainerSlot;
+            }
+
+            set
+            {
+                itemContainerSlot = value;
+            }
+        }
+
+        public int SlotIndex = -1;
+
         public bool HasItem
         {
             get
             {
-                return ItemSO != null;
+                return this.itemContainerSlot.ItemSO != null;
             }
         }
 
-        public int GetQuantity()
+        public virtual int GetQuantity()
         {
-            return quantity;
+            return this.itemContainerSlot.Quantity;
         }
 
-        void Start()
+        public Image GetIcon()
+        {
+            return icon;
+        }
+
+        public Text GetQuantityText()
+        {
+            return quantityText;
+        }
+
+        public virtual void Start()
         {
             var dragAndDropBehaviour = GetComponentInChildren<ItemSlotDragAndDrop>();
             dragAndDropBehaviour.OnItemDragStartEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragStart);
             dragAndDropBehaviour.OnItemDragEndEvent += new ItemSlotDragAndDrop.ItemSlotDragAndDropEvent(OnItemDragEnd);
 
-            playerInventory = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
+            icon = transform.Find("Icon").GetComponent<Image>();
+            quantityText = transform.Find("Text").GetComponent<Text>();
+            ItemContainerSlot = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>().ItemContainer.GetItemContainerSlot(SlotIndex);
         }
 
         public void ItemSlotClicked()
         {
-            if (ItemSO == null)
+            if (this.itemContainerSlot.ItemSO == null)
             {
                 return;
             }
-            if (ItemSO is BaseConsumableItemSO)
+            if (this.itemContainerSlot.ItemSO is BaseConsumableItemSO)
             {
-                var consumableItemSO = ItemSO as BaseConsumableItemSO;
+                var consumableItemSO = this.itemContainerSlot.ItemSO as BaseConsumableItemSO;
                 if (consumableItemSO != null)
                 {
                     consumableItemSO.Use();
-                    playerInventory.RemoveItem(ItemSO);
+                    var playerInventory = GameManager.Instance.PlayerBehaviour.GetComponent<InventoryBehaviour>();
+                    playerInventory.RemoveItem(this.itemContainerSlot.ItemSO);
                 }
             }
-            else if (ItemSO is BaseConstructableItemSO)
+            else if (this.itemContainerSlot.ItemSO is BaseConstructableItemSO)
             {
-                var constructableItemSO = ItemSO as BaseConstructableItemSO;
+                var constructableItemSO = this.itemContainerSlot.ItemSO as BaseConstructableItemSO;
                 if (constructableItemSO != null)
                 {
                     constructableItemSO.Construct();
                 }
-            } else if (ItemSO is WeaponItemSO)
+            }
+            else if (this.itemContainerSlot.ItemSO is WeaponItemSO)
             {
-                var weaponItemSO = ItemSO as WeaponItemSO;
+                var weaponItemSO = this.itemContainerSlot.ItemSO as WeaponItemSO;
                 if (weaponItemSO != null)
                 {
                     weaponItemSO.Equip();
@@ -75,15 +106,20 @@ namespace DTWorldz.Items.Behaviours.UI
             }
         }
 
-        internal BaseItemSO GetItem()
+        internal virtual BaseItemSO GetItem()
         {
-            return ItemSO;
+            return this.itemContainerSlot.ItemSO;
+        }
+
+        internal ItemContainerSlot GetItemContainerSlot()
+        {
+            return this.itemContainerSlot;
         }
 
         public virtual void OnItemDragStart(ItemSlotBehaviour itemSlotBehaviour)
         {
             dragStartedSlot = itemSlotBehaviour;
-            Debug.Log(gameObject.name + " " + itemSlotBehaviour.ItemSO.name + " start");
+            //Debug.Log(gameObject.name + " " + itemSlotBehaviour.ItemSO.name + " start");
 
             SendMessageUpwards("DragStartMessage", this);
         }
@@ -94,12 +130,18 @@ namespace DTWorldz.Items.Behaviours.UI
 
         }
 
-        internal void SetItem(ItemContainerSlot itemContainerSlot)
+        internal virtual void SetItem(BaseItemSO itemSO, int quantity = 1)
         {
-            ItemSO = itemContainerSlot.ItemSO;
-            Icon.sprite = ItemSO.Icon;
-            Icon.enabled = true;
-            SetQuantity(itemContainerSlot.Quantity == 0 ? 1 : itemContainerSlot.Quantity);
+            if (itemContainerSlot == null)
+            {
+                RemoveItem();
+                return;
+            }
+            itemContainerSlot.ItemSO = itemSO;
+            icon.sprite = itemSO ? itemSO.Icon : null;
+            icon.enabled = itemSO != null;
+            itemContainerSlot.Quantity = quantity;
+            SetQuantity(quantity);
         }
 
         internal void SetQuantity(int value)
@@ -107,22 +149,28 @@ namespace DTWorldz.Items.Behaviours.UI
             quantity = value;
             if (quantity > 1)
             {
-                QuantityText.text = quantity.ToString();
+                quantityText.text = quantity.ToString();
             }
             else
             {
-                QuantityText.text = String.Empty;
+                quantityText.text = String.Empty;
+            }
+            if (itemContainerSlot != null)
+            {
+                itemContainerSlot.Quantity = quantity;
             }
         }
 
-        internal void RemoveItem()
+        internal virtual void RemoveItem()
         {
-            Icon.sprite = null;
-            Icon.enabled = false;
-            ItemSO = null;
-            if(QuantityText != null){
-                QuantityText.text = String.Empty;
+            icon.sprite = null;
+            icon.enabled = false;
+            itemContainerSlot.ItemSO = null;
+            if (quantityText != null)
+            {
+                quantityText.text = String.Empty;
             }
+            itemContainerSlot.Quantity = 0;
         }
 
         public virtual void OnDrop(PointerEventData eventData)

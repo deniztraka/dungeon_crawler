@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DTWorldz.Items.Behaviours;
 using DTWorldz.Items.Models;
 using UnityEngine;
 namespace DTWorldz.Items.SO
@@ -15,18 +16,31 @@ namespace DTWorldz.Items.SO
 
         internal void AddItem(BaseItemSO itemSO, int quantity)
         {
-            ItemSlots.Add(new ItemContainerSlot(itemSO, quantity));
+            var emptyItemContainerSlot = GetEmptySlot();
 
-            if (OnInventoryUpdated != null)
+            if (emptyItemContainerSlot != null)
             {
-                OnInventoryUpdated.Invoke();
+                emptyItemContainerSlot.ItemSO = itemSO;
+                emptyItemContainerSlot.Quantity = quantity;
+
+                if (OnInventoryUpdated != null)
+                {
+                    OnInventoryUpdated.Invoke();
+                }
             }
         }
 
-        internal void StackItem(ItemContainerSlot itemContainerSlot, int quantity)
+        private ItemContainerSlot GetEmptySlot()
+        {
+            return ItemSlots.Find(itc => itc.ItemSO == null);
+        }
+
+        internal void StackItem(ItemContainerSlot itemContainerSlot, ItemBehaviour item)
         {
             var itcToUpdate = ItemSlots.Find(itc => itc == itemContainerSlot);
-            itcToUpdate.Quantity += quantity;
+            itcToUpdate.Quantity += item.Quantity;
+            itcToUpdate.ItemSO = item.ItemSO;
+
             if (OnInventoryUpdated != null)
             {
                 OnInventoryUpdated.Invoke();
@@ -36,7 +50,7 @@ namespace DTWorldz.Items.SO
         internal int GetTotalQuantity(BaseItemSO itemSO)
         {
             var totalQuantity = 0;
-            var sameItems = ItemSlots.FindAll(itc => itc.ItemSO.Id == itemSO.Id);
+            var sameItems = ItemSlots.FindAll(itc => itc.ItemSO != null && itc.ItemSO.Id == itemSO.Id);
             foreach (var item in sameItems)
             {
                 totalQuantity += item.Quantity;
@@ -46,7 +60,23 @@ namespace DTWorldz.Items.SO
 
         internal ItemContainerSlot FindItemToAllowStackedOn(BaseItemSO itemSO, int quantity)
         {
-            return ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id && itc.Quantity + quantity <= itemSO.MaxStackQuantity);
+            // return a slot that has the same item and stackable or an empty slot if there is any
+            var sameItems = ItemSlots.FindAll(itc => itc.ItemSO != null && itc.ItemSO.Id == itemSO.Id);
+            foreach (var item in sameItems)
+            {
+                if (item.Quantity + quantity <= itemSO.MaxStackQuantity)
+                {
+                    return item;
+                }
+            }
+
+            var emptySlot = GetEmptySlot();
+            if (emptySlot != null)
+            {
+                return emptySlot;
+            }
+
+            return null;
         }
 
         internal void RefreshList(List<ItemContainerSlot> itemContainerSlotList)
@@ -65,12 +95,13 @@ namespace DTWorldz.Items.SO
 
         internal void RemoveItem(BaseItemSO itemSO)
         {
-            var itemSlot = ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id);
+            var itemSlot = ItemSlots.Find(itc => itc.ItemSO != null && itc.ItemSO.Id == itemSO.Id);
             if (itemSlot != null && itemSlot.Quantity == 1)
             {
-                ItemSlots.Remove(itemSlot);
+                itemSlot.ItemSO = null;
+                itemSlot.Quantity = 0;
             }
-            else if (itemSlot != null && itemSlot.Quantity > 1) 
+            else if (itemSlot != null && itemSlot.Quantity > 1)
             {
                 itemSlot.Quantity--;
             }
@@ -81,14 +112,25 @@ namespace DTWorldz.Items.SO
             }
         }
 
+        internal bool HasEmptySlot()
+        {
+            // find a slot that has no item
+            return ItemSlots.Exists(itc => itc.ItemSO == null);
+        }
+
         internal bool HasItem(BaseItemSO itemSO, int quantity)
         {
-            var itemSlot = ItemSlots.Find(itc => itc.ItemSO.Id == itemSO.Id);
-            if (itemSlot != null && itemSlot.Quantity >= quantity)
-            {
-                return true;
-            }
-            return false;
+            return ItemSlots.Exists(itc => itc.ItemSO != null && itc.ItemSO.Id == itemSO.Id && itc.Quantity >= quantity);
+        }
+
+        internal ItemContainerSlot GetItemContainerSlot(int slotIndex)
+        {
+            return slotIndex == -1 ? null : ItemSlots[slotIndex];
+        }
+
+        internal ItemContainerSlot GetItemContainerSlot(BaseItemSO itemSO)
+        {
+            return ItemSlots.Find(itc => itc.ItemSO != null && itc.ItemSO.Id == itemSO.Id);
         }
     }
 }

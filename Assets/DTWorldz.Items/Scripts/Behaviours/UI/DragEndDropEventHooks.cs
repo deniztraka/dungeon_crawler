@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DTWorldz.Behaviours.UI;
 using DTWorldz.Items.Models;
 using DTWorldz.Items.SO;
+using DTWorldz.ScriptableObjects.Items;
 using UnityEngine;
 namespace DTWorldz.Items.Behaviours.UI
 {
@@ -13,9 +14,11 @@ namespace DTWorldz.Items.Behaviours.UI
         public StackingMenu StackingMenu;
         private ItemSlotBehaviour itemSlotDragStart;
         private ItemSlotBehaviour itemSlotDragEnd;
+
+
         void DragEndMessage(ItemSlotBehaviour itemSlotBehaviour)
         {
-            Debug.Log("Normal DragEndMessage");
+            //Debug.Log("Normal DragEndMessage");
             if (itemSlotDragStart == null)
             {
                 return;
@@ -42,7 +45,7 @@ namespace DTWorldz.Items.Behaviours.UI
                 }
                 else // just move to annother slot 1 quantity item
                 {
-                    itemSlotDragEnd.SetItem(new ItemContainerSlot(draggedItem, startQuantity));
+                    itemSlotDragEnd.SetItem(draggedItem, startQuantity);
                     itemSlotDragStart.RemoveItem();
                 }
             }
@@ -54,8 +57,19 @@ namespace DTWorldz.Items.Behaviours.UI
                 // different item case -  switch items
                 if (draggedItem != itemOnTarget)
                 {
-                    itemSlotDragEnd.SetItem(new ItemContainerSlot(draggedItem, startQuantity));
-                    itemSlotDragStart.SetItem(new ItemContainerSlot(itemOnTarget, quantityOnTarget));
+
+                    // check if switch on equipment slot
+                    if(itemSlotDragStart is EquipmentSlotBehavior){
+                        var oldItem = (itemSlotDragStart as EquipmentSlotBehavior).Switch(itemOnTarget);
+                        if(oldItem != null){
+                            itemSlotDragEnd.SetItem(oldItem, 1);
+                        }
+                    } else {
+                        // regular switch
+                        itemSlotDragEnd.SetItem(draggedItem, startQuantity);
+                        itemSlotDragStart.SetItem(itemOnTarget, quantityOnTarget);
+                    }
+                    
                 }
                 else
                 {
@@ -80,7 +94,7 @@ namespace DTWorldz.Items.Behaviours.UI
 
             if (RelatedInventory != null)
             {
-                RelatedInventory.RefreshItemContainer();
+                RelatedInventory.RefreshUI();
                 RelatedInventory.RefreshHotBar();
             }
 
@@ -120,27 +134,37 @@ namespace DTWorldz.Items.Behaviours.UI
         void DropToEquipmentSlot(EquipmentSlotBehavior equipmentSlotBehavior)
         {
             var item = itemSlotDragStart.GetItem();
+            var targetSlotItem = equipmentSlotBehavior.GetItem();
 
-            if(item is WeaponItemSO && equipmentSlotBehavior.EquipmentType == EquipmentType.RightHand){
-                equipmentSlotBehavior.SetItem(RelatedInventory, item as WeaponItemSO);
-                //RelatedInventory.RemoveItem(item);
+            if (item != null && targetSlotItem != null)
+            {
+                //Debug.Log("Switching items");
+                var oldItemSO = equipmentSlotBehavior.Switch(item);
+                if (oldItemSO != null)
+                {
+                    itemSlotDragStart.SetItem(oldItemSO, 1);
+                }
+                return;
+            }
+
+            if (item is WeaponItemSO && equipmentSlotBehavior.EquipmentType == EquipmentType.RightHand)
+            {
+                equipmentSlotBehavior.SetItem(item as WeaponItemSO, 1);
                 itemSlotDragStart.RemoveItem();
             }
         }
 
         void DragEndDropHotBar(HotBarSlotBehaviour hotBarSlotBehaviour)
         {
-            Debug.Log("Hotbar DragEndMessage");
-
             if (itemSlotDragStart == null)
             {
                 return;
             }
 
-            var itemToSet = itemSlotDragStart.GetItem() as BaseConsumableItemSO;
-            if (itemToSet != null && itemToSet.ItemType == ItemType.Consumable && hotBarSlotBehaviour != null && RelatedInventory != null && itemSlotDragStart != null)
+            var itemContainerSlot = itemSlotDragStart.GetItemContainerSlot();
+            if (itemContainerSlot != null && itemContainerSlot.ItemSO is BaseConsumableItemSO && hotBarSlotBehaviour != null && RelatedInventory != null)
             {
-                hotBarSlotBehaviour.SetItem(RelatedInventory, itemToSet);
+                hotBarSlotBehaviour.SetItem(RelatedInventory, itemContainerSlot);
             }
 
             if (RelatedInventory != null)

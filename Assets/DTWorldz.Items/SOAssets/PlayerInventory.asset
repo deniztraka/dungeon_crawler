@@ -12,4 +12,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbed622dde2a1d54fb7130a91c075a25, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  ItemSlots: []
+  ItemSlots:
+  - ItemSO: {fileID: 11400000, guid: 7124e3663e0ca497fb764f340adfb238, type: 2}
+    Quantity: 1
+  - ItemSO: {fileID: 11400000, guid: 7124e3663e0ca497fb764f340adfb238, type: 2}
+    Quantity: 1
+  - ItemSO: {fileID: 11400000, guid: 9550eb60a44374a209b73848272eb0ae, type: 2}
+    Quantity: 1
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 11400000, guid: 2b7d4b0563add6d489e0b42cecfc06b7, type: 2}
+    Quantity: 1
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 11400000, guid: a8beca2e2f8fe5846b94eb33d1082352, type: 2}
+    Quantity: 2
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0
+  - ItemSO: {fileID: 0}
+    Quantity: 0

@@ -7,19 +7,17 @@ using DTWorldz.Behaviours.Mobiles;
 using DTWorldz.Behaviours.UI;
 using DTWorldz.Behaviours.Utils;
 using DTWorldz.DataModel;
+using DTWorldz.Items.Behaviours.UI;
 using DTWorldz.Items.SO;
 using DTWorldz.Models;
 using DTWorldz.Models.MobileStats;
 using DTWorldz.SaveSystem;
+using DTWorldz.Scripts.Managers;
 using UnityEngine;
 namespace DTWorldz.Behaviours.Player
 {
     public class PlayerBehaviour : MonoBehaviour
     {
-        private int goldAmount;
-        private int healthPotionAmount;
-        private int stamPotionAmount;
-
         private SaveSystemManager saveSystemManager;
 
 
@@ -60,10 +58,25 @@ namespace DTWorldz.Behaviours.Player
             hunger = GetComponent<HungerBehaviour>();
             audioManager = gameObject.GetComponent<AudioManager>();
 
+            var equipmentSlots = GameManager.Instance.PlayerEquipmentSlotsWrapper.GetComponentsInChildren<EquipmentSlotBehavior>();
+            foreach (var slot in equipmentSlots)
+            {
+                slot.OnItemEquipped += new EquipmentSlotBehavior.ItemEquippedHandler(OnItemEquipped);
+                slot.OnItemUnequipped += new EquipmentSlotBehavior.ItemEquippedHandler(OnItemUnequipped);
+            }
+
             RegisterToSaveSystem();
         }
 
+        private void OnItemUnequipped(BaseItemSO itemSO)
+        {
+            Debug.Log("OnItemUnequipped" + itemSO.Name);
+        }
 
+        private void OnItemEquipped(BaseItemSO itemSO)
+        {
+            Debug.Log("OnItemEquipped" + itemSO.Name);
+        }
 
         private void OnInteractTargetChanged(Interactable interactable)
         {

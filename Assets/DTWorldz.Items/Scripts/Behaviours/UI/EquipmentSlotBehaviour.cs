@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 namespace DTWorldz.Items.Behaviours.UI
 {
-    public enum EquipmentType{
+    public enum EquipmentType
+    {
         Head,
         Chest,
         Legs,
@@ -20,7 +21,12 @@ namespace DTWorldz.Items.Behaviours.UI
     public class EquipmentSlotBehavior : ItemSlotBehaviour
     {
 
+        public delegate void ItemEquippedHandler(BaseItemSO itemSO);
+        public event ItemEquippedHandler OnItemEquipped;
+        public event ItemEquippedHandler OnItemUnequipped;
+
         private InventoryBehaviour inventoryBehaviour;
+        private BaseItemSO equippedItemSO;
         public EquipmentType EquipmentType;
 
         public override void OnDrop(PointerEventData eventData)
@@ -28,69 +34,107 @@ namespace DTWorldz.Items.Behaviours.UI
             SendMessageUpwards("DropToEquipmentSlot", this);
         }
 
-        internal void SetItem(InventoryBehaviour relatedInventory, BaseItemSO itemSO)
+        public BaseItemSO Switch(BaseItemSO itemSO)
         {
-            if (relatedInventory == null || itemSO == null)
+            if (itemSO == null)
             {
-                if (Icon != null)
-                {
-                    Icon.sprite = null;
-                    Icon.color = new Color(255, 255, 255, 0);
-                }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = String.Empty;
-                }
-                this.ItemSO = null;
+                return null;
+            }
+
+            if (equippedItemSO != null && equippedItemSO.Id == itemSO.Id)
+            {
+                return null;
+            }
+
+            if (itemSO is not WeaponItemSO)
+            {
+                return null;
+            }
+
+            var oldItemSO = equippedItemSO;
+            SetItem(itemSO, 1);
+            return oldItemSO;
+        }
+
+        internal override void SetItem(BaseItemSO itemSO, int quantity)
+        {
+            //Debug.Log("SetItemEquipmentSlot");
+
+            if(itemSO is not WeaponItemSO){
                 return;
             }
 
-            inventoryBehaviour = relatedInventory;
-            this.ItemSO = itemSO;
-
-            var totalQuantity = inventoryBehaviour.ItemContainer.GetTotalQuantity(itemSO);
-            if (totalQuantity == 0)
+            var icon = GetIcon();
+            if (itemSO == null)
             {
-                if (Icon != null)
+                if (icon != null)
                 {
-                    Icon.sprite = null;
-                    Icon.color = new Color(255, 255, 255, 0);
+                    icon.sprite = null;
+                    icon.color = new Color(255, 255, 255, 0);
                 }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = String.Empty;
-                }
-                this.ItemSO = null;
                 return;
             }
-            else
+
+
+            if (icon != null)
             {
-                if (Icon != null)
+                icon.enabled = true;
+                icon.sprite = itemSO.Icon;
+                icon.color = new Color(255, 255, 255, 1);
+            }
+
+            
+
+            // there is item switch here
+            if(equippedItemSO != null && equippedItemSO.Id != itemSO.Id){
+                // fire unequip event
+                //Debug.Log("OnItemUneqquiped: " + equippedItemSO.Name);
+                if (OnItemEquipped != null)
                 {
-                    Icon.sprite = itemSO.Icon;
-                    Icon.color = new Color(255, 255, 255, 1);
+                    OnItemUnequipped.Invoke(equippedItemSO);
                 }
-                if (QuantityText != null)
-                {
-                    QuantityText.text = totalQuantity > 1 ? totalQuantity.ToString() : String.Empty;
-                }
+            }
+
+            equippedItemSO = itemSO;
+            // fire equip event
+            //Debug.Log("OnItemEqquiped: " + itemSO.Name);
+            if (OnItemEquipped != null)
+            {
+                OnItemEquipped.Invoke(itemSO);
             }
         }
 
-        internal void Refresh(InventoryBehaviour inventoryBehaviour)
+        internal override BaseItemSO GetItem()
         {
-            if (ItemSO != null && inventoryBehaviour != null)
-            {
-                SetItem(inventoryBehaviour, ItemSO);
-            }
+            return equippedItemSO;
         }
 
-        internal void Refresh()
+        public override int GetQuantity()
         {
-            if (ItemSO != null && inventoryBehaviour != null)
+            return 1;
+        }
+
+        internal override void RemoveItem()
+        {
+            var icon = GetIcon();
+
+            if (icon != null)
             {
-                SetItem(inventoryBehaviour, ItemSO);
+                icon.color = new Color(255, 255, 255, 0f);
+                icon.sprite = null;
+                icon.enabled = false;
+
+                //Debug.Log("RemoveItemEquipmentSlot");
             }
+
+            // fire unequip event
+            //Debug.Log("OnItemUneqquiped: " + equippedItemSO.Name);
+            if (OnItemEquipped != null)
+            {
+                OnItemUnequipped.Invoke(equippedItemSO);
+            }
+
+            equippedItemSO = null;
         }
     }
 }
