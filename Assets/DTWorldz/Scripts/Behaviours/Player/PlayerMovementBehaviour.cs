@@ -170,10 +170,10 @@ namespace DTWorldz.Behaviours
             {
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
-                foreach (var animator in AnimationSlots)
+                foreach (var slotAnimator in AnimationSlots)
                 {
-                    animator.SetFloat("Horizontal", movement.x);
-                    animator.SetFloat("Vertical", movement.y);
+                    slotAnimator.SetFloat("Horizontal", movement.x);
+                    slotAnimator.SetFloat("Vertical", movement.y);
                 }
                 resultingSpeed = isRunning ? RunningSpeed : Speed;
 
@@ -185,10 +185,10 @@ namespace DTWorldz.Behaviours
             }
             animator.SetFloat("MovementSpeed", resultingSpeed);
             animator.SetBool("Attack", attackingTrigger);
-            foreach (var animatorSlot in AnimationSlots)
+            foreach (var slotAnimator in AnimationSlots)
             {
-                animatorSlot.SetFloat("MovementSpeed", resultingSpeed);
-                animatorSlot.SetBool("Attack", attackingTrigger);
+                slotAnimator.SetFloat("MovementSpeed", resultingSpeed);
+                slotAnimator.SetBool("Attack", attackingTrigger);
             }
         }
 

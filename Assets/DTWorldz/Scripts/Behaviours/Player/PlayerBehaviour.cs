@@ -36,7 +36,7 @@ namespace DTWorldz.Behaviours.Player
         public GameObject GoldLootPrefab;
         private PlayerMovementBehaviour movementBehaviour;
 
-        public Direction Direction { get { return movementBehaviour.GetDirection(); }}
+        public Direction Direction { get { return movementBehaviour.GetDirection(); } }
 
         public delegate void DataLoaderHandler();
         public event DataLoaderHandler OnAfterDataLoad;
@@ -68,23 +68,88 @@ namespace DTWorldz.Behaviours.Player
             RegisterToSaveSystem();
         }
 
-        private void OnItemUnequipped(BaseItemSO itemSO)
+        private void OnItemUnequipped(BaseEquipmentItemSO itemSO)
         {
-            Debug.Log("OnItemUnequipped" + itemSO.Name);
+            if (itemSO is WeaponItemSO)
+            {
+                var weaponItemSO = itemSO as WeaponItemSO;
+                var attackBehaviour = GetComponentInChildren<AttackBehaviour>();
+
+                attackBehaviour.Damage -= weaponItemSO.DamageAddition;
+                if (attackBehaviour.Damage < 0)
+                {
+                    attackBehaviour.Damage = 0;
+                }
+                if (weaponItemSO.AttackSpeedModifier > 0)
+                {
+                    attackBehaviour.AttackingFrequency /= weaponItemSO.AttackSpeedModifier;
+                }
+                if (attackBehaviour.AttackingFrequency < 0.1f)
+                {
+                    attackBehaviour.AttackingFrequency = 0.1f;
+                }
+                if (weaponItemSO.KnockbackForceModifier > 0)
+                {
+                    attackBehaviour.KnockbackForce /= weaponItemSO.KnockbackForceModifier;
+                }
+                attackBehaviour.AttackRange -= weaponItemSO.RangeAddition;
+                if (attackBehaviour.AttackRange < 0)
+                {
+                    attackBehaviour.AttackRange = 0;
+                }
+
+                if(weaponItemSO.Animator != null){
+                    GetComponent<PlayerMovementBehaviour>().AnimationSlots.Find(x => x.name == "Weapon").GetComponent<Animator>().runtimeAnimatorController = null;
+                }
+            }
         }
 
-        private void OnItemEquipped(BaseItemSO itemSO)
+        private void OnItemEquipped(BaseEquipmentItemSO itemSO)
         {
-            Debug.Log("OnItemEquipped" + itemSO.Name);
+            if (itemSO is WeaponItemSO)
+            {
+                var weaponItemSO = itemSO as WeaponItemSO;
+                var attackBehaviour = GetComponentInChildren<AttackBehaviour>();
+
+
+                attackBehaviour.Damage += weaponItemSO.DamageAddition;
+                if (attackBehaviour.Damage < 0)
+                {
+                    attackBehaviour.Damage = 0;
+                }
+                if (weaponItemSO.AttackSpeedModifier > 0)
+                {
+                    attackBehaviour.AttackingFrequency *= weaponItemSO.AttackSpeedModifier;
+                }
+                if (attackBehaviour.AttackingFrequency < 0.1f)
+                {
+                    attackBehaviour.AttackingFrequency = 0.1f;
+                }
+                if (weaponItemSO.KnockbackForceModifier > 0)
+                {
+                    attackBehaviour.KnockbackForce *= weaponItemSO.KnockbackForceModifier;
+                }
+                attackBehaviour.AttackRange += weaponItemSO.RangeAddition;
+                if (attackBehaviour.AttackRange < 0)
+                {
+                    attackBehaviour.AttackRange = 0;
+                }
+
+                if(weaponItemSO.Animator != null){
+                    GetComponent<PlayerMovementBehaviour>().AnimationSlots.Find(x => x.name == "Weapon").GetComponent<Animator>().runtimeAnimatorController = weaponItemSO.Animator;
+                }
+            }
         }
 
         private void OnInteractTargetChanged(Interactable interactable)
         {
-            if(UseActionButtonBehavior == null){
+            if (UseActionButtonBehavior == null)
+            {
                 return;
             }
 
-            if(interactable == null){
+            if (interactable == null)
+            {
                 UseActionButtonBehavior.SetAction(null, 0);
                 return;
             }

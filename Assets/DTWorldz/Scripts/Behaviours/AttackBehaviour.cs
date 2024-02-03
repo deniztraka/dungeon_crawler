@@ -19,7 +19,6 @@ namespace DTWorldz.Behaviours
         private LayerMask layer = 0;
         private Direction direction;
         private BoxCollider2D coll;
-        private Vector2 collSizeDirectionAddition;
 
         private AudioManager audioManager;
 
@@ -63,30 +62,25 @@ namespace DTWorldz.Behaviours
             {
                 case Direction.Up:
                     coll.offset = AttackingColliderOffsetUp;
-                    coll.size = AttackingColliderSizeUp;
+                    coll.size = AttackingColliderSizeUp + new Vector2(0, AttackRange);
 
                     break;
                 case Direction.Left:
                     coll.offset = AttackingColliderOffsetLeft;
-                    coll.size = AttackingColliderSizeLeft;
+                    coll.size = AttackingColliderSizeLeft + new Vector2(AttackRange, 0);
                     break;
                 case Direction.Down:
                     coll.offset = AttackingColliderOffsetDown;
-                    coll.size = AttackingColliderSizeDown;
+                    coll.size = AttackingColliderSizeDown + new Vector2(0, AttackRange);
                     break;
                 case Direction.Right:
                     coll.offset = AttackingColliderOffsetRight;
-                    coll.size = AttackingColliderSizeRight;
+                    coll.size = AttackingColliderSizeRight + new Vector2(AttackRange, 0);
                     break;
             }
 
             attackTime -= Time.deltaTime;
             attackTime = attackTime <= 0 ? 0 : attackTime;
-        }
-
-        public Vector2 GetSizeEdition()
-        {
-            return collSizeDirectionAddition;
         }
 
         internal void SetDirection(Direction direction)

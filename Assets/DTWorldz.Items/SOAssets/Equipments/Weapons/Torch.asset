@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d545e670314e6d40995dcf045e1c2c8, type: 3}
   m_Name: Torch
   m_EditorClassIdentifier: 
-  Id: 11
+  Id: torch
   Name: Torch
   Description: Something cool
   Icon: {fileID: -1693881076098464576, guid: c2af4bb3854969d4cb2f76aacb65cd71, type: 3}
@@ -20,3 +20,11 @@ MonoBehaviour:
   Stackable: 0
   Prefab: {fileID: 3007609105436017230, guid: f348f8a231e58421f943179eb0c17877, type: 3}
   MaxStackQuantity: 1
+  Durability: 10
+  Animator: {fileID: 9100000, guid: 6053bc48cd54f0145944a027f6635f33, type: 2}
+  DamageAddition: 5
+  AttackSpeedModifier: 0.75
+  RangeAddition: 0
+  CriticalChanceModifier: 0
+  CriticalDamageModifier: 0
+  KnockbackForceModifier: 0

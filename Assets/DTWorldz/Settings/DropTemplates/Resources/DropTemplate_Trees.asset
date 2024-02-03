@@ -21,7 +21,3 @@ MonoBehaviour:
         type: 3}
       CountMin: 1
       CountMax: 2
-    - ItemPrefab: {fileID: 5201006734434581963, guid: cb406f3030b39454aa0af812d712da1e,
-        type: 3}
-      CountMin: 1
-      CountMax: 3

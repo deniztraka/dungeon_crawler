@@ -20,3 +20,10 @@ MonoBehaviour:
   Stackable: 0
   Prefab: {fileID: 5961818377584682122, guid: 4f512387cfe2646e390198849bb5c8a4, type: 3}
   MaxStackQuantity: 1
+  Durability: 10
+  DamageAddition: 10
+  AttackSpeedModifier: 1.25
+  RangeAddition: 0
+  CriticalChanceModifier: 0
+  CriticalDamageModifier: 0
+  KnockbackForceModifier: 0

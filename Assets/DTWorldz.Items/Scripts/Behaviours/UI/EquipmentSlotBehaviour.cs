@@ -21,7 +21,7 @@ namespace DTWorldz.Items.Behaviours.UI
     public class EquipmentSlotBehavior : ItemSlotBehaviour
     {
 
-        public delegate void ItemEquippedHandler(BaseItemSO itemSO);
+        public delegate void ItemEquippedHandler(BaseEquipmentItemSO itemSO);
         public event ItemEquippedHandler OnItemEquipped;
         public event ItemEquippedHandler OnItemUnequipped;
 
@@ -91,7 +91,7 @@ namespace DTWorldz.Items.Behaviours.UI
                 //Debug.Log("OnItemUneqquiped: " + equippedItemSO.Name);
                 if (OnItemEquipped != null)
                 {
-                    OnItemUnequipped.Invoke(equippedItemSO);
+                    OnItemUnequipped.Invoke(equippedItemSO as BaseEquipmentItemSO);
                 }
             }
 
@@ -100,7 +100,7 @@ namespace DTWorldz.Items.Behaviours.UI
             //Debug.Log("OnItemEqquiped: " + itemSO.Name);
             if (OnItemEquipped != null)
             {
-                OnItemEquipped.Invoke(itemSO);
+                OnItemEquipped.Invoke(itemSO as BaseEquipmentItemSO);
             }
         }
 
@@ -131,7 +131,7 @@ namespace DTWorldz.Items.Behaviours.UI
             //Debug.Log("OnItemUneqquiped: " + equippedItemSO.Name);
             if (OnItemEquipped != null)
             {
-                OnItemUnequipped.Invoke(equippedItemSO);
+                OnItemUnequipped.Invoke(equippedItemSO as BaseEquipmentItemSO);
             }
 
             equippedItemSO = null;
